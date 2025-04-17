@@ -431,7 +431,7 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
-<li>2024. 08 - 2025. 02: Kalvin Chang </li>
+<li>2024. 08 - 2025. 02: Kalvin Chang (UC Berkeley) </li>
 <li>2024. 09 - 2025. 02: Holger Severin Bovbjerg (Aalborg University) </li>
 <li>2024. 08 - 2024. 12: Carlos Carvalho (Instituto Superior Técnico ) </li>
 <li>2024. 04 - 2024. 12: Shuichiro Shimizu (Kyoto University) </li>
