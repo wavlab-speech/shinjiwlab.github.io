@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>WAVLab | Babel Usage</title>
+<meta name="description" content="Webpage of Watanabe's Audio and Voice (WAV) Lab
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="/assets/img/favicon.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/activities/2024/babel-usage/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       WAVLab
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              Activities
+              
+            </a>
+          </li>
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/members/">
+                Members
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/open_source">
+                Open-source
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/courses/">
+                Courses
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/sponsors/">
+                Sponsors
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/info/">
+                Info
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/positions/">
+                Positions
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/speech_lunch">
+                Speech Lunch
+                
+              </a>
+          </li>
+          
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Babel Usage</h1>
+    <p class="post-meta">August 20, 2024</p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="important-information">Important Information</h2>
+<ul>
+  <li>Document: Babel is the cluster hosted in LTI, CMU. Besides this page, <strong>please also check the <a href="https://hpc.lti.cs.cmu.edu/wiki/index.php?title=Main_Page">official document</a></strong>. You will need a CMU identity to access this document (i.e., andrew ID).</li>
+  <li>Slack Channel: Babel users should join the <code class="language-plaintext highlighter-rouge">babel-babble</code> channel in <code class="language-plaintext highlighter-rouge">LTI</code> slack space to receive the latest information. You may also contact the cluster admin through that channel.</li>
+  <li>Use Policy:
+    <ul>
+      <li>Generally, each user can use up to 8 GPUs without notifying the admin of the cluster.</li>
+      <li>Occasionally, one can use more than 8 GPUs but need to send a message in the slack channel to clarify the number of GPUs and the estimated time to finish. The admin will request you to lower your usage when the cluster is busy.</li>
+      <li>There is no charging mechanism in babel but please still use it reasonably.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">swl_general</code> and <code class="language-plaintext highlighter-rouge">swl_short</code> partitions:
+    <ul>
+      <li>Nodes with names <code class="language-plaintext highlighter-rouge">babel-11-*</code> are former SWL cluster. Our lab members will have priority to these nodes as long as you use partitions <code class="language-plaintext highlighter-rouge">swl_general</code> and <code class="language-plaintext highlighter-rouge">swl_short</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="cluster-access">Cluster Access</h2>
+<ul>
+  <li>Before you proceed, please make sure your access to Babel is approved by Prof. Shinji Watanabe.
+    <ul>
+      <li>Go to <a href="https://lti.cs.cmu.edu/misc-pages/intranet-forms.html">LTI intranet</a> and then submit <code class="language-plaintext highlighter-rouge">HPC Cluster User Account Request Form</code>.</li>
+      <li>HPC Cluster Name: <code class="language-plaintext highlighter-rouge">babel</code></li>
+      <li>Department Association: <code class="language-plaintext highlighter-rouge">LTI</code></li>
+      <li>Faculty Sponsoring Account: <code class="language-plaintext highlighter-rouge">swatanab</code></li>
+      <li>Additional Groups: <code class="language-plaintext highlighter-rouge">swl</code></li>
+    </ul>
+  </li>
+  <li>Connect to the cluster by <code class="language-plaintext highlighter-rouge">ssh &lt;username&gt;@babel.lti.cs.cmu.edu</code></li>
+</ul>
+
+<h2 id="login-nodes-working-nodes-and-working-directories">Login nodes, working nodes and working directories</h2>
+<ul>
+  <li>Once login, you will be in a <code class="language-plaintext highlighter-rouge">login</code> node. These nodes are used for login only and are not for real jobs.</li>
+  <li>You jobs will be conducted by <code class="language-plaintext highlighter-rouge">working</code> nodes. You can allocate CPU/GPU resources for your jobs. Once allocated, you can also login these nodes from the login node by <code class="language-plaintext highlighter-rouge">ssh</code>. E.g., if there is a job running on <code class="language-plaintext highlighter-rouge">babel-11-29</code>, you can login that node by <code class="language-plaintext highlighter-rouge">ssh babel-11-29</code>.</li>
+  <li>Working directories below are commonly used. Note <code class="language-plaintext highlighter-rouge">/data</code> is not visible to the <code class="language-plaintext highlighter-rouge">login</code> nodes.
+    <ul>
+      <li>Personal directory: <code class="language-plaintext highlighter-rouge">/data/user_data/&lt;user_name&gt;</code></li>
+      <li>Shared corpus storage <code class="language-plaintext highlighter-rouge">/data/group_data/swl/corpora</code></li>
+      <li>Legacy working directory of previous SWL user: <code class="language-plaintext highlighter-rouge">/data/group_data/swl/old_home</code></li>
+      <li>Personal home, with very limited space. Do not use it for your works: <code class="language-plaintext highlighter-rouge">/home/&lt;user_name&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="resource-allocation">Resource Allocation</h2>
+<ul>
+  <li>Resources in Babel are managed by <code class="language-plaintext highlighter-rouge">slurm</code>. For general use cases, please refer to <a href="https://hpc.lti.cs.cmu.edu/wiki/index.php?title=Slurm">this document</a></li>
+  <li>For ESPnet users, jobs are submitted to <code class="language-plaintext highlighter-rouge">slurm</code> automatically.
+    <ul>
+      <li>For each recipe (e.g., <code class="language-plaintext highlighter-rouge">espnet/egs2/librispeech/asr1</code>), there are a <code class="language-plaintext highlighter-rouge">cmd.sh</code> and a <code class="language-plaintext highlighter-rouge">conf/slurm.conf</code> files. Setting <code class="language-plaintext highlighter-rouge">backend=slurm</code> in <code class="language-plaintext highlighter-rouge">cmd.sh</code> and setting <code class="language-plaintext highlighter-rouge">conf/slurm.conf</code> properly should be sufficient to use Babel resources. An example <code class="language-plaintext highlighter-rouge">conf/slurm.con</code> is below.
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default configuration
+command sbatch --export=PATH
+option name=* --job-name $0
+default time=2-00:00:00
+option time=* --time $0
+option mem=* --mem-per-cpu $0
+option mem=0
+option num_threads=* --cpus-per-task $0
+option num_threads=1 --cpus-per-task 1
+option num_nodes=* --nodes $0
+default gpu=0
+option gpu=0 -p swl_general --mem 2000M
+option gpu=1 -p swl_general --gres=gpu:1 -c 8  --mem 30000M
+option gpu=2 -p swl_general --gres=gpu:2 -c 16 --mem 60000M
+option gpu=3 -p swl_general --gres=gpu:3 -c 24 --mem 90000M 
+option gpu=4 -p swl_general --gres=gpu:4 -c 32 --mem 120000M 
+option gpu=8 -p swl_general --gres=gpu:8 -c 48 --mem 240000M
+</code></pre></div>        </div>
+        <ul>
+          <li>Based on the number of GPUs you request, it will automatically select the setup above. E.g., if 2 GPUs are requested, configuration <code class="language-plaintext highlighter-rouge">gpu=2 -p swl_general --gres=gpu:2 -c 16 --mem 60000M</code> will be in use.</li>
+          <li><code class="language-plaintext highlighter-rouge">-p swl_general</code> specify which <code class="language-plaintext highlighter-rouge">partition</code> the jobs are submitted to. Use <code class="language-plaintext highlighter-rouge">sinfo</code> to check all available partitions. Each partition will contain different resources. Members from <code class="language-plaintext highlighter-rouge">WavLab</code> will be able to use partitions <code class="language-plaintext highlighter-rouge">debug</code>, <code class="language-plaintext highlighter-rouge">general</code>, <code class="language-plaintext highlighter-rouge">long</code>, <code class="language-plaintext highlighter-rouge">cpu</code>, <code class="language-plaintext highlighter-rouge">swl_general</code> and <code class="language-plaintext highlighter-rouge">swl_short</code>.</li>
+          <li><code class="language-plaintext highlighter-rouge">-c</code> means the CPU cores to allocate, usually 8 CPU cores for each GPU.</li>
+          <li><code class="language-plaintext highlighter-rouge">--mem</code> means the CPU memory to allocate, usually 30G for each GPU.</li>
+          <li>Make sure <code class="language-plaintext highlighter-rouge">gpu=N</code> matches <code class="language-plaintext highlighter-rouge">--gres=gpu:N</code></li>
+          <li><code class="language-plaintext highlighter-rouge">default time=2-00:00:00</code> specify the estimated time of your jobs. The maximum valid time will be differnt based on the partition. Use <code class="language-plaintext highlighter-rouge">sinfo</code> to check that for each partition.</li>
+          <li>Your jobs will fail if the requested number of GPUs / CPU cores / memory beyond the possible configuration.</li>
+          <li>By adding <code class="language-plaintext highlighter-rouge">--exclude=&lt;node&gt;</code>, you can avoid submitting your jobs to certain nodes. E.g., <code class="language-plaintext highlighter-rouge">--exclude=babel-11-[13,29]</code>.</li>
+          <li>By adding <code class="language-plaintext highlighter-rouge">-w &lt;nodes&gt;</code>, you can submit your jobs to certain nodes, E.g., <code class="language-plaintext highlighter-rouge">--w babel-11-[13,29]</code>.</li>
+          <li>You can also specify the GPU types. E.g., to request A6000 GPUs, replace <code class="language-plaintext highlighter-rouge">--gres=gpu:4</code> to <code class="language-plaintext highlighter-rouge">--gres=gpu:A6000:4</code>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="espnet">ESPnet</h2>
+<p>Using ESPnet on Babel will not cause extra difficulties. To setup the environment:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/espnet/espnet.git
+cd espnet/tools
+./setup_anaconda.sh &lt;path-to-conda&gt; &lt;env_name&gt; &lt;python_version&gt; # E.g., ./setup_anaconda.sh /data/user_data/&lt;user_name&gt;/tools/miniconda3 espnet 3.10
+make TH_VERSION=&lt;torch_version&gt; CUDA_VERSION=&lt;cuda_version&gt; # E.g., make TH_VERSION=2.1.0 CUDA_VERSION=11.8
+</code></pre></div></div>
+<ul>
+  <li>Note: You will not need to use <code class="language-plaintext highlighter-rouge">module load</code> as before, as the conda will handle the CUDA automatically.</li>
+</ul>
+
+<p>Then you can run ESPnet recipes. E.g.,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd espnet/egs2/librispeech/asr1/
+# configurate cmd.sh to use slurm backend
+# configurate conf/slurm.conf as above
+# Add your dataset path to db.sh
+bash run.sh
+</code></pre></div></div>
+<p>Further ESPnet use guidance is beyond the scope of Babel. Readers can refer to the <a href="https://espnet.github.io/espnet/tutorial.html">tutorials</a> in our <a href="https://github.com/espnet/espnet">website</a>.</p>
+
+<h2 id="misc">Misc.</h2>
+<ul>
+  <li>VSCode: Both login nodes and working nodes can be accessed by VSCode. Search <code class="language-plaintext highlighter-rouge">VSCode</code> in Babel official document for guidance.</li>
+  <li>
+    <p>As <code class="language-plaintext highlighter-rouge">/data</code> directory is not visible to login nodes, one can keep a small CPU job for coding. Please only use a small amount of memory / CPU cores for this porpose. For short-time use, you can also allocate some GPUs, but please don’t allocate GPUs for a long time for coding and debugging.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sbatch --partition=swl_general --nodes=1 --tasks=1 --tasks-per-node=1 --cpus-per-task=4 --mem=8000M -w babel-11-17 --time=15-00:00:00 /home/&lt;user_name&gt;/run.sh &amp; 
+
+  ### with the run.sh example below
+  #!/bin/bash
+  sleep 15d
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2025   WAV Lab.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>

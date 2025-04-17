@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>WAVLab | Open Whisper-style Speech Models (OWSM)</title>
+<meta name="description" content="Webpage of Watanabe's Audio and Voice (WAV) Lab
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="/assets/img/favicon.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/activities/2024/owsm/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       WAVLab
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              Activities
+              
+            </a>
+          </li>
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/members/">
+                Members
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/open_source">
+                Open-source
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/courses/">
+                Courses
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/sponsors/">
+                Sponsors
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/info/">
+                Info
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/positions/">
+                Positions
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/speech_lunch">
+                Speech Lunch
+                
+              </a>
+          </li>
+          
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Open Whisper-style Speech Models (OWSM)</h1>
+    <p class="post-meta">January 1, 2024</p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="overview">Overview</h2>
+
+<p><strong>O</strong>pen <strong>W</strong>hisper-style <strong>S</strong>peech <strong>M</strong>odels (OWSM, pronounced as “awesome”) are a series of speech foundation models developed by <a href="https://www.wavlab.org/">WAVLab</a> at Carnegie Mellon University. We reproduce Whisper-style training using publicly available data and our open-source toolkit <a href="https://github.com/espnet/espnet">ESPnet</a>. By publicly releasing data preparation scripts, training and inference code, pre-trained model weights and training logs, we aim to promote transparency and open science in large-scale speech pre-training.</p>
+
+<h2 id="demo">Demo</h2>
+
+<ul>
+  <li>Gradio demo: <a href="https://pyf98-owsm-v3-demo.hf.space"><img src="https://img.shields.io/badge/OWSM-Demo-orange" alt="Static Badge" /></a></li>
+  <li>Colab notebook: <a href="https://colab.research.google.com/drive/1zKI3ZY_OtZd6YmVeED6Cxy1QwT1mqv9O?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open All Collab" /></a></li>
+</ul>
+
+<h2 id="pre-trained-models">Pre-trained models</h2>
+
+<p>We publicly release a series of <a href="https://huggingface.co/collections/pyf98/open-whisper-style-speech-models-owsm-66d5312c1c9a1508189192cd">pre-trained models</a>. The training logs are also available for major models. <strong>We recommend using OWSM v3.1 or later versions for better performance and efficiency.</strong></p>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Data (hours)</th>
+        <th>Encoder</th>
+        <th>Parameters</th>
+        <th>Model Link</th>
+        <th>ESPnet Recipe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OWSM v1</td>
+        <td>38k</td>
+        <td>Transformer</td>
+        <td>272M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v1">espnet/owsm_v1</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v1/s2t1">egs2/owsm_v1/s2t1</a></td>
+      </tr>
+      <tr>
+        <td>OWSM v2</td>
+        <td>129k</td>
+        <td>Transformer</td>
+        <td>712M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v2">espnet/owsm_v2</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v2/s2t1">egs2/owsm_v2/s2t1</a></td>
+      </tr>
+      <tr>
+        <td>OWSM v2</td>
+        <td>129k</td>
+        <td>E-Branchformer</td>
+        <td>739M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v2_ebranchformer">espnet/owsm_v2_ebranchformer</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v2/s2t1">egs2/owsm_v2/s2t1</a></td>
+      </tr>
+      <tr>
+        <td>OWSM v3</td>
+        <td>180k</td>
+        <td>Transformer</td>
+        <td>889M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v3">espnet/owsm_v3</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v3/s2t1">egs2/owsm_v3/s2t1</a></td>
+      </tr>
+      <tr>
+        <td><b>OWSM v3.1 base</b></td>
+        <td>180k</td>
+        <td>E-Branchformer</td>
+        <td>101M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v3.1_ebf_base">espnet/owsm_v3.1_ebf_base</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v3.1/s2t1">egs2/owsm_v3.1/s2t1</a></td>
+      </tr>
+      <tr>
+        <td><b>OWSM v3.1 small</b></td>
+        <td>180k</td>
+        <td>E-Branchformer</td>
+        <td>367M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v3.1_ebf_small">espnet/owsm_v3.1_ebf_small</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v3.1/s2t1">egs2/owsm_v3.1/s2t1</a></td>
+      </tr>
+      <tr>
+        <td><b>OWSM v3.1 medium</b></td>
+        <td>180k</td>
+        <td>E-Branchformer</td>
+        <td>1.02B</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v3.1_ebf">espnet/owsm_v3.1_ebf</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v3.1/s2t1">egs2/owsm_v3.1/s2t1</a></td>
+      </tr>
+      <tr>
+        <td><b>OWSM v3.1 small low-restriction</b></td>
+        <td>70k</td>
+        <td>E-Branchformer</td>
+        <td>367M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v3.1_ebf_small_lowrestriction">espnet/owsm_v3.1_ebf_small_lowrestriction</a></td>
+        <td><a href="https://github.com/espnet/espnet/tree/master/egs2/owsm_v3.1/s2t1">egs2/owsm_v3.1/s2t1</a></td>
+      </tr>
+      <tr>
+        <td><b><a href="https://aclanthology.org/2024.acl-long.549/">OWSM-CTC v3.1 medium</a></b></td>
+        <td>180k</td>
+        <td>E-Branchformer</td>
+        <td>1.01B</td>
+        <td><a href="https://huggingface.co/pyf98/owsm_ctc_v3.1_1B">pyf98/owsm_ctc_v3.1_1B</a></td>
+        <td><a href="https://huggingface.co/pyf98/owsm_ctc_v3.1_1B">Check model page</a></td>
+      </tr>
+      <tr>
+        <td><b>OWSM v3.2 small</b></td>
+        <td>180k</td>
+        <td>E-Branchformer</td>
+        <td>367M</td>
+        <td><a href="https://huggingface.co/espnet/owsm_v3.2">espnet/owsm_v3.2</a></td>
+        <td><a href="">Coming soon</a></td>
+      </tr>
+    </tbody>
+</table>
+
+<h2 id="data-details">Data details</h2>
+
+<p>The latest OWSM v3.1 models are trained on a diverse combination of public datasets as listed below.</p>
+
+<details style="margin-bottom:1em;"><summary>OWSM v3.1 training data mixtures</summary>
+<ul>
+  <li>AIDATATANG</li>
+  <li>AISHELL-1</li>
+  <li>AMI</li>
+  <li>Babel</li>
+  <li>Common Voice</li>
+  <li>Googlei18n</li>
+  <li>CoVoST2</li>
+  <li>Fisher Callhome Spanish</li>
+  <li>Fisher (Switchboard)</li>
+  <li>FLEURS</li>
+  <li>GigaSpeech</li>
+  <li>GigaST</li>
+  <li>KsponSpeech</li>
+  <li>LibriSpeech</li>
+  <li>MagicData</li>
+  <li>Multilingual LibriSpeech</li>
+  <li>MuST-C</li>
+  <li>ReazonSpeech</li>
+  <li>Russian Open STT</li>
+  <li>SPGISpeech</li>
+  <li>TEDLIUM3</li>
+  <li>VCTK</li>
+  <li>VoxForge</li>
+  <li>VoxPopuli</li>
+  <li>WenetSpeech</li>
+</ul>
+</details>
+
+<p>The low-restriction model is trained on a subset of the above data with “more flexible licenses”.</p>
+
+<details style="margin-bottom:1em;"><summary>OWSM v3.1 low-restriction data</summary>
+<ul>
+  <li>AMI: CC-BY-4.0</li>
+  <li>Common Voice: CC0-1.0</li>
+  <li>FLEURS: CC-BY-4.0</li>
+  <li>KsponSpeech: MIT</li>
+  <li>LibriSpeech: CC-BY-4.0</li>
+  <li>Multilingual LibriSpeech: CC-BY-4.0</li>
+  <li>VCTK: CC-BY-4.0</li>
+</ul>
+</details>
+
+<h2 id="inference">Inference</h2>
+
+<p>Similar to other ESPnet models, the pre-trained OWSM models can be easily downloaded and used in a python script. Below are some examples using OWSM v3.1. For earlier versions (v2 and before), the language code should follow the two-letter format (e.g., <code class="language-plaintext highlighter-rouge">&lt;en&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;de&gt;</code>).</p>
+
+<h3 id="language-identification">Language Identification</h3>
+
+<p>We pass the Hugging Face model tag when initializing <code class="language-plaintext highlighter-rouge">Speech2Language</code>. The model will be automatically downloaded from Hugging Face to a local cache directory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">espnet2.bin.s2t_inference_language</span> <span class="kn">import</span> <span class="n">Speech2Language</span>
+<span class="n">s2l</span> <span class="o">=</span> <span class="n">Speech2Language</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span>
+    <span class="n">model_tag</span><span class="o">=</span><span class="sh">"</span><span class="s">espnet/owsm_v3.1_ebf</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="sh">"</span><span class="s">cuda</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">nbest</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># return nbest prediction and probability
+</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="n">soundfile</span> <span class="k">as</span> <span class="n">sf</span>
+<span class="n">speech</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">sf</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="sh">"</span><span class="s">audio.wav</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="nf">s2l</span><span class="p">(</span><span class="n">speech</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># list of tuples (language, probability)
+# [('&lt;eng&gt;', 0.9994348883628845), ('&lt;jpn&gt;', 0.00010286537144565955), ('&lt;rus&gt;', 6.185896199895069e-05)]
+</span></code></pre></div></div>
+
+<h3 id="speech-recognition-or-translation">Speech Recognition or Translation</h3>
+
+<p>We use <code class="language-plaintext highlighter-rouge">Speech2Text</code> for speech recognition or translation. We also pass the model tag so that the model can be automatically downloaded. When initializing this object, we set the default values for <code class="language-plaintext highlighter-rouge">lang_sym</code>, <code class="language-plaintext highlighter-rouge">task_sym</code> and <code class="language-plaintext highlighter-rouge">predict_time</code>. These variables can be overwritten later, which provides more flexibility. Note that the language must be known to use this functionality. If it is unknown, one can first perform language identification and then recognition or translation.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">espnet2.bin.s2t_inference</span> <span class="kn">import</span> <span class="n">Speech2Text</span>
+<span class="n">s2t</span> <span class="o">=</span> <span class="n">Speech2Text</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span>
+    <span class="n">model_tag</span><span class="o">=</span><span class="sh">"</span><span class="s">espnet/owsm_v3.1_ebf</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="sh">"</span><span class="s">cuda</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">beam_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">ctc_weight</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">maxlenratio</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="c1"># below are default values which can be overwritten in __call__
+</span>    <span class="n">lang_sym</span><span class="o">=</span><span class="sh">"</span><span class="s">&lt;eng&gt;</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">task_sym</span><span class="o">=</span><span class="sh">"</span><span class="s">&lt;asr&gt;</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">predict_time</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="n">soundfile</span> <span class="k">as</span> <span class="n">sf</span>
+<span class="n">speech</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">sf</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="sh">"</span><span class="s">audio.wav</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="n">result</span> <span class="o">=</span> <span class="nf">s2t</span><span class="p">(</span><span class="n">speech</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># an optional text prompt can be passed
+</span><span class="n">result</span> <span class="o">=</span> <span class="nf">s2t</span><span class="p">(</span>
+    <span class="n">speech</span><span class="p">,</span>
+    <span class="n">text_prev</span><span class="o">=</span><span class="sh">"</span><span class="s">this is an optional prompt</span><span class="sh">"</span>
+<span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># lang_sym, task_sym, predict_time can be overwritten
+</span><span class="n">result</span> <span class="o">=</span> <span class="nf">s2t</span><span class="p">(</span>
+    <span class="n">speech</span><span class="p">,</span>
+    <span class="n">lang_sym</span><span class="o">=</span><span class="sh">"</span><span class="s">&lt;eng&gt;</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">task_sym</span><span class="o">=</span><span class="sh">"</span><span class="s">&lt;st_zho&gt;</span><span class="sh">"</span><span class="p">,</span>    <span class="c1"># translation into Chinese
+</span>    <span class="n">predict_time</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="long-form-speech-recognition-or-translation">Long-form Speech Recognition or Translation</h3>
+
+<p>OWSM processes an entire audio recording in a chunk-by-chunk manner. Each chunk has a fixed length of 30s. The chunk is shifted based on the predicted timestamps. We still use <code class="language-plaintext highlighter-rouge">Speech2Text</code> but we call its <code class="language-plaintext highlighter-rouge">decode_long</code> method.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">espnet2.bin.s2t_inference</span> <span class="kn">import</span> <span class="n">Speech2Text</span>
+<span class="n">s2t</span> <span class="o">=</span> <span class="n">Speech2Text</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span>
+    <span class="n">model_tag</span><span class="o">=</span><span class="sh">"</span><span class="s">espnet/owsm_v3.1_ebf</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="sh">"</span><span class="s">cuda</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">beam_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">ctc_weight</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">maxlenratio</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="c1"># below are default values which can be overwritten in __call__
+</span>    <span class="n">lang_sym</span><span class="o">=</span><span class="sh">"</span><span class="s">&lt;eng&gt;</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">task_sym</span><span class="o">=</span><span class="sh">"</span><span class="s">&lt;asr&gt;</span><span class="sh">"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="n">soundfile</span> <span class="k">as</span> <span class="n">sf</span>
+<span class="n">speech</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">sf</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="sh">"</span><span class="s">covid.wav</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">s2t</span><span class="p">.</span><span class="nf">decode_long</span><span class="p">(</span><span class="n">speech</span><span class="p">)</span>
+<span class="c1"># list of tuples (start_time, end_time, text)
+</span></code></pre></div></div>
+
+<h2 id="fine-tuning-on-custom-data">Fine-tuning on custom data</h2>
+
+<p>Our latest work (accepted to SLT 2024), “ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration”, will provide an easier way for fine-tuning pre-trained models. We are preparing demos and notebooks. Please stay tuned!</p>
+
+<h2 id="papers">Papers</h2>
+
+<p>Please cite our papers if you find OWSM helpful.</p>
+
+<ul>
+  <li>ACL 2024: <a href="https://aclanthology.org/2024.acl-long.549/">OWSM-CTC: An Open Encoder-Only Speech Foundation Model for Speech Recognition, Translation, and Language Identification</a></li>
+  <li>INTERSPEECH 2024: <a href="https://arxiv.org/abs/2406.09282">On the Effects of Heterogeneous Data Sources on Speech-to-Text Foundation Models</a></li>
+  <li>INTERSPEECH 2024: <a href="https://arxiv.org/abs/2401.16658">OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer</a></li>
+  <li>ASRU 2023: <a href="https://arxiv.org/abs/2309.13876">Reproducing Whisper-Style Training Using an Open-Source Toolkit and Publicly Available Data</a></li>
+</ul>
+
+<p>We also collect other papers related to OWSM. <strong>Please contact Yifan Peng (yifanpen@andrew.cmu.edu) if you use OWSM in your work and want to include it here.</strong></p>
+
+<details><summary>OWSM applications</summary>
+<ul>
+  <li>ASRU 2023 SPARKS Workshop: <a href="https://drive.google.com/file/d/18UCCNZssZGTh92lKt7vU7IlmbW_tuFGy/view?usp=sharing">SLUE-PERB: A Spoken Language Understanding Performance Benchmark and Toolkit</a></li>
+</ul>
+</details>
+
+<details><summary>Foundational work used by OWSM</summary>
+<ul>
+  <li>INTERSPEECH 2023: <a href="https://arxiv.org/abs/2305.11073">A Comparative Study on E-Branchformer vs Conformer in Speech Recognition, Translation, and Understanding Tasks</a></li>
+  <li>SLT 2022: <a href="https://proceedings.mlr.press/v162/peng22a.html">E-Branchformer: Branchformer with Enhanced merging for speech recognition</a></li>
+  <li>ICML 2022: <a href="https://proceedings.mlr.press/v162/peng22a.html">Branchformer: Parallel MLP-Attention Architectures to Capture Local and Global Context for Speech Recognition and Understanding</a></li>
+</ul>
+</details>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2025   WAV Lab.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
