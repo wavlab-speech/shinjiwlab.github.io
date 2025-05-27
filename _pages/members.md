@@ -370,10 +370,6 @@ order: 1
             Bo-Hao Su
         </div>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
 </div>
 <hr />
 
