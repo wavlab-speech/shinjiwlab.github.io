@@ -232,16 +232,6 @@ order: 1
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-	<div class="square">
-	    <a href="https://pyf98.github.io/" target="_blank" rel="noopener noreferrer">
-	        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/yifan.jpg">
-    	    </a>
-	</div>
-        <div class="caption">
-            Yifan Peng
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://www.linkedin.com/in/arora-sid/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/sarora.jpg">
@@ -250,8 +240,6 @@ order: 1
             Siddhant Arora
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-1 mt-md-1">
         <div class="square">
         <a href="#">
@@ -261,6 +249,8 @@ order: 1
             Li-wei Chen (co-supervising)
         </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">
@@ -287,6 +277,8 @@ order: 1
         <div class="caption">
             Shikhar Bharadwaj
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
@@ -410,6 +402,7 @@ order: 1
 
 ##### PhD
 <ul>
+<li>2020. 09 - 2025. 04: Yifan Peng (CMU) </li>
 <li>2019. 09 - 2024. 05: Xuankai Chang (CMU) </li>
 <li>2021. 09 - 2024. 05: Muqiao Yang (CMU, co-supervisor) </li>
 <li>2021. 01 - 2023. 06: Xinjian Li (CMU, co-supervisor) </li>
