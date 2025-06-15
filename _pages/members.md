@@ -178,15 +178,6 @@ order: 1
 #### Post-Doc
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-1">
-        <div class="square">
-	    <a href="https://scholar.google.co.kr/citations?user=MSIvlNoAAAAJ&hl=ko&authuser=1" target="_blank" rel="noopener noreferrer">
-	        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/hyejin.png">
-	    </a></div>
-        <div class="caption">
-            Hye-jin Shim
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
     <div class="square">
     <a href="https://github.com/popcornell" target="_blank" rel="noopener noreferrer">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/samuele.jpg">
@@ -395,9 +386,10 @@ order: 1
 
 ##### Post-Docs
 <ul>
-<li>2021. 09 - 2024. 07: Zhong-Qiu Wang (CMU) </li>
-<li>2022. 03 - 2024. 08: Soumi Maiti (CMU) </li>
+<li>2024. 02 - 2025. 05: Hye-jin Shim (CMU) </li>
 <li>2023. 03 - 2024. 09: Jeeweon Jung (CMU)</li>
+<li>2022. 03 - 2024. 08: Soumi Maiti (CMU) </li>
+<li>2021. 09 - 2024. 07: Zhong-Qiu Wang (CMU) </li>
 </ul>
 
 ##### PhD
