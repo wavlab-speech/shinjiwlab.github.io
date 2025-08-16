@@ -355,6 +355,14 @@ order: 1
             Bo-Hao Su
         </div>
     </div>
+    <div class="col-sm mt-3 mt-md-0">
+      <div class="square">
+        <a href="https://subohao.github.io/borrissu.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haoran.jpg">
+        </a></div>
+        <div class="caption">
+            Haoran Wang
+        </div>
     <div class="col-sm mt-3 mt-md-1">
     </div>
 </div>
