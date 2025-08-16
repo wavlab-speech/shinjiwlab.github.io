@@ -356,6 +356,13 @@ order: 1
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-1">
+      <div class="square">
+        <a href="https://whr-a.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haoran.jpg">
+        </a></div>
+        <div class="caption">
+            Haoran Wang
+        </div>
     </div>
 </div>
 <hr />
