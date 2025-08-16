@@ -363,6 +363,7 @@ order: 1
         <div class="caption">
             Haoran Wang
         </div>
+    </div>
     <div class="col-sm mt-3 mt-md-1">
     </div>
 </div>
