@@ -279,15 +279,6 @@ order: 1
 #### Master Students
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-	 <div class="square">
-        <a href="https://kwangheechoi.com/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/kwanghee.jpg">
-	    </a></div>
-        <div class="caption">
-            Kwanghee Choi
-        </div>	
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
       <div class="square">
         <a href="https://eric102004.github.io/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chyijiunn.jpg">
@@ -304,6 +295,8 @@ order: 1
         <div class="caption">
             Masao Someki
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
@@ -330,15 +323,6 @@ order: 1
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
-        <a href="https://sites.google.com/view/jialuli/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jialu.jpg">
-        </a></div>
-        <div class="caption">
-            Jialu Li
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
         <a href="https://sites.google.com/view/jhoonkim/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jihoon.jpeg">
         </a></div>
@@ -363,6 +347,8 @@ order: 1
         <div class="caption">
             Haoran Wang
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
@@ -418,6 +404,7 @@ order: 1
 
 ##### MS & Undergraduate
 <ul>
+<li>2023. 05 - 2025. 05: Kwanghee Choi (CMU) </li>
 <li>2022. 09 - 2024. 05: Shih-Lun Wu (CMU) </li>
 <li>2021. 09 - 2023. 05: Dan Berrebbi (CMU) </li>
 <li>2021. 09 - 2022. 12: Dorsa Zeinali (CMU) </li>
@@ -434,6 +421,7 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
+<li>2025. 02 - 2025. 07: Jialu Li (University of Illinois Urbana-Champaign) </li>
 <li>2025. 01 - 2025. 04: Pu Wang (KU Leuven) </li>
 <li>2024. 08 - 2025. 02: Kalvin Chang (UC Berkeley) </li>
 <li>2024. 09 - 2025. 02: Holger Severin Bovbjerg (Aalborg University) </li>
