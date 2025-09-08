@@ -13,9 +13,9 @@ This is Watanabe's Audio and Voice (WAV) Lab at the Language Technologies Instit
 
 
 <div class="col-sm mt-3 mt-md-0" style="display:table-cell; vertical-align:middle; text-align:center">
-    <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/gallery/03-06-2022.jpg">
+    <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/PXL_20240506_150609437.MP.jpg">
     <div class="caption">
-        Our Lab Party at the Porch before Interspeech, 03.06.2022
+        The end-of-semester presentation, 05.06.2024
     </div>
 </div>
 

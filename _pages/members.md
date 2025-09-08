@@ -175,55 +175,8 @@ order: 1
 </div>
 <hr />
 
-#### Visting Faculty
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://home.ttic.edu/~klivescu/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/karen.jpeg">
-        </a></div>
-        <div class="caption">
-            Karen Livescu
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-</div>
-<hr />
-
 #### Post-Doc
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-1">
-        <div class="square">
-	    <a href="https://scholar.google.co.kr/citations?user=MSIvlNoAAAAJ&hl=ko&authuser=1" target="_blank" rel="noopener noreferrer">
-	        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/hyejin.png">
-	    </a></div>
-        <div class="caption">
-            Hye-jin Shim
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
-    <div class="square">
-    <a href="https://www.linkedin.com/in/soumi-maiti-84ba6a20" target="_blank" rel="noopener noreferrer">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/soumi.jpg">
-    </a></div>
-        <div class="caption">
-            Soumi Maiti
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
-    <div class="square">
-    <a href="https://jungjee.github.io/" target="_blank" rel="noopener noreferrer">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jeeweon.jpg">
-    </a></div>
-        <div class="caption">
-            Jee-weon Jung
-        </div>
-    </div>
     <div class="col-sm mt-3 mt-md-1">
     <div class="square">
     <a href="https://github.com/popcornell" target="_blank" rel="noopener noreferrer">
@@ -232,6 +185,12 @@ order: 1
         <div class="caption">
             Samuele Cornell
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-1">
+    </div>
+    <div class="col-sm mt-3 mt-md-1">
+    </div>
+    <div class="col-sm mt-3 mt-md-1">
     </div>
 </div>
 <!-- <div class="row mt-3">
@@ -266,16 +225,6 @@ order: 1
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-	<div class="square">
-	    <a href="https://pyf98.github.io/" target="_blank" rel="noopener noreferrer">
-	        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/yifan.jpg">
-    	    </a>
-	</div>
-        <div class="caption">
-            Yifan Peng
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://www.linkedin.com/in/arora-sid/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/sarora.jpg">
@@ -284,8 +233,6 @@ order: 1
             Siddhant Arora
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-1 mt-md-1">
         <div class="square">
         <a href="#">
@@ -295,6 +242,8 @@ order: 1
             Li-wei Chen (co-supervising)
         </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">
@@ -322,20 +271,20 @@ order: 1
             Shikhar Bharadwaj
         </div>
     </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <div class="square">
+        <a href="https://cyhuang-tw.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chienyu.png">
+        </a></div>
+        <div class="caption">
+            Chien-yu Huang
+        </div>
+    </div>
 </div>
 <hr />
 
 #### Master Students
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-	 <div class="square">
-        <a href="https://kwangheechoi.com/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/kwanghee.jpg">
-	    </a></div>
-        <div class="caption">
-            Kwanghee Choi
-        </div>	
-    </div>
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
         <a href="https://eric102004.github.io/" target="_blank" rel="noopener noreferrer">
@@ -343,6 +292,15 @@ order: 1
         </a></div>
         <div class="caption">
             Chyi-Jiunn Lin
+        </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+      <div class="square">
+        <a href="https://masao-someki.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/msomeki.png">
+        </a></div>
+        <div class="caption">
+            Masao Someki
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
@@ -366,55 +324,52 @@ order: 1
 </div>
 <hr /> -->
 
-#### Visitors & Collaborators
+#### Visitors
 
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://wyh2000.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/yihanwu.jpg">
+      <div class="square">
+        <a href="https://sites.google.com/view/jhoonkim/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jihoon.jpeg">
         </a></div>
         <div class="caption">
-            Yihan Wu
+            Ji-Hoon Kim
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://cromz22.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/sshimizu.jpg">
+      <div class="square">
+        <a href="https://subohao.github.io/borrissu.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/BoHaoSu.jpg">
         </a></div>
         <div class="caption">
-            Shuichiro Shimizu
+            Bo-Hao Su
+        </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-1">
+      <div class="square">
+        <a href="https://whr-a.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haoran.jpg">
+        </a></div>
+        <div class="caption">
+            Haoran Wang
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-    <div class="square">
-        <a href="https://github.com/Stanwang1210" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/stan.jpg">
-        </a></div>
-        <div class="caption">
-            Shih-Heng Wang
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://ybando.jp/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/ybando.jpg">
-        </a></div>
-        <div class="caption">
-            Yoshiaki Bando
-        </div>
     </div>
 </div>
+<hr />
+
+#### Industrial Collaborators
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
-        <a href="https://linkedin.com/in/kalvinc" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/kalvin.jpg">
+        <a href="https://jungjee.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jeeweon.png">
         </a></div>
         <div class="caption">
-            Kalvin Chang
+            Jee-weon Jung
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
@@ -424,18 +379,26 @@ order: 1
     <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
-
 <hr />
 
 #### Alumni
 
+##### Visting Faculty
+<ul>
+<li>2023. 09 -- 2024. 06: Karen Livescu (TTIC) </li>
+</ul>
+
 ##### Post-Docs
 <ul>
+<li>2024. 02 - 2025. 05: Hye-jin Shim (CMU) </li>
+<li>2023. 03 - 2024. 09: Jeeweon Jung (CMU)</li>
+<li>2022. 03 - 2024. 08: Soumi Maiti (CMU) </li>
 <li>2021. 09 - 2024. 07: Zhong-Qiu Wang (CMU) </li>
 </ul>
 
 ##### PhD
 <ul>
+<li>2020. 09 - 2025. 04: Yifan Peng (CMU) </li>
 <li>2019. 09 - 2024. 05: Xuankai Chang (CMU) </li>
 <li>2021. 09 - 2024. 05: Muqiao Yang (CMU, co-supervisor) </li>
 <li>2021. 01 - 2023. 06: Xinjian Li (CMU, co-supervisor) </li>
@@ -448,6 +411,7 @@ order: 1
 
 ##### MS & Undergraduate
 <ul>
+<li>2023. 05 - 2025. 05: Kwanghee Choi (CMU) </li>
 <li>2022. 09 - 2024. 05: Shih-Lun Wu (CMU) </li>
 <li>2021. 09 - 2023. 05: Dan Berrebbi (CMU) </li>
 <li>2021. 09 - 2022. 12: Dorsa Zeinali (CMU) </li>
@@ -464,6 +428,15 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
+<li>2025. 02 - 2025. 07: Jialu Li (University of Illinois Urbana-Champaign) </li>
+<li>2025. 01 - 2025. 04: Pu Wang (KU Leuven) </li>
+<li>2024. 08 - 2025. 02: Kalvin Chang (UC Berkeley) </li>
+<li>2024. 09 - 2025. 02: Holger Severin Bovbjerg (Aalborg University) </li>
+<li>2024. 08 - 2024. 12: Carlos Carvalho (Instituto Superior Técnico ) </li>
+<li>2024. 04 - 2024. 12: Shuichiro Shimizu (Kyoto University) </li>
+<li>2024. 08 - 2024. 11: Shih-Heng Wang (National Taiwan University) </li>
+<li>2024. 08 - 2024. 11: Yoshiaki Bando (National Institute of Advanced Industrial Science and Technology) </li>
+<li>2023. 09 - 2024. 08: Yihan Wu (Renmin University) </li>
 <li>2023. 11 - 2024. 04: Chenda Li (Shanghai Jiaotong University) </li>
 <li>2023. 08 - 2024. 03: Roshan Sharma (Carnegie Mellon University)</li>
 <li>2023. 03 - 2024. 03: Wangyou Zhang (Shanghai Jiaotong University)</li>
@@ -485,5 +458,6 @@ order: 1
 <li>2018. 07 - 2020. 03: Yusuke Fujita (Hitachi Ltd.)</li>
 <li>2018. 04 - 2018. 09: Nelson Enrique Yalta Soplin (Waseda University)</li>
 </ul>
+
 
 

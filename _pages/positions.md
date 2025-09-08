@@ -35,12 +35,14 @@ Please see the following for details of each application category.
 
 - [ ] &nbsp; Please submit your application through [LTI](https://www.lti.cs.cmu.edu/apply-lti). Unfortunately, we may not respond to a direct email about the Ph.D. application.
 
-### CMU undergraduate/master students
-
-- [ ] &nbsp; Please email your CV to shinjiw@ieee.org with the subject **"WAVLab undergraduate/master applications"**
-- [ ] &nbsp; If you do not put it in the subject, we regard that you do not thoroughly investigate our lab's activities in this webpage, and unfortunately, we may not respond to this email.
-- [ ] &nbsp; Note that your CV will be shared with other lab members (but we do not distribute it outside).
-- [ ] &nbsp; We care about the educational perspectives for the undergraduate/master students to be familiar with the speech research background, required programming skills, knowledge of the cluster, and use of speech and audio toolkit. This period would be at least the first couple of months or longer. We believe that this is an essential process for you to start a solid research activity. If you want to publish a paper as soon as possible, our lab is not the best option for you, unfortunately. I recommend you to contact the other faculties.
+### WAVLab Collaborator
+- We provide training and research opportunities to students who are interested in speech processing and want to collaborate with us.
+  - We usually work with students at Carnegie Mellon University (CMU), but students from other universities are also welcome. We accept both undergraduate and graduate students if they are motivated.
+  - We emphasize the educational perspectives for speech processing, especially for students who are new to speech research. We guide students in understanding speech research background, required programming skills, knowledge of the cluster, and use of speech and audio toolkits. Students can also conduct research under our supervision. 
+  - It usually takes a few months or even longer for students to obtain sufficient research skills before starting serious research activities. We believe this process is necessary and is essential for new researchers. If you want to publish a paper as soon as possible, our lab is not the best option for you, unfortunately. We recommend you contact the other faculties.
+- [ ] &nbsp; Students who are interested in these opportunities should fill out **[this form](https://docs.google.com/forms/d/1AE-MMtqXpdPG07U6nnNfp9N2abJrI54XeVIshkyrwng/)**
+  - If you fail to do so, we regard that you do not thoroughly investigate our lab's activities on this webpage, and unfortunately, we may not respond to your application.
+  - The form will request your CV. Note that your CV will be shared with other lab members (but we do not distribute it outside).
 - [ ] &nbsp; Please refer to the FAQ to learn more about the interview and admission process. 
 
 ### Visting positions

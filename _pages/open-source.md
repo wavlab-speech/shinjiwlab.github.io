@@ -28,6 +28,19 @@ Our lab has led and participated in the development of several open-source toolk
 
 <table cellspacing="0" cellpadding="0">
 <tr>
+<td class="col-sm w-25">
+      <a href="https://github.com/wavlab-speech/versa">
+        <img src="{{ site.baseurl }}/assets/img/blog/versa-light-char.png" width="150" />
+      </a>
+</td>
+<td>
+  <strong>VERSA</strong> (Versatile Evaluation of Speech and Audio) is a comprehensive toolkit for evaluating speech and audio quality. It provides seamless access to over 80 evaluation/profiling metrics with 10x variants, enabling researchers and developers to assess audio quality through multiple dimensions.
+</td></tr>
+</table>
+<hr />
+
+<table cellspacing="0" cellpadding="0">
+<tr>
 <td class="col-sm w-25" style="display:table-cell; vertical-align:middle; text-align:center">
       <a href="https://github.com/kaldi-asr/kaldi">
         <img src="{{ site.baseurl }}/assets/img/kaldi-logo.png" width="100" />
