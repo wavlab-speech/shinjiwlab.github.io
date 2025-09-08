@@ -11,6 +11,10 @@ order: 6
 
 * [Speech Recognition and Understanding (11-751)]({% post_url 2025-08-25-11751-2025f %})
 
+### 2024 Fall
+
+* [Speech Recognition and Understanding (11-751)]({% post_url 2024-08-26-11751-2024f %})
+
 ### 2023 Fall
 
 * [Speech Recognition and Understanding (11-751)]({% post_url 2023-08-27-11751-2023f %})
