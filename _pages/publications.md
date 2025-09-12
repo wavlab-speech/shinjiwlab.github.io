@@ -7,6 +7,7 @@ nav: true
 order: 2
 ---
 
+- [2025 Papers]({% post_url 2025-01-30-paper-list %})
 - [2024 Papers]({% post_url 2024-01-30-paper-list %})
 - [2023 Papers]({% post_url 2023-03-14-paper-list %})
 - [2022 Papers]({% post_url 2022-12-31-paper-list %})
