@@ -280,6 +280,8 @@ order: 1
             Chien-yu Huang
         </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jaeyeonkim99.github.io/" target="_blank" rel="noopener noreferrer">
@@ -288,6 +290,12 @@ order: 1
         <div class="caption">
             Jaeyeon Kim (co-supervising)
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
