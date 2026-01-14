@@ -15,7 +15,6 @@ We also welcome any CMU researchers and external researchers to join the meeting
 During the semester, we will regularly have meetings in the following slots:
 
 - Date: Thursday 12:30 pm - 1:30 pm
-- Room: GHC 6501
 
 The time and room may change, especially if we have a guest speaker.
 We will announce the talk information through our [mailing list](https://mailman.srv.cs.cmu.edu/mailman/listinfo/sphinxmail). Approval by the admin is required.
