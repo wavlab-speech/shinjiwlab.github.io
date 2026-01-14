@@ -217,14 +217,6 @@ order: 1
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        <a href="http://shijt.site/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jiatong.jpg">
-        </a>
-        <div class="caption">
-            Jiatong Shi
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://www.linkedin.com/in/arora-sid/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/sarora.jpg">
@@ -242,8 +234,6 @@ order: 1
             Li-wei Chen (co-supervising)
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">
@@ -253,6 +243,8 @@ order: 1
             Jinchuan Tian
         </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://wanchichen.github.io/" target="_blank" rel="noopener noreferrer">
@@ -280,8 +272,6 @@ order: 1
             Chien-yu Huang
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jaeyeonkim99.github.io/" target="_blank" rel="noopener noreferrer">
@@ -290,12 +280,6 @@ order: 1
         <div class="caption">
             Jaeyeon Kim (co-supervising)
         </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
@@ -347,33 +331,6 @@ order: 1
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
-        <a href="https://sites.google.com/view/jhoonkim/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jihoon.jpeg">
-        </a></div>
-        <div class="caption">
-            Ji-Hoon Kim
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://subohao.github.io/borrissu.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/BoHaoSu.jpg">
-        </a></div>
-        <div class="caption">
-            Bo-Hao Su
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
-      <div class="square">
-        <a href="https://whr-a.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haoran.jpg">
-        </a></div>
-        <div class="caption">
-            Haoran Wang
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
         <a href="https://audiocc.sjtu.edu.cn/en/members/xun.gong" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/xungong.jpg">
         </a></div>
@@ -381,8 +338,6 @@ order: 1
             Xun Gong
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
         <a href="https://www.fit.vut.cz/person/ipoloka/.en" target="_blank" rel="noopener noreferrer">
@@ -391,8 +346,6 @@ order: 1
         <div class="caption">
             Alexander Polok
         </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
@@ -439,6 +392,7 @@ order: 1
 
 ##### PhD
 <ul>
+<li>2019. 09 - 2025. 12: Jiatong Shi (CMU) </li>
 <li>2020. 09 - 2025. 04: Yifan Peng (CMU) </li>
 <li>2019. 09 - 2024. 05: Xuankai Chang (CMU) </li>
 <li>2021. 09 - 2024. 05: Muqiao Yang (CMU, co-supervisor) </li>
@@ -469,6 +423,9 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
+<li>2025. 08 - 2025. 12: Haoran Wang (Shanghai Jiao Tong University) </li>
+<li>2025. 04 - 2025. 12: Bo-Hao Su (National Tsing Hua University) </li>
+<li>2025. 05 - 2025. 11: Ji-Hoon Kim (Korea Advanced Institute of Science and Technology) </li>
 <li>2025. 02 - 2025. 07: Jialu Li (University of Illinois Urbana-Champaign) </li>
 <li>2025. 01 - 2025. 04: Pu Wang (KU Leuven) </li>
 <li>2024. 08 - 2025. 02: Kalvin Chang (UC Berkeley) </li>
