@@ -7,6 +7,10 @@ nav: true
 order: 6
 ---
 
+### 2026 Spring
+
+* [Speech Technology for Conversational AI (11-692)]({% post_url 2026-01-12-11692-2026s %})
+
 ### 2025 Fall
 
 * [Speech Recognition and Understanding (11-751)]({% post_url 2025-08-25-11751-2025f %})
