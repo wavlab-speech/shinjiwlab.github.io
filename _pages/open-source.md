@@ -143,6 +143,19 @@ Our lab has led and participated in the development of several open-source toolk
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="col-sm w-25">
+      <a href="https://cmu.flintbox.com/technologies/b435b5ba-62a0-442d-857a-bced6070f621">
+        SSSD
+      </a>
+</td>
+<td>
+  The <strong>Scalable Spontaneous Speech Dataset (SSSD)</strong> is a large-scale collection of spontaneous English conversations, comprising 727 hours of audio collected via crowdsourcing on Amazon Mechanical Turk. The dataset features randomly-matched anonymous participants engaging in casual, everyday conversations averaging 25-30 minutes each. SSSD is designed to enable the research community to train expressive models for dialogue with natural turn-taking. <a href="https://wavlab-speech.github.io/SSSD/">[Project page]</a>
+</td></tr>
+</table>
+<hr />
+
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="col-sm w-25">
       <a href="https://github.com/mispchallenge/MISP2021-AVSR">
         AVSR (MIPS2021)
       </a>
