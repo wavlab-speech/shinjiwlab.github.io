@@ -143,6 +143,32 @@ Our lab has led and participated in the development of several open-source toolk
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="col-sm w-25">
+      <a href="https://cmu.flintbox.com/technologies/b435b5ba-62a0-442d-857a-bced6070f621">
+        SSSD
+      </a>
+</td>
+<td>
+  The <strong>Scalable Spontaneous Speech Dataset (SSSD)</strong> is a large-scale collection of spontaneous English conversations, comprising 727 hours of audio collected via crowdsourcing on Amazon Mechanical Turk. The dataset features randomly-matched anonymous participants engaging in casual, everyday conversations averaging 25-30 minutes each. SSSD is designed to enable the research community to train expressive models for dialogue with natural turn-taking. <a href="https://wavlab-speech.github.io/SSSD/">[Project page]</a>
+</td></tr>
+</table>
+<hr />
+
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="col-sm w-25">
+      <a href="https://huggingface.co/datasets/espnet/yodas">
+        YODAS
+      </a>
+</td>
+<td>
+  <strong>YODAS</strong> (YouTube-Oriented Dataset for Audio and Speech) is a large-scale, multilingual dataset comprising over 500k hours of speech data in more than 100 languages, sourced from YouTube. The labeled subsets, including manual or automatic subtitles, facilitate supervised model training, while the unlabeled subsets are suited for self-supervised learning. YODAS is the first publicly available dataset of its scale, distributed under a Creative Commons license. <a href="https://arxiv.org/abs/2406.00899">[Paper]</a>
+</td></tr>
+</table>
+<hr />
+
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="col-sm w-25">
       <a href="https://github.com/mispchallenge/MISP2021-AVSR">
         AVSR (MIPS2021)
       </a>
