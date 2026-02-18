@@ -156,6 +156,19 @@ Our lab has led and participated in the development of several open-source toolk
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="col-sm w-25">
+      <a href="https://huggingface.co/datasets/espnet/yodas">
+        YODAS
+      </a>
+</td>
+<td>
+  <strong>YODAS</strong> (YouTube-Oriented Dataset for Audio and Speech) is a large-scale, multilingual dataset comprising over 500k hours of speech data in more than 100 languages, sourced from YouTube. The labeled subsets, including manual or automatic subtitles, facilitate supervised model training, while the unlabeled subsets are suited for self-supervised learning. YODAS is the first publicly available dataset of its scale, distributed under a Creative Commons license. <a href="https://arxiv.org/abs/2406.00899">[Paper]</a>
+</td></tr>
+</table>
+<hr />
+
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="col-sm w-25">
       <a href="https://github.com/mispchallenge/MISP2021-AVSR">
         AVSR (MIPS2021)
       </a>
