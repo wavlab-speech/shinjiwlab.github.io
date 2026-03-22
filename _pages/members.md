@@ -216,15 +216,6 @@ order: 1
             Brian Yan
         </div>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://www.linkedin.com/in/arora-sid/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/sarora.jpg">
-        </a></div>
-        <div class="caption">
-            Siddhant Arora
-        </div>
-    </div>
     <div class="col-sm mt-1 mt-md-1">
         <div class="square">
         <a href="#">
@@ -243,17 +234,17 @@ order: 1
             Jinchuan Tian
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://wanchichen.github.io/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/william_chen.png">
-	</a></div>
+        </a></div>
         <div class="caption">
-            William Chen 
-        </div>	    
+            William Chen
+        </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://shikhar-s.github.io/" target="_blank" rel="noopener noreferrer">
@@ -280,6 +271,8 @@ order: 1
         <div class="caption">
             Jaeyeon Kim (co-supervising)
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
@@ -405,6 +398,7 @@ order: 1
 
 ##### PhD
 <ul>
+<li>2020. 08 - 2026. 03: Siddhant Arora (CMU) </li>
 <li>2019. 09 - 2025. 12: Jiatong Shi (CMU) </li>
 <li>2020. 09 - 2025. 04: Yifan Peng (CMU) </li>
 <li>2019. 09 - 2024. 05: Xuankai Chang (CMU) </li>
