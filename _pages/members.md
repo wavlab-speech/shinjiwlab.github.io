@@ -216,15 +216,6 @@ order: 1
             Brian Yan
         </div>
     </div>
-    <div class="col-sm mt-1 mt-md-1">
-        <div class="square">
-        <a href="#">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/liwei.png">
-        </a></div>
-        <div class="caption">
-            Li-wei Chen (co-supervising)
-        </div>
-    </div>
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">
@@ -243,8 +234,6 @@ order: 1
             William Chen
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://shikhar-s.github.io/" target="_blank" rel="noopener noreferrer">
@@ -254,6 +243,8 @@ order: 1
             Shikhar Bharadwaj
         </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://cyhuang-tw.github.io/" target="_blank" rel="noopener noreferrer">
@@ -271,6 +262,8 @@ order: 1
         <div class="caption">
             Jaeyeon Kim (co-supervising)
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
@@ -324,15 +317,6 @@ order: 1
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
-        <a href="https://audiocc.sjtu.edu.cn/en/members/xun.gong" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/xungong.jpg">
-        </a></div>
-        <div class="caption">
-            Xun Gong
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
         <a href="https://www.fit.vut.cz/person/ipoloka/.en" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/apolok.jpg">
         </a></div>
@@ -356,6 +340,8 @@ order: 1
         <div class="caption">
             Chin-Jou Li
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
@@ -398,6 +384,7 @@ order: 1
 
 ##### PhD
 <ul>
+<li>2022. 05 - 2026. 03: Li-Wei Chen (CMU, co-supervising) </li>
 <li>2020. 08 - 2026. 03: Siddhant Arora (CMU) </li>
 <li>2019. 09 - 2025. 12: Jiatong Shi (CMU) </li>
 <li>2020. 09 - 2025. 04: Yifan Peng (CMU) </li>
@@ -430,6 +417,7 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
+<li>2025. 12 - 2026. 03: Xun Gong (Shanghai Jiao Tong University) </li>
 <li>2025. 08 - 2025. 12: Haoran Wang (Shanghai Jiao Tong University) </li>
 <li>2025. 04 - 2025. 12: Bo-Hao Su (National Tsing Hua University) </li>
 <li>2025. 05 - 2025. 11: Ji-Hoon Kim (Korea Advanced Institute of Science and Technology) </li>
