@@ -209,14 +209,6 @@ order: 1
 #### PhD Students
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-    <a href="https://www.cs.cmu.edu/~byan" target="_blank" rel="noopener noreferrer">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/brian.jpg">
-    </a>
-        <div class="caption">
-            Brian Yan
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jinchuan.jpg">
@@ -243,8 +235,6 @@ order: 1
             Shikhar Bharadwaj
         </div>
     </div>
-</div>
-<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://cyhuang-tw.github.io/" target="_blank" rel="noopener noreferrer">
@@ -254,6 +244,8 @@ order: 1
             Chien-yu Huang
         </div>
     </div>
+</div>
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <div class="square">
         <a href="https://jaeyeonkim99.github.io/" target="_blank" rel="noopener noreferrer">
@@ -262,6 +254,8 @@ order: 1
         <div class="caption">
             Jaeyeon Kim (co-supervising)
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
@@ -384,6 +378,7 @@ order: 1
 
 ##### PhD
 <ul>
+<li>2021. 09 - 2026. 04: Brian Yan (CMU) </li>
 <li>2022. 05 - 2026. 03: Li-Wei Chen (CMU, co-supervising) </li>
 <li>2020. 08 - 2026. 03: Siddhant Arora (CMU) </li>
 <li>2019. 09 - 2025. 12: Jiatong Shi (CMU) </li>
