@@ -310,15 +310,6 @@ order: 1
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://www.fit.vut.cz/person/ipoloka/.en" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/apolok.jpg">
-        </a></div>
-        <div class="caption">
-            Alexander Polok
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
 	  <div class="square">
           <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photo-dahee.jpg">
         </div>
@@ -334,6 +325,8 @@ order: 1
         <div class="caption">
             Chin-Jou Li
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
@@ -412,6 +405,7 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
+<li>2026. 01 - 2026. 05: Alexander Polok (Brno University of Technology) </li>
 <li>2025. 12 - 2026. 03: Xun Gong (Shanghai Jiao Tong University) </li>
 <li>2025. 08 - 2025. 12: Haoran Wang (Shanghai Jiao Tong University) </li>
 <li>2025. 04 - 2025. 12: Bo-Hao Su (National Tsing Hua University) </li>
@@ -420,6 +414,7 @@ order: 1
 <li>2025. 01 - 2025. 04: Pu Wang (KU Leuven) </li>
 <li>2024. 08 - 2025. 02: Kalvin Chang (UC Berkeley) </li>
 <li>2024. 09 - 2025. 02: Holger Severin Bovbjerg (Aalborg University) </li>
+<li>2024. 11 - 2024. 12: Junyi Peng (Brno University of Technology) </li>
 <li>2024. 08 - 2024. 12: Carlos Carvalho (Instituto Superior Técnico ) </li>
 <li>2024. 04 - 2024. 12: Shuichiro Shimizu (Kyoto University) </li>
 <li>2024. 08 - 2024. 11: Shih-Heng Wang (National Taiwan University) </li>
