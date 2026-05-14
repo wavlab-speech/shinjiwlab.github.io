@@ -268,21 +268,14 @@ order: 1
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
-        <a href="https://eric102004.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chyijiunn.jpg">
-        </a></div>
-        <div class="caption">
-            Chyi-Jiunn Lin
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
         <a href="https://masao-someki.github.io/" target="_blank" rel="noopener noreferrer">
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/msomeki.png">
         </a></div>
         <div class="caption">
             Masao Someki
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
@@ -395,6 +388,7 @@ order: 1
 
 ##### MS & Undergraduate
 <ul>
+<li>2024. 08 - 2026. 05: Chyi-Jiunn Lin (CMU) </li>
 <li>2023. 05 - 2025. 05: Kwanghee Choi (CMU) </li>
 <li>2022. 09 - 2024. 05: Shih-Lun Wu (CMU) </li>
 <li>2021. 09 - 2023. 05: Dan Berrebbi (CMU) </li>
