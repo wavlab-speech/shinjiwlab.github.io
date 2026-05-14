@@ -327,6 +327,13 @@ order: 1
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
+      <div class="square">
+        <a href="https://www.linkedin.com/in/thanapat-trachu-602551227/" target="_blank" rel="noopener noreferrer">
+          <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/thanapat.jpg">
+        </a></div>
+        <div class="caption">
+            Thanapat Trachu
+        </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
