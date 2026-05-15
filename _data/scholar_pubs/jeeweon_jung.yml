@@ -1,0 +1,193 @@
+- title: The text-to-speech in the wild (TITW) dataset
+  author: Jee-weon Jung and Wangyou Zhang and Soumi Maiti and Yihan Wu and Xin Wang
+    and Ji-Hoon Kim and Yuta Matsunaga and Seyun Um and Jinchuan Tian and Hye-jin
+    Shim and Nicholas Evans and Joon Son Chung and Shinnosuke Takamichi and Shinji
+    Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: jung_titw_interspeech2025
+  url: ''
+  num_citations: 0
+- title: A Chain-of-Thought Reasoning Approach to E2E Spoken Dialogue Systems with
+    an Open-Source Toolkit
+  author: Siddhant Arora and Jinchuan Tian and Hayato Futami and Jee-weon Jung and
+    Jiatong Shi and Yosuke Kashiwagi and Emiru Tsunoo and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: arora_cot_sds_interspeech2025
+  url: ''
+  num_citations: 0
+- title: Context-Driven Dynamic Pruning for Large Multi-Modal Foundation Model
+  author: Masao Someki and Shikhar Bharadwaj and Atharva Anand Joshi and Chyi-Jiunn
+    Lin and Jinchuan Tian and Jee-weon Jung and Markus Müller and Nathan Susanj and
+    Jing Liu and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: someki_context_pruning_multimodal_interspeech2025
+  url: ''
+  num_citations: 0
+- title: 'Speaker-IPL: Unsupervised Learning of Speaker Characteristics with i-Vector
+    based Pseudo-Labels'
+  author: Zakaria Aldeneh and Takuya Higuchi and Jee-weon Jung and Li-Wei Chen and
+    Stephen Shum and Ahmed Hussen Abdelaziz and Shinji Watanabe and Tatiana Likhomanenko
+    and Barry-John Theobald
+  year: '2025'
+  venue: ''
+  cite_key: aldeneh_speakeripl_icassp2025
+  url: ''
+  num_citations: 0
+- title: 'ESPnet-Codec: Comprehensive Training and Evaluation of Neural Codecs for
+    Audio, Music, and Speech'
+  author: Jiatong Shi and Jinchuan Tian and Yihan Wu and Jee-weon Jung and Jia Qi
+    Yip and Yoshiki Masuyama and William Chen and Yuning Wu and Yuxun Tang and Massa
+    Baali and Dareen Alharthi and Dong Zhang and Ruifan Deng and Tejes Srivastava
+    and Haibin Wu and Alexander Liu and Bhiksha Raj and Qin Jin and Ruihua Song and
+    Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: shi_espnet_codec_slt2024
+  url: ''
+  num_citations: 0
+- title: To what extent can ASV systems naturally defend against spoofing attacks?
+  author: Jee-weon Jung and Xin Wang and Nicholas Evans and Shinji Watanabe and Hye-jin
+    Shim and Hemlata Tak and Siddhant Arora and Junichi Yamagishi and Joon Son Chung
+  year: '2024'
+  venue: ''
+  cite_key: jung_asv_defense_interspeech2024
+  url: ''
+  num_citations: 0
+- title: 'ESPnet-SPK: full pipeline speaker embedding toolkit with reproducible recipes,
+    self-supervised front-ends, and off-the-shelf models'
+  author: Jee-weon Jung and Wangyou Zhang and Jiatong Shi and Zakaria Aldeneh and
+    Takuya Higuchi and Alex Gichamba and Barry-John Theobald and Ahmed Hussen Abdelaziz
+    and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: jung_espnet_spk_interspeech2024
+  url: ''
+  num_citations: 0
+- title: 'Beyond Performance Plateaus: A Comprehensive Study on Scalability in Speech
+    Enhancement'
+  author: Wangyou Zhang and Kohei Saijo and Jee-weon Jung and Chenda Li and Shinji
+    Watanabe and Yanmin Qian
+  year: '2024'
+  venue: ''
+  cite_key: zhang_scalability_se_interspeech2024
+  url: ''
+  num_citations: 0
+- title: Can you Remove the Downstream Model for Speaker Recognition with Self-Supervised
+    Speech Features?
+  author: Zakaria Aldeneh and Takuya Higuchi and Jee-weon Jung and Skyler Seto and
+    Tatiana Likhomanenko and Stephen Shum and Ahmed Hussen Abdelaziz and Shinji Watanabe
+    and Barry-John Theobald
+  year: '2024'
+  venue: ''
+  cite_key: aldeneh_downstreamless_speaker_interspeech2024
+  url: ''
+  num_citations: 0
+- title: 'OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer'
+  author: Yifan Peng and Jinchuan Tian and William Chen and Siddhant Arora and Brian
+    Yan and Yui Sudo and Muhammad Shakeel and Kwanghee Choi and Jiatong Shi and Xuankai
+    Chang and Jee-weon Jung and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: peng_owsm_v3_interspeech2024
+  url: ''
+  num_citations: 0
+- title: On the Evaluation of Speech Foundation Models for Spoken Language Understanding
+  author: Siddhant Arora and Ankita Pasad and Chung-Ming Chien and Jionghao Han and
+    Roshan Sharma and Jee-weon Jung and Hira Dhamyal and William Chen and Suwon Shon
+    and Hung-yi Lee and Karen Livescu and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: arora_slu_foundation_acl2024
+  url: ''
+  num_citations: 0
+- title: 'UniverSLU: Universal Spoken Language Understanding for Diverse Tasks with
+    Natural Language Instructions'
+  author: Siddhant Arora and Hayato Futami and Jee-weon Jung and Yifan Peng and Roshan
+    Sharma and Yosuke Kashiwagi and Emiru Tsunoo and Karen Livescu and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: arora_universlu_naacl2024
+  url: ''
+  num_citations: 0
+- title: 'AugSumm: Towards Generalizable Speech Summarization Using Synthetic Labels
+    from Large Language Models'
+  author: Jee-weon Jung and Roshan Sharma and William Chen and Bhiksha Raj and Shinji
+    Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: jung_icassp2024
+  url: ''
+  num_citations: 0
+- title: 'Voxtlm: Unified Decoder-Only Models for Consolidating Speech Recognition,
+    Synthesis and Speech, Text Continuation Tasks'
+  author: Soumi Maiti and Yifan Peng and Shukjae Choi and Jee-weon Jung and Xuankai
+    Chang and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: maiti_icassp2024
+  url: ''
+  num_citations: 0
+- title: One Model to Rule Them All? Towards End-to-End Joint Speaker Diarization
+    and Speech Recognition
+  author: Samuele Cornell and Jee-weon Jung and Shinji Watanabe and Stefano Squartini
+  year: '2024'
+  venue: ''
+  cite_key: cornell_icassp2024
+  url: ''
+  num_citations: 0
+- title: 'Exploring Speech Recognition, Translation, and Understanding with Discrete
+    Speech Units: A Comparative Study'
+  author: Xuankai Chang and Brian Yan and Kwanghee Choi and Jee-weon Jung and Yichen
+    Lu and Soumi Maiti and Roshan Sharma and Jiatong Shi and Jinchuan Tian and Shinji
+    Watanabe and Yuya Fujita and Takashi Maekaku and Pengcheng Guo and Yao-Fei Cheng
+    and Pavel Denisov and Kohei Saijo and Hsiu-Hsuan Wang
+  year: '2024'
+  venue: ''
+  cite_key: chang_icassp2024
+  url: ''
+  num_citations: 0
+- title: Improving Design of Input Condition Invariant Speech Enhancement
+  author: Wangyou Zhang and Jee-weon Jung and Shinji Watanabe and Yanmin Qian
+  year: '2024'
+  venue: ''
+  cite_key: zhang_icassp2024
+  url: ''
+  num_citations: 0
+- title: Understanding Probe Behaviors Through Variational Bounds of Mutual Information
+  author: Kwanghee Choi and Jee-weon Jung and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: choi_kwanghee_icassp2024
+  url: ''
+  num_citations: 0
+- title: Improving Audio Captioning Models with Fine-Grained Audio Features, Text
+    Embedding Supervision, and LLM Mix-Up Augmentation
+  author: Shih-Lun Wu and Xuankai Chang and Gordon Wichern and Jee-weon Jung and François
+    Germain and Jonathan Le Roux and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: wu_shihlun_icassp2024
+  url: ''
+  num_citations: 0
+- title: Reproducing Whisper-Style Training Using an Open-Source Toolkit and Publicly
+    Available Data
+  author: Yifan Peng and Jinchuan Tian and Brian Yan and Dan Berrebbi and Xuankai
+    Chang and Xinjian Li and Jiatong Shi and Siddhant Arora and William Chen and Roshan
+    Sharma and Wangyou Zhang and Yui Sudo and Muhammad Shakeel and Jee-weon Jung and
+    Soumi Maiti and Shinji Watanabe
+  year: '2023'
+  venue: ''
+  cite_key: peng2023reproducing
+  url: ''
+  num_citations: 0
+- title: In search of strong embedding extractors for speaker diarisation
+  author: Jee-weon Jung and Hee-Soo Heo and Bong-Jin Lee and Jaesung Huh and Andrew
+    Brown and Youngki Kwon and Shinji Watanabe and and Joon Son Chung
+  year: '2023'
+  venue: ''
+  cite_key: jee_icassp2023
+  url: ''
+  num_citations: 0

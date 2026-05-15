@@ -155,6 +155,34 @@ order: 1
     position:absolute;
 }
 
+.member-pubs-section details {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-pubs-section details summary {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.member-pubs-section .pub-list {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.member-pubs-section .pub-list li {
+    margin-bottom: 0.4rem;
+}
+
+.member-pubs-section .pub-venue {
+    color: #6c757d;
+    font-style: italic;
+}
+
 </style>
 
 
@@ -172,6 +200,23 @@ order: 1
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
+</div>
+
+<div class="member-pubs-section mt-2">
+{% assign pubs = site.data.scholar_pubs.shinji_watanabe %}
+<details>
+<summary><strong>Shinji Watanabe</strong> — Publications
+{% if pubs.size > 0 %}<small class="text-muted">({{ pubs.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=qesMX_wAAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+{% if pubs.size > 20 %}<p><small><em>Showing 20 of {{ pubs.size }} publications. <a href="https://scholar.google.com/citations?user=qesMX_wAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
+</details>
 </div>
 <hr />
 
@@ -203,6 +248,23 @@ order: 1
     <div class="col-sm mt-3 mt-md-0">
     </div>
 </div> -->
+
+<div class="member-pubs-section mt-2">
+{% assign pubs = site.data.scholar_pubs.samuele_cornell %}
+<details>
+<summary><strong>Samuele Cornell</strong> — Publications
+{% if pubs.size > 0 %}<small class="text-muted">({{ pubs.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=A3lfL0QAAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+{% if pubs.size > 20 %}<p><small><em>Showing 20 of {{ pubs.size }} publications. <a href="https://scholar.google.com/citations?user=A3lfL0QAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
+</details>
+</div>
 <hr />
 
 
@@ -262,6 +324,83 @@ order: 1
     <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
+
+<div class="member-pubs-section mt-2">
+{% assign pubs_jinchuan = site.data.scholar_pubs.jinchuan_tian %}
+<details>
+<summary><strong>Jinchuan Tian</strong> — Publications
+{% if pubs_jinchuan.size > 0 %}<small class="text-muted">({{ pubs_jinchuan.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer"><small>Personal Website ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs_jinchuan limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+</details>
+
+{% assign pubs_william = site.data.scholar_pubs.william_chen %}
+<details>
+<summary><strong>William Chen</strong> — Publications
+{% if pubs_william.size > 0 %}<small class="text-muted">({{ pubs_william.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=e89NRb0AAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs_william limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+{% if pubs_william.size > 20 %}<p><small><em>Showing 20 of {{ pubs_william.size }} publications. <a href="https://scholar.google.com/citations?user=e89NRb0AAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
+</details>
+
+{% assign pubs_shikhar = site.data.scholar_pubs.shikhar_bharadwaj %}
+<details>
+<summary><strong>Shikhar Bharadwaj</strong> — Publications
+{% if pubs_shikhar.size > 0 %}<small class="text-muted">({{ pubs_shikhar.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=pbU47_MAAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs_shikhar limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+</details>
+
+{% assign pubs_chienyu = site.data.scholar_pubs.chienyu_huang %}
+<details>
+<summary><strong>Chien-yu Huang</strong> — Publications
+{% if pubs_chienyu.size > 0 %}<small class="text-muted">({{ pubs_chienyu.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=1Xfc3ikAAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs_chienyu limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+</details>
+
+{% assign pubs_jaeyeon = site.data.scholar_pubs.jaeyeon_kim %}
+<details>
+<summary><strong>Jaeyeon Kim</strong> — Publications
+{% if pubs_jaeyeon.size > 0 %}<small class="text-muted">({{ pubs_jaeyeon.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=2Yi8qMIAAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+{% if pubs_jaeyeon.size == 0 %}
+<p><em>No publications yet in lab bibliography. <a href="https://scholar.google.com/citations?user=2Yi8qMIAAAAJ" target="_blank" rel="noopener noreferrer">View on Google Scholar ↗</a></em></p>
+{% else %}
+<ol class="pub-list">
+{% for pub in pubs_jaeyeon limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+{% endif %}
+</details>
+</div>
 <hr />
 
 #### Master Students
@@ -281,6 +420,22 @@ order: 1
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
+</div>
+
+<div class="member-pubs-section mt-2">
+{% assign pubs_masao = site.data.scholar_pubs.masao_someki %}
+<details>
+<summary><strong>Masao Someki</strong> — Publications
+{% if pubs_masao.size > 0 %}<small class="text-muted">({{ pubs_masao.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://masao-someki.github.io/" target="_blank" rel="noopener noreferrer"><small>Personal Website ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs_masao limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+</ol>
+</details>
 </div>
 
 <hr />
@@ -351,6 +506,23 @@ order: 1
     </div>
     <div class="col-sm mt-3 mt-md-0">
     </div>
+</div>
+
+<div class="member-pubs-section mt-2">
+{% assign pubs_jeeweon = site.data.scholar_pubs.jeeweon_jung %}
+<details>
+<summary><strong>Jee-weon Jung</strong> — Publications
+{% if pubs_jeeweon.size > 0 %}<small class="text-muted">({{ pubs_jeeweon.size }} in lab bibliography)</small>{% endif %}
+&nbsp;<a href="https://scholar.google.com/citations?user=A5OcLdAAAAAJ" target="_blank" rel="noopener noreferrer"><small>Full Google Scholar ↗</small></a>
+</summary>
+<ol class="pub-list">
+{% for pub in pubs_jeeweon limit:20 %}
+<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+{% endfor %}
+{% if pubs_jeeweon.size > 20 %}<p><small><em>Showing 20 of {{ pubs_jeeweon.size }} publications. <a href="https://scholar.google.com/citations?user=A5OcLdAAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
+</ol>
+</details>
 </div>
 <hr />
 

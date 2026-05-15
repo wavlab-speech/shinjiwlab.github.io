@@ -1,0 +1,62 @@
+- id: shinji_watanabe
+  name: Shinji Watanabe
+  role: faculty
+  scholar_id: qesMX_wAAAAJ
+  website: https://sites.google.com/view/shinjiwatanabe
+  image: shinji_20210605.jpg
+
+- id: samuele_cornell
+  name: Samuele Cornell
+  role: postdoc
+  scholar_id: A3lfL0QAAAAJ
+  website: https://github.com/popcornell
+  image: samuele.jpg
+
+- id: jinchuan_tian
+  name: Jinchuan Tian
+  role: phd
+  scholar_id: ""
+  website: https://jctian98.github.io/
+  image: jinchuan.jpg
+
+- id: william_chen
+  name: William Chen
+  role: phd
+  scholar_id: e89NRb0AAAAJ
+  website: https://wanchichen.github.io/
+  image: william_chen.png
+
+- id: shikhar_bharadwaj
+  name: Shikhar Bharadwaj
+  role: phd
+  scholar_id: pbU47_MAAAAJ
+  website: https://shikhar-s.github.io/
+  image: shikhar.png
+
+- id: chienyu_huang
+  name: Chien-yu Huang
+  role: phd
+  scholar_id: 1Xfc3ikAAAAJ
+  website: https://cyhuang-tw.github.io/
+  image: chienyu.png
+
+- id: jaeyeon_kim
+  name: Jaeyeon Kim
+  role: phd
+  scholar_id: 2Yi8qMIAAAAJ
+  website: https://jaeyeonkim99.github.io/
+  image: jaeyeon.jpg
+
+- id: masao_someki
+  name: Masao Someki
+  role: master
+  scholar_id: ""
+  website: https://masao-someki.github.io/
+  image: msomeki.png
+
+- id: jeeweon_jung
+  name: Jee-weon Jung
+  role: industrial
+  scholar_id: A5OcLdAAAAAJ
+  website: https://jungjee.github.io/
+  image: jeeweon.png

@@ -1,0 +1,40 @@
+- title: Context-Driven Dynamic Pruning for Large Multi-Modal Foundation Model
+  author: Masao Someki and Shikhar Bharadwaj and Atharva Anand Joshi and Chyi-Jiunn
+    Lin and Jinchuan Tian and Jee-weon Jung and Markus Müller and Nathan Susanj and
+    Jing Liu and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: someki_context_pruning_multimodal_interspeech2025
+  url: ''
+  num_citations: 0
+- title: On-device Streaming Discrete Speech Units
+  author: Kwanghee Choi and Masao Someki and Emma Strubell and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: choi_discrete_units_interspeech2025
+  url: ''
+  num_citations: 0
+- title: Context-aware Dynamic Pruning for Speech Foundation Models
+  author: Masao Someki and Yifan Peng and Siddhant Arora and Markus Müller and Athanasios
+    Mouchtaris and Grant Strimel and Jing Liu and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: someki_context_pruning_iclr2025
+  url: ''
+  num_citations: 0
+- title: 'ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration'
+  author: Masao Someki and Kwanghee Choi and Siddhant Arora and William Chen and Samuele
+    Cornell and Jionghao Han and Yifan Peng and Jiatong Shi and Vaibhav Srivastav
+    and Shinji Watanabe
+  year: '2024'
+  venue: ''
+  cite_key: someki_espnet_ez_slt2024
+  url: ''
+  num_citations: 0
+- title: Segment-Level Vectorized Beam Search Based on Partially Autoregressive Inference
+  author: Masao Someki and Nicholas Eng and Yosuke Higuchi and Shinji Watanabe
+  year: '2023'
+  venue: ''
+  cite_key: someki2023segment
+  url: ''
+  num_citations: 0

@@ -1,0 +1,56 @@
+- title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
+    with Expanded Metrics, Visualization, and LLM Integration'
+  author: Jiatong Shi and Bo-Hao Su and Shikhar Bharadwaj and Yiwen Zhao and Shih-Heng
+    Wang and Jionghao Han and Haoran Wang and Wei Wang and Wenhao Feng and Yuxun Tang
+    and Nezih Topaloğlu and Siddhant Arora and Jinchuan Tian and William Chen and
+    Hye-jin Shim and Wangyou Zhang and Wen-Chin Huang and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: shi_versav2_asru2025
+  url: ''
+  num_citations: 0
+- title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
+  author: Shikhar Bharadwaj and Samuele Cornell and Kwanghee Choi and Satoru Fukayama
+    and Hye-jin Shim and Soham Deshmukh and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: bharadwaj_openbeats_waspaa2025
+  url: ''
+  num_citations: 0
+- title: Context-Driven Dynamic Pruning for Large Multi-Modal Foundation Model
+  author: Masao Someki and Shikhar Bharadwaj and Atharva Anand Joshi and Chyi-Jiunn
+    Lin and Jinchuan Tian and Jee-weon Jung and Markus Müller and Nathan Susanj and
+    Jing Liu and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: someki_context_pruning_multimodal_interspeech2025
+  url: ''
+  num_citations: 0
+- title: 'OpusLM: A Family of Open Unified Speech Language Models'
+  author: Jinchuan Tian and William Chen and Yifan Peng and Jiatong Shi and Siddhant
+    Arora and Shikhar Bharadwaj and Maekaku Takashi and Yusuke Shinohara and Keita
+    Goto and Xiang Yue and Chao-Han Huck Yang and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: tian_opuslm_interspeech2025
+  url: ''
+  num_citations: 0
+- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
+  author: Siddhant Arora and Yifan Peng and Jiatong Shi and Jinchuan Tian and William
+    Chen and Shikhar Bharadwaj and Hayato Futami and Yosuke Kashiwagi and Emiru Tsunoo
+    and Shuichiro Shimizu and Vaibhav Srivastav and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: arora_espnetsds_naacl2025
+  url: ''
+  num_citations: 0
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
+  author: Jinchuan Tian and Jiatong Shi and William Chen and Siddhant Arora and Yoshiki
+    Masuyama and Takashi Maekaku and Yihan Wu and Junyi Peng and Shikhar Bharadwaj
+    and Yiwen Zhao and Samuele Cornell and Yifan Peng and Xiang Yue and Chao-Han Huck
+    Yang and Graham Neubig and Shinji Watanabe
+  year: '2025'
+  venue: ''
+  cite_key: tian_espnetspeechlm_naacl2025
+  url: ''
+  num_citations: 0

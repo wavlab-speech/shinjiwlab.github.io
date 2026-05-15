@@ -1,0 +1,38 @@
+name: Update Scholar Publications
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly on Sundays at midnight UTC
+  workflow_dispatch:  # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install scholarly pyyaml
+
+      - name: Fetch Scholar publications
+        run: python3 bin/fetch_scholar.py
+        continue-on-error: true  # Don't fail the workflow if Scholar blocks us
+
+      - name: Commit and push updated data
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/scholar_pubs/
+          git diff --staged --quiet || git commit -m "Update Scholar publications data [skip ci]"
+          git push origin source
