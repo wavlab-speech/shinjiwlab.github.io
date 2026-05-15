@@ -346,7 +346,7 @@
   num_citations: 0
 - title: Improving Massively Multilingual ASR With Auxiliary CTC Objectives
   author: William Chen and Brian Yan and Jiatong Shi and Yifan Peng and Soumi Maiti
-    and and Shinji Watanabe
+    and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: william_icassp2023

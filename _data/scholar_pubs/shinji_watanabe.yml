@@ -1380,8 +1380,8 @@
   num_citations: 0
 - title: Integrating Pretrained ASR and LM to perform Sequence Generation for Spoken
     Language Understanding
-  author: Siddhant Arora and Hayato Futami and Yosuke Kashiwagi and Emiru Tsunoo and  Brian
-    Yan and Shinji Watanabe
+  author: Siddhant Arora and Hayato Futami and Yosuke Kashiwagi and Emiru Tsunoo and
+    Brian Yan and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: Arora_is2023
@@ -1487,8 +1487,8 @@
   url: ''
   num_citations: 0
 - title: Multi-blank Transducers for Speech Recognition
-  author: Hainan Xu and Fei Jia and Somshubra Majumdar and Shinji Watanabe and and
-    Boris Ginsburg
+  author: Hainan Xu and Fei Jia and Somshubra Majumdar and Shinji Watanabe and Boris
+    Ginsburg
   year: '2023'
   venue: ''
   cite_key: hainan_icassp2023
@@ -1496,7 +1496,7 @@
   num_citations: 0
 - title: 'PAAPLoss: A Phonetic-Aligned Acoustic Parameter Loss for Speech Enhancement'
   author: Muqiao Yang and Joseph Konan and David Bick and Yunyang Zeng and Shuo Han
-    and Anurag Kumar and Shinji Watanabe and and Bhiksha Raj
+    and Anurag Kumar and Shinji Watanabe and Bhiksha Raj
   year: '2023'
   venue: ''
   cite_key: muqiao_icassp2023
@@ -1504,7 +1504,7 @@
   num_citations: 0
 - title: In search of strong embedding extractors for speaker diarisation
   author: Jee-weon Jung and Hee-Soo Heo and Bong-Jin Lee and Jaesung Huh and Andrew
-    Brown and Youngki Kwon and Shinji Watanabe and and Joon Son Chung
+    Brown and Youngki Kwon and Shinji Watanabe and Joon Son Chung
   year: '2023'
   venue: ''
   cite_key: jee_icassp2023
@@ -1513,23 +1513,21 @@
 - title: 'Wav2Seq: Pre-training Speech-to-Text Encoder-Decoder Models Using Pseudo
     Languages'
   author: Felix Wu and Kwangyoun Kim and Shinji Watanabe and Kyu J. Han and Ryan McDonald
-    and Kilian Q. Weinberger and and Yoav Artzi
+    and Kilian Q. Weinberger and Yoav Artzi
   year: '2023'
   venue: ''
   cite_key: felix_icassp2023
   url: ''
   num_citations: 0
 - title: 'BECTRA: Transducer-based End-to-End ASR with BERT-Enhanced Encoder'
-  author: Yosuke Higuchi and Tetsuji Ogawa and Tetsunori Kobayashi and and Shinji
-    Watanabe
+  author: Yosuke Higuchi and Tetsuji Ogawa and Tetsunori Kobayashi and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: yosuke_icassp2023
   url: ''
   num_citations: 0
 - title: 'InterMPL: Momentum Pseudo-Labeling with Intermediate CTC Loss'
-  author: Yosuke Higuchi and Tetsuji Ogawa and Tetsunori Kobayashi and and Shinji
-    Watanabe
+  author: Yosuke Higuchi and Tetsuji Ogawa and Tetsunori Kobayashi and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: yousuke_icassp2023
@@ -1537,7 +1535,7 @@
   num_citations: 0
 - title: A Unified One-Shot Prosody and Speaker Conversion System with Self-Supervised
     Discrete Speech Units
-  author: Li-Wei Chen and Shinji Watanabe and and Alexander Rudnicky
+  author: Li-Wei Chen and Shinji Watanabe and Alexander Rudnicky
   year: '2023'
   venue: ''
   cite_key: liwei_icassp2023
@@ -1545,7 +1543,7 @@
   num_citations: 0
 - title: 'TAPLoss: A Temporal Acoustic Parameter Loss for Speech Enhancement'
   author: Yunyang Zeng and Joseph Konan and Shuo Han and David Bick and Muqiao Yang
-    and Anurag Kumar and Shinji Watanabe and and Bhiksha Raj
+    and Anurag Kumar and Shinji Watanabe and Bhiksha Raj
   year: '2023'
   venue: ''
   cite_key: yunyang_icassp2023
@@ -1553,7 +1551,7 @@
   num_citations: 0
 - title: Bridging Speech and Text Pre-trained Models with Unsupervised ASR
   author: Jiatong Shi and Chan-Jan Hsu and Holam Chung and Dongji Gao and Paola Garcia
-    and Shinji Watanabe and Ann Lee and and Hung-yi Lee
+    and Shinji Watanabe and Ann Lee and Hung-yi Lee
   year: '2023'
   venue: ''
   cite_key: jiatong2_icassp2023
@@ -1562,7 +1560,7 @@
 - title: 'Speech summarization of long spoken document: Improving memory efficiency
     of speech/text encoders'
   author: Takatomo Kano and Atsunori Ogawa and Marc Delcroix and Roshan Sharma and
-    Kohei Matsuura and and Shinji Watanabe
+    Kohei Matsuura and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: takatomo_icassp2023
@@ -1570,7 +1568,7 @@
   num_citations: 0
 - title: Context-Aware Fine-Tuning of Self-Supervised Speech Models
   author: Suwon Shon and Felix Wu and Kwangyoun Kim and Prashant Sridhar and Karen
-    Livescu and and Shinji Watanabe
+    Livescu and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: suwon_icassp2023
@@ -1578,7 +1576,7 @@
   num_citations: 0
 - title: Enhancing Speech-To-Speech Translation with Multiple TTS Targets
   author: Jiatong Shi and Yun Tang and Ann Lee and Hirofumi Inaguma and Changhan Wang
-    and Juan Pino and and Shinji Watanabe
+    and Juan Pino and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: jiatong1_icassp2023
@@ -1586,15 +1584,15 @@
   num_citations: 0
 - title: Streaming Joint Speech Recognition and Disfluency Detection
   author: Hayato Futami and Emiru Tsunoo and Kentaro Shibata and Yosuke Kashiwagi
-    and Takao Okuda and Siddhant Arora and and Shinji Watanabe
+    and Takao Okuda and Siddhant Arora and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: _icassp2023
   url: ''
   num_citations: 0
 - title: Towards Zero-Shot Code-Switched Speech Recognition
-  author: Brian Yan and Matthew Wiesner and Ondrej Klejch and Preethi Jyothi and and
-    Shinji Watanabe
+  author: Brian Yan and Matthew Wiesner and Ondrej Klejch and Preethi Jyothi and Shinji
+    Watanabe
   year: '2023'
   venue: ''
   cite_key: brian_icassp2023
@@ -1602,8 +1600,8 @@
   num_citations: 0
 - title: 'Align and Write and Re-order: Explainable End-to-End Speech Translation
     via Operation Sequence Generation'
-  author: Motoi Omachi and Brian Yan and Siddharth Dalmia and Yuya Fujita and and
-    Shinji Watanabe
+  author: Motoi Omachi and Brian Yan and Siddharth Dalmia and Yuya Fujita and Shinji
+    Watanabe
   year: '2023'
   venue: ''
   cite_key: motoi_icassp2023
@@ -1611,14 +1609,14 @@
   num_citations: 0
 - title: Improving Massively Multilingual ASR With Auxiliary CTC Objectives
   author: William Chen and Brian Yan and Jiatong Shi and Yifan Peng and Soumi Maiti
-    and and Shinji Watanabe
+    and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: william_icassp2023
   url: ''
   num_citations: 0
 - title: 'SpeechLMScore: Evaluating Speech Generation Using Speech Language Model'
-  author: Soumi Maiti and Yifan Peng and Takaaki Saeki and and Shinji Watanabe
+  author: Soumi Maiti and Yifan Peng and Takaaki Saeki and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: soumi_icassp2023
@@ -1626,7 +1624,7 @@
   num_citations: 0
 - title: Speaker-Independent Acoustic-to-Articulatory Speech Inversion
   author: Peter Wu and Li-Wei Chen and Cheol Jun Cho and Shinji Watanabe and Louis
-    Goldstein and Alan W. Black and and Gopala K. Anumanchipalli
+    Goldstein and Alan W. Black and Gopala K. Anumanchipalli
   year: '2023'
   venue: ''
   cite_key: peter_icassp2023
@@ -1634,8 +1632,8 @@
   num_citations: 0
 - title: Joint Modelling of Spoken Language Understanding Tasks with Integrated Dialog
     History
-  author: Siddhant Arora and Hayato Futami and Emiru Tsunoo and Brian Yan and and
-    Shinji Watanabe
+  author: Siddhant Arora and Hayato Futami and Emiru Tsunoo and Brian Yan and Shinji
+    Watanabe
   year: '2023'
   venue: ''
   cite_key: siddhant_icassp2023
@@ -1644,7 +1642,7 @@
 - title: 'TF-GridNet: Making Time-Frequency Domain Models Great Again for Monaural
     Speaker Separation'
   author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and and Shinji Watanabe
+    Byeong-Yeol Kim and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: zhongqiu2_icassp2023
@@ -1652,7 +1650,7 @@
   num_citations: 0
 - title: 'EURO: ESPnet Unsupervised ASR Open-Source Toolkit'
   author: Dongji Gao and Jiatong Shi and Shun-Po Chuang and Leibny Paola Garcia and
-    Hung-yi Lee and Shinji Watanabe and and Sanjeev Khudanpur
+    Hung-yi Lee and Shinji Watanabe and Sanjeev Khudanpur
   year: '2023'
   venue: ''
   cite_key: dongji_icassp2023
@@ -1661,14 +1659,14 @@
 - title: Neural Speech Enhancement with Very Low Algorithmic Latency and Complexity
     via Integrated Full- and Sub-Band Modeling
   author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and and Shinji Watanabe
+    Byeong-Yeol Kim and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: zhongqiu_icassp2023
   url: ''
   num_citations: 0
 - title: Avoid Overthinking in Self-Supervised Models for Speech Recognition
-  author: Dan Berrebbi and Brian Yan and and Shinji Watanabe
+  author: Dan Berrebbi and Brian Yan and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: dan_icassp2023
@@ -1677,7 +1675,7 @@
 - title: Articulatory Representation Learning Via Joint Factor Analysis and Neural
     Matrix Factorization
   author: Jiachen Lian and Alan W Black and Yijing Lu and Louis Goldstein and Shinji
-    Watanabe and and Gopala K. Anumanchipalli
+    Watanabe and Gopala K. Anumanchipalli
   year: '2023'
   venue: ''
   cite_key: jianchen_icassp2023
@@ -1685,7 +1683,7 @@
   num_citations: 0
 - title: Structured Pruning of Self-Supervised Pre-trained Models for Speech Recognition
     and Understanding
-  author: Yifan Peng and Kwangyoun Kim and Felix Wu and Prashant Sridhar and and Shinji
+  author: Yifan Peng and Kwangyoun Kim and Felix Wu and Prashant Sridhar and Shinji
     Watanabe
   year: '2023'
   venue: ''
@@ -1694,7 +1692,7 @@
   num_citations: 0
 - title: Fully Unsupervised Topic Clustering of Unlabelled Spoken Audio Using Self-Supervised
     Representation Learning and Topic Model
-  author: Takashi Maekaku and Yuya Fujita and Xuankai Chang and and Shinji Watanabe
+  author: Takashi Maekaku and Yuya Fujita and Xuankai Chang and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: takashi_icassp2023
@@ -1704,7 +1702,7 @@
     Audio-Visual Diarization and Recognition'
   author: Zhe Wang and Shilong Wu and Hang Chen and Mao-Kui He and Jun Du and Chin-Hui
     Lee and Jingdong Chen and Shinji Watanabe and Sabato Siniscalchi and Odette Scharenborg
-    and Diyuan Liu and Baocai Yin and Jia Pan and Jianqing Gao and and Cong Liu
+    and Diyuan Liu and Baocai Yin and Jia Pan and Jianqing Gao and Cong Liu
   year: '2023'
   venue: ''
   cite_key: zhe_icassp2023
@@ -1712,7 +1710,7 @@
   num_citations: 0
 - title: 'FINDADAPTNET: Find and Insert Adapters by Learned Layer Importance'
   author: Junwei Huang and Karthik Ganesan and Soumi Maiti and Young Min Kim and Xuankai
-    Chang and Paul Liang and and Shinji Watanabe
+    Chang and Paul Liang and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: junwei_icassp2023
@@ -1720,7 +1718,7 @@
   num_citations: 0
 - title: 'I3D: Transformer architectures with input-dependent dynamic depth for speech
     recognition'
-  author: Yifan Peng and Jaesong Lee and and Shinji Watanabe
+  author: Yifan Peng and Jaesong Lee and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: yifan_icassp2023
@@ -2091,9 +2089,9 @@
 - title: 'SUPERB-SG: Enhanced Speech processing Universal PERformance Benchmark for
     Semantic and Generative Capabilities'
   author: Hsiang-Sheng Tsai and Heng-Jui Chang and Wen-Chin Huang and Zili Huang and
-    Kushal Lakhotia and  Shu-wen Yang and  Shuyan Dong and  Andy T. Liu and  Cheng-I
-    Lai and  Jiatong Shi and  Xuankai Chang and  Phil Hall and  Hsuan-Jui Chen and  Shang-Wen
-    Li and  Shinji Watanabe and  Abdelrahman Mohamed and Hung-yi Lee
+    Kushal Lakhotia and Shu-wen Yang and Shuyan Dong and Andy T. Liu and Cheng-I Lai
+    and Jiatong Shi and Xuankai Chang and Phil Hall and Hsuan-Jui Chen and Shang-Wen
+    Li and Shinji Watanabe and Abdelrahman Mohamed and Hung-yi Lee
   year: '2022'
   venue: ''
   cite_key: tsai2022acl

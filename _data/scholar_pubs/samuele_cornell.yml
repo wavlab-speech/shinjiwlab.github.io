@@ -138,7 +138,7 @@
 - title: 'TF-GridNet: Making Time-Frequency Domain Models Great Again for Monaural
     Speaker Separation'
   author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and and Shinji Watanabe
+    Byeong-Yeol Kim and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: zhongqiu2_icassp2023
@@ -147,7 +147,7 @@
 - title: Neural Speech Enhancement with Very Low Algorithmic Latency and Complexity
     via Integrated Full- and Sub-Band Modeling
   author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and and Shinji Watanabe
+    Byeong-Yeol Kim and Shinji Watanabe
   year: '2023'
   venue: ''
   cite_key: zhongqiu_icassp2023
