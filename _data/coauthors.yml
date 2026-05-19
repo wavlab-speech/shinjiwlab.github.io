@@ -37,3 +37,41 @@
 "Jung":
   - firstname: ["Jee-weon", "Jee-Weon", "J."]
     url: https://jungjee.github.io
+
+"Huang":
+  - firstname: ["Chien-yu", "Chien-Yu"]
+    url: https://cyhuang-tw.github.io
+
+"Chen":
+  - firstname: ["William"]
+    url: https://wanchichen.github.io
+  - firstname: ["Li-Wei"]
+    url: https://www.cs.cmu.edu/~liweiche/
+
+"Tian":
+  - firstname: ["Jinchuan"]
+    url: https://jctian98.github.io
+
+"Bharadwaj":
+  - firstname: ["Shikhar"]
+    url: https://shikhar-s.github.io
+
+"Kim":
+  - firstname: ["Jaeyeon"]
+    url: https://jaeyeonkim99.github.io
+
+"Arora":
+  - firstname: ["Siddhant"]
+    url: https://siddhu001.github.io
+
+"Yan":
+  - firstname: ["Brian"]
+    url: https://brianyan918.github.io
+
+"Someki":
+  - firstname: ["Masao"]
+    url: https://masao-someki.github.io
+
+"Lin":
+  - firstname: ["Chyi-Jiunn"]
+    url: https://eric102004.github.io
