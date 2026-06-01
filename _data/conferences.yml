@@ -64,6 +64,26 @@
   place: "Palermo, Sicily, Italy"
   url: https://attend.ieee.org/slt-2026/
 
+- name: IEEE SLT Workshop — Demo, System & Data / Challenge Papers
+  acronym: SLT Demo/Challenge
+  year: 2026
+  deadline: 2026-07-08 23:59
+  start: 2026-12-13
+  end: 2026-12-16
+  place: "Palermo, Sicily, Italy"
+  url: https://attend.ieee.org/slt-2026/call-for-demo-system-and-data-papers/
+  note: "Shared deadline (AoE) for demo/system/data papers and challenge papers; separate from the main SLT paper deadline."
+
+- name: Speech and Audio in the Northeast
+  acronym: SANE
+  year: 2026
+  deadline: 2026-10-10 23:59
+  start: 2026-10-30
+  end: 2026-10-30
+  place: "Cambridge, Massachusetts, USA"
+  url: https://www.saneworkshop.org/sane2026/
+  note: "One-day workshop; date shown is the poster submission deadline (no timezone published — treated as AoE)."
+
 - name: ACL Rolling Review
   acronym: ARR
   year: 2026
@@ -109,3 +129,14 @@
   end: 2026-12-06
   place: "Sydney, Australia"
   url: https://neurips.cc/Conferences/2026
+
+- name: AAAI Conference on Artificial Intelligence
+  acronym: AAAI
+  year: 2027
+  ccfddl: AI/aaai
+  abstract_deadline: 2026-07-21 23:59
+  deadline: 2026-07-28 23:59
+  start: 2027-02-16
+  end: 2027-02-23
+  place: "Montréal, Québec, Canada"
+  url: https://aaai.org/conference/aaai/aaai-27/
