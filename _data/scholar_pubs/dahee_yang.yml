@@ -1,1 +1,83 @@
-[]
+total: 18
+pubs:
+- title: A Dual-Branch Parallel Network for Speech Enhancement and Restoration
+  year: '2026'
+  venue: Computer Speech & Language
+  url: ''
+- title: Latent-Level Enhancement With Flow Matching for Robust Automatic Speech Recognition
+  year: '2026'
+  venue: IEEE Signal Processing Letters
+  url: ''
+- title: 'FlipCon: Flipped Contrastive Learning for Fine-Grained DOA Representation'
+  year: '2026'
+  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  url: ''
+- title: An Experimental Study of Diffusion-Based General Speech Restoration with
+    Predictive-Guided Conditioning
+  year: '2026'
+  venue: Computer Speech & Language
+  url: ''
+- title: 'Flow-PLC: Towards efficient packet loss concealment with flow matching'
+  year: '2025'
+  venue: IEEE Signal Processing Letters
+  url: ''
+- title: Improving Noise Robust Audio-Visual Speech Recognition via Router-Gated Cross-Modal
+    Feature Fusion
+  year: '2025'
+  venue: IEEE ASRU - Workshop on Automatic Speech Recognition and Understanding
+  url: ''
+- title: Spatially Weighted Contrastive Learning for Robust Sound Source Localization
+  year: '2025'
+  venue: INTERSPEECH 2025, 2490-2494
+  url: ''
+- title: Tokenized Generative Speech Enhancement with Language Model and Flow Matching
+  year: '2025'
+  venue: IEEE Signal Processing Letters
+  url: ''
+- title: A momentum-based framework with contrastive data generation for robust sound
+    source localization
+  year: '2025'
+  venue: IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), 1-7
+  url: ''
+- title: 'FLOWER: Flow-Based Estimated Gaussian Guidance for General Speech Restoration'
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.01750
+  url: ''
+- title: Guided conditioning with predictive network on score-based diffusion model
+    for speech enhancement
+  year: '2024'
+  venue: INTERSPEECH 2024
+  url: ''
+- title: 'Diff-PLC: A diffusion-based approach for effective packet loss concealment'
+  year: '2024'
+  venue: IEEE Spoken Language Technology Workshop (SLT), 357-363
+  url: ''
+- title: Attention-based latent features for jointly trained end-to-end automatic
+    speech recognition with modified speech enhancement
+  year: '2023'
+  venue: Journal of King Saud University-Computer and Information Sciences 35 (3 …
+  url: ''
+- title: Masked frequency modeling for improving packet loss concealment in speech
+    transmission systems
+  year: '2023'
+  venue: IEEE WASPAA - Workshop on Applications of Signal Processing to Audio and
+    …
+  url: ''
+- title: TOWARDS ROBUST PACKET LOSS CONCEALMENT SYSTEM WITH ASR-GUIDED REPRESENTATIONS
+  year: '2023'
+  venue: IEEE ASRU - Workshop on Automatic Speech Recognition and Understanding
+  url: ''
+- title: Selective Film Conditioning with CTC-Based ASR Probability for Speech Enhancement
+  year: '2023'
+  venue: IEEE ICASSP - International Conference on Acoustics, Speech and Signal …
+  url: ''
+- title: FiLM Conditioning with Enhanced Feature to the Transformer-based End-to-End
+    Noisy Speech Recognition.
+  year: '2022'
+  venue: Interspeech, 4098-4102
+  url: ''
+- title: Transformer-based voice recognition technology using improved voice as conditioning
+    feature
+  year: '2021'
+  venue: US Patent App. 17/884,086
+  url: ''

@@ -32,8 +32,28 @@ def load_members():
         return yaml.safe_load(f)
 
 
-def fetch_publications(scholar_id, max_pubs=100):
-    """Fetch publications from Google Scholar for a given scholar ID."""
+# How many of the most recent publications to store per member. The members
+# page only ever displays the 20 newest, so we keep a small buffer beyond that
+# rather than hundreds of older papers (which would bloat the repo and make the
+# weekly refresh diffs noisy). The true total is stored separately for the count.
+KEEP_LATEST = 25
+
+
+def fetch_publications(scholar_id):
+    """Fetch a member's full publication list from Google Scholar (newest first).
+
+    We read only the author's publication list (a single, paginated request)
+    and use the metadata it already provides. We deliberately do NOT call
+    scholarly.fill() on each publication: filling every paper issues one extra
+    request per paper, which quickly triggers Google Scholar rate limiting and
+    silently blocks the whole run. The list view gives us title, year and the
+    'citation' string (which we use as the venue) -- enough for the members
+    page. Exact duplicates (same normalized title) are collapsed before the
+    list is returned, sorted newest-first (no cap); the caller decides how many
+    to keep.
+    """
+    import re
+
     try:
         from scholarly import scholarly as _scholarly
     except ImportError:
@@ -44,46 +64,60 @@ def fetch_publications(scholar_id, max_pubs=100):
     author = _scholarly.search_author_id(scholar_id, filled=False)
     author = _scholarly.fill(author, sections=['publications'])
 
-    pubs = []
-    for i, pub in enumerate(author.get('publications', [])):
-        if i >= max_pubs:
-            break
-        try:
-            filled_pub = _scholarly.fill(pub)
-            bib = filled_pub.get('bib', {})
-            pubs.append({
-                'title': bib.get('title', ''),
-                'author': bib.get('author', ''),
-                'year': str(bib.get('pub_year', '')),
-                'venue': bib.get('venue', ''),
-                'abstract': bib.get('abstract', ''),
-                'url': filled_pub.get('pub_url', ''),
-                'num_citations': filled_pub.get('num_citations', 0),
-            })
-            time.sleep(1)  # be polite to Google Scholar
-        except Exception as e:
-            print(f"    Warning: failed to fill publication {i}: {e}")
-            bib = pub.get('bib', {})
-            pubs.append({
-                'title': bib.get('title', ''),
-                'author': bib.get('author', ''),
-                'year': str(bib.get('pub_year', '')),
-                'venue': bib.get('venue', ''),
-                'abstract': '',
-                'url': '',
-                'num_citations': pub.get('num_citations', 0),
-            })
+    rows = []
+    for pub in author.get('publications', []):
+        bib = pub.get('bib', {})
+        title = bib.get('title') or ''
+        if not title:
+            continue
+        # 'citation' is the grey line under the title, e.g.
+        # "ICASSP 2021 IEEE International Conference ..., 2021"; drop the
+        # trailing year so the template's ", {{ year }}" isn't duplicated.
+        citation = bib.get('citation') or ''
+        venue = re.sub(r',?\s*\d{4}\s*$', '', citation).strip()
+        rows.append({
+            'title': title,
+            'year': str(bib.get('pub_year') or ''),
+            'venue': venue,
+            'url': '',
+        })
 
-    return pubs
+    # Google Scholar profiles routinely list the same work several times
+    # (preprint + published version, or minor title variants), which inflates
+    # the count. Collapse exact duplicates after case/punctuation-insensitive
+    # normalization, keeping the newest-year copy of each. We deliberately do
+    # NOT fuzzy-match: titles like "Findings of the IWSLT 2023/2024 ..." are
+    # genuinely different annual papers and must never be merged.
+    deduped = {}
+    for r in rows:
+        key = re.sub(r'[^a-z0-9]+', ' ', r['title'].lower()).strip()
+        if not key:
+            continue
+        prev = deduped.get(key)
+        if (prev is None
+                or (r['year'].isdigit()
+                    and (not prev['year'].isdigit() or r['year'] > prev['year']))):
+            deduped[key] = r
+    rows = list(deduped.values())
+
+    # Newest first; entries with no usable year sort to the end.
+    rows.sort(key=lambda r: (r['year'].isdigit(), r['year']), reverse=True)
+    return rows
 
 
 def save_publications(member_id, pubs):
-    """Save publications to YAML file."""
+    """Save the member's true total plus their most recent publications.
+
+    `pubs` is the member's full, newest-first publication list. We persist the
+    real total (for the count badge) but only keep the latest KEEP_LATEST
+    entries to keep the data files lean.
+    """
     os.makedirs(PUBS_DIR, exist_ok=True)
     out_file = os.path.join(PUBS_DIR, f'{member_id}.yml')
+    data = {'total': len(pubs), 'pubs': pubs[:KEEP_LATEST]}
     with open(out_file, 'w') as f:
-        yaml.dump(pubs, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-    print(f"  Saved {len(pubs)} publications to {out_file}")
+        yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+    print(f"  Saved {len(data['pubs'])} of {data['total']} publications to {out_file}")
 
 
 def main():

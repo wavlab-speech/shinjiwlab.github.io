@@ -1,183 +1,115 @@
-- title: 'Less is More: Data Curation Matters in Scaling Speech Enhancement'
-  author: Chenda Li and Wangyou Zhang and Wei Wang and Robin Scheibler and Kohei Saijo
-    and Samuele Cornell and Yihui Fu and Marvin Sach and Zhaoheng Ni and Anurag Kumar
-    and Tim Fingscheidt and Shinji Watanabe and Yanmin Qian
-  year: '2025'
-  venue: ''
-  cite_key: li_lessismore_asru2025
+total: 98
+pubs:
+- title: An end-to-end integration of speech separation and recognition with self-supervised
+    learning representation
+  year: '2026'
+  venue: Computer Speech & Language 95, 101813
   url: ''
-  num_citations: 0
+- title: ICASSP 2026 URGENT Speech Enhancement Challenge
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.13531
+  url: ''
+- title: 'SE-DiCoW: Self-Enrolled Diarization-Conditioned Whisper'
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.19194
+  url: ''
+- title: 'UrgentMOS: Unified Multi-Metric and Preference Learning for Robust Speech
+    Quality Assessment'
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.18438
+  url: ''
+- title: 'ARECHO: Autoregressive evaluation via chain-based hypothesis optimization
+    for speech multi-metric estimation'
+  year: '2026'
+  venue: Advances in Neural Information Processing Systems 38, 89719-89764
+  url: ''
+- title: Cross-Talk Speech Reduction, by Separation, for Separation
+  year: '2026'
+  venue: arXiv preprint arXiv:2605.19695
+  url: ''
+- title: 'Mind the Gap: Impact of Synthetic Conversational Data on Multi-Talker ASR
+    and Speaker Diarization'
+  year: '2026'
+  venue: arXiv preprint arXiv:2605.15442
+  url: ''
+- title: '2025 Urgent Speech Enhancement Challenge Multilingual P. 808 Listening Tests:
+    Approach and Results'
+  year: '2026'
+  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  url: ''
+- title: Ring Mixing with Auxiliary Signal-to-Consistency-Error Ratio Loss for Unsupervised
+    Denoising in Speech Separation
+  year: '2026'
+  venue: arXiv preprint arXiv:2604.08415
+  url: ''
+- title: Who Spoke What When? Evaluating Spoken Language Models for Conversational
+    ASR with Semantic and Overlap-Aware Metrics
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.22709
+  url: ''
+- title: Modeling Overlapped Speech with Shuffles
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.17769
+  url: ''
+- title: The CMU-AIST submission for the ICME 2025 Audio Encoder Challenge
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.16273
+  url: ''
+- title: Interspeech 2025 URGENT speech enhancement challenge
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.23212
+  url: ''
+- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
+  year: '2025'
+  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
+    of …
+  url: ''
+- title: Lessons learned from the URGENT 2024 speech enhancement challenge
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.01611
+  url: ''
+- title: 'Less is more: Data curation matters in scaling speech enhancement'
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.23859
+  url: ''
+- title: 'Recent trends in distant conversational speech recognition: A review of
+    CHiME-7 and 8 DASR challenges'
+  year: '2025'
+  venue: Computer Speech & Language, 101901
+  url: ''
+- title: 'CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset'
+  year: '2025'
+  venue: arXiv preprint arXiv:2509.14161
+  url: ''
+- title: 'P. 808 Multilingual Speech Enhancement Testing: Approach and Results of
+    URGENT 2025 Challenge'
+  year: '2025'
+  venue: arXiv preprint arXiv:2507.11306
+  url: ''
+- title: Investigation of spatial self-supervised learning and its application to
+    target speaker speech recognition
+  year: '2025'
+  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
+  url: ''
+- title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
+  year: '2025'
+  venue: 2025 IEEE Workshop on Applications of Signal Processing to Audio and …
+  url: ''
 - title: 'URGENT-PK: Perceptually-Aligned Ranking Model Designed for Speech Enhancement
     Competition'
-  author: Jiahe Wang and Chenda Li and Wei Wang and Wangyou Zhang and Samuele Cornell
-    and Marvin Sach and Robin Scheibler and Kohei Saijo and Yihui Fu and Zhaoheng
-    Ni and Anurag Kumar and Tim Fingscheidt and Shinji Watanabe and Yanmin Qian
   year: '2025'
-  venue: ''
-  cite_key: wang_urgentpk_asru2025
+  venue: arXiv preprint arXiv:2506.23874
   url: ''
-  num_citations: 0
-- title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
-  author: Shikhar Bharadwaj and Samuele Cornell and Kwanghee Choi and Satoru Fukayama
-    and Hye-jin Shim and Soham Deshmukh and Shinji Watanabe
+- title: BUT system for the MLC-SLM challenge
   year: '2025'
-  venue: ''
-  cite_key: bharadwaj_openbeats_waspaa2025
+  venue: arXiv preprint arXiv:2506.13414
   url: ''
-  num_citations: 0
+- title: Restoring music integrity via predictive modeling and spectral inpainting
+  year: '2025'
+  venue: Università Politecnica delle Marche & Carnegie Mellon University, Tech. Rep.
+  url: ''
 - title: 'Scalable Spontaneous Speech Dataset (SSSD): Crowdsourcing Data Collection
     to Promote Dialogue Research'
-  author: Zaid Sheikh and Shuichiro Shimizu and Siddhant Arora and Jiatong Shi and
-    Samuele Cornell and Xinjian Li and Shinji Watanabe
   year: '2025'
-  venue: ''
-  cite_key: sheikh_sssd_interspeech2025
+  venue: Proceedings of the Annual Conference of the International Speech …
   url: ''
-  num_citations: 0
-- title: 'CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset'
-  author: Brian Yan and Injy Hamed and Shuichiro Shimizu and Vasista Lodagala and
-    William Chen and Olga Iakovenko and Bashar Talafha and Amir Hussein and Alexander
-    Polok and Kalvin Chang and Dominik Klement and Sara Althubaiti and Puyuan Peng
-    and Matthew Wiesner and Thamar Solorio and Ahmed Ali and Sanjeev Khudanpur and
-    Shinji Watanabe and Chih-Chen Chen and Zhen Wu and Karim Benharrak and Anuj Diwan
-    and Samuele Cornell and Eunjung Yeo and Kwanghee Choi and Carlos Carvalho and
-    Karen Rosero
-  year: '2025'
-  venue: ''
-  cite_key: yan_csfleurs_interspeech2025
-  url: ''
-  num_citations: 0
-- title: Interspeech 2025 URGENT Speech Enhancement Challenge
-  author: Kohei Saijo and Wangyou Zhang and Samuele Cornell and Robin Scheibler and
-    Chenda Li and Zhaoheng Ni and Anurag Kumar and Marvin Sach and Yihui Fu and Wei
-    Wang and Tim Fingscheidt and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: saijo_urgent2025_interspeech2025
-  url: ''
-  num_citations: 0
-- title: Lessons Learned from the URGENT 2024 Speech Enhancement Challenge
-  author: Wangyou Zhang and Kohei Saijo and Samuele Cornell and Robin Scheibler and
-    Chenda Li and Zhaoheng Ni and Anurag Kumar and Marvin Sach and Wei Wang and Yihui
-    Fu and Shinji Watanabe and Tim Fingscheidt and Yanmin Qian
-  year: '2025'
-  venue: ''
-  cite_key: zhang_urgent_lessons_interspeech2025
-  url: ''
-  num_citations: 0
-- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
-  author: Jinchuan Tian and Jiatong Shi and William Chen and Siddhant Arora and Yoshiki
-    Masuyama and Takashi Maekaku and Yihan Wu and Junyi Peng and Shikhar Bharadwaj
-    and Yiwen Zhao and Samuele Cornell and Yifan Peng and Xiang Yue and Chao-Han Huck
-    Yang and Graham Neubig and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: tian_espnetspeechlm_naacl2025
-  url: ''
-  num_citations: 0
-- title: Investigation of Spatial Self-Supervised Learning and Its Application to
-    Target Speaker Speech Recognition
-  author: Yoshiaki Bando and Samuele Cornell and Satoru Fukayama and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: bando_spatial_ssl_icassp2025
-  url: ''
-  num_citations: 0
-- title: Diffusion-based Generative Modeling with Discriminative Guidance for Streamable
-    Speech Enhancement
-  author: Chenda Li and Samuele Cornell and Shinji Watanabe and Yanmin Qian
-  year: '2024'
-  venue: ''
-  cite_key: li_diffusion_se_slt2024
-  url: ''
-  num_citations: 0
-- title: 'ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration'
-  author: Masao Someki and Kwanghee Choi and Siddhant Arora and William Chen and Samuele
-    Cornell and Jionghao Han and Yifan Peng and Jiatong Shi and Vaibhav Srivastav
-    and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: someki_espnet_ez_slt2024
-  url: ''
-  num_citations: 0
-- title: 'URGENT Challenge: Universality, Robustness, and Generalizability for speech
-    EnhancemeNT'
-  author: Wangyou Zhang and Robin Scheibler and Kohei Saijo and Samuele Cornell and
-    Chenda Li and Zhaoheng Ni and Jan Pirklbauer and Marvin Sach and Shinji Watanabe
-    and Tim Fingscheidt and Yanmin Qian
-  year: '2024'
-  venue: ''
-  cite_key: zhang_urgent_challenge_interspeech2024
-  url: ''
-  num_citations: 0
-- title: One Model to Rule Them All? Towards End-to-End Joint Speaker Diarization
-    and Speech Recognition
-  author: Samuele Cornell and Jee-weon Jung and Shinji Watanabe and Stefano Squartini
-  year: '2024'
-  venue: ''
-  cite_key: cornell_icassp2024
-  url: ''
-  num_citations: 0
-- title: Exploring the Integration of Speech Separation and Recognition with Self-Supervised
-    Learning Representation
-  author: Yoshiki Masuyama and Xuankai Chang and Wangyou Zhang and Samuele Cornell
-    and Zhong-Qiu Wang and Nobutaka Ono and Yanmin Qian and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: masuyama2023exploring
-  url: ''
-  num_citations: 0
-- title: 'TF-GridNet: Integrating Full- and Sub-Band Modeling for Speech Separation'
-  author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: wang2023tf
-  url: ''
-  num_citations: 0
-- title: 'TF-GridNet: Making Time-Frequency Domain Models Great Again for Monaural
-    Speaker Separation'
-  author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: zhongqiu2_icassp2023
-  url: ''
-  num_citations: 0
-- title: Neural Speech Enhancement with Very Low Algorithmic Latency and Complexity
-    via Integrated Full- and Sub-Band Modeling
-  author: Zhong-Qiu Wang and Samuele Cornell and Shukjae Choi and Younglo Lee and
-    Byeong-Yeol Kim and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: zhongqiu_icassp2023
-  url: ''
-  num_citations: 0
-- title: End-to-End Integration of Speech Recognition and Dereverberation and Beamforming
-    and Self-Supervised Learning Representation
-  author: Yoshiki Masuyama and Xuankai Chang and Samuele Cornell and Shinji Watanabe
-    and Nobutaka Ono
-  year: '2022'
-  venue: ''
-  cite_key: yoshiki_slt2022
-  url: ''
-  num_citations: 0
-- title: 'ESPnet-SE++: Speech Enhancement for Robust Speech Recognition and Translation
-    and and Understanding'
-  author: Yen-Ju Lu and Xuankai Chang and Chenda Li and Wangyou Zhang and Samuele
-    Cornell and Zhaoheng Ni and Yoshiki Masuyama and Brian Yan and Robin Scheibler
-    and Zhong-Qiu Wang and Yu Tsao and Yanmin Qian and Shinji Watanabe
-  year: '2022'
-  venue: ''
-  cite_key: yenju_interspeech2022
-  url: ''
-  num_citations: 0
-- title: 'TOWARDS LOW-DISTORTION MULTI-CHANNEL SPEECH ENHANCEMENT: THE ESPNET-SE SUBMISSION
-    TO THE L3DAS22 CHALLENGE'
-  author: Jen-Ju Lu and Samuele Cornell and Xuankai Chang and Wangyou Zhang and Chenda
-    Li and Zhaoheng Ni and Zhong-Qiu Wang and Shinji Watanabe
-  year: '2022'
-  venue: ''
-  cite_key: lu2022icassp
-  url: ''
-  num_citations: 0

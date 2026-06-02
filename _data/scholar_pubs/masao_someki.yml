@@ -1,40 +1,55 @@
-- title: Context-Driven Dynamic Pruning for Large Multi-Modal Foundation Model
-  author: Masao Someki and Shikhar Bharadwaj and Atharva Anand Joshi and Chyi-Jiunn
-    Lin and Jinchuan Tian and Jee-weon Jung and Markus Müller and Nathan Susanj and
-    Jing Liu and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: someki_context_pruning_multimodal_interspeech2025
+total: 12
+pubs:
+- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.05220
   url: ''
-  num_citations: 0
-- title: On-device Streaming Discrete Speech Units
-  author: Kwanghee Choi and Masao Someki and Emma Strubell and Shinji Watanabe
+- title: 'Towards inclusive ASR: investigating voice conversion for dysarthric speech
+    recognition in low-resource languages'
   year: '2025'
-  venue: ''
-  cite_key: choi_discrete_units_interspeech2025
+  venue: arXiv preprint arXiv:2505.14874
   url: ''
-  num_citations: 0
-- title: Context-aware Dynamic Pruning for Speech Foundation Models
-  author: Masao Someki and Yifan Peng and Siddhant Arora and Markus Müller and Athanasios
-    Mouchtaris and Grant Strimel and Jing Liu and Shinji Watanabe
+- title: Context-aware dynamic pruning for speech foundation models
   year: '2025'
-  venue: ''
-  cite_key: someki_context_pruning_iclr2025
+  venue: The Thirteenth International Conference on Learning Representations
   url: ''
-  num_citations: 0
-- title: 'ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration'
-  author: Masao Someki and Kwanghee Choi and Siddhant Arora and William Chen and Samuele
-    Cornell and Jionghao Han and Yifan Peng and Jiatong Shi and Vaibhav Srivastav
-    and Shinji Watanabe
+- title: On-device streaming discrete speech units
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.01845
+  url: ''
+- title: 'SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational
+    Roleplay Applications'
+  year: '2025'
+  venue: arXiv preprint arXiv:2511.20972
+  url: ''
+- title: Context-driven dynamic pruning for large speech foundation models
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.18860
+  url: ''
+- title: 'ESPnet-EZ: Python-Only ESPnet For Easy Fine-Tuning And Integration'
   year: '2024'
-  venue: ''
-  cite_key: someki_espnet_ez_slt2024
+  venue: 2024 IEEE Spoken Language Technology Workshop (SLT), 863-870
   url: ''
-  num_citations: 0
 - title: Segment-Level Vectorized Beam Search Based on Partially Autoregressive Inference
-  author: Masao Someki and Nicholas Eng and Yosuke Higuchi and Shinji Watanabe
   year: '2023'
-  venue: ''
-  cite_key: someki2023segment
+  venue: 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
+    1-8
   url: ''
-  num_citations: 0
+- title: 'Espnet-onnx: Bridging a gap between research and production'
+  year: '2022'
+  venue: 2022 Asia-Pacific Signal and Information Processing Association Annual …
+  url: ''
+- title: A comparative study on transformer vs rnn in speech applications
+  year: '2019'
+  venue: 2019 IEEE automatic speech recognition and understanding workshop (ASRU …
+  url: ''
+- title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
+    Audio Understanding'
+  year: ''
+  venue: ''
+  url: ''
+- title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
+    Model Era'
+  year: ''
+  venue: ''
+  url: ''

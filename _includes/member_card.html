@@ -10,7 +10,9 @@ Scholar-sourced field is HTML-escaped and links are restricted to http(s)
 to avoid injection. Curated members.yml fields are escaped too for safety.
 {%- endcomment -%}
 {%- assign m = include.member -%}
-{%- assign pubs = site.data.scholar_pubs[m.id] -%}
+{%- assign data = site.data.scholar_pubs[m.id] -%}
+{%- assign pubs = data.pubs | sort: "year" | reverse -%}
+{%- assign total = data.total | default: pubs.size -%}
 {%- assign scholar = m.scholar_id | default: "" | strip -%}
 <div class="member-card">
 <div class="member-card-head">
@@ -27,15 +29,15 @@ to avoid injection. Curated members.yml fields are escaped too for safety.
 </div>
 </div>
 <details class="member-pubs">
-<summary>Publications{% if pubs.size > 0 %} <span class="pub-count">({{ pubs.size }})</span>{% endif %}</summary>
+<summary>Publications{% if total > 0 %} <span class="pub-count">({{ total }})</span>{% endif %}</summary>
 {%- if pubs.size > 0 %}
 <ol class="pub-list">
 {%- for pub in pubs limit:20 %}
 <li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %} <span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {%- endfor %}
 </ol>
-{%- if pubs.size > 20 and scholar != "" %}
-<p class="pub-more"><small><em>Showing 20 of {{ pubs.size }}. <a href="https://scholar.google.com/citations?user={{ scholar | escape }}" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>
+{%- if total > 20 and scholar != "" %}
+<p class="pub-more"><small><em>Showing 20 of {{ total }}. <a href="https://scholar.google.com/citations?user={{ scholar | escape }}" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>
 {%- endif %}
 {%- else %}
 <p class="pub-none"><small><em>No publications listed yet{% if scholar != "" %} — <a href="https://scholar.google.com/citations?user={{ scholar | escape }}" target="_blank" rel="noopener noreferrer">View on Google Scholar ↗</a>{% endif %}.</em></small></p>

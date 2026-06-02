@@ -1,354 +1,113 @@
-- title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
-    with Expanded Metrics, Visualization, and LLM Integration'
-  author: Jiatong Shi and Bo-Hao Su and Shikhar Bharadwaj and Yiwen Zhao and Shih-Heng
-    Wang and Jionghao Han and Haoran Wang and Wei Wang and Wenhao Feng and Yuxun Tang
-    and Nezih Topaloğlu and Siddhant Arora and Jinchuan Tian and William Chen and
-    Hye-jin Shim and Wangyou Zhang and Wen-Chin Huang and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: shi_versav2_asru2025
+total: 67
+pubs:
+- title: Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical
+    Control
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.13193
   url: ''
-  num_citations: 0
-- title: Robust Training of Singing Voice Synthesis Using Prior and Posterior Uncertainty
-  author: Yiwen Zhao and Jiatong Shi and Yuxun Tang and William Chen and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: zhao_svs_asru2025
+- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.05220
   url: ''
-  num_citations: 0
-- title: 'PURE Codec: Progressive Unfolding of Residual Entropy for Speech Codec Learning'
-  author: Jiatong Shi and Haoran Wang and William Chen and Chenda Li and Wangyou Zhang
-    and Jinchuan Tian and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: shi_purecodec_asru2025
+- title: 'AudioChat: Unified Audio Storytelling, Editing, and Understanding with Transfusion
+    Forcing'
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.17097
   url: ''
-  num_citations: 0
+- title: An Empirical Recipe for Universal Phone Recognition
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.29042
+  url: ''
+- title: 'Dynamic-superb phase-2: A collaboratively expanding benchmark for measuring
+    the capabilities of spoken language models with 180 tasks'
+  year: '2025'
+  venue: International Conference on Learning Representations 2025, 82908-82973
+  url: ''
+- title: Quantum-enabled microwave-to-optical transduction via silicon nanomechanics
+  year: '2025'
+  venue: Nature Nanotechnology 20 (5), 602-608
+  url: ''
+- title: Findings of the IWSLT 2025 evaluation campaign
+  year: '2025'
+  venue: Proceedings of the 22nd International Conference on Spoken Language …
+  url: ''
+- title: 'OWSM v4: Improving open whisper-style speech models via data scaling and
+    cleaning'
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.00338
+  url: ''
+- title: 'OWLS: Scaling laws for multilingual speech recognition and translation models'
+  year: '2025'
+  venue: arXiv preprint arXiv:2502.10373
+  url: ''
+- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
+  year: '2025'
+  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
+    of …
+  url: ''
+- title: 'Polaris: Scalable real-to-sim evaluations for generalist robot policies'
+  year: '2025'
+  venue: arXiv preprint arXiv:2512.16881
+  url: ''
+- title: 'Vulbinllm: Llm-powered vulnerability detection for stripped binaries'
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.22010
+  url: ''
+- title: Measuring general intelligence with generated games
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.07215
+  url: ''
+- title: 'Opuslm: A family of open unified speech language models'
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.17611
+  url: ''
+- title: 'Espnet-sds: Unified toolkit and demo for spoken dialogue systems'
+  year: '2025'
+  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
+    of …
+  url: ''
 - title: 'CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset'
-  author: Brian Yan and Injy Hamed and Shuichiro Shimizu and Vasista Lodagala and
-    William Chen and Olga Iakovenko and Bashar Talafha and Amir Hussein and Alexander
-    Polok and Kalvin Chang and Dominik Klement and Sara Althubaiti and Puyuan Peng
-    and Matthew Wiesner and Thamar Solorio and Ahmed Ali and Sanjeev Khudanpur and
-    Shinji Watanabe and Chih-Chen Chen and Zhen Wu and Karim Benharrak and Anuj Diwan
-    and Samuele Cornell and Eunjung Yeo and Kwanghee Choi and Carlos Carvalho and
-    Karen Rosero
   year: '2025'
-  venue: ''
-  cite_key: yan_csfleurs_interspeech2025
+  venue: arXiv preprint arXiv:2509.14161
   url: ''
-  num_citations: 0
+- title: 'The ML-SUPERB 2.0 challenge: Towards inclusive ASR benchmarking for all
+    language varieties'
+  year: '2025'
+  venue: arXiv preprint arXiv:2509.07139
+  url: ''
 - title: Exploring Linear Variant Transformers and k-NN Memory Inference for Long-Form
     ASR
-  author: Carlos Ferreira Carvalho and Jinchuan Tian and William Chen and Yifan Peng
-    and Alberto Abad and Shinji Watanabe
   year: '2025'
-  venue: ''
-  cite_key: carvalho_linearvariant_asr_interspeech2025
+  venue: Proc. Interspeech 2025, 3583-3587
   url: ''
-  num_citations: 0
+- title: Robust training of singing voice synthesis using prior and posterior uncertainty
+  year: '2025'
+  venue: arXiv preprint arXiv:2512.14653
+  url: ''
+- title: 'Mujaz: A Summarization-based Approach for Normalized Vulnerability Description'
+  year: '2025'
+  venue: IEEE Transactions on Dependable and Secure Computing
+  url: ''
 - title: 'Pick and Summarize: Integrating Extractive and Abstractive Speech Summarization'
-  author: Takatomo Kano and Atsunori Ogawa and Marc Delcroix and Ryo Fukuda and William
-    Chen and Shinji Watanabe
   year: '2025'
-  venue: ''
-  cite_key: kano_summarization_interspeech2025
+  venue: Proceedings of the Annual Conference of the International Speech …
   url: ''
-  num_citations: 0
-- title: 'OpusLM: A Family of Open Unified Speech Language Models'
-  author: Jinchuan Tian and William Chen and Yifan Peng and Jiatong Shi and Siddhant
-    Arora and Shikhar Bharadwaj and Maekaku Takashi and Yusuke Shinohara and Keita
-    Goto and Xiang Yue and Chao-Han Huck Yang and Shinji Watanabe
+- title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
+    with Expanded Metrics, Visualization, and LLM Integration'
   year: '2025'
-  venue: ''
-  cite_key: tian_opuslm_interspeech2025
+  venue: 2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
+    1-4
   url: ''
-  num_citations: 0
-- title: 'OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and
-    Cleaning'
-  author: Yifan Peng and Shakeel Muhammad and Yui Sudo and William Chen and Jinchuan
-    Tian and Chyi-Jiunn Lin and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: peng_owsm_v4_interspeech2025
-  url: ''
-  num_citations: 0
-- title: 'The ML-SUPERB 2.0 Challenge: Towards Inclusive ASR Benchmarking for All
-    Language Varieties'
-  author: William Chen and Chutong Meng and Jiatong Shi and Martijn Bartelds and Shih-Heng
-    Wang and Hsiu-Hsuan Wang and Rafael Mosquera and Sara Hincapie and Dan Jurafsky
-    and Antonis Anastasopoulos and Hung-yi Lee and Karen Livescu and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: chen_mlsuperb2_interspeech2025
-  url: ''
-  num_citations: 0
-- title: 'GALAXY: A Large-Scale Open-Domain Dataset for Multimodal Learning'
-  author: Yihan Wu and Yichen Lu and Yijing Chen and Jiaqi Song and William Chen and
-    Ruihua Song and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: wu_galaxy_interspeech2025
-  url: ''
-  num_citations: 0
-- title: 'OWLS: Scaling Laws for Multilingual Speech Recognition and Translation Models'
-  author: William Chen and Jinchuan Tian and Yifan Peng and Brian Yan and Chao-Han
-    Huck Yang and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: chen_owls_icml2025
-  url: ''
-  num_citations: 0
-- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
-  author: Siddhant Arora and Yifan Peng and Jiatong Shi and Jinchuan Tian and William
-    Chen and Shikhar Bharadwaj and Hayato Futami and Yosuke Kashiwagi and Emiru Tsunoo
-    and Shuichiro Shimizu and Vaibhav Srivastav and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: arora_espnetsds_naacl2025
-  url: ''
-  num_citations: 0
-- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
-  author: Jinchuan Tian and Jiatong Shi and William Chen and Siddhant Arora and Yoshiki
-    Masuyama and Takashi Maekaku and Yihan Wu and Junyi Peng and Shikhar Bharadwaj
-    and Yiwen Zhao and Samuele Cornell and Yifan Peng and Xiang Yue and Chao-Han Huck
-    Yang and Graham Neubig and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: tian_espnetspeechlm_naacl2025
-  url: ''
-  num_citations: 0
-- title: 'Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring
-    the Capabilities of Spoken Language Models with 180 Tasks'
-  author: Chien-yu Huang and Wei-Chih Chen and Shu-wen Yang and Andy T. Liu and Chen-An
-    Li and Yu-Xiang Lin and Wei-Cheng Tseng and Anuj Diwan and Yi-Jen Shih and Jiatong
-    Shi and William Chen and Xuanjun Chen and Chi-Yuan Hsiao and Puyuan Peng and Shih-Heng
-    Wang and Chun-Yi Kuan and Ke-Han Lu and Kai-Wei Chang and Chih-Kai Yang and Fabian
-    Ritter-Gutierrez and Ming To Chuang and Kuan-Po Huang and Siddhant Arora and You-Kuan
-    Lin and Eunjung Yeo and Kalvin Chang and Chung-Ming Chien and Kwanghee Choi and
-    Cheng-Hsiu Hsieh and Yi-Cheng Lin and Chee-En Yu and I-Hsiang Chiu and Heitor
-    R. Guimarães and Jionghao Han and Tzu-Quan Lin and Tzu-Yuan Lin and Homu Chang
-    and Ting-Wu Chang and Chun Wei Chen and Shou-Jen Chen and Yu-Hua Chen and Hsi-Chun
-    Cheng and Kunal Dhawan and Jia-Lin Fang and Shi-Xin Fang and Kuan-Yu Fang Chiang
-    and Chi An Fu and Hsien-Fu Hsiao and Ching Yu Hsu and Shao-Syuan Huang and Lee
-    Chen Wei and Hsi-Che Lin and Hsuan-Hao Lin and Hsuan-Ting Lin and Jian-Ren Lin
-    and Ting-Chun Liu and Li-Chun Lu and Tsung-Min Pai and Ankita Pasad and Shih-Yun
-    Shan Kuan and Suwon Shon and Yuxun Tang and Yun-Shao Tsai and Jui-Chiang Wei and
-    Tzu-Chieh Wei and Chengxi Wu and Dien-Ruei Wu and Chao-Han Huck Yang and Chieh-Chi
-    Yang and Jia Qi Yip and Shao-Xiang Yuan and Vahid Noroozi and Zhehuai Chen and
-    Haibin Wu and Karen Livescu and David Harwath and Shinji Watanabe and Hung-yi
-    Lee
-  year: '2025'
-  venue: ''
-  cite_key: huang_dynamicsuperb2_iclr2025
-  url: ''
-  num_citations: 0
 - title: Bridging Speech and Text Foundation Models with ReShape Attention
-  author: Takatomo Kano and Atsunori Ogawa and Marc Delcroix and William Chen and
-    Ryo Fukuda and Kohei Matsuura and Takanori Ashihara and Shinji Watanabe
   year: '2025'
-  venue: ''
-  cite_key: kano_reshape_attention_icassp2025
+  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
   url: ''
-  num_citations: 0
-- title: Towards Robust Speech Representation Learning for Thousands of Languages
-  author: William Chen and Wangyou Zhang and Yifan Peng and Xinjian Li and Jinchuan
-    Tian and Jiatong Shi and Xuankai Chang and Soumi Maiti and Karen Livescu and Shinji
-    Watanabe
+- title: 'GALAXY: A Large-Scale Open-Domain Dataset for Multimodal Learning'
+  year: '2025'
+  venue: Proceedings of the Annual Conference of the International Speech …
+  url: ''
+- title: 'Owsm v3. 1: Better and faster open whisper-style speech models based on
+    e-branchformer'
   year: '2024'
-  venue: Proceedings of EMNLP
-  cite_key: chen_emnlp2024
+  venue: INTERSPEECH 2024
   url: ''
-  num_citations: 0
-- title: 'ESPnet-Codec: Comprehensive Training and Evaluation of Neural Codecs for
-    Audio, Music, and Speech'
-  author: Jiatong Shi and Jinchuan Tian and Yihan Wu and Jee-weon Jung and Jia Qi
-    Yip and Yoshiki Masuyama and William Chen and Yuning Wu and Yuxun Tang and Massa
-    Baali and Dareen Alharthi and Dong Zhang and Ruifan Deng and Tejes Srivastava
-    and Haibin Wu and Alexander Liu and Bhiksha Raj and Qin Jin and Ruihua Song and
-    Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: shi_espnet_codec_slt2024
-  url: ''
-  num_citations: 0
-- title: 'FLORAS 50: A Massively Multilingual Multitask Benchmark for Long-form Conversational
-    Speech'
-  author: William Chen and Brian Yan and Chih-Chen Chen and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: chen_floras50_slt2024
-  url: ''
-  num_citations: 0
-- title: 'ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration'
-  author: Masao Someki and Kwanghee Choi and Siddhant Arora and William Chen and Samuele
-    Cornell and Jionghao Han and Yifan Peng and Jiatong Shi and Vaibhav Srivastav
-    and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: someki_espnet_ez_slt2024
-  url: ''
-  num_citations: 0
-- title: 'ML-SUPERB 2.0: Benchmarking Multilingual Speech Models Across Modeling Constraints,
-    Languages, and Datasets'
-  author: Jiatong Shi and Shi-Heng Wang and William Chen and Martijn Bartelds and
-    Vanya Bannihatti Kumar and Jinchuan Tian and Xuankai Chang and Dan Jurafsky and
-    Karen Livescu and Hung-yi Lee and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: shi_ml_superb2_interspeech2024
-  url: ''
-  num_citations: 0
-- title: 'EFFUSE: Efficient Self-Supervised Feature Fusion for E2E ASR in Low Resource
-    and Multilingual Scenarios'
-  author: Tejes Srivastava and Jiatong Shi and William Chen and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: srivastava_effuse_interspeech2024
-  url: ''
-  num_citations: 0
-- title: On the Effects of Heterogeneous Data Sources on Speech-to-Text Foundation
-    Models
-  author: Jinchuan Tian and Yifan Peng and William Chen and Kwanghee Choi and Karen
-    Livescu and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: tian_heterogeneous_data_interspeech2024
-  url: ''
-  num_citations: 0
-- title: 'OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer'
-  author: Yifan Peng and Jinchuan Tian and William Chen and Siddhant Arora and Brian
-    Yan and Yui Sudo and Muhammad Shakeel and Kwanghee Choi and Jiatong Shi and Xuankai
-    Chang and Jee-weon Jung and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: peng_owsm_v3_interspeech2024
-  url: ''
-  num_citations: 0
-- title: On the Evaluation of Speech Foundation Models for Spoken Language Understanding
-  author: Siddhant Arora and Ankita Pasad and Chung-Ming Chien and Jionghao Han and
-    Roshan Sharma and Jee-weon Jung and Hira Dhamyal and William Chen and Suwon Shon
-    and Hung-yi Lee and Karen Livescu and Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: arora_slu_foundation_acl2024
-  url: ''
-  num_citations: 0
-- title: 'AugSumm: Towards Generalizable Speech Summarization Using Synthetic Labels
-    from Large Language Models'
-  author: Jee-weon Jung and Roshan Sharma and William Chen and Bhiksha Raj and Shinji
-    Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: jung_icassp2024
-  url: ''
-  num_citations: 0
-- title: 'Train Long and Test Long: Leveraging Full Document Contexts in Speech Processing'
-  author: William Chen and Takatomo Kano and Atsunori Ogawa and Marc Delcroix and
-    Shinji Watanabe
-  year: '2024'
-  venue: ''
-  cite_key: chen_william_icassp2024
-  url: ''
-  num_citations: 0
-- title: 'Summarize while Translating: Universal Model with Parallel Decoding for
-    Summarization and Translation'
-  author: Takatomo Kano and Atsunori Ogawa and Marc Delcroix and Kohei Matsuura and
-    Takanori Ashihara and William Chen and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: kano2023summarize
-  url: ''
-  num_citations: 0
-- title: 'YODAS: Youtube-Oriented Dataset for Audio and Speech'
-  author: Xinjian Li and Shinnosuke Takamichi and Takaaki Saeki and William Chen and
-    Sayaka Shiota and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: li2023yodas
-  url: ''
-  num_citations: 0
-- title: 'Findings of the 2023 ML-SUPERB Challenge: Pre-Training and Evaluation over
-    More Languages and Beyond'
-  author: Jiatong Shi and William Chen and Dan Berrebbi and Hsiu-Hsuan Wang and Wei
-    Ping Huang and En Pei Hu and ho lam Chung and Xuankai Chang and Yuxun Tang and
-    Shang-Wen Li and Abdelrahman Mohamed and Hung-yi Lee and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: shi2023findings
-  url: ''
-  num_citations: 0
-- title: Joint Prediction and Denoising for Large-Scale Multilingual Self-Supervised
-    Learning
-  author: William Chen and Jiatong Shi and Brian Yan and Dan Berrebbi and Wangyou
-    Zhang and Yifan Peng and Xuankai Chang and Soumi Maiti and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: chen2023joint
-  url: ''
-  num_citations: 0
-- title: Reproducing Whisper-Style Training Using an Open-Source Toolkit and Publicly
-    Available Data
-  author: Yifan Peng and Jinchuan Tian and Brian Yan and Dan Berrebbi and Xuankai
-    Chang and Xinjian Li and Jiatong Shi and Siddhant Arora and William Chen and Roshan
-    Sharma and Wangyou Zhang and Yui Sudo and Muhammad Shakeel and Jee-weon Jung and
-    Soumi Maiti and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: peng2023reproducing
-  url: ''
-  num_citations: 0
-- title: 'ESPNet-SUMM: Introducing a novel large dataset, toolkit, and a cross-corpora
-    evaluation of speech summarization systems'
-  author: Roshan Sharma and William Chen and Takatomo Kano and Ruchira Sharma and
-    Atsunori Ogawa and Siddhant Arora and Marc Delcroix and Rita Singh and Shinji
-    Watanabe and Bhiksha Raj
-  year: '2023'
-  venue: ''
-  cite_key: roshan2023espnet
-  url: ''
-  num_citations: 0
-- title: A New Benchmark of Aphasia Speech Recognition and Detection Based on E-Branchformer
-    and Multi-task Learning
-  author: Jiyang Tang and William Chen and Xuankai Chang and Shinji Watanabe and Brian
-    MacWhinney
-  year: '2023'
-  venue: ''
-  cite_key: Tang_is2023
-  url: ''
-  num_citations: 0
-- title: 'ML-SUPERB: Multilingual Speech Universal PERformance Benchmark'
-  author: Jiatong Shi and Dan Berrebbi and William Chen and En-Pei Hu and Wei-Ping
-    Huang and Ho-Lam Chung and Xuankai Chang and Shang-Wen Li and Abdelrahman Mohamed
-    and Hung-yi Lee and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: Jiatong_is2023
-  url: ''
-  num_citations: 0
-- title: lA Comparative Study on E-Branchformer vs Conformer in Speech Recognition,
-    Translation, and Understanding Tasks
-  author: Yifan Peng andKwangyoun Kim and Felix Wu and Brian Yan and Siddhant Arora
-    and William Chen and Jiyang Tang and Suwon Shon and Prashant Sridhar and Shinji
-    Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: Pend_is2023_2
-  url: ''
-  num_citations: 0
-- title: 'Reducing Barriers to Self-Supervised Learning: HuBERT Pre-training with
-    Academic Compute'
-  author: William Chen and Xuankai Chang and Yifan Peng and Zhaoheng Ni and Soumi
-    Maiti and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: Chen_is2023
-  url: ''
-  num_citations: 0
-- title: Improving Massively Multilingual ASR With Auxiliary CTC Objectives
-  author: William Chen and Brian Yan and Jiatong Shi and Yifan Peng and Soumi Maiti
-    and Shinji Watanabe
-  year: '2023'
-  venue: ''
-  cite_key: william_icassp2023
-  url: ''
-  num_citations: 0

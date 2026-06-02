@@ -1,56 +1,107 @@
-- title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
-    with Expanded Metrics, Visualization, and LLM Integration'
-  author: Jiatong Shi and Bo-Hao Su and Shikhar Bharadwaj and Yiwen Zhao and Shih-Heng
-    Wang and Jionghao Han and Haoran Wang and Wei Wang and Wenhao Feng and Yuxun Tang
-    and Nezih Topaloğlu and Siddhant Arora and Jinchuan Tian and William Chen and
-    Hye-jin Shim and Wangyou Zhang and Wen-Chin Huang and Shinji Watanabe
-  year: '2025'
-  venue: ''
-  cite_key: shi_versav2_asru2025
+total: 24
+pubs:
+- title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.14046
   url: ''
-  num_citations: 0
+- title: An Empirical Recipe for Universal Phone Recognition
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.29042
+  url: ''
+- title: The CMU-AIST submission for the ICME 2025 Audio Encoder Challenge
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.16273
+  url: ''
+- title: 'Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality,
+    long context, and next generation agentic capabilities'
+  year: '2025'
+  venue: arXiv preprint arXiv:2507.06261
+  url: ''
+- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
+  year: '2025'
+  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
+    of …
+  url: ''
+- title: 'Opuslm: A family of open unified speech language models'
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.17611
+  url: ''
+- title: 'Espnet-sds: Unified toolkit and demo for spoken dialogue systems'
+  year: '2025'
+  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
+    of …
+  url: ''
+- title: 'Powsm: A phonetic open whisper-style speech foundation model'
+  year: '2025'
+  venue: arXiv preprint arXiv:2510.24992
+  url: ''
 - title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
-  author: Shikhar Bharadwaj and Samuele Cornell and Kwanghee Choi and Satoru Fukayama
-    and Hye-jin Shim and Soham Deshmukh and Shinji Watanabe
   year: '2025'
-  venue: ''
-  cite_key: bharadwaj_openbeats_waspaa2025
+  venue: 2025 IEEE Workshop on Applications of Signal Processing to Audio and …
   url: ''
-  num_citations: 0
-- title: Context-Driven Dynamic Pruning for Large Multi-Modal Foundation Model
-  author: Masao Someki and Shikhar Bharadwaj and Atharva Anand Joshi and Chyi-Jiunn
-    Lin and Jinchuan Tian and Jee-weon Jung and Markus Müller and Nathan Susanj and
-    Jing Liu and Shinji Watanabe
+- title: Context-driven dynamic pruning for large speech foundation models
   year: '2025'
-  venue: ''
-  cite_key: someki_context_pruning_multimodal_interspeech2025
+  venue: arXiv preprint arXiv:2505.18860
   url: ''
-  num_citations: 0
-- title: 'OpusLM: A Family of Open Unified Speech Language Models'
-  author: Jinchuan Tian and William Chen and Yifan Peng and Jiatong Shi and Siddhant
-    Arora and Shikhar Bharadwaj and Maekaku Takashi and Yusuke Shinohara and Keita
-    Goto and Xiang Yue and Chao-Han Huck Yang and Shinji Watanabe
+- title: Identifying and Mitigating Mismatched Language Code in Multilingual ASR
   year: '2025'
-  venue: ''
-  cite_key: tian_opuslm_interspeech2025
+  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
   url: ''
-  num_citations: 0
-- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
-  author: Siddhant Arora and Yifan Peng and Jiatong Shi and Jinchuan Tian and William
-    Chen and Shikhar Bharadwaj and Hayato Futami and Yosuke Kashiwagi and Emiru Tsunoo
-    and Shuichiro Shimizu and Vaibhav Srivastav and Shinji Watanabe
+- title: Identifying and Mitigating Mismatched Language Signal in Multilingual Automated
+    Speech Recognition
   year: '2025'
-  venue: ''
-  cite_key: arora_espnetsds_naacl2025
+  venue: US Patent App. 19/173,179
   url: ''
-  num_citations: 0
-- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
-  author: Jinchuan Tian and Jiatong Shi and William Chen and Siddhant Arora and Yoshiki
-    Masuyama and Takashi Maekaku and Yihan Wu and Junyi Peng and Shikhar Bharadwaj
-    and Yiwen Zhao and Samuele Cornell and Yifan Peng and Xiang Yue and Chao-Han Huck
-    Yang and Graham Neubig and Shinji Watanabe
+- title: 'EmoNews: A Spoken Dialogue System for Expressive News Conversations'
   year: '2025'
-  venue: ''
-  cite_key: tian_espnetspeechlm_naacl2025
+  venue: Proceedings of the 26th Annual Meeting of the Special Interest Group on …
   url: ''
-  num_citations: 0
+- title: 'Indicgenbench: A multilingual benchmark to evaluate generation capabilities
+    of llms on indic languages'
+  year: '2024'
+  venue: Proceedings of the 62nd Annual Meeting of the Association for Computational
+    …
+  url: ''
+- title: 'Codequeries: A dataset of semantic queries over code'
+  year: '2024'
+  venue: Proceedings of the 17th Innovations in Software Engineering Conference, 1-11
+  url: ''
+- title: 'STAB: speech tokenizer assessment benchmark'
+  year: '2024'
+  venue: arXiv preprint arXiv:2409.02384
+  url: ''
+- title: Multimodal modeling for spoken language identification
+  year: '2024'
+  venue: ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and …
+  url: ''
+- title: Label aware speech representation learning for language identification
+  year: '2023'
+  venue: arXiv preprint arXiv:2306.04374
+  url: ''
+- title: 'MASR: Multi-Label Aware Speech Representation'
+  year: '2023'
+  venue: 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
+    1-8
+  url: ''
+- title: Github issue classification using BERT-style models
+  year: '2022'
+  venue: Proceedings of the 1st International Workshop on Natural Language-based …
+  url: ''
+- title: Efficient Constituency Tree based Encoding for Natural Language to Bash Translation
+  year: '2022'
+  venue: Proceedings of the 2022 Conference of the North American Chapter of the …
+  url: ''
+- title: Explainable and Efficient Neural Models for Natural Language to Bash Command
+    Translation
+  year: '2022'
+  venue: Indian Institute of Science (Awarded Outstanding Thesis 2022-23)
+  url: ''
+- title: Explainable natural language to bash translation using abstract syntax tree
+  year: '2021'
+  venue: Proceedings of the 25th Conference on Computational Natural Language …
+  url: ''
+- title: 'An Extraction based approach to Keyword Generation and Precedence Retrieval:
+    BITS Pilani-Hyderabad.'
+  year: '2017'
+  venue: FIRE (working notes), 74-77
+  url: ''
