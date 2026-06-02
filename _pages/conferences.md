@@ -49,14 +49,16 @@ nav: false
 
 <div class="conf-tracker" id="conf-tracker">
   {% for c in site.data.conferences %}
+  {% comment %} Data may be auto-refreshed from a third-party dataset, so every
+  field is HTML-escaped and links are restricted to http(s) to avoid injection. {% endcomment %}
   <div class="conf-card"
-       data-deadline="{{ c.deadline | date: '%Y-%m-%d %H:%M' }}"
-       data-abstract="{{ c.abstract_deadline | date: '%Y-%m-%d %H:%M' }}"
+       data-deadline="{{ c.deadline | date: '%Y-%m-%d %H:%M' | escape }}"
+       data-abstract="{{ c.abstract_deadline | date: '%Y-%m-%d %H:%M' | escape }}"
        data-offset="{{ c.utc_offset | default: -12 }}">
     <div class="conf-head">
-      <span class="conf-acronym">{{ c.acronym }} <span class="conf-year">{{ c.year }}</span></span>
+      <span class="conf-acronym">{{ c.acronym | escape }} <span class="conf-year">{{ c.year }}</span></span>
     </div>
-    <div class="conf-name">{{ c.name }}</div>
+    <div class="conf-name">{{ c.name | escape }}</div>
     <div class="conf-countdown">…</div>
     <div class="conf-meta">
       {% if c.abstract_deadline %}
@@ -66,10 +68,17 @@ nav: false
       <div><span class="label">📅 Dates:</span>
         {% if c.start == 'TBA' or c.start == 'TBD' or c.start == nil or c.start == '' %}TBD{% else %}{{ c.start | date: '%b %-d' }}{% if c.end and c.end != c.start %} – {{ c.end | date: '%b %-d, %Y' }}{% else %}, {{ c.start | date: '%Y' }}{% endif %}{% endif %}
       </div>
-      <div><span class="label">📍 Place:</span> {{ c.place | default: 'TBD' }}</div>
-      {% if c.url %}<div><span class="label">🔗 Site:</span> <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.url | remove: 'https://' | remove: 'http://' | remove_first: 'www.' | split: '/' | first }}</a></div>{% endif %}
+      <div><span class="label">📍 Place:</span> {{ c.place | default: 'TBD' | escape }}</div>
+      {% if c.url %}
+        {% assign u = c.url | strip %}
+        {% assign u_https = u | slice: 0, 8 | downcase %}
+        {% assign u_http = u | slice: 0, 7 | downcase %}
+        {% if u_https == 'https://' or u_http == 'http://' %}
+        <div><span class="label">🔗 Site:</span> <a href="{{ u | escape }}" target="_blank" rel="noopener">{{ u | remove_first: 'https://' | remove_first: 'http://' | remove_first: 'www.' | split: '/' | first | escape }}</a></div>
+        {% endif %}
+      {% endif %}
     </div>
-    {% if c.note %}<div class="conf-note">{{ c.note }}</div>{% endif %}
+    {% if c.note %}<div class="conf-note">{{ c.note | escape }}</div>{% endif %}
   </div>
   {% endfor %}
 </div>

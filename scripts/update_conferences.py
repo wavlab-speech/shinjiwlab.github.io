@@ -62,7 +62,9 @@ def fetch(path: str):
 def parse_deadline(value: str | None) -> dt.datetime | None:
     if not value or value == "TBD":
         return None
-    m = re.match(r"(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})", str(value))
+    # ccfddl timestamps include seconds (e.g. '2026-09-16 23:59:59'); the
+    # optional ':SS' group is matched and discarded so we never fall through.
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})(?::\d{2})?", str(value))
     if not m:
         return None
     y, mo, d, h, mi = (int(x) for x in m.groups())
@@ -76,7 +78,7 @@ def fmt_deadline(value: str | None) -> str | None:
     """'YYYY-MM-DD HH:MM:SS' -> 'YYYY-MM-DD HH:MM' (drop seconds); None if TBD."""
     if not value or value == "TBD":
         return None
-    m = re.match(r"(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})", str(value))
+    m = re.match(r"(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})(?::\d{2})?", str(value))
     return f"{m.group(1)} {m.group(2)}" if m else None
 
 
@@ -119,13 +121,26 @@ def parse_date_range(value: str | None):
 
 
 def tz_to_offset(tz: str | None):
-    """'AoE'->-12, 'UTC'->0, 'UTC-7'->-7, 'UTC+8'->8; None if unrecognized."""
+    """Convert a ccfddl timezone string to a UTC offset in hours.
+
+    'AoE'->-12, 'UTC'->0, 'UTC-7'->-7, 'UTC+8'->8, 'UTC+5:30'->5.5,
+    'UTC+5.5'->5.5; None if unrecognized. Whole offsets return int, fractional
+    ones return float (the page reads the value with parseFloat either way).
+    """
     if not tz or tz == "AoE":
         return -12
-    m = re.match(r"^UTC([+-]\d+)?$", tz)
+    if tz == "UTC":
+        return 0
+    m = re.match(r"^UTC([+-])(\d+)(?:([:.])(\d+))?$", tz)
     if not m:
         return None
-    return int(m.group(1)) if m.group(1) else 0
+    sign, hours, sep, frac = m.groups()
+    val = float(hours)
+    if frac is not None:
+        val += int(frac) / 60 if sep == ":" else float("0." + frac)
+    if sign == "-":
+        val = -val
+    return int(val) if val == int(val) else val
 
 
 def pick_edition(confs):
@@ -150,35 +165,49 @@ def update_entry(entry) -> str:
 
     entry["year"] = int(conf["year"])
 
+    # Volatile fields mirror ccfddl: when upstream no longer provides a value we
+    # drop the stale one rather than leaving an outdated date/link behind.
     deadline = fmt_deadline(timeline.get("deadline"))
     note_bits = []
     if deadline:
         entry["deadline"] = deadline
     else:
+        entry.pop("deadline", None)
         note_bits.append("Next deadline TBD on ccfddl — verify on the official site.")
 
     abstract = fmt_deadline(timeline.get("abstract_deadline"))
     if abstract:
         entry["abstract_deadline"] = abstract
-    elif "abstract_deadline" in entry:
-        del entry["abstract_deadline"]
+    else:
+        entry.pop("abstract_deadline", None)
 
     offset = tz_to_offset(conf.get("timezone"))
     if offset is None or offset == -12:   # -12 / AoE is our default -> omit key
-        if "utc_offset" in entry:
-            del entry["utc_offset"]
+        entry.pop("utc_offset", None)
     else:
         entry["utc_offset"] = offset
 
-    start, end = parse_date_range(conf.get("date"))
+    date_str = conf.get("date")
+    start, end = parse_date_range(date_str)
     if start:
         entry["start"] = start
         entry["end"] = end
+    elif not date_str:                     # upstream omitted dates -> drop stale
+        entry.pop("start", None)
+        entry.pop("end", None)
+    else:                                  # present but unparseable -> keep, flag
+        note_bits.append(
+            f"Unrecognized ccfddl date '{date_str}' — verify on the official site."
+        )
 
     if conf.get("link"):
         entry["url"] = conf["link"]
+    else:
+        entry.pop("url", None)
     if conf.get("place"):
         entry["place"] = conf["place"]
+    else:
+        entry.pop("place", None)
 
     comment = timeline.get("comment")
     if comment:
@@ -192,8 +221,15 @@ def update_entry(entry) -> str:
 
 
 def _quote(value) -> str:
-    s = str(value)
-    return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    # Backslash first, then quotes, then whitespace control chars, so a newline
+    # in upstream place/comment text can't break the double-quoted YAML scalar.
+    s = (str(value)
+         .replace("\\", "\\\\")
+         .replace('"', '\\"')
+         .replace("\n", "\\n")
+         .replace("\r", "\\r")
+         .replace("\t", "\\t"))
+    return '"' + s + '"'
 
 
 def _format_value(key, value) -> str:
