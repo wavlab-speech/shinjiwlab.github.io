@@ -1,7 +1,7 @@
 - id: shinji_watanabe
   name: Shinji Watanabe
   role: faculty
-  scholar_id: qesMX_wAAAAJ
+  scholar_id: U5xRA6QAAAAJ
   website: https://sites.google.com/view/shinjiwatanabe
   image: shinji_20210605.jpg
 
@@ -15,7 +15,7 @@
 - id: jinchuan_tian
   name: Jinchuan Tian
   role: phd
-  scholar_id: ""
+  scholar_id: KE5I4R0AAAAJ
   website: https://jctian98.github.io/
   image: jinchuan.jpg
 
@@ -46,13 +46,41 @@
   scholar_id: 2Yi8qMIAAAAJ
   website: https://jaeyeonkim99.github.io/
   image: jaeyeon.jpg
+  note: co-supervising
 
 - id: masao_someki
   name: Masao Someki
   role: master
-  scholar_id: ""
+  scholar_id: _aVVkVsAAAAJ
   website: https://masao-someki.github.io/
   image: msomeki.png
+
+- id: dahee_yang
+  name: Dahee Yang
+  role: visitor
+  scholar_id: R_PVtlMAAAAJ
+  image: photo-dahee.jpg
+
+- id: chinjou_li
+  name: Chin-Jou Li
+  role: visitor
+  scholar_id: tU4UHFAAAAAJ
+  website: https://chinjouli.github.io/mysite
+  image: chinjou.jpg
+
+- id: thanapat_trachu
+  name: Thanapat Trachu
+  role: visitor
+  scholar_id: zbCoi_EAAAAJ
+  website: https://www.linkedin.com/in/thanapat-trachu-602551227/
+  image: thanapat.jpg
+
+- id: kuangda_wang
+  name: Kuang-Da Wang
+  role: visitor
+  scholar_id: JGH6qUMAAAAJ
+  website: https://kuangdw.github.io/
+  image: photo-kuangda.jpg
 
 - id: jeeweon_jung
   name: Jee-weon Jung
