@@ -201,3 +201,58 @@
   place: "TBD (Midwest USA)"
   url: https://midwest-sld.org/
   note: "Annual regional speech and language meeting (free registration). 2026 was hosted at UIUC; the 2027 edition and abstract deadline are not yet announced."
+
+- name: The Speaker and Language Recognition Workshop
+  acronym: Odyssey
+  year: 2026
+  abstract_deadline: 2026-03-15 23:59
+  deadline: 2026-03-22 23:59
+  start: 2026-06-23
+  end: 2026-06-26
+  place: "Lisbon, Portugal"
+  url: https://odyssey2026.inesc-id.pt/
+  note: "ISCA speaker/language recognition workshop (biennial). No timezone published, treated as AoE. Abstract Mar 15, full paper Mar 22; both passed."
+
+- name: Joint Workshop on HSCMA and CHiME
+  acronym: HSCMA/CHiME
+  year: 2026
+  abstract_deadline: 2026-02-06 23:59
+  deadline: 2026-02-12 23:59
+  start: 2026-05-04
+  end: 2026-05-04
+  place: "Barcelona, Spain"
+  url: https://sites.google.com/view/hscmachime2026
+  note: "One-day ICASSP 2026 satellite, already held May 4. AoE deadlines (passed): CHiME-9 paper Feb 6, revision Feb 12; plus an HSCMA archival track."
+
+- name: International Society for Music Information Retrieval Conference
+  acronym: ISMIR
+  year: 2026
+  abstract_deadline: 2026-04-20 23:59
+  deadline: 2026-04-27 23:59
+  start: 2026-11-08
+  end: 2026-11-12
+  place: "Abu Dhabi, UAE"
+  url: https://ismir2026.ismir.net/
+  note: "27th ISMIR; AoE (UTC-12) deadlines, both passed. Abstract/paper registration Apr 20, full paper Apr 27. Hybrid (in-person and online)."
+
+- name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  acronym: CVPR
+  year: 2026
+  ccfddl: AI/cvpr
+  abstract_deadline: 2025-11-07 23:59
+  deadline: 2025-11-13 23:59
+  start: 2026-06-03
+  end: 2026-06-07
+  place: "Denver, Colorado, United States"
+  url: https://cvpr.thecvf.com/Conferences/2026
+
+- name: ACM International Conference on Multimodal Interaction
+  acronym: ICMI
+  year: 2026
+  abstract_deadline: 2026-04-13 23:59
+  deadline: 2026-04-23 23:59
+  start: 2026-10-05
+  end: 2026-10-09
+  place: "Napoli, Italy"
+  url: https://icmi.acm.org/2026/
+  note: "28th ACM ICMI. AoE deadlines, both passed: abstract Apr 13, paper Apr 23. Main conference Oct 6-8; workshops/tutorials Oct 5 and 9."
