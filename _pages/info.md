@@ -8,6 +8,7 @@ order: 8
 
 This page has some information and guidelines for members of WAVLab.
 
+* [Conference deadline tracker]({{ '/conferences/' | relative_url }}) — live countdowns for conferences the lab follows
 * [TIR cluster use instructions (for ESPnet user)]({% post_url 2022-01-01-tir-usage %})
 * [AWS use instructions]({% post_url 2022-01-01-aws-usage %})
 * [PSC cluster use instructions]({% post_url 2022-01-01-psc-usage %})
