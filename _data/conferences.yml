@@ -1,0 +1,142 @@
+# -----------------------------------------------------------------------------
+# Conference deadline tracker  ->  rendered at /conferences/
+# -----------------------------------------------------------------------------
+# This is the ONLY file you need to edit to maintain the conference list.
+# Each cycle, update `deadline` / `abstract_deadline` / `start` / `end` / `place`.
+#
+# Fields per entry:
+#   name              full conference name (string)
+#   acronym           short label shown on the card, e.g. ICASSP
+#   year              edition year (number) shown next to the acronym
+#   abstract_deadline (optional) "YYYY-MM-DD HH:MM" abstract/registration deadline
+#   deadline          "YYYY-MM-DD HH:MM" full paper submission deadline
+#   utc_offset        (optional) deadline timezone as UTC offset in hours.
+#                     OMIT for "Anywhere on Earth" (AoE), which is UTC-12 (default).
+#                     Examples: -5 = US Eastern (EST), 1 = Central Europe (CET).
+#   start             "YYYY-MM-DD" conference start date
+#   end               "YYYY-MM-DD" conference end date
+#   place             city, country  (used for the location line)
+#   url               official conference website
+#   note              (optional) short free-text note shown under the card
+#   ccfddl            (optional) path into the ccfddl/ccf-deadlines dataset,
+#                     e.g. "CG/icassp". Entries with this key are auto-refreshed
+#                     by .github/workflows/update-conferences.yml, which opens a
+#                     PR with proposed updates for review. The refresh overwrites
+#                     the volatile fields (year, deadlines, dates, place, url,
+#                     note) but preserves name/acronym. Entries WITHOUT this
+#                     key (e.g. ARR) are maintained entirely by hand.
+#
+# The page computes live countdowns client-side and sorts by soonest deadline;
+# passed deadlines automatically grey out and drop to the bottom.
+#
+# !! Always verify against the official site before relying on any date. !!
+# -----------------------------------------------------------------------------
+
+- name: IEEE International Conference on Acoustics, Speech and Signal Processing
+  acronym: ICASSP
+  year: 2027
+  ccfddl: CG/icassp
+  deadline: 2026-09-16 23:59
+  start: 2027-05-16
+  end: 2027-05-21
+  place: "Toronto, Canada"
+  url: https://2027.ieeeicassp.org/
+
+- name: Conference of the International Speech Communication Association
+  acronym: Interspeech
+  year: 2026
+  ccfddl: CG/interspeech
+  abstract_deadline: 2026-02-25 23:59
+  deadline: 2026-03-04 23:59
+  utc_offset: 0
+  start: 2026-09-27
+  end: 2026-10-01
+  place: "Sydney, Australia"
+  url: https://interspeech2026.org/
+
+- name: IEEE Spoken Language Technology Workshop
+  acronym: SLT
+  year: 2026
+  ccfddl: CG/slt
+  deadline: 2026-06-17 23:59
+  start: 2026-12-13
+  end: 2026-12-16
+  place: "Palermo, Sicily, Italy"
+  url: https://attend.ieee.org/slt-2026/
+
+- name: IEEE SLT Workshop — Demo, System & Data / Challenge Papers
+  acronym: SLT Demo/Challenge
+  year: 2026
+  deadline: 2026-07-08 23:59
+  start: 2026-12-13
+  end: 2026-12-16
+  place: "Palermo, Sicily, Italy"
+  url: https://attend.ieee.org/slt-2026/call-for-demo-system-and-data-papers/
+  note: "Shared deadline (AoE) for demo/system/data papers and challenge papers; separate from the main SLT paper deadline."
+
+- name: Speech and Audio in the Northeast
+  acronym: SANE
+  year: 2026
+  deadline: 2026-10-10 23:59
+  start: 2026-10-30
+  end: 2026-10-30
+  place: "Cambridge, Massachusetts, USA"
+  url: https://www.saneworkshop.org/sane2026/
+  note: "One-day workshop; date shown is the poster submission deadline (no timezone published — treated as AoE)."
+
+- name: ACL Rolling Review
+  acronym: ARR
+  year: 2026
+  deadline: 2026-08-03 23:59
+  start: TBA
+  end: TBA
+  place: "Online (monthly cycle)"
+  url: https://aclrollingreview.org/dates
+  note: "ARR runs monthly cycles; update to the next submission deadline."
+
+- name: International Conference on Machine Learning
+  acronym: ICML
+  year: 2026
+  ccfddl: AI/icml
+  abstract_deadline: 2026-01-24 11:59
+  deadline: 2026-01-29 11:59
+  utc_offset: 0
+  start: 2026-07-06
+  end: 2026-07-12
+  place: "Seoul, Korea"
+  url: https://icml.cc/Conferences/2026
+  note: "Paper Submissions Open on OpenReview Jan 08 2026 12:00AM UTC-0"
+
+- name: International Conference on Learning Representations
+  acronym: ICLR
+  year: 2026
+  ccfddl: AI/iclr
+  abstract_deadline: 2025-09-19 23:59
+  deadline: 2025-09-24 23:59
+  start: 2026-05-01
+  end: 2026-05-05
+  place: "Brazil"
+  url: https://iclr.cc/Conferences/2026
+
+- name: Conference on Neural Information Processing Systems
+  acronym: NeurIPS
+  year: 2026
+  ccfddl: AI/nips
+  abstract_deadline: 2026-05-05 11:59
+  deadline: 2026-05-07 11:59
+  utc_offset: 0
+  start: 2026-12-06
+  end: 2026-12-06
+  place: "Sydney, Australia"
+  url: https://neurips.cc/Conferences/2026
+
+- name: AAAI Conference on Artificial Intelligence
+  acronym: AAAI
+  year: 2027
+  ccfddl: AI/aaai
+  abstract_deadline: 2026-07-21 23:59
+  deadline: 2026-07-28 23:59
+  start: 2027-02-16
+  end: 2027-02-23
+  place: "Montréal, Québec, Canada"
+  url: https://aaai.org/conference/aaai/aaai-27/
