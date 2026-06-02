@@ -3,8 +3,7 @@ layout: page
 permalink: /conferences/
 title: Conferences
 description: Submission deadlines and dates for conferences the lab follows. Countdowns use your local timezone; deadlines without a timezone are Anywhere-on-Earth (UTC-12).
-nav: true
-order: 11
+nav: false
 ---
 
 <style>
