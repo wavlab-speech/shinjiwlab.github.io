@@ -102,7 +102,14 @@ def main():
         print(f"Processing {name} (scholar_id: {scholar_id})")
         try:
             pubs = fetch_publications(scholar_id)
-            save_publications(member_id, pubs)
+            if pubs:
+                save_publications(member_id, pubs)
+            else:
+                # Google Scholar often soft-blocks scrapers and returns an empty
+                # publication list *without* raising. Never overwrite good data
+                # with nothing — leave the existing YAML file in place.
+                print(f"  No publications returned for {name}; "
+                      "keeping existing data.")
         except Exception as e:
             print(f"  Error fetching publications for {name}: {e}")
 

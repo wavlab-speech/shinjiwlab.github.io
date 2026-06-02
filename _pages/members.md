@@ -156,7 +156,7 @@ order: 1
 }
 
 .member-pubs-section details {
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--global-divider-color);
     border-radius: 4px;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
@@ -179,7 +179,7 @@ order: 1
 }
 
 .member-pubs-section .pub-venue {
-    color: #6c757d;
+    color: var(--global-text-color-light);
     font-style: italic;
 }
 
@@ -211,8 +211,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 {% if pubs.size > 20 %}<p><small><em>Showing 20 of {{ pubs.size }} publications. <a href="https://scholar.google.com/citations?user=qesMX_wAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
@@ -258,8 +258,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 {% if pubs.size > 20 %}<p><small><em>Showing 20 of {{ pubs.size }} publications. <a href="https://scholar.google.com/citations?user=A3lfL0QAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
@@ -334,8 +334,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs_jinchuan limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 </details>
@@ -348,8 +348,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs_william limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 {% if pubs_william.size > 20 %}<p><small><em>Showing 20 of {{ pubs_william.size }} publications. <a href="https://scholar.google.com/citations?user=e89NRb0AAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
@@ -363,8 +363,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs_shikhar limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 </details>
@@ -377,8 +377,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs_chienyu limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 </details>
@@ -394,8 +394,8 @@ order: 1
 {% else %}
 <ol class="pub-list">
 {% for pub in pubs_jaeyeon limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 {% endif %}
@@ -431,8 +431,8 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs_masao limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
 </ol>
 </details>
@@ -517,11 +517,11 @@ order: 1
 </summary>
 <ol class="pub-list">
 {% for pub in pubs_jeeweon limit:20 %}
-<li>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-<span class="pub-venue">{% if pub.venue %}{{ pub.venue }}, {% endif %}{{ pub.year }}</span></li>
+<li>{% assign pub_url = pub.url | strip %}{% assign sch8 = pub_url | slice: 0, 8 | downcase %}{% assign sch7 = pub_url | slice: 0, 7 | downcase %}{% if sch8 == 'https://' or sch7 == 'http://' %}<a href="{{ pub_url | escape }}" target="_blank" rel="noopener noreferrer">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}
+<span class="pub-venue">{% if pub.venue %}{{ pub.venue | escape }}, {% endif %}{{ pub.year | escape }}</span></li>
 {% endfor %}
-{% if pubs_jeeweon.size > 20 %}<p><small><em>Showing 20 of {{ pubs_jeeweon.size }} publications. <a href="https://scholar.google.com/citations?user=A5OcLdAAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
 </ol>
+{% if pubs_jeeweon.size > 20 %}<p><small><em>Showing 20 of {{ pubs_jeeweon.size }} publications. <a href="https://scholar.google.com/citations?user=A5OcLdAAAAAJ" target="_blank" rel="noopener noreferrer">View all on Google Scholar ↗</a></em></small></p>{% endif %}
 </details>
 </div>
 <hr />

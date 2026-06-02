@@ -1,18 +1,23 @@
 name: Update Scholar Publications
 
+# Refreshes the per-member files in _data/scholar_pubs/ from Google Scholar and
+# opens a pull request with the proposed changes for human review. It never
+# pushes to a deploy branch directly — a maintainer reviews and merges.
+
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Run weekly on Sundays at midnight UTC
-  workflow_dispatch:  # Allow manual triggering
+    - cron: '0 0 * * 0'   # every Sunday 00:00 UTC
+  workflow_dispatch: {}    # allow manual runs from the Actions tab
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-publications:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout source branch
         uses: actions/checkout@v4
         with:
           ref: source
@@ -27,12 +32,25 @@ jobs:
 
       - name: Fetch Scholar publications
         run: python3 bin/fetch_scholar.py
-        continue-on-error: true  # Don't fail the workflow if Scholar blocks us
+        continue-on-error: true  # Google Scholar may rate-limit/block the scraper
 
-      - name: Commit and push updated data
-        run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/scholar_pubs/
-          git diff --staged --quiet || git commit -m "Update Scholar publications data [skip ci]"
-          git push origin source
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: source
+          branch: bot/update-scholar-pubs
+          delete-branch: true
+          add-paths: _data/scholar_pubs/
+          commit-message: "chore: refresh member publications from Google Scholar"
+          title: "Update member publications from Google Scholar"
+          labels: automated
+          body: |
+            Automated refresh of `_data/scholar_pubs/*.yml` from Google Scholar
+            (via `bin/fetch_scholar.py`).
+
+            **Please review the diff before merging.** Google Scholar metadata is
+            community-sourced and the scraper can be rate-limited, so titles,
+            venues, and links may be incomplete or wrong. Empty fetches are
+            skipped (existing data is preserved), but verify any large drops in a
+            member's publication count. If there is nothing to update, no PR is
+            created.
