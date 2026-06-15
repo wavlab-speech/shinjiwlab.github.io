@@ -41,13 +41,25 @@
   end: 2027-05-21
   place: "Toronto, Canada"
   url: https://2027.ieeeicassp.org/
+  
+- name: Conference of the International Speech Communication Association
+  acronym: Interspeech
+  year: 2027
+  ccfddl: CG/interspeech
+  abstract_deadline: 2026-02-12 23:59
+  deadline: 2026-02-19 23:59
+  utc_offset: 0
+  start: 2027-08-29
+  end: 2027-09-02
+  place: "São Paulo, Brazil"
+  url: https://interspeech2027.org/
 
 - name: Conference of the International Speech Communication Association
   acronym: Interspeech
   year: 2026
   ccfddl: CG/interspeech
-  abstract_deadline: 2026-02-12 23:59
-  deadline: 2026-02-19 23:59
+  abstract_deadline: 2025-02-17 23:59
+  deadline: 2025-02-25 23:59
   utc_offset: 0
   start: 2026-09-27
   end: 2026-10-01
