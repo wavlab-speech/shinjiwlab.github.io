@@ -58,7 +58,8 @@
   acronym: SLT
   year: 2026
   ccfddl: CG/slt
-  deadline: 2026-06-17 23:59
+  abstract_deadline: 2026-06-17 23:59
+  deadline: 2026-06-24 23:59
   start: 2026-12-13
   end: 2026-12-16
   place: "Palermo, Sicily, Italy"
