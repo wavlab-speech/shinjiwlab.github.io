@@ -46,7 +46,8 @@
   acronym: Interspeech
   year: 2026
   ccfddl: CG/interspeech
-  deadline: 2026-02-25 23:59
+  abstract_deadline: 2026-02-12 23:59
+  deadline: 2026-02-19 23:59
   utc_offset: 0
   start: 2026-09-27
   end: 2026-10-01
