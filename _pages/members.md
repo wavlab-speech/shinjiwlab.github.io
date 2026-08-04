@@ -265,8 +265,22 @@ order: 1
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
+      <div class="square">
+        <a href="https://masao-someki.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/msomeki.png">
+        </a></div>
+        <div class="caption">
+            Masao Someki
+        </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
+      <div class="square">
+        <a href="https://chinjouli.github.io/mysite" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chinjou.jpg">
+        </a></div>
+        <div class="caption">
+            Chin-Jou Li
+        </div>
     </div>
 </div>
 <hr />
@@ -275,11 +289,11 @@ order: 1
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
       <div class="square">
-        <a href="https://masao-someki.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/msomeki.png">
+        <a href="https://whr-a.github.io/" target="_blank" rel="noopener noreferrer">
+            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haoran.jpg">
         </a></div>
         <div class="caption">
-            Masao Someki
+            Haoran Wang
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
@@ -310,23 +324,6 @@ order: 1
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-	  <div class="square">
-          <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photo-dahee.jpg">
-        </div>
-        <div class="caption">
-            Dahee Yang
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://chinjouli.github.io/mysite" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chinjou.jpg">
-        </a></div>
-        <div class="caption">
-            Chin-Jou Li
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
       <div class="square">
         <a href="https://www.linkedin.com/in/thanapat-trachu-602551227/" target="_blank" rel="noopener noreferrer">
           <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/thanapat.jpg">
@@ -343,6 +340,10 @@ order: 1
         <div class="caption">
             Kuang-Da Wang
         </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
     </div>
 </div>
 <hr />
@@ -420,6 +421,7 @@ order: 1
 
 ##### Visitors & Collaborators
 <ul>
+<li>2026. 02 - 2026. 07: Dahee Yang (Hanyang University) </li>
 <li>2026. 01 - 2026. 05: Alexander Polok (Brno University of Technology) </li>
 <li>2025. 12 - 2026. 03: Xun Gong (Shanghai Jiao Tong University) </li>
 <li>2025. 08 - 2025. 12: Haoran Wang (Shanghai Jiao Tong University) </li>
