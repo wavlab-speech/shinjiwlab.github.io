@@ -232,7 +232,7 @@ order: 1
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/shikhar.png">
         </a></div>
         <div class="caption">
-            Shikhar Bharadwaj
+            Shikhar Bharadwaj (co-supervising)
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
@@ -279,7 +279,7 @@ order: 1
             <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chinjou.jpg">
         </a></div>
         <div class="caption">
-            Chin-Jou Li
+            Chin-Jou Li (co-supervising)
         </div>
     </div>
 </div>
