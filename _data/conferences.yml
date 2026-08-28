@@ -46,8 +46,7 @@
   acronym: Interspeech
   year: 2026
   ccfddl: CG/interspeech
-  abstract_deadline: 2026-02-12 23:59
-  deadline: 2026-02-19 23:59
+  deadline: 2026-02-25 23:59
   utc_offset: 0
   start: 2026-09-27
   end: 2026-10-01
@@ -109,14 +108,14 @@
 
 - name: International Conference on Learning Representations
   acronym: ICLR
-  year: 2026
+  year: 2027
   ccfddl: AI/iclr
-  abstract_deadline: 2025-09-19 23:59
-  deadline: 2025-09-24 23:59
-  start: 2026-05-01
-  end: 2026-05-05
-  place: "Brazil"
-  url: https://iclr.cc/Conferences/2026
+  abstract_deadline: 2026-09-18 23:59
+  deadline: 2026-09-25 23:59
+  start: 2027-04-26
+  end: 2027-04-30
+  place: "San Francisco, CA, USA"
+  url: https://iclr.cc/Conferences/2027
 
 - name: Conference on Neural Information Processing Systems
   acronym: NeurIPS
@@ -134,8 +133,8 @@
   acronym: AAAI
   year: 2027
   ccfddl: AI/aaai
-  abstract_deadline: 2026-07-20 23:59
-  deadline: 2026-07-27 23:59
+  abstract_deadline: 2026-07-21 23:59
+  deadline: 2026-07-28 23:59
   start: 2027-02-16
   end: 2027-02-23
   place: "Montréal, Québec, Canada"
