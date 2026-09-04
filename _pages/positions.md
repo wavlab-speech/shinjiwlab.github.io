@@ -43,6 +43,7 @@ Please see the following for details of each application category.
 - [ ] &nbsp; Students who are interested in these opportunities should fill out **[this form](https://docs.google.com/forms/d/1AE-MMtqXpdPG07U6nnNfp9N2abJrI54XeVIshkyrwng/)**
   - If you fail to do so, we regard that you do not thoroughly investigate our lab's activities on this webpage, and unfortunately, we may not respond to your application.
   - The form will request your CV. Note that your CV will be shared with other lab members (but we do not distribute it outside).
+  - If we find a good match between your background and our expertise, we will connect you with our lab menbers and arrange an interview.
 - [ ] &nbsp; Please be prepared to present your past research clearly during the interview. A short slide presentation is very appreciated but not mandatory.
 - [ ] &nbsp; Please refer to the FAQ to learn more about the interview and admission process. 
 
