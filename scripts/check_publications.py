@@ -9,6 +9,7 @@ exits 1 when there is work to do, so the weekly workflow can branch on it.
 
 Usage:
     python scripts/check_publications.py                 # report to stdout
+    python scripts/check_publications.py --review        # edit and write papers.bib
     python scripts/check_publications.py --report out.md # report to a file
     python scripts/check_publications.py --fixture f.html
     python scripts/check_publications.py --selftest
@@ -19,10 +20,17 @@ from __future__ import annotations
 import argparse
 import difflib
 import gzip
+import hashlib
+import http.server
+import json
+import os
 import re
+import subprocess
 import sys
+import threading
 import time
 import unicodedata
+import webbrowser
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -138,6 +146,29 @@ VENUE_MAP: list[tuple[str, str, str | None, str]] = [
     (r"Speech Communication", "article", "{Speech Communication}", "SpeechCom"),
     (r"Signal Processing Magazine", "article", "{IEEE Signal Processing Magazine}", "SPM"),
 ]
+
+
+# The review page offers venues by label. One choice sets the entry type, the
+# field name and whether the value is a bare @string macro or a braced literal.
+# Those three move together, which is what makes `booktitle=IWSLTT` (an
+# undefined macro, rendered "In iwsltt 2022" for months) and `@article` with a
+# `booktitle` (which renders no venue at all) impossible to express here.
+#   label -> (entry type, field, value, braced, abbr_publisher)
+VENUE_BY_LABEL: dict[str, tuple[str, str, str, bool, str]] = {}
+for _pattern, _kind, _value, _abbr in VENUE_MAP:
+    if _value is None:
+        continue
+    _label = "EMNLP Findings" if _value == "{Proceedings of Findings of EMNLP}" else _abbr
+    if _label in VENUE_BY_LABEL:
+        continue
+    _braced = _value.startswith("{")
+    VENUE_BY_LABEL[_label] = (
+        _kind,
+        "journal" if _kind == "article" else "booktitle",
+        _value.strip("{}") if _braced else _value,
+        _braced,
+        _abbr,
+    )
 
 
 # ---------------------------------------------------------------- normalising
@@ -399,6 +430,299 @@ def uppercase_ratio(text: str) -> float:
     return sum(1 for c in letters if c.isupper()) / len(letters)
 
 
+# ------------------------------------------------------------------- writing
+
+class WriteRefused(Exception):
+    """A check failed. The tool did not change papers.bib."""
+
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def build_entry(card: dict, vocab: list[str]) -> str:
+    """Turn one completed card into the BibTeX text that goes into papers.bib.
+
+    Raises WriteRefused with a message meant for the person, not the log.
+    """
+    title = collapse(card.get("title", ""))
+    if len(title) < 10:
+        raise WriteRefused("The title is too short.")
+
+    abbr = [a for a in card.get("abbr", []) if a in vocab]
+    if not abbr:
+        raise WriteRefused(f"{title[:40]}: choose at least one topic.")
+    # Fixed order, so ASR&SSL and SSL&ASR can never both exist.
+    abbr.sort(key=vocab.index)
+
+    venue = card.get("venue")
+    if venue not in VENUE_BY_LABEL:
+        raise WriteRefused(f"{title[:40]}: unknown venue {venue!r}.")
+    kind, field, value, braced, publisher = VENUE_BY_LABEL[venue]
+
+    try:
+        year = int(card.get("year"))
+    except (TypeError, ValueError):
+        raise WriteRefused(f"{title[:40]}: the year is missing.")
+    if not YEAR_SANE[0] <= year <= YEAR_SANE[1]:
+        raise WriteRefused(f"{title[:40]}: {year} is not a plausible year.")
+
+    authors = collapse(card.get("authors", ""))
+    if " and " not in authors and len(authors) < 4:
+        raise WriteRefused(f"{title[:40]}: the author list is empty.")
+
+    lines = [f"@{kind}{{{card['citekey']},",
+             f"  abbr={{{'&'.join(abbr)}}},",
+             f"  abbr_publisher={{{publisher}}},",
+             f"  title={{{title}}},",
+             f"  author={{{authors}}},",
+             f"  {field}={'{' + value + '}' if braced else value},",
+             f"  year={{{year}}},"]
+    for name in ("arxiv", "code", "html", "pdf"):
+        raw = collapse(card.get("links", {}).get(name, ""))
+        if not raw:
+            continue
+        if name == "arxiv":
+            # A URL here builds http://arxiv.org/abs/<url>, a dead link. It
+            # shipped three times before #289 caught it.
+            bare = re.sub(r"^.*?arxiv\.org/(?:abs|pdf)/", "", raw)
+            bare = bare[:-4] if bare.endswith(".pdf") else bare
+            if not re.fullmatch(r"\d{4}\.\d{4,5}(v\d+)?", bare):
+                raise WriteRefused(f"{title[:40]}: the arxiv field needs a bare id, for example 2105.01051.")
+            raw = bare
+        elif not raw.startswith(("http://", "https://")):
+            # Without a scheme the template prepends /assets/pdf/ and 404s.
+            raise WriteRefused(f"{title[:40]}: the {name} link needs http:// or https://.")
+        lines.append(f"  {name}={{{raw}}},")
+    if card.get("selected"):
+        lines.append("  selected={true},")
+    lines.append("}")
+
+    entry = "\n".join(lines)
+    if entry.count("{") != entry.count("}"):
+        raise WriteRefused(f"{title[:40]}: a field has an unbalanced brace.")
+    return entry
+
+
+def unique_citekey(base: str, taken: set[str], title: str) -> str:
+    """A key nobody else uses.
+
+    A collision is not an error in BibTeX: jekyll-scholar increments the last
+    character of the second key, and that key is the entry's HTML anchor. Six
+    such pairs were fixed in #290, so this refuses to make more.
+    """
+    if base not in taken:
+        return base
+    words = [w for w in re.sub(r"[^a-z0-9 ]", " ", title.lower()).split()
+             if w not in STOPWORDS and len(w) > 2 and w not in base]
+    for word in words:
+        if base + word not in taken:
+            return base + word
+    for n in range(2, 50):
+        if f"{base}{n}" not in taken:
+            return f"{base}{n}"
+    raise WriteRefused(f"Cannot find a free citation key near {base!r}.")
+
+
+def splice(original: str, entries: list[tuple[int, str]]) -> str:
+    """Insert each entry at the head of its year block.
+
+    Insert only. Never parse the file and write it back out: a round trip
+    through the parser would drop the 11 `selected` flags, every `abbr` badge
+    and every link field, and turn a three-line change into a 4,500-line diff.
+    """
+    text = original
+    for year, entry in sorted(entries, key=lambda e: e[0]):
+        at = None
+        for match in re.finditer(r"(?m)^@(?!string)\w+\{", text):
+            chunk = text[match.start():match.start() + 900]
+            found = re.search(r"year\s*=\s*\{?(\d{4})", chunk)
+            if found and int(found.group(1)) < year:
+                at = match.start()
+                break
+        if at is None:                       # older than everything in the file
+            at = len(text.rstrip("\n")) + 1
+            text = text.rstrip("\n") + "\n\n" + entry + "\n"
+            continue
+        text = text[:at] + entry + "\n\n" + text[at:]
+    return text
+
+
+def write_papers_bib(entries: list[tuple[int, str]], expect_digest: str) -> dict:
+    """Write papers.bib, or raise and leave it exactly as it was."""
+    if digest(BIB) != expect_digest:
+        raise WriteRefused(
+            "Another program changed papers.bib after this page opened. "
+            "The tool wrote nothing. Reload the page to start again.")
+
+    before = BIB.read_text(encoding="utf-8")
+    n_before = len(parse_bib(BIB))
+    after = splice(before, entries)
+
+    backup = BIB.with_suffix(".bib.bak")
+    backup.write_text(before, encoding="utf-8")
+
+    # Same directory, so os.replace is atomic. A crash mid-write leaves the
+    # original file untouched rather than a truncated one.
+    tmp = BIB.with_suffix(".bib.tmp")
+    with tmp.open("w", encoding="utf-8") as handle:
+        handle.write(after)
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(tmp, BIB)
+
+    try:
+        records = parse_bib(BIB)
+        keys = [r["citekey"] for r in records]
+        if len(records) != n_before + len(entries):
+            raise WriteRefused(
+                f"papers.bib now holds {len(records)} entries. "
+                f"The tool expected {n_before + len(entries)}.")
+        if len(set(keys)) != len(keys):
+            duplicated = {k for k in keys if keys.count(k) > 1}
+            raise WriteRefused(
+                f"These citation keys now occur more than once: {duplicated}.")
+    except Exception:
+        os.replace(backup, BIB)
+        raise
+    try:
+        shown = str(backup.relative_to(ROOT))
+    except ValueError:                       # a test copy outside the repo
+        shown = str(backup)
+    return {"written": len(entries), "entries": n_before + len(entries),
+            "backup": shown}
+
+
+# ------------------------------------------------------------------- serving
+
+PAGE = ROOT / "scripts" / "review_page.html"
+
+
+def git(*args: str) -> str:
+    try:
+        done = subprocess.run(("git",) + args, cwd=str(ROOT),
+                              capture_output=True, text=True, timeout=10)
+        return done.stdout.strip() if done.returncode == 0 else ""
+    except Exception:
+        return ""
+
+
+def build_payload(missing: list[tuple[dict, tuple[float, dict] | None]],
+                  records: list[dict], vocab: list[str]) -> dict:
+    """Everything the page needs, decided here rather than in the browser."""
+    taken = {r["citekey"] for r in records}
+    papers = []
+    for index, (entry, suspect) in enumerate(missing):
+        kind, venue, publisher = map_venue(entry["section"], entry["rest"])
+        year = entry["year"] or year_from_venue(entry["rest"])
+        authors = format_authors(entry["authors"])
+        key = unique_citekey(
+            make_citekey(authors, year, entry["title"]).replace("TODO_", ""),
+            taken, entry["title"])
+        taken.add(key)
+        papers.append({
+            "id": f"p{index}",
+            "citekey": key,
+            "title": entry["title"],
+            "authors": authors,
+            "rest": entry["rest"],
+            "venue": publisher if publisher in VENUE_BY_LABEL else "",
+            "year": year,
+            "duplicate": ({"citekey": suspect[1]["citekey"],
+                           "line": suspect[1]["line"],
+                           "score": round(suspect[0], 2)} if suspect else None),
+        })
+    return {
+        "papers": papers,
+        "vocab": vocab,
+        "common": VOCAB_COMMON,
+        "venues": {k: list(v) for k, v in VENUE_BY_LABEL.items()},
+        "entries": len(records),
+        "digest": digest(BIB),
+        "branch": git("rev-parse", "--abbrev-ref", "HEAD") or "unknown",
+        "dirty": bool(git("status", "--porcelain", "--", str(BIB))),
+    }
+
+
+def serve_review(payload: dict, vocab: list[str]) -> int:
+    """Serve the review page on the loopback address until one write happens."""
+    if not PAGE.exists():
+        print(f"error: page template not found: {PAGE}", file=sys.stderr)
+        return 2
+    template = PAGE.read_text(encoding="utf-8")
+    outcome = {"code": 1}
+
+    class Handler(http.server.BaseHTTPRequestHandler):
+        def log_message(self, *_args):        # keep the terminal readable
+            pass
+
+        def _send(self, code, body: bytes, ctype: str):
+            self.send_response(code)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_GET(self):
+            if self.path not in ("/", "/index.html"):
+                self._send(404, b"not found", "text/plain; charset=utf-8")
+                return
+            page = template.replace("__DATA__", json.dumps(payload))
+            self._send(200, page.encode("utf-8"), "text/html; charset=utf-8")
+
+        def do_POST(self):
+            if self.path != "/commit":
+                self._send(404, b"not found", "text/plain; charset=utf-8")
+                return
+            length = int(self.headers.get("Content-Length") or 0)
+            try:
+                body = json.loads(self.rfile.read(length) or b"{}")
+                cards = body.get("cards") or []
+                if not cards:
+                    raise WriteRefused("No paper is ready.")
+                entries = []
+                for card in cards:
+                    entries.append((int(card["year"]), build_entry(card, vocab)))
+                result = write_papers_bib(entries, body.get("digest", ""))
+            except WriteRefused as refusal:
+                self._send(409, json.dumps({"error": str(refusal)}).encode(),
+                           "application/json; charset=utf-8")
+                return
+            except Exception as exc:          # a bug here must not damage the file
+                self._send(500, json.dumps({"error": f"{type(exc).__name__}: {exc}"}).encode(),
+                           "application/json; charset=utf-8")
+                return
+            self._send(200, json.dumps(result).encode(),
+                       "application/json; charset=utf-8")
+            print(f"\nwrote {result['written']} entries to "
+                  f"_bibliography/papers.bib ({result['entries']} total)")
+            print(f"backup: {result['backup']}")
+            print("\nread the change before you push:")
+            print("  git diff _bibliography/papers.bib")
+            print("\nthe tool checked the structure. please check the facts:")
+            print("  the title, the venue, the year and the topic")
+            print("\nto undo:")
+            print("  git checkout -- _bibliography/papers.bib")
+            outcome["code"] = 0
+            threading.Thread(target=server.shutdown, daemon=True).start()
+
+    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    url = f"http://127.0.0.1:{server.server_address[1]}/"
+    print(f"review page: {url}")
+    if payload["dirty"]:
+        print("note: papers.bib already has uncommitted changes", file=sys.stderr)
+    if payload["branch"] in ("master", "main"):
+        print(f"note: you are on branch {payload['branch']}", file=sys.stderr)
+    threading.Timer(0.4, lambda: webbrowser.open(url)).start()
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nthe tool stopped. it wrote nothing.")
+    finally:
+        server.server_close()
+    return outcome["code"]
+
+
 # ----------------------------------------------------------------- self-test
 
 def selftest(fixture: Path) -> int:
@@ -489,6 +813,68 @@ def selftest(fixture: Path) -> int:
     assert format_authors("A B, C D, and E F") == "A B and C D and E F"
     assert "Member" not in format_authors("A B, Member, and C D")
     print("  ok  author formatter normalises separators")
+
+    # --- the write path -------------------------------------------------
+    vocab_all = abbr_vocabulary(records)
+    card = {"citekey": "probe2026test", "title": "A Probe Entry For The Write Path",
+            "authors": "Test Author and Shinji Watanabe", "abbr": ["SSL", "ASR"],
+            "venue": "Interspeech", "year": 2026, "links": {}, "selected": False}
+    entry = build_entry(card, vocab_all)
+    assert "abbr={ASR&SSL}" in entry, entry      # fixed order, never SSL&ASR
+    assert "booktitle=interspeech," in entry     # bare macro, not braced
+    assert "{interspeech}" not in entry
+    assert "journal" not in entry                # a conference is @inproceedings
+    print("  ok  a completed card renders with fixed topic order and a bare macro")
+
+    refusals = [
+        ({**card, "abbr": []}, "no topic"),
+        ({**card, "year": None}, "no year"),
+        ({**card, "year": 2099}, "implausible year"),
+        ({**card, "venue": "NoSuchVenue"}, "unknown venue"),
+        ({**card, "abbr": ["NotAReal Topic"]}, "topic outside the vocabulary"),
+        ({**card, "title": "unbalanced { brace in the title here"}, "unbalanced brace"),
+        ({**card, "links": {"pdf": "example.com/a.pdf"}}, "link without a scheme"),
+        ({**card, "links": {"arxiv": "not-an-id"}}, "arxiv that is not an id"),
+    ]
+    for bad, why in refusals:
+        try:
+            build_entry(bad, vocab_all)
+        except WriteRefused:
+            continue
+        raise AssertionError(f"build_entry accepted a card with {why}")
+    print(f"  ok  {len(refusals)} malformed cards refused before any write")
+
+    # A URL in `arxiv` built http://arxiv.org/abs/<url> and shipped three dead
+    # links before #289. It is stripped to a bare id now.
+    stripped = build_entry({**card, "links": {"arxiv": "https://arxiv.org/abs/2105.01051v2"}},
+                           vocab_all)
+    assert "arxiv={2105.01051v2}," in stripped, stripped
+    print("  ok  an arxiv URL is reduced to a bare id")
+
+    # Splice inserts and never rewrites: every existing entry must come back
+    # byte-identical, or a three-line change becomes a 4,500-line diff.
+    original = BIB.read_text(encoding="utf-8")
+
+    def entry_chunks(text: str) -> list[str]:
+        return [c for c in re.split(r"\n(?=@)", text)
+                if c.lstrip().startswith("@")
+                and not c.lstrip().lower().startswith("@string")]
+
+    before_chunks = entry_chunks(original)
+    spliced = splice(original, [(2026, entry), (2019, entry.replace("probe2026test", "probe2019test"))])
+    after_chunks = entry_chunks(spliced)
+    after_set = set(after_chunks)
+    assert len(after_chunks) == len(before_chunks) + 2, len(after_chunks)
+    changed = [c for c in before_chunks if c not in after_set]
+    assert not changed, f"{len(changed)} existing entries were modified by splice"
+    years = [int(m.group(1)) if (m := re.search(r"year\s*=\s*\{?(\d{4})", c)) else 0
+             for c in after_chunks]
+    at = next(i for i, c in enumerate(after_chunks) if "probe2026test" in c)
+    assert years[at - 1] >= 2026 >= years[at + 1], (years[at - 1], years[at + 1])
+    print("  ok  splice inserts in the right year block and leaves every entry unchanged")
+
+    assert unique_citekey("taken", {"taken"}, "A Distinctive Title Here") != "taken"
+    print("  ok  a colliding citation key is given a new name")
     print("\nself-test passed")
     return 0
 
@@ -586,6 +972,8 @@ def main() -> int:
     ap.add_argument("--min-year", type=int, default=MIN_YEAR)
     ap.add_argument("--report", type=Path,
                     help="write the Markdown report here instead of to stdout")
+    ap.add_argument("--review", action="store_true",
+                    help="open the review page and write completed entries into papers.bib")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
 
@@ -615,7 +1003,12 @@ def main() -> int:
     print(f"=> {len(missing)} missing ({suspects} need a duplicate check)",
           file=sys.stderr)
 
-    text = report(missing, abbr_vocabulary(records))
+    vocab = abbr_vocabulary(records)
+
+    if args.review:
+        return serve_review(build_payload(missing, records, vocab), vocab)
+
+    text = report(missing, vocab)
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(text, encoding="utf-8")

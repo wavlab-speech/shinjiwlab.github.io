@@ -11,3 +11,6 @@ vendor
 .jekyll-cache
 __pycache__/
 *.pyc
+
+# the review tool writes a backup next to papers.bib before it edits it
+*.bak
