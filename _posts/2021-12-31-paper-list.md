@@ -7,9 +7,6 @@ comments: false
 ---
 
 <div class="publications">
-
-
-  <h2 class="year">{{y}}</h2>
   {% bibliography -f papers -q @*[year=2021]* %}
 
 </div>
