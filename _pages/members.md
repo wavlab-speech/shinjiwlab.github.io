@@ -155,177 +155,186 @@ order: 1
     position:absolute;
 }
 
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+    /* Without this, grid items stretch to the tallest card in the row, so
+       expanding one member's publication list inflates every sibling card
+       into a tall empty box. */
+    align-items: start;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--global-divider-color, rgba(128, 128, 128, 0.25));
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    background-color: var(--global-bg-color);
+}
+
+.member-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.member-card-photo {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.member-card-info {
+    min-width: 0;
+}
+
+.member-card-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.member-card-note {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+}
+
+.member-card-links {
+    margin-top: 0.3rem;
+    font-size: 0.82rem;
+}
+
+.member-card-links a {
+    color: var(--global-theme-color);
+    margin-right: 0.7rem;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.member-card-links a:hover {
+    text-decoration: underline;
+}
+
+.member-pubs {
+    margin-top: 0.85rem;
+}
+
+.member-pubs > summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    list-style: none;
+}
+
+.member-pubs > summary::-webkit-details-marker {
+    display: none;
+}
+
+.member-pubs > summary::before {
+    content: "▸ ";
+}
+
+.member-pubs[open] > summary::before {
+    content: "▾ ";
+}
+
+.member-pubs .pub-count {
+    color: var(--global-theme-color);
+}
+
+.pub-list {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    margin: 0.6rem 0 0;
+    font-size: 0.85rem;
+}
+
+.pub-list li {
+    margin-bottom: 0.45rem;
+    line-height: 1.4;
+}
+
+.pub-venue {
+    color: var(--global-text-color-light);
+    font-style: italic;
+}
+
+.pub-more,
+.pub-none {
+    margin-top: 0.5rem;
+    color: var(--global-text-color-light);
+}
+
+.pub-disclaimer {
+    /* The theme zeroes h4 margin-top, so the bottom margin here is the only
+       thing separating this block from the "Faculty" heading. Every other
+       section heading gets its clearance from the <hr /> above it. */
+    margin: 1.5rem 0 2.25rem;
+    padding: 0.7rem 0.9rem;
+    border-left: 3px solid var(--global-theme-color);
+    border-radius: 0 6px 6px 0;
+    background-color: var(--global-code-bg-color, rgba(128, 128, 128, 0.07));
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+}
+
+.pub-disclaimer a {
+    color: var(--global-theme-color);
+}
+
 </style>
 
+<p class="pub-disclaimer">
+The publication list under each member is fetched automatically from
+<a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+and shows only that member's most recent papers, so it may be incomplete or
+out of date, and titles and venues are not always correct. For an accurate and
+complete list, please see each member's own website or Google Scholar profile,
+linked on their card. The lab's curated list of papers is on the
+<a href="{{ site.baseurl }}/publications/">Publications</a> page.
+</p>
 
 #### Faculty
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-1" style="display:table-cell; vertical-align:middle; text-align:center">
-    	<a href="https://sites.google.com/view/shinjiwatanabe" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/shinji_20210605.jpg">
-        </a>
-        <div class="caption">
-            Shinji Watanabe
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
+
+<div class="member-grid">
+{%- assign faculty = site.data.members | where: "role", "faculty" -%}
+{% for m in faculty %}{% include member_card.html member=m %}{% endfor %}
 </div>
 <hr />
 
 #### Post-Doc
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-1">
-    <div class="square">
-    <a href="https://github.com/popcornell" target="_blank" rel="noopener noreferrer">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/samuele.jpg">
-    </a></div>
-        <div class="caption">
-            Samuele Cornell
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
-    </div>
-    <div class="col-sm mt-3 mt-md-1">
-    </div>
+
+<div class="member-grid">
+{%- assign postdocs = site.data.members | where: "role", "postdoc" -%}
+{% for m in postdocs %}{% include member_card.html member=m %}{% endfor %}
 </div>
-<!-- <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-1">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-</div> -->
 <hr />
 
 
 #### PhD Students
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jinchuan.jpg">
-        </a></div>
-        <div class="caption">
-            Jinchuan Tian
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://wanchichen.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/william_chen.png">
-        </a></div>
-        <div class="caption">
-            William Chen
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://shikhar-s.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/shikhar.png">
-        </a></div>
-        <div class="caption">
-            Shikhar Bharadwaj (co-supervising)
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://cyhuang-tw.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chienyu.png">
-        </a></div>
-        <div class="caption">
-            Chien-yu Huang
-        </div>
-    </div>
-</div>
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://jaeyeonkim99.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jaeyeon.jpg">
-        </a></div>
-        <div class="caption">
-            Jaeyeon Kim (co-supervising)
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://chenehk.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/sichen.png">
-        </a></div>
-        <div class="caption">
-            Sichen Jin
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://masao-someki.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/msomeki.png">
-        </a></div>
-        <div class="caption">
-            Masao Someki
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://chinjouli.github.io/mysite" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/chinjou.jpg">
-        </a></div>
-        <div class="caption">
-            Chin-Jou Li (co-supervising)
-        </div>
-    </div>
-</div>
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://scholar.google.com/citations?user=eGfZvOkAAAAJ" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/justin.png">
-        </a></div>
-        <div class="caption">
-            Ting (Justin) Jiang
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://kimhaeri.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haeri.jpg">
-        </a></div>
-        <div class="caption">
-            Haeri Kim (co-supervising)
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
+
+<div class="member-grid">
+{%- assign phds = site.data.members | where: "role", "phd" -%}
+{% for m in phds %}{% include member_card.html member=m %}{% endfor %}
 </div>
 <hr />
 
 #### Master Students
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://whr-a.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/haoran.jpg">
-        </a></div>
-        <div class="caption">
-            Haoran Wang
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
+
+<div class="member-grid">
+{%- assign masters = site.data.members | where: "role", "master" -%}
+{% for m in masters %}{% include member_card.html member=m %}{% endfor %}
 </div>
 
 <hr />
@@ -345,51 +354,17 @@ order: 1
 
 #### Visitors
 
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-      <div class="square">
-        <a href="https://www.linkedin.com/in/thanapat-trachu-602551227/" target="_blank" rel="noopener noreferrer">
-          <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/thanapat.jpg">
-        </a></div>
-        <div class="caption">
-            Thanapat Trachu
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-	  <div class="square">
-        <a href="https://kuangdw.github.io/" target="_blank" rel="noopener noreferrer">
-          <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photo-kuangda.jpg">
-        </a></div>
-        <div class="caption">
-            Kuang-Da Wang
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
+<div class="member-grid">
+{%- assign visitors = site.data.members | where: "role", "visitor" -%}
+{% for m in visitors %}{% include member_card.html member=m %}{% endfor %}
 </div>
 <hr />
 
 #### Industrial Collaborators
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <div class="square">
-        <a href="https://jungjee.github.io/" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/jeeweon.png">
-        </a></div>
-        <div class="caption">
-            Jee-weon Jung
-        </div>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-    </div>
+<div class="member-grid">
+{%- assign industrial = site.data.members | where: "role", "industrial" -%}
+{% for m in industrial %}{% include member_card.html member=m %}{% endfor %}
 </div>
 <hr />
 

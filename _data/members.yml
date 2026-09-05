@@ -1,0 +1,151 @@
+# The current members of the lab. The file _includes/member_card.html shows
+# each member as a card on the /members/ page.
+#
+# TO ADD A MEMBER: add an entry below. Put the photo in assets/img/.
+# Do this only. Do not make a file in _data/scholar_pubs/.
+# The new card comes on the page immediately. The card shows
+# "No publications listed yet". The next run of bin/fetch_scholar.py makes
+# the publication file for the new member.
+#
+# For the full procedure, and for the pull request steps, read
+# docs/adding-a-member.md
+#
+#   id          Necessary. A unique name. The data file
+#               _data/scholar_pubs/<id>.yml uses this name also.
+#   name        Necessary. The card shows this name.
+#   role        Necessary. This field selects the group on the page.
+#               Use one of these six values:
+#               faculty | postdoc | phd | master | visitor | industrial
+#               CAUTION: an incorrect value removes the member from the page.
+#               The build does not fail, and you get no error message.
+#   scholar_id  Optional. The 12 characters from the Google Scholar address
+#               (scholar.google.com/citations?user=THIS_PART). Without this
+#               field, the site gets no publications. The card also shows no
+#               Google Scholar link.
+#   website     Optional. The address must start with http:// or https://.
+#               The card removes all other addresses.
+#   image       Optional. The name of a photo file in assets/img/.
+#   note        Optional. The card shows this text in parentheses after the
+#               name. Example: co-supervising.
+#
+# The sequence in each role is the sequence on the page.
+#
+# WHEN A MEMBER LEAVES: delete the entry below. Delete the file
+# _data/scholar_pubs/<id>.yml also. Then add the member to the Alumni list in
+# _pages/members.md.
+
+- id: shinji_watanabe
+  name: Shinji Watanabe
+  role: faculty
+  scholar_id: U5xRA6QAAAAJ
+  website: https://sites.google.com/view/shinjiwatanabe
+  image: shinji_20210605.jpg
+
+- id: samuele_cornell
+  name: Samuele Cornell
+  role: postdoc
+  scholar_id: A3lfL0QAAAAJ
+  website: https://github.com/popcornell
+  image: samuele.jpg
+
+- id: jinchuan_tian
+  name: Jinchuan Tian
+  role: phd
+  scholar_id: KE5I4R0AAAAJ
+  website: https://jctian98.github.io/
+  image: jinchuan.jpg
+
+- id: william_chen
+  name: William Chen
+  role: phd
+  scholar_id: e89NRb0AAAAJ
+  website: https://wanchichen.github.io/
+  image: william_chen.png
+
+- id: shikhar_bharadwaj
+  name: Shikhar Bharadwaj
+  role: phd
+  scholar_id: pbU47_MAAAAJ
+  website: https://shikhar-s.github.io/
+  image: shikhar.png
+  note: co-supervising
+
+- id: chienyu_huang
+  name: Chien-yu Huang
+  role: phd
+  scholar_id: 1Xfc3ikAAAAJ
+  website: https://cyhuang-tw.github.io/
+  image: chienyu.png
+
+- id: jaeyeon_kim
+  name: Jaeyeon Kim
+  role: phd
+  scholar_id: 2Yi8qMIAAAAJ
+  website: https://jaeyeonkim99.github.io/
+  image: jaeyeon.jpg
+  note: co-supervising
+
+- id: sichen_jin
+  name: Sichen Jin
+  role: phd
+  scholar_id: OwO5VXMAAAAJ
+  website: https://chenehk.github.io/
+  image: sichen.png
+
+- id: masao_someki
+  name: Masao Someki
+  role: phd
+  scholar_id: _aVVkVsAAAAJ
+  website: https://masao-someki.github.io/
+  image: msomeki.png
+
+
+- id: chinjou_li
+  name: Chin-Jou Li
+  role: phd
+  scholar_id: tU4UHFAAAAAJ
+  website: https://chinjouli.github.io/mysite
+  image: chinjou.jpg
+  note: co-supervising
+
+- id: ting_jiang
+  name: Ting (Justin) Jiang
+  role: phd
+  scholar_id: eGfZvOkAAAAJ
+  image: justin.png
+
+- id: haeri_kim
+  name: Haeri Kim
+  role: phd
+  scholar_id: YVhT8sEAAAAJ
+  website: https://kimhaeri.github.io/
+  image: haeri.jpg
+  note: co-supervising
+
+- id: haoran_wang
+  name: Haoran Wang
+  role: master
+  scholar_id: slH6TeAAAAAJ
+  website: https://whr-a.github.io/
+  image: haoran.jpg
+
+- id: thanapat_trachu
+  name: Thanapat Trachu
+  role: visitor
+  scholar_id: zbCoi_EAAAAJ
+  website: https://www.linkedin.com/in/thanapat-trachu-602551227/
+  image: thanapat.jpg
+
+- id: kuangda_wang
+  name: Kuang-Da Wang
+  role: visitor
+  scholar_id: JGH6qUMAAAAJ
+  website: https://kuangdw.github.io/
+  image: photo-kuangda.jpg
+
+- id: jeeweon_jung
+  name: Jee-weon Jung
+  role: industrial
+  scholar_id: A5OcLdAAAAAJ
+  website: https://jungjee.github.io/
+  image: jeeweon.png

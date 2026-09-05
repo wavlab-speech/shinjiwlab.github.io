@@ -1,0 +1,51 @@
+total: 11
+pubs:
+- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
+  year: '2026'
+  venue: COLM 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:ufrVoPGSRksC
+- title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
+  year: '2026'
+  venue: EACLFindings
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:2osOgNQ5qMEC
+- title: An Efficient vLLM-Based Inference Pipeline for Unified Audio Understanding
+    and Generation
+  year: '2026'
+  venue: Interspeech 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:Se3iqnhoufwC
+- title: 'Bagpiper-TTS: Natural Language Guided Universal Speech Synthesis'
+  year: '2026'
+  venue: Interspeech 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:_FxGoFyzp5QC
+- title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
+  year: '2026'
+  venue: Interspeech 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:LkGwnXOMwfcC
+- title: A Unified and Reproducible Experimentation Framework for Speech Understanding
+  year: '2026'
+  venue: Interspeech 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:roLk4NBRz8UC
+- title: Robust and Efficient Autoregressive Speech Synthesis with Dynamic Chunk-wise
+    Prediction Policy
+  year: '2025'
+  venue: ICASSP 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:d1gkVwhDpl0C
+- title: 'PURE Codec: Progressive Unfolding of Residual Entropy for Speech Codec Learning'
+  year: '2025'
+  venue: ASRU
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:qjMakFHDy7sC
+- title: 'Towards General Discrete Speech Codec for Complex Acoustic Environments:
+    A Study of Reconstruction and Downstream Task Consistency'
+  year: '2025'
+  venue: ASRU 2025
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:u5HHmVD_uO8C
+- title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
+    with Expanded Metrics, Visualization, and LLM Integration'
+  year: '2025'
+  venue: ASRU
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:9yKSN-GCB0IC
+- title: Why Do Speech Language Models Fail to Generate Semantically Coherent Outputs?
+    A Modality Evolving Perspective
+  year: '2024'
+  venue: ICASSP 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slH6TeAAAAAJ&citation_for_view=slH6TeAAAAAJ:u-x6o8ySG0sC
