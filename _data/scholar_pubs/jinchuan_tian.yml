@@ -3,17 +3,12 @@ pubs:
 - title: 'Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition
     and Audio Reasoning with Omni Perception'
   year: '2026'
-  venue: arXiv preprint arXiv:2601.09413
-  url: ''
-- title: 'Reasoning beyond Majority Vote: An Explainable Speechlm Framework for Speech
+  venue: ACL
+  url: https://arxiv.org/abs/2601.09413
+- title: 'Reasoning Beyond Majority Vote: An Explainable SpeechLM Framework for Speech
     Emotion Recognition'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
-  url: ''
-- title: 'ARECHO: Autoregressive evaluation via chain-based hypothesis optimization
-    for speech multi-metric estimation'
-  year: '2026'
-  venue: Advances in Neural Information Processing Systems 38, 89719-89764
+  venue: ICASSP
   url: ''
 - title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
   year: '2026'
@@ -22,66 +17,68 @@ pubs:
 - title: Optimizing Conversational Quality in Spoken Dialogue Systems with Reinforcement
     Learning from AI Feedback
   year: '2026'
-  venue: arXiv preprint arXiv:2601.19063
-  url: ''
-- title: 'Online Register For Dual-Mode Self-Supervised Speech Models: Mitigating
+  venue: ACLFindings
+  url: https://arxiv.org/abs/2601.19063
+- title: 'Online Register for Dual-Mode Self-Supervised Speech Models: Mitigating
     the Lack of Future Context'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
   year: '2026'
-  venue: 'Findings of the Association for Computational Linguistics: EACL 2026, 4685-4697'
+  venue: EACLFindings
   url: ''
 - title: Do Neural Codecs Generalize? A Controlled Study Across Unseen Languages and
     Non-Speech Tasks
   year: '2026'
   venue: arXiv preprint arXiv:2601.12205
   url: ''
-- title: 'VERSA: A versatile evaluation toolkit for speech, audio, and music'
+- title: 'UALM: Unified Audio Language Model for Understanding, Generation and Reasoning'
+  year: '2026'
+  venue: ICLR
+  url: https://arxiv.org/abs/2510.12000
+- title: 'ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization
+    for Speech Multi-Metric Estimation'
   year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
+  venue: NeurIPS
+  url: ''
+- title: 'VERSA: A Versatile Evaluation Toolkit for Speech, Audio, and Music'
+  year: '2025'
+  venue: NAACL
   url: ''
 - title: 'Spoofceleb: Speech deepfake detection and sasv in the wild'
   year: '2025'
   venue: IEEE Open Journal of Signal Processing
   url: ''
-- title: 'OWSM v4: Improving open whisper-style speech models via data scaling and
-    cleaning'
+- title: 'OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and
+    Cleaning'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.00338
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.00338
+- title: Preference Alignment Improves Language Model-Based TTS
+  year: '2025'
+  venue: ICASSP
   url: ''
-- title: Preference alignment improves language model-based tts
+- title: 'OWLS: Scaling Laws for Multilingual Speech Recognition and Translation Models'
   year: '2025'
-  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
-  url: ''
-- title: 'OWLS: Scaling laws for multilingual speech recognition and translation models'
+  venue: ICML
+  url: https://arxiv.org/abs/2502.10373
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
   year: '2025'
-  venue: arXiv preprint arXiv:2502.10373
-  url: ''
-- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
-  year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
+  venue: NAACL
   url: ''
 - title: 'OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding
     LLM'
   year: '2025'
   venue: arXiv preprint arXiv:2510.15870
   url: ''
-- title: 'Opuslm: A family of open unified speech language models'
+- title: 'OpusLM: A Family of Open Unified Speech Language Models'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.17611
-  url: ''
-- title: 'Ualm: Unified audio language model for understanding, generation and reasoning'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.17611
+- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
   year: '2025'
-  venue: arXiv preprint arXiv:2510.12000
-  url: ''
-- title: 'Espnet-sds: Unified toolkit and demo for spoken dialogue systems'
-  year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
+  venue: NAACL
   url: ''
 - title: Chain-of-thought reasoning in streaming full-duplex end-to-end spoken dialogue
     systems
@@ -105,7 +102,7 @@ pubs:
 - title: Exploring Linear Variant Transformers and k-NN Memory Inference for Long-Form
     ASR
   year: '2025'
-  venue: Proc. Interspeech 2025, 3583-3587
+  venue: Interspeech
   url: ''
 - title: Context-driven dynamic pruning for large speech foundation models
   year: '2025'
@@ -114,5 +111,5 @@ pubs:
 - title: Balancing Speech Understanding and Generation Using Continual Pre-training
     for Codec-based Speech LLM
   year: '2025'
-  venue: arXiv preprint arXiv:2502.16897
-  url: ''
+  venue: ASRU
+  url: https://arxiv.org/abs/2502.16897

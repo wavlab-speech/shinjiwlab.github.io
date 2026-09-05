@@ -1,9 +1,9 @@
 total: 812
 pubs:
-- title: 'Full-duplex-bench v1. 5: Evaluating overlap handling for full-duplex speech
-    models'
+- title: 'Full-Duplex-Bench v1.5: Evaluating Overlap Handling for Full-Duplex Speech
+    Models'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: 'AHa-bench: Benchmarking audio hallucinations in large audio-language models'
   year: '2026'
@@ -25,8 +25,8 @@ pubs:
   url: ''
 - title: ICASSP 2026 URGENT Speech Enhancement Challenge
   year: '2026'
-  venue: arXiv preprint arXiv:2601.13531
-  url: ''
+  venue: ICASSP
+  url: https://arxiv.org/abs/2601.13531
 - title: 'UrgentMOS: Unified Multi-Metric and Preference Learning for Robust Speech
     Quality Assessment'
   year: '2026'
@@ -35,17 +35,12 @@ pubs:
 - title: 'Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition
     and Audio Reasoning with Omni Perception'
   year: '2026'
-  venue: arXiv preprint arXiv:2601.09413
-  url: ''
-- title: 'Reasoning beyond Majority Vote: An Explainable Speechlm Framework for Speech
+  venue: ACL
+  url: https://arxiv.org/abs/2601.09413
+- title: 'Reasoning Beyond Majority Vote: An Explainable SpeechLM Framework for Speech
     Emotion Recognition'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
-  url: ''
-- title: 'ARECHO: Autoregressive evaluation via chain-based hypothesis optimization
-    for speech multi-metric estimation'
-  year: '2026'
-  venue: Advances in Neural Information Processing Systems 38, 89719-89764
+  venue: ICASSP
   url: ''
 - title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
   year: '2026'
@@ -54,40 +49,40 @@ pubs:
 - title: 'AudioChat: Unified Audio Storytelling, Editing, and Understanding with Transfusion
     Forcing'
   year: '2026'
-  venue: arXiv preprint arXiv:2602.17097
-  url: ''
+  venue: ICML
+  url: https://arxiv.org/abs/2602.17097
 - title: 'LALM-as-a-Judge: Benchmarking Large Audio-Language Models for Safety Evaluation
     in Multi-Turn Spoken Dialogues'
   year: '2026'
-  venue: arXiv preprint arXiv:2602.04796
-  url: ''
+  venue: ICML
+  url: https://arxiv.org/abs/2602.04796
 - title: Optimizing Conversational Quality in Spoken Dialogue Systems with Reinforcement
     Learning from AI Feedback
   year: '2026'
-  venue: arXiv preprint arXiv:2601.19063
-  url: ''
+  venue: ACLFindings
+  url: https://arxiv.org/abs/2601.19063
 - title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
   year: '2026'
-  venue: arXiv preprint arXiv:2601.14046
-  url: ''
+  venue: ACL
+  url: https://arxiv.org/abs/2601.14046
 - title: 'Mind the Gap: Impact of Synthetic Conversational Data on Multi-Talker ASR
     and Speaker Diarization'
   year: '2026'
   venue: arXiv preprint arXiv:2605.15442
   url: ''
-- title: '2025 Urgent Speech Enhancement Challenge Multilingual P. 808 Listening Tests:
+- title: '2025 URGENT Speech Enhancement Challenge Multilingual Ṗ808 Listening Tests:
     Approach and Results'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
-- title: 'Online Register For Dual-Mode Self-Supervised Speech Models: Mitigating
+- title: 'Online Register for Dual-Mode Self-Supervised Speech Models: Mitigating
     the Lack of Future Context'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: 'SSVD-O: Parameter-Efficient Fine-Tuning with Structured SVD for Speech Recognition'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: Adapting Text LLMs to Speech via Multimodal Depth Up-Scaling
   year: '2026'
@@ -109,9 +104,14 @@ pubs:
 - title: 'CSPB: Conversational Speech Processing Benchmark for Self-supervised Speech
     Models'
   year: '2026'
-  venue: Proceedings of the 19th Conference of the European Chapter of the …
+  venue: EACL
   url: ''
 - title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
   year: '2026'
-  venue: 'Findings of the Association for Computational Linguistics: EACL 2026, 4685-4697'
+  venue: EACLFindings
+  url: ''
+- title: 'ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization
+    for Speech Multi-Metric Estimation'
+  year: '2025'
+  venue: NeurIPS
   url: ''

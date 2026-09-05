@@ -4,19 +4,24 @@ pubs:
   year: '2026'
   venue: arXiv preprint arXiv:2602.05220
   url: ''
+- title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
+    Audio Understanding'
+  year: '2026'
+  venue: ACLFindings
+  url: ''
 - title: 'Towards inclusive ASR: investigating voice conversion for dysarthric speech
     recognition in low-resource languages'
   year: '2025'
   venue: arXiv preprint arXiv:2505.14874
   url: ''
-- title: Context-aware dynamic pruning for speech foundation models
+- title: Context-aware Dynamic Pruning for Speech Foundation Models
   year: '2025'
-  venue: The Thirteenth International Conference on Learning Representations
+  venue: ICLR
   url: ''
-- title: On-device streaming discrete speech units
+- title: On-device Streaming Discrete Speech Units
   year: '2025'
-  venue: arXiv preprint arXiv:2506.01845
-  url: ''
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.01845
 - title: 'SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational
     Roleplay Applications'
   year: '2025'
@@ -26,14 +31,13 @@ pubs:
   year: '2025'
   venue: arXiv preprint arXiv:2505.18860
   url: ''
-- title: 'ESPnet-EZ: Python-Only ESPnet For Easy Fine-Tuning And Integration'
+- title: 'ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration'
   year: '2024'
-  venue: 2024 IEEE Spoken Language Technology Workshop (SLT), 863-870
+  venue: SLT
   url: ''
 - title: Segment-Level Vectorized Beam Search Based on Partially Autoregressive Inference
   year: '2023'
-  venue: 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
-    1-8
+  venue: ASRU
   url: ''
 - title: 'Espnet-onnx: Bridging a gap between research and production'
   year: '2022'
@@ -41,13 +45,8 @@ pubs:
   url: ''
 - title: A comparative study on transformer vs rnn in speech applications
   year: '2019'
-  venue: 2019 IEEE automatic speech recognition and understanding workshop (ASRU …
-  url: ''
-- title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
-    Audio Understanding'
-  year: ''
-  venue: ''
-  url: ''
+  venue: ASRU
+  url: https://ieeexplore.ieee.org/abstract/document/9003750
 - title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
     Model Era'
   year: ''

@@ -11,8 +11,12 @@ pubs:
   url: ''
 - title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
   year: '2026'
-  venue: arXiv preprint arXiv:2601.14046
-  url: ''
+  venue: ACL
+  url: https://arxiv.org/abs/2601.14046
+- title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
+  year: '2026'
+  venue: ACL
+  url: https://arxiv.org/abs/2510.24992
 - title: 'Prompt-MII: Meta-Learning Instruction Induction for LLMs'
   year: '2025'
   venue: arXiv preprint arXiv:2510.16932
@@ -21,10 +25,6 @@ pubs:
     recognition in low-resource languages'
   year: '2025'
   venue: arXiv preprint arXiv:2505.14874
-  url: ''
-- title: 'Powsm: A phonetic open whisper-style speech foundation model'
-  year: '2025'
-  venue: arXiv preprint arXiv:2510.24992
   url: ''
 - title: Efficient many-shot in-context learning with dynamic block-sparse attention
   year: '2025'

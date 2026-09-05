@@ -33,7 +33,7 @@ pubs:
 - title: 'Speaker-IPL: Unsupervised Learning of Speaker Characteristics with i-Vector
     based Pseudo-Labels'
   year: '2025'
-  venue: IEEE ICASSP 2024, 1-5
+  venue: ICASSP
   url: ''
 - title: 'SEED: Speaker Embedding Enhancement Diffusion Model'
   year: '2025'
@@ -52,45 +52,44 @@ pubs:
   year: '2024'
   venue: ASVspoof 2024 Workshop (ISCA Interspeech 2024 Satellite)
   url: ''
-- title: 'OWSM v3. 1: Better and Faster Open Whisper-Style Speech Models based on
-    E-Branchformer'
+- title: 'OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer'
   year: '2024'
-  venue: ISCA Interspeech 2024
+  venue: Interspeech
   url: ''
-- title: 'Voxtlm: unified decoder-only models for consolidating speech recognition/synthesis
-    and speech/text continuation tasks'
+- title: 'Voxtlm: Unified Decoder-Only Models for Consolidating Speech Recognition,
+    Synthesis and Speech, Text Continuation Tasks'
   year: '2024'
-  venue: IEEE ICASSP 2024
+  venue: ICASSP
   url: ''
 - title: 'Exploring Speech Recognition, Translation, and Understanding with Discrete
     Speech Units: A Comparative Study'
   year: '2024'
-  venue: IEEE ICASSP 2024
+  venue: ICASSP
   url: ''
 - title: 'ESPnet-SPK: full pipeline speaker embedding toolkit with reproducible recipes,
     self-supervised front-ends, and off-the-shelf models'
   year: '2024'
-  venue: ISCA Interspeech 2024
+  venue: Interspeech
   url: ''
-- title: 'Espnet-codec: Comprehensive training and evaluation of neural codecs for
-    audio, music, and speech'
+- title: 'ESPnet-Codec: Comprehensive Training and Evaluation of Neural Codecs for
+    Audio, Music, and Speech'
   year: '2024'
-  venue: IEEE SLT 2024, 562-569
+  venue: SLT
   url: ''
-- title: One model to rule them all? Towards End-to-End Joint Speaker Diarization
+- title: One Model to Rule Them All? Towards End-to-End Joint Speaker Diarization
     and Speech Recognition
   year: '2024'
-  venue: IEEE ICASSP 2024
+  venue: ICASSP
   url: ''
-- title: Improving Audio Captioning Models with Fine-grained Audio Features, Text
-    Embedding Supervision, and LLM Mix-up Augmentation
+- title: Improving Audio Captioning Models with Fine-Grained Audio Features, Text
+    Embedding Supervision, and LLM Mix-Up Augmentation
   year: '2024'
-  venue: IEEE ICASSP 2024
+  venue: ICASSP
   url: ''
 - title: 'UniverSLU: Universal Spoken Language Understanding for Diverse Tasks with
     Natural Language Instructions'
   year: '2024'
-  venue: ACL NAACL, 2754-2774
+  venue: NAACL
   url: ''
 - title: 'The VoxCeleb Speaker Recognition Challenge: A Retrospective'
   year: '2024'
@@ -104,13 +103,13 @@ pubs:
 - title: 'Beyond Performance Plateaus: A Comprehensive Study on Scalability in Speech
     Enhancement'
   year: '2024'
-  venue: ISCA Interspeech 2024
+  venue: Interspeech
   url: ''
 - title: Improving Design of Input Condition Invariant Speech Enhancement
   year: '2024'
-  venue: IEEE ICASSP 2024
+  venue: ICASSP
   url: ''
 - title: To what extent can ASV systems naturally defend against spoofing attacks?
   year: '2024'
-  venue: ISCA Interspeech 2024
+  venue: Interspeech
   url: ''

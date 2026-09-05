@@ -1,3 +1,27 @@
+# Current lab members, rendered as cards on /members/ by _includes/member_card.html.
+#
+# TO ADD SOMEONE: add an entry below and drop their photo in assets/img/.
+# That is all — you do NOT need to create anything in _data/scholar_pubs/.
+# Their card renders straight away ("No publications listed yet"), and the next
+# run of bin/fetch_scholar.py creates their publication file for them.
+#
+#   id          required, unique. Also the _data/scholar_pubs/<id>.yml filename.
+#   name        required, shown on the card.
+#   role        required, decides which section they appear in. One of:
+#               faculty | postdoc | phd | master | visitor | industrial
+#               (a role with no matching section in _pages/members.md is not
+#               rendered anywhere, so check the spelling)
+#   scholar_id  optional, the 12-char id from their Google Scholar profile URL
+#               (scholar.google.com/citations?user=THIS_PART). Without it their
+#               publications are never fetched and the card shows no Scholar link.
+#   website     optional, must start with http:// or https:// or it is dropped.
+#   image       optional, a filename inside assets/img/.
+#   note        optional, shown in parentheses after the name (e.g. co-supervising).
+#
+# Order within a role is the order shown on the page.
+# When someone leaves, move them to the Alumni list in _pages/members.md and
+# delete both their entry here and their _data/scholar_pubs/<id>.yml file.
+
 - id: shinji_watanabe
   name: Shinji Watanabe
   role: faculty

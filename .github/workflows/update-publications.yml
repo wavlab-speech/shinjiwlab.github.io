@@ -30,9 +30,31 @@ jobs:
       - name: Install dependencies
         run: pip install scholarly pyyaml
 
+      # No continue-on-error: the script exits non-zero when it could not
+      # refresh a single member, which is exactly the case we must not sleep
+      # through. Google Scholar blocking this runner should turn the run red,
+      # not quietly leave stale data on the site.
       - name: Fetch Scholar publications
+        # Google Scholar can leave a request hanging; without a cap the job
+        # would sit on the runner until the 6-hour default.
+        timeout-minutes: 30
         run: python3 bin/fetch_scholar.py
-        continue-on-error: true  # Google Scholar may rate-limit/block the scraper
+
+      # deploy.yml's `on: pull_request` build does not run unattended on a PR
+      # opened with the default GITHUB_TOKEN: GitHub holds such runs behind an
+      # "Approve workflows to run" banner that a write-access user has to click
+      # (and historically suppressed them entirely). Either way the bot PR has
+      # no automatic build result. So build the site here instead, before the
+      # PR exists: scraped data that breaks the build fails this run rather
+      # than sitting in an unchecked PR and taking the site down once merged.
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.2'
+          bundler-cache: true
+
+      - name: Verify the site still builds with the new data
+        run: bundle exec jekyll build
 
       - name: Open pull request
         uses: peter-evans/create-pull-request@v6
@@ -50,7 +72,11 @@ jobs:
 
             **Please review the diff before merging.** Google Scholar metadata is
             community-sourced and the scraper can be rate-limited, so titles,
-            venues, and links may be incomplete or wrong. Empty fetches are
-            skipped (existing data is preserved), but verify any large drops in a
-            member's publication count. If there is nothing to update, no PR is
-            created.
+            venues, and links may be incomplete or wrong. Titles, venues and
+            links are upgraded from `_bibliography/papers.bib` wherever a paper
+            is found there, so unmatched records are the ones worth eyeballing.
+
+            Two guards ran before this PR was opened: fetches that returned
+            nothing (or fewer than 70% of a member's previous publications) were
+            discarded rather than saved, and `jekyll build` succeeded against
+            this data. If there is nothing to update, no PR is created.

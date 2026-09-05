@@ -160,6 +160,10 @@ order: 1
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 1rem;
     margin: 1.5rem 0;
+    /* Without this, grid items stretch to the tallest card in the row, so
+       expanding one member's publication list inflates every sibling card
+       into a tall empty box. */
+    align-items: start;
 }
 
 .member-card {
@@ -271,8 +275,35 @@ order: 1
     color: var(--global-text-color-light);
 }
 
+.pub-disclaimer {
+    /* The theme zeroes h4 margin-top, so the bottom margin here is the only
+       thing separating this block from the "Faculty" heading. Every other
+       section heading gets its clearance from the <hr /> above it. */
+    margin: 1.5rem 0 2.25rem;
+    padding: 0.7rem 0.9rem;
+    border-left: 3px solid var(--global-theme-color);
+    border-radius: 0 6px 6px 0;
+    background-color: var(--global-code-bg-color, rgba(128, 128, 128, 0.07));
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+}
+
+.pub-disclaimer a {
+    color: var(--global-theme-color);
+}
+
 </style>
 
+<p class="pub-disclaimer">
+The publication list under each member is fetched automatically from
+<a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+and shows only that member's most recent papers, so it may be incomplete or
+out of date, and titles and venues are not always correct. For an accurate and
+complete list, please see each member's own website or Google Scholar profile,
+linked on their card. The lab's curated list of papers is on the
+<a href="{{ site.baseurl }}/publications/">Publications</a> page.
+</p>
 
 #### Faculty
 

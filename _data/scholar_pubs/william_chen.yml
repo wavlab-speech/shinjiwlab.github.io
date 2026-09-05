@@ -12,16 +12,16 @@ pubs:
 - title: 'AudioChat: Unified Audio Storytelling, Editing, and Understanding with Transfusion
     Forcing'
   year: '2026'
-  venue: arXiv preprint arXiv:2602.17097
-  url: ''
+  venue: ICML
+  url: https://arxiv.org/abs/2602.17097
 - title: An Empirical Recipe for Universal Phone Recognition
   year: '2026'
   venue: arXiv preprint arXiv:2603.29042
   url: ''
-- title: 'Dynamic-superb phase-2: A collaboratively expanding benchmark for measuring
-    the capabilities of spoken language models with 180 tasks'
+- title: 'Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring
+    the Capabilities of Spoken Language Models with 180 Tasks'
   year: '2025'
-  venue: International Conference on Learning Representations 2025, 82908-82973
+  venue: ICLR
   url: ''
 - title: Quantum-enabled microwave-to-optical transduction via silicon nanomechanics
   year: '2025'
@@ -31,19 +31,18 @@ pubs:
   year: '2025'
   venue: Proceedings of the 22nd International Conference on Spoken Language …
   url: ''
-- title: 'OWSM v4: Improving open whisper-style speech models via data scaling and
-    cleaning'
+- title: 'OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and
+    Cleaning'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.00338
-  url: ''
-- title: 'OWLS: Scaling laws for multilingual speech recognition and translation models'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.00338
+- title: 'OWLS: Scaling Laws for Multilingual Speech Recognition and Translation Models'
   year: '2025'
-  venue: arXiv preprint arXiv:2502.10373
-  url: ''
-- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
+  venue: ICML
+  url: https://arxiv.org/abs/2502.10373
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
   year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
+  venue: NAACL
   url: ''
 - title: 'Polaris: Scalable real-to-sim evaluations for generalist robot policies'
   year: '2025'
@@ -57,57 +56,54 @@ pubs:
   year: '2025'
   venue: arXiv preprint arXiv:2505.07215
   url: ''
-- title: 'Opuslm: A family of open unified speech language models'
+- title: 'OpusLM: A Family of Open Unified Speech Language Models'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.17611
-  url: ''
-- title: 'Espnet-sds: Unified toolkit and demo for spoken dialogue systems'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.17611
+- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
   year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
+  venue: NAACL
   url: ''
 - title: 'CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset'
   year: '2025'
-  venue: arXiv preprint arXiv:2509.14161
-  url: ''
-- title: 'The ML-SUPERB 2.0 challenge: Towards inclusive ASR benchmarking for all
-    language varieties'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2509.14161
+- title: 'The ML-SUPERB 2.0 Challenge: Towards Inclusive ASR Benchmarking for All
+    Language Varieties'
   year: '2025'
-  venue: arXiv preprint arXiv:2509.07139
-  url: ''
+  venue: Interspeech
+  url: https://arxiv.org/abs/2509.07139
 - title: Exploring Linear Variant Transformers and k-NN Memory Inference for Long-Form
     ASR
   year: '2025'
-  venue: Proc. Interspeech 2025, 3583-3587
+  venue: Interspeech
   url: ''
-- title: Robust training of singing voice synthesis using prior and posterior uncertainty
+- title: Robust Training of Singing Voice Synthesis Using Prior and Posterior Uncertainty
   year: '2025'
-  venue: arXiv preprint arXiv:2512.14653
-  url: ''
+  venue: ASRU
+  url: https://arxiv.org/abs/2512.14653
 - title: 'Mujaz: A Summarization-based Approach for Normalized Vulnerability Description'
   year: '2025'
   venue: IEEE Transactions on Dependable and Secure Computing
   url: ''
 - title: 'Pick and Summarize: Integrating Extractive and Abstractive Speech Summarization'
   year: '2025'
-  venue: Proceedings of the Annual Conference of the International Speech …
+  venue: Interspeech
   url: ''
 - title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
     with Expanded Metrics, Visualization, and LLM Integration'
   year: '2025'
-  venue: 2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
-    1-4
+  venue: ASRU
   url: ''
 - title: Bridging Speech and Text Foundation Models with ReShape Attention
   year: '2025'
-  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: 'GALAXY: A Large-Scale Open-Domain Dataset for Multimodal Learning'
   year: '2025'
-  venue: Proceedings of the Annual Conference of the International Speech …
+  venue: Interspeech
   url: ''
-- title: 'Owsm v3. 1: Better and faster open whisper-style speech models based on
-    e-branchformer'
+- title: 'OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer'
   year: '2024'
-  venue: INTERSPEECH 2024
+  venue: Interspeech
   url: ''

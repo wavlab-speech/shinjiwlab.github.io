@@ -2,8 +2,8 @@ total: 24
 pubs:
 - title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
   year: '2026'
-  venue: arXiv preprint arXiv:2601.14046
-  url: ''
+  venue: ACL
+  url: https://arxiv.org/abs/2601.14046
 - title: An Empirical Recipe for Universal Phone Recognition
   year: '2026'
   venue: arXiv preprint arXiv:2603.29042
@@ -12,32 +12,30 @@ pubs:
   year: '2026'
   venue: arXiv preprint arXiv:2601.16273
   url: ''
+- title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
+  year: '2026'
+  venue: ACL
+  url: https://arxiv.org/abs/2510.24992
 - title: 'Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality,
     long context, and next generation agentic capabilities'
   year: '2025'
   venue: arXiv preprint arXiv:2507.06261
   url: ''
-- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
   year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
+  venue: NAACL
   url: ''
-- title: 'Opuslm: A family of open unified speech language models'
+- title: 'OpusLM: A Family of Open Unified Speech Language Models'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.17611
-  url: ''
-- title: 'Espnet-sds: Unified toolkit and demo for spoken dialogue systems'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.17611
+- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
   year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
-  url: ''
-- title: 'Powsm: A phonetic open whisper-style speech foundation model'
-  year: '2025'
-  venue: arXiv preprint arXiv:2510.24992
+  venue: NAACL
   url: ''
 - title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
   year: '2025'
-  venue: 2025 IEEE Workshop on Applications of Signal Processing to Audio and …
+  venue: WASPAA
   url: ''
 - title: Context-driven dynamic pruning for large speech foundation models
   year: '2025'

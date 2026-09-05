@@ -7,8 +7,8 @@ pubs:
   url: ''
 - title: ICASSP 2026 URGENT Speech Enhancement Challenge
   year: '2026'
-  venue: arXiv preprint arXiv:2601.13531
-  url: ''
+  venue: ICASSP
+  url: https://arxiv.org/abs/2601.13531
 - title: 'SE-DiCoW: Self-Enrolled Diarization-Conditioned Whisper'
   year: '2026'
   venue: arXiv preprint arXiv:2601.19194
@@ -17,11 +17,6 @@ pubs:
     Quality Assessment'
   year: '2026'
   venue: arXiv preprint arXiv:2601.18438
-  url: ''
-- title: 'ARECHO: Autoregressive evaluation via chain-based hypothesis optimization
-    for speech multi-metric estimation'
-  year: '2026'
-  venue: Advances in Neural Information Processing Systems 38, 89719-89764
   url: ''
 - title: Cross-Talk Speech Reduction, by Separation, for Separation
   year: '2026'
@@ -32,10 +27,10 @@ pubs:
   year: '2026'
   venue: arXiv preprint arXiv:2605.15442
   url: ''
-- title: '2025 Urgent Speech Enhancement Challenge Multilingual P. 808 Listening Tests:
+- title: '2025 URGENT Speech Enhancement Challenge Multilingual Ṗ808 Listening Tests:
     Approach and Results'
   year: '2026'
-  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: Ring Mixing with Auxiliary Signal-to-Consistency-Error Ratio Loss for Unsupervised
     Denoising in Speech Separation
@@ -55,23 +50,27 @@ pubs:
   year: '2026'
   venue: arXiv preprint arXiv:2601.16273
   url: ''
-- title: Interspeech 2025 URGENT speech enhancement challenge
+- title: 'ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization
+    for Speech Multi-Metric Estimation'
   year: '2025'
-  venue: arXiv preprint arXiv:2505.23212
+  venue: NeurIPS
   url: ''
-- title: 'ESPnet-SpeechLM: An open speech language model toolkit'
+- title: Interspeech 2025 URGENT Speech Enhancement Challenge
   year: '2025'
-  venue: Proceedings of the 2025 Conference of the Nations of the Americas Chapter
-    of …
-  url: ''
-- title: Lessons learned from the URGENT 2024 speech enhancement challenge
+  venue: Interspeech
+  url: https://arxiv.org/abs/2505.23212
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.01611
+  venue: NAACL
   url: ''
-- title: 'Less is more: Data curation matters in scaling speech enhancement'
+- title: Lessons Learned from the URGENT 2024 Speech Enhancement Challenge
   year: '2025'
-  venue: arXiv preprint arXiv:2506.23859
-  url: ''
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.01611
+- title: 'Less is More: Data Curation Matters in Scaling Speech Enhancement'
+  year: '2025'
+  venue: ASRU
+  url: https://arxiv.org/abs/2506.23859
 - title: 'Recent trends in distant conversational speech recognition: A review of
     CHiME-7 and 8 DASR challenges'
   year: '2025'
@@ -79,27 +78,27 @@ pubs:
   url: ''
 - title: 'CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset'
   year: '2025'
-  venue: arXiv preprint arXiv:2509.14161
-  url: ''
+  venue: Interspeech
+  url: https://arxiv.org/abs/2509.14161
 - title: 'P. 808 Multilingual Speech Enhancement Testing: Approach and Results of
     URGENT 2025 Challenge'
   year: '2025'
   venue: arXiv preprint arXiv:2507.11306
   url: ''
-- title: Investigation of spatial self-supervised learning and its application to
-    target speaker speech recognition
+- title: Investigation of Spatial Self-Supervised Learning and Its Application to
+    Target Speaker Speech Recognition
   year: '2025'
-  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
+  venue: ICASSP
   url: ''
 - title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
   year: '2025'
-  venue: 2025 IEEE Workshop on Applications of Signal Processing to Audio and …
+  venue: WASPAA
   url: ''
 - title: 'URGENT-PK: Perceptually-Aligned Ranking Model Designed for Speech Enhancement
     Competition'
   year: '2025'
-  venue: arXiv preprint arXiv:2506.23874
-  url: ''
+  venue: ASRU
+  url: https://arxiv.org/abs/2506.23874
 - title: BUT system for the MLC-SLM challenge
   year: '2025'
   venue: arXiv preprint arXiv:2506.13414
@@ -111,5 +110,5 @@ pubs:
 - title: 'Scalable Spontaneous Speech Dataset (SSSD): Crowdsourcing Data Collection
     to Promote Dialogue Research'
   year: '2025'
-  venue: Proceedings of the Annual Conference of the International Speech …
+  venue: Interspeech
   url: ''
