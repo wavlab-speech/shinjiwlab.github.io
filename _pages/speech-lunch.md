@@ -20,7 +20,7 @@ The time and room may change, especially if we have a guest speaker.
 We will announce the talk information through our [mailing list](https://mailman.srv.cs.cmu.edu/mailman/listinfo/sphinxmail). Approval by the admin is required.
 So, please subscribe to it if you're interested in the CMU speech!
 
-Please contact Samuele Cornell <cornellsamuele@gmail.com> and Shinji Watanabe <shinjiw@ieee.org> if you would like to participate in our Speech Lunch.
+Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinjiw@ieee.org> if you would like to participate in our Speech Lunch.
 
 ## Talk schedule
 
