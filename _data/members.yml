@@ -1,27 +1,38 @@
-# Current lab members, rendered as cards on /members/ by _includes/member_card.html.
+# The current members of the lab. The file _includes/member_card.html shows
+# each member as a card on the /members/ page.
 #
-# TO ADD SOMEONE: add an entry below and drop their photo in assets/img/.
-# Full walkthrough, including the pull-request steps: docs/adding-a-member.md
-# That is all — you do NOT need to create anything in _data/scholar_pubs/.
-# Their card renders straight away ("No publications listed yet"), and the next
-# run of bin/fetch_scholar.py creates their publication file for them.
+# TO ADD A MEMBER: add an entry below. Put the photo in assets/img/.
+# Do this only. Do not make a file in _data/scholar_pubs/.
+# The new card comes on the page immediately. The card shows
+# "No publications listed yet". The next run of bin/fetch_scholar.py makes
+# the publication file for the new member.
 #
-#   id          required, unique. Also the _data/scholar_pubs/<id>.yml filename.
-#   name        required, shown on the card.
-#   role        required, decides which section they appear in. One of:
+# For the full procedure, and for the pull request steps, read
+# docs/adding-a-member.md
+#
+#   id          Necessary. A unique name. The data file
+#               _data/scholar_pubs/<id>.yml uses this name also.
+#   name        Necessary. The card shows this name.
+#   role        Necessary. This field selects the group on the page.
+#               Use one of these six values:
 #               faculty | postdoc | phd | master | visitor | industrial
-#               (a role with no matching section in _pages/members.md is not
-#               rendered anywhere, so check the spelling)
-#   scholar_id  optional, the 12-char id from their Google Scholar profile URL
-#               (scholar.google.com/citations?user=THIS_PART). Without it their
-#               publications are never fetched and the card shows no Scholar link.
-#   website     optional, must start with http:// or https:// or it is dropped.
-#   image       optional, a filename inside assets/img/.
-#   note        optional, shown in parentheses after the name (e.g. co-supervising).
+#               CAUTION: an incorrect value removes the member from the page.
+#               The build does not fail, and you get no error message.
+#   scholar_id  Optional. The 12 characters from the Google Scholar address
+#               (scholar.google.com/citations?user=THIS_PART). Without this
+#               field, the site gets no publications. The card also shows no
+#               Google Scholar link.
+#   website     Optional. The address must start with http:// or https://.
+#               The card removes all other addresses.
+#   image       Optional. The name of a photo file in assets/img/.
+#   note        Optional. The card shows this text in parentheses after the
+#               name. Example: co-supervising.
 #
-# Order within a role is the order shown on the page.
-# When someone leaves, move them to the Alumni list in _pages/members.md and
-# delete both their entry here and their _data/scholar_pubs/<id>.yml file.
+# The sequence in each role is the sequence on the page.
+#
+# WHEN A MEMBER LEAVES: delete the entry below. Delete the file
+# _data/scholar_pubs/<id>.yml also. Then add the member to the Alumni list in
+# _pages/members.md.
 
 - id: shinji_watanabe
   name: Shinji Watanabe
