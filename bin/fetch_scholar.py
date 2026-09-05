@@ -513,7 +513,13 @@ def write_file(member_id, total, pubs):
     out_file = os.path.join(PUBS_DIR, f'{member_id}.yml')
     data = {'total': total, 'pubs': pubs}
     with open(out_file, 'w', encoding='utf-8') as f:
-        yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+        # safe_dump, to match the safe_load these files are read back with.
+        # scholarly parses with BeautifulSoup, whose NavigableString subclasses
+        # str; plain yaml.dump would serialise such a value as a
+        # !!python/object node that safe_load then refuses to read, corrupting
+        # the file silently. safe_dump raises at write time instead.
+        yaml.safe_dump(data, f, default_flow_style=False, allow_unicode=True,
+                       sort_keys=False)
     return out_file
 
 
