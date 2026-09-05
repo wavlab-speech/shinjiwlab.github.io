@@ -4,112 +4,112 @@ pubs:
     deepfake, and adversarial attack detection using crowdsourced speech'
   year: '2026'
   venue: Computer Speech & Language 95, 101825
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:1sJd4Hv_s6UC
 - title: 'WildSpoof: advancing in-the-wild data in Text-to-Speech generation and Spoofing-aware
     automatic speaker verification'
   year: '2026'
   venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:u9iWguZQMMsC
 - title: Which Data Matter? Embedding-Based Data Selection for Speech Recognition
   year: '2026'
   venue: arXiv preprint arXiv:2603.05819
-  url: ''
-- title: 'SpoofCeleb: Speech Deepfake Detection and SASV In The Wild'
+  url: https://arxiv.org/abs/2603.05819
+- title: 'Spoofceleb: Speech deepfake detection and sasv in the wild'
   year: '2025'
-  venue: IEEE Open Journal of Signal Processing
-  url: ''
+  venue: IEEE Open Journal of Signal Processing 6, 68-77
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:abG-DnoFyZgC
 - title: 'X3A: Efficient Multimodal Deepfake Detection with Score-Level Fusion'
   year: '2025'
   venue: ACM/SIGAPP Symposium on Applied Computing, 767-774
-  url: ''
-- title: WildSpoof Challenge Evaluation Plan
-  year: '2025'
-  venue: arXiv preprint arXiv:2508.16858
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:P5F9QuxV20EC
 - title: Chain-of-Thought Training for Open E2E Spoken Dialogue Systems
   year: '2025'
   venue: ISCA Interspeech 2025
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:KxtntwgDAa4C
+- title: WildSpoof Challenge Evaluation Plan
+  year: '2025'
+  venue: arXiv preprint arXiv:2508.16858
+  url: https://arxiv.org/abs/2508.16858
 - title: 'Speaker-IPL: Unsupervised Learning of Speaker Characteristics with i-Vector
     based Pseudo-Labels'
   year: '2025'
   venue: ICASSP
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:xtRiw3GOFMkC
 - title: 'SEED: Speaker Embedding Enhancement Diffusion Model'
   year: '2025'
   venue: ISCA Interspeech 2025
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:nb7KW1ujOQ8C
 - title: Context-Driven Dynamic Pruning for Large Speech Foundation Models
   year: '2025'
   venue: ISCA Interspeech 2025
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:dshw04ExmUIC
 - title: Token-based Attractors and Cross-attention in Spoof Diarization
   year: '2025'
   venue: IEEE ASRU
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:SP6oXDckpogC
 - title: 'ASVspoof 5: Crowdsourced Speech Data, Deepfakes, and Adversarial Attacks
     at Scale'
   year: '2024'
   venue: ASVspoof 2024 Workshop (ISCA Interspeech 2024 Satellite)
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:_xSYboBqXhAC
 - title: 'OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer'
   year: '2024'
   venue: Interspeech
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:zA6iFVUQeVQC
 - title: 'Voxtlm: Unified Decoder-Only Models for Consolidating Speech Recognition,
     Synthesis and Speech, Text Continuation Tasks'
   year: '2024'
   venue: ICASSP
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:vV6vV6tmYwMC
 - title: 'Exploring Speech Recognition, Translation, and Understanding with Discrete
     Speech Units: A Comparative Study'
   year: '2024'
   venue: ICASSP
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:70eg2SAEIzsC
 - title: 'ESPnet-SPK: full pipeline speaker embedding toolkit with reproducible recipes,
     self-supervised front-ends, and off-the-shelf models'
   year: '2024'
   venue: Interspeech
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:rO6llkc54NcC
 - title: 'ESPnet-Codec: Comprehensive Training and Evaluation of Neural Codecs for
     Audio, Music, and Speech'
   year: '2024'
   venue: SLT
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:NhqRSupF_l8C
 - title: One Model to Rule Them All? Towards End-to-End Joint Speaker Diarization
     and Speech Recognition
   year: '2024'
   venue: ICASSP
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:M05iB0D1s5AC
 - title: Improving Audio Captioning Models with Fine-Grained Audio Features, Text
     Embedding Supervision, and LLM Mix-Up Augmentation
   year: '2024'
   venue: ICASSP
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:2P1L_qKh6hAC
+- title: 'The VoxCeleb Speaker Recognition Challenge: A Retrospective'
+  year: '2024'
+  venue: IEEE/ACM Transactions on Audio, Speech, and Language Processing
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:EUQCXRtRnyEC
 - title: 'UniverSLU: Universal Spoken Language Understanding for Diverse Tasks with
     Natural Language Instructions'
   year: '2024'
   venue: NAACL
-  url: ''
-- title: 'The VoxCeleb Speaker Recognition Challenge: A Retrospective'
-  year: '2024'
-  venue: IEEE/ACM Transactions on Audio, Speech, and Language Processing
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:yD5IFk8b50cC
 - title: 'a-DCF: an architecture agnostic metric with application to spoofing-robust
     speaker verification'
   year: '2024'
   venue: ISCA Speaker Odyssey
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:4OULZ7Gr8RgC
 - title: 'Beyond Performance Plateaus: A Comprehensive Study on Scalability in Speech
     Enhancement'
   year: '2024'
   venue: Interspeech
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:dfsIfKJdRG4C
 - title: Improving Design of Input Condition Invariant Speech Enhancement
   year: '2024'
   venue: ICASSP
-  url: ''
-- title: To what extent can ASV systems naturally defend against spoofing attacks?
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:3s1wT3WcHBgC
+- title: On the Evaluation of Speech Foundation Models for Spoken Language Understanding
   year: '2024'
-  venue: Interspeech
-  url: ''
+  venue: ACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A5OcLdAAAAAJ&citation_for_view=A5OcLdAAAAAJ:a0OBvERweLwC

@@ -1,55 +1,77 @@
-total: 59
+total: 63
 pubs:
-- title: 'Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition
-    and Audio Reasoning with Omni Perception'
+- title: 'Omnivinci: Enhancing architecture and data for omni-modal understanding
+    llm'
   year: '2026'
-  venue: ACL
-  url: https://arxiv.org/abs/2601.09413
-- title: 'Reasoning Beyond Majority Vote: An Explainable SpeechLM Framework for Speech
-    Emotion Recognition'
+  venue: International Conference on Learning Representations 2026, 56101-56138
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:IWHjjKOFINEC
+- title: 'UALM: Unified Audio Language Model for Understanding, Generation and Reasoning'
   year: '2026'
-  venue: ICASSP
-  url: ''
+  venue: ICLR
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:ZeXyd9-uunAC
 - title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
   year: '2026'
   venue: arXiv preprint arXiv:2602.05220
-  url: ''
+  url: https://arxiv.org/abs/2602.05220
 - title: Optimizing Conversational Quality in Spoken Dialogue Systems with Reinforcement
     Learning from AI Feedback
   year: '2026'
   venue: ACLFindings
-  url: https://arxiv.org/abs/2601.19063
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:R3hNpaxXUhUC
+- title: 'Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition
+    and Audio Reasoning with Omni Perception'
+  year: '2026'
+  venue: ACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:HDshCWvjkbEC
+- title: 'Reasoning Beyond Majority Vote: An Explainable SpeechLM Framework for Speech
+    Emotion Recognition'
+  year: '2026'
+  venue: ICASSP
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:dhFuZR0502QC
+- title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
+  year: '2026'
+  venue: EACLFindings
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:hC7cP41nSMkC
 - title: 'Online Register for Dual-Mode Self-Supervised Speech Models: Mitigating
     the Lack of Future Context'
   year: '2026'
   venue: ICASSP
-  url: ''
-- title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
-  year: '2026'
-  venue: EACLFindings
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:_Qo2XoVZTnwC
 - title: Do Neural Codecs Generalize? A Controlled Study Across Unseen Languages and
     Non-Speech Tasks
   year: '2026'
   venue: arXiv preprint arXiv:2601.12205
-  url: ''
-- title: 'UALM: Unified Audio Language Model for Understanding, Generation and Reasoning'
+  url: https://arxiv.org/abs/2601.12205
+- title: An Efficient vLLM-Based Inference Pipeline for Unified Audio Understanding
+    and Generation
   year: '2026'
-  venue: ICLR
-  url: https://arxiv.org/abs/2510.12000
-- title: 'ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization
-    for Speech Multi-Metric Estimation'
-  year: '2025'
-  venue: NeurIPS
-  url: ''
+  venue: arXiv preprint arXiv:2607.02119
+  url: https://arxiv.org/abs/2607.02119
+- title: 'Bagpiper-TTS: Natural Language Guided Universal Speech Synthesis'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.22811
+  url: https://arxiv.org/abs/2606.22811
+- title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
+    Model Era'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.21854
+  url: https://arxiv.org/abs/2606.21854
+- title: Online Predictive Coding for Dual-Mode Self-Supervised Speech Model
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.21268
+  url: https://arxiv.org/abs/2606.21268
+- title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.21227
+  url: https://arxiv.org/abs/2606.21227
 - title: 'VERSA: A Versatile Evaluation Toolkit for Speech, Audio, and Music'
   year: '2025'
   venue: NAACL
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:kNdYIx-mwKoC
 - title: 'Spoofceleb: Speech deepfake detection and sasv in the wild'
   year: '2025'
-  venue: IEEE Open Journal of Signal Processing
-  url: ''
+  venue: IEEE Open Journal of Signal Processing 6, 68-77
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:3fE2CSJIrl8C
 - title: 'OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and
     Cleaning'
   year: '2025'
@@ -58,58 +80,35 @@ pubs:
 - title: Preference Alignment Improves Language Model-Based TTS
   year: '2025'
   venue: ICASSP
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:8k81kl-MbHgC
 - title: 'OWLS: Scaling Laws for Multilingual Speech Recognition and Translation Models'
   year: '2025'
   venue: ICML
   url: https://arxiv.org/abs/2502.10373
-- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
-  year: '2025'
-  venue: NAACL
-  url: ''
-- title: 'OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding
-    LLM'
-  year: '2025'
-  venue: arXiv preprint arXiv:2510.15870
-  url: ''
 - title: 'OpusLM: A Family of Open Unified Speech Language Models'
   year: '2025'
   venue: Interspeech
   url: https://arxiv.org/abs/2506.17611
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
+  year: '2025'
+  venue: NAACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:Zph67rFs4hoC
 - title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
   year: '2025'
   venue: NAACL
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:YOwf2qJgpHMC
+- title: Chain-of-thought training for open e2e spoken dialogue systems
+  year: '2025'
+  venue: arXiv preprint arXiv:2506.00722
+  url: https://arxiv.org/abs/2506.00722
 - title: Chain-of-thought reasoning in streaming full-duplex end-to-end spoken dialogue
     systems
   year: '2025'
   venue: arXiv preprint arXiv:2510.02066
-  url: ''
-- title: Chain-of-thought training for open e2e spoken dialogue systems
-  year: '2025'
-  venue: arXiv preprint arXiv:2506.00722
-  url: ''
-- title: The Text-to-speech in the Wild (TITW) Database
-  year: '2025'
-  venue: Proc. Interspeech 2025, 4798-4802
-  url: ''
+  url: https://arxiv.org/abs/2510.02066
 - title: 'SpeechIQ: Speech-agentic intelligence quotient across cognitive levels in
     voice understanding by large language models'
   year: '2025'
   venue: Proceedings of the 63rd Annual Meeting of the Association for Computational
     …
-  url: ''
-- title: Exploring Linear Variant Transformers and k-NN Memory Inference for Long-Form
-    ASR
-  year: '2025'
-  venue: Interspeech
-  url: ''
-- title: Context-driven dynamic pruning for large speech foundation models
-  year: '2025'
-  venue: arXiv preprint arXiv:2505.18860
-  url: ''
-- title: Balancing Speech Understanding and Generation Using Continual Pre-training
-    for Codec-based Speech LLM
-  year: '2025'
-  venue: ASRU
-  url: https://arxiv.org/abs/2502.16897
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:4DMP91E08xMC

@@ -481,7 +481,12 @@ def fetch_publications(scholar_id, bib_index):
             'title': title,
             'year': year,
             'venue': venue,
-            'url': scholar_citation_url(pub.get('author_pub_id')),
+            # Prefer a direct arXiv link over Scholar's own citation page: the
+            # id is right there in the venue for preprints, and it takes the
+            # reader to the paper instead of to another index page. The
+            # Scholar permalink is the catch-all when there is no id.
+            'url': (arxiv_link_from_venue(venue)
+                    or scholar_citation_url(pub.get('author_pub_id'))),
         }, bib_index))
 
     return sort_newest_first(dedupe(rows))

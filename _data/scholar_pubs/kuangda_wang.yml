@@ -1,131 +1,131 @@
-total: 29
+total: 31
 pubs:
+- title: Test-time alignment for large language models via textual model predictive
+    control
+  year: '2026'
+  venue: International Conference on Learning Representations 2026, 317-346
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:0EnyYjriUFMC
+- title: 'Webgen-v bench: Structured representation for enhancing visual design in
+    llm-based web generation and evaluation'
+  year: '2026'
+  venue: Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and
+    …
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:8k81kl-MbHgC
+- title: Benchmarking Agentic Newswriting via Journalistic Workflows
+  year: '2026'
+  venue: 'Findings of the Association for Computational Linguistics: ACL 2026, 36450-36463'
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:4TOpqqG69KYC
 - title: Visual Prompt Discovery via Semantic Exploration
   year: '2026'
   venue: arXiv preprint arXiv:2603.16250
-  url: ''
+  url: https://arxiv.org/abs/2603.16250
 - title: 'Adapting to Evolving Data: Test-Time Expert Aggregation for Imbalanced Tabular
     Regression'
   year: '2026'
   venue: Proceedings of the Nineteenth ACM International Conference on Web Search
     and …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:ULOm3_A8WrAC
 - title: 'Multi-Agent Reinforcement Learning Correctable Strategy: A Framework with
     Correctable Strategies for Portfolio Management'
   year: '2026'
   venue: Engineering Proceedings 120 (1), 11
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:Zph67rFs4hoC
 - title: Template-based financial report generation in agentic and decomposed information
     retrieval
   year: '2025'
   venue: Proceedings of the 48th International ACM SIGIR Conference on Research and
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:eQOLeE2rZwMC
 - title: Extending automatic machine translation evaluation to book-length documents
   year: '2025'
   venue: Proceedings of the 2025 Conference on Empirical Methods in Natural Language
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:hqOjcs7Dif8C
 - title: Mixture experts with test-time self-supervised aggregation for tabular imbalanced
     regression
   year: '2025'
   venue: arXiv preprint arXiv:2506.07033
-  url: ''
-- title: Nvidia-Nemo’s WMT 2025 Metrics Shared Task Submission
+  url: https://arxiv.org/abs/2506.07033
+- title: 'Tree-of-report: Table-to-text generation for sports game reports with tree-structured
+    prompting'
   year: '2025'
-  venue: Proceedings of the Tenth Conference on Machine Translation, 920-925
-  url: ''
-- title: 'WebGen-V Bench: Structured Representation for Enhancing Visual Design in
-    LLM-based Web Generation and Evaluation'
-  year: '2025'
-  venue: arXiv preprint arXiv:2510.15306
-  url: ''
+  venue: ACL 2025 Student Research Workshop
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:Se3iqnhoufwC
 - title: 'NEWSAGENT: Benchmarking Multimodal Agents as Journalists with Real-World
     Newswriting Tasks'
   year: '2025'
   venue: arXiv preprint arXiv:2509.00446
-  url: ''
-- title: 'DDOT: A Derivative-Directed Dual-Decoder Ordinary Differential Equation
-    Transformer for Dynamic System Modeling'
+  url: https://arxiv.org/abs/2509.00446
+- title: NVIDIA-NeMo’s WMT 2025 Metrics Shared Task Submission
+  year: '2025'
+  venue: Proceedings of the Tenth Conference on Machine Translation, 920-925
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:MXK_kJrjxJIC
+- title: 'Ddot: A derivative-directed dual-decoder ordinary differential equation
+    transformer for dynamic system modeling'
   year: '2025'
   venue: Pacific-Asia Conference on Knowledge Discovery and Data Mining, 434-445
-  url: ''
-- title: Test-Time Alignment for Large Language Models via Textual Model Predictive
-    Control
-  year: '2025'
-  venue: arXiv preprint arXiv:2502.20795
-  url: ''
-- title: 'Tree-of-Report: Table-to-Text Generation for Sports Game Reports with Tree-Structured
-    Prompting'
-  year: '2025'
-  venue: ACL 2025 Student Research Workshop
-  url: ''
-- title: 'RallyDiffuser: A Representation-Guided Diffusion Model Framework for Strategic
-    Planning in Badminton'
-  year: '2025'
-  venue: Proceedings of the 24th International Conference on Autonomous Agents and
-    …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:LkGwnXOMwfcC
 - title: 'APAR: Modeling Irregular Target Functions in Tabular Regression via Arithmetic-Aware
     Pre-Training and Adaptive-Regularized Fine-Tuning'
   year: '2025'
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 39 (20), 21536
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:Tyk-4Ss8FVUC
+- title: 'RallyDiffuser: A Representation-Guided Diffusion Model Framework for Strategic
+    Planning in Badminton'
+  year: '2025'
+  venue: Proceedings of the 24th International Conference on Autonomous Agents and
+    …
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:ufrVoPGSRksC
 - title: Imitation Learning of Correlated Policies in Stackelberg Games
   year: '2025'
   venue: arXiv preprint arXiv:2503.08883
-  url: ''
+  url: https://arxiv.org/abs/2503.08883
 - title: 'Plan2Align: Predictive Planning Based Test-Time Preference Alignment in
-    Paragraph-Level Machine Translation'
+    Paragraph-Level Machine Translation.'
   year: '2025'
-  venue: 'arXiv e-prints, arXiv: 2502.20795'
-  url: ''
+  venue: CoRR
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:kNdYIx-mwKoC
 - title: Root Cause Analysis In Microservice Using Neural Granger Causal Discovery
   year: '2024'
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 38 (1), 206-213
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:2osOgNQ5qMEC
 - title: 'BADGE: BADminton report Generation and Evaluation with LLM'
   year: '2024'
   venue: arXiv preprint arXiv:2406.18116
-  url: ''
-- title: 'The CoachAI Badminton Environment: Bridging the Gap between a Reinforcement
-    Learning Environment and Real-World Badminton Games'
+  url: https://arxiv.org/abs/2406.18116
+- title: 'The coachai badminton environment: Bridging the gap between a reinforcement
+    learning environment and real-world badminton games'
   year: '2024'
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 38 (21), 23844
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:UeHWp8X0CEIC
 - title: Offline Imitation of Badminton Player Behavior via Experiential Contexts
     and Brownian Motion
   year: '2024'
   venue: Proceedings of the European Conference on Machine Learning and Principles
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:qjMakFHDy7sC
 - title: 'The CoachAI Badminton Environment: A Novel Reinforcement Learning Environment
     with Realistic Opponents (Student Abstract)'
   year: '2024'
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 38 (21), 23679
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:IjCSPb-OGe4C
 - title: 'The CoachAI Badminton Environment: A Novel Reinforcement Learning Environment
     with Realistic Opponents'
   year: '2024'
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 38 (21), 23679
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:KlAtU1dfN6UC
 - title: A reinforcement learning badminton environment for simulating player tactics
     (student abstract)
   year: '2023'
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 37 (13), 16232
     …
-  url: ''
-- title: 'Enhancing Badminton Player Performance via a Closed-Loop AI Approach: Imitation,
-    Simulation, Optimization, and Execution'
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:u5HHmVD_uO8C
+- title: 'Enhancing badminton player performance via a closed-loop AI approach: Imitation,
+    simulation, optimization, and execution'
   year: '2023'
   venue: Proceedings of the 32nd ACM International Conference on Information and …
-  url: ''
-- title: 'NYCU-TWO at Memotion 3: Good Foundation, Good Teacher, then you have Good
-    Meme Analysis'
-  year: '2023'
-  venue: DE-FACTIFY@AAAI 2023
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:9yKSN-GCB0IC

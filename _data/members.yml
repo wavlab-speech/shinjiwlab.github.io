@@ -1,6 +1,7 @@
 # Current lab members, rendered as cards on /members/ by _includes/member_card.html.
 #
 # TO ADD SOMEONE: add an entry below and drop their photo in assets/img/.
+# Full walkthrough, including the pull-request steps: docs/adding-a-member.md
 # That is all — you do NOT need to create anything in _data/scholar_pubs/.
 # Their card renders straight away ("No publications listed yet"), and the next
 # run of bin/fetch_scholar.py creates their publication file for them.
@@ -56,6 +57,7 @@
   scholar_id: pbU47_MAAAAJ
   website: https://shikhar-s.github.io/
   image: shikhar.png
+  note: co-supervising
 
 - id: chienyu_huang
   name: Chien-yu Huang
@@ -72,25 +74,49 @@
   image: jaeyeon.jpg
   note: co-supervising
 
+- id: sichen_jin
+  name: Sichen Jin
+  role: phd
+  scholar_id: OwO5VXMAAAAJ
+  website: https://chenehk.github.io/
+  image: sichen.png
+
 - id: masao_someki
   name: Masao Someki
-  role: master
+  role: phd
   scholar_id: _aVVkVsAAAAJ
   website: https://masao-someki.github.io/
   image: msomeki.png
 
-- id: dahee_yang
-  name: Dahee Yang
-  role: visitor
-  scholar_id: R_PVtlMAAAAJ
-  image: photo-dahee.jpg
 
 - id: chinjou_li
   name: Chin-Jou Li
-  role: visitor
+  role: phd
   scholar_id: tU4UHFAAAAAJ
   website: https://chinjouli.github.io/mysite
   image: chinjou.jpg
+  note: co-supervising
+
+- id: ting_jiang
+  name: Ting (Justin) Jiang
+  role: phd
+  scholar_id: eGfZvOkAAAAJ
+  image: justin.png
+
+- id: haeri_kim
+  name: Haeri Kim
+  role: phd
+  scholar_id: YVhT8sEAAAAJ
+  website: https://kimhaeri.github.io/
+  image: haeri.jpg
+  note: co-supervising
+
+- id: haoran_wang
+  name: Haoran Wang
+  role: master
+  scholar_id: slH6TeAAAAAJ
+  website: https://whr-a.github.io/
+  image: haoran.jpg
 
 - id: thanapat_trachu
   name: Thanapat Trachu

@@ -1,0 +1,17 @@
+total: 3
+pubs:
+- title: 'BBPE16: UTF-16-based byte-level byte-pair encoding for improved multilingual
+    speech recognition'
+  year: '2026'
+  venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YVhT8sEAAAAJ&citation_for_view=YVhT8sEAAAAJ:d1gkVwhDpl0C
+- title: A More Accurate Internal Language Model Score Estimation for the Hybrid Autoregressive
+    Transducer
+  year: '2023'
+  venue: Proc. Interspeech 2023, 869-873
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YVhT8sEAAAAJ&citation_for_view=YVhT8sEAAAAJ:u-x6o8ySG0sC
+- title: 'Self-diagnosing gan: Diagnosing underrepresented samples in generative adversarial
+    networks'
+  year: '2021'
+  venue: Advances in Neural Information Processing Systems 34, 1925-1938
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YVhT8sEAAAAJ&citation_for_view=YVhT8sEAAAAJ:u5HHmVD_uO8C

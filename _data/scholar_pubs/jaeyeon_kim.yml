@@ -1,52 +1,61 @@
-total: 11
+total: 13
 pubs:
 - title: 'The interspeech 2026 audio reasoning challenge: Evaluating reasoning process
     quality for audio reasoning models and agents'
   year: '2026'
   venue: arXiv preprint arXiv:2602.14224
-  url: ''
+  url: https://arxiv.org/abs/2602.14224
+- title: 'Wow-bench: Evaluating fine-grained acoustic perception in audio-language
+    models via marine mammal vocalizations'
+  year: '2026'
+  venue: 'Findings of the Association for Computational Linguistics: ACL 2026, 31208-31229'
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:Y0pCki6q_DkC
+- title: 'K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.02404
+  url: https://arxiv.org/abs/2606.02404
+- title: 'Comparative Reasoning: Making an Audio Language Model Better at Comparing
+    Emotions'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.24082
+  url: https://arxiv.org/abs/2606.24082
 - title: Towards Scene-Aware Video-to-Spatial Audio Generation
   year: '2026'
   venue: International Journal of Computer Vision 134 (4), 184
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:UebtZRa9Y70C
 - title: 'Visage: Video-to-spatial audio generation'
   year: '2025'
   venue: ICLR 2025
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:qjMakFHDy7sC
 - title: Multi-Domain Audio Question Answering Benchmark Toward Acoustic Content Reasoning
   year: '2025'
   venue: ICASSP 2026
-  url: ''
-- title: 'WoW-Bench: Evaluating Fine-Grained Acoustic Perception in Audio-Language
-    Models via Marine Mammal Vocalizations'
-  year: '2025'
-  venue: arXiv preprint arXiv:2508.20976
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:UeHWp8X0CEIC
 - title: 'Gaze Beyond the Frame: Forecasting Egocentric 3D Visual Span'
   year: '2025'
   venue: NeurIPS 2025
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:YsMSGLbcyi4C
 - title: 'Enclap: Combining neural audio codec and audio-text joint embedding for
     automated audio captioning'
   year: '2024'
   venue: ICASSP 2024
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:u-x6o8ySG0sC
 - title: 'Enclap++: Analyzing the enclap framework for optimizing automated audio
     captioning performance'
   year: '2024'
   venue: DCASE2024 Workshop
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:2osOgNQ5qMEC
 - title: Expanding on EnCLAP with auxiliary retrieval model for automated audio captioning
   year: '2024'
   venue: DCASE2024 Challenge Technical Report
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:9yKSN-GCB0IC
 - title: Learning Semantic Information from Raw Audio Signal Using Both Contextual
     and Phonetic Representations
   year: '2024'
   venue: ICASSP 2024
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:d1gkVwhDpl0C
 - title: 'PITS: Variational pitch inference without fundamental frequency for end-to-end
     pitch-controllable TTS'
   year: '2023'
   venue: ICML 2023 Workshop on SPIGM
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:u5HHmVD_uO8C

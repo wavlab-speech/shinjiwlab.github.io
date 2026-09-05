@@ -1,51 +1,51 @@
 total: 11
 pubs:
-- title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
+- title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
+  year: '2026'
+  venue: ACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:zYLM7Y9cAGgC
+- title: 'Prompt-MII: Meta-learning instruction induction for LLMs'
+  year: '2026'
+  venue: International Conference on Learning Representations 2026, 52735-52756
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:Y0pCki6q_DkC
+- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
   year: '2026'
   venue: arXiv preprint arXiv:2602.05220
-  url: ''
+  url: https://arxiv.org/abs/2602.05220
+- title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
+  year: '2026'
+  venue: ACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:2osOgNQ5qMEC
 - title: Adapting Self-Supervised Speech Representations for Cross-lingual Dysarthria
     Detection in Parkinson's Disease
   year: '2026'
   venue: arXiv preprint arXiv:2603.22225
-  url: ''
-- title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
-  year: '2026'
-  venue: ACL
-  url: https://arxiv.org/abs/2601.14046
-- title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
-  year: '2026'
-  venue: ACL
-  url: https://arxiv.org/abs/2510.24992
-- title: 'Prompt-MII: Meta-Learning Instruction Induction for LLMs'
-  year: '2025'
-  venue: arXiv preprint arXiv:2510.16932
-  url: ''
-- title: 'Towards inclusive ASR: investigating voice conversion for dysarthric speech
-    recognition in low-resource languages'
-  year: '2025'
-  venue: arXiv preprint arXiv:2505.14874
-  url: ''
+  url: https://arxiv.org/abs/2603.22225
 - title: Efficient many-shot in-context learning with dynamic block-sparse attention
   year: '2025'
   venue: Proceedings of the 63rd Annual Meeting of the Association for Computational
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:9yKSN-GCB0IC
+- title: 'Towards inclusive ASR: investigating voice conversion for dysarthric speech
+    recognition in low-resource languages'
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.14874
+  url: https://arxiv.org/abs/2505.14874
 - title: Face swapping in seizure videos for patient deidentification
   year: '2024'
   venue: Epilepsy Research 207, 107453
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:d1gkVwhDpl0C
 - title: Epileptic Seizure Classification with Patient-level and Video-level Contrastive
     Pretraining
   year: '2024'
   venue: 2024 46th Annual International Conference of the IEEE Engineering in …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:Tyk-4Ss8FVUC
+- title: Deep complex u-net with conformer for audio-visual speech enhancement
+  year: '2023'
+  venue: arXiv preprint arXiv:2309.11059
+  url: https://arxiv.org/abs/2309.11059
 - title: Artificial intelligence-based face transformation in patient seizure videos
     for privacy protection
   year: '2023'
   venue: 'Mayo Clinic Proceedings: Digital Health 1 (4), 619-628'
-  url: ''
-- title: Deep complex u-net with conformer for audio-visual speech enhancement
-  year: '2023'
-  venue: arXiv preprint arXiv:2309.11059
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:qjMakFHDy7sC

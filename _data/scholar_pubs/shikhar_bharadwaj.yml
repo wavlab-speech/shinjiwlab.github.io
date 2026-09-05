@@ -1,105 +1,108 @@
-total: 24
+total: 26
 pubs:
-- title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
-  year: '2026'
-  venue: ACL
-  url: https://arxiv.org/abs/2601.14046
-- title: An Empirical Recipe for Universal Phone Recognition
-  year: '2026'
-  venue: arXiv preprint arXiv:2603.29042
-  url: ''
-- title: The CMU-AIST submission for the ICME 2025 Audio Encoder Challenge
-  year: '2026'
-  venue: arXiv preprint arXiv:2601.16273
-  url: ''
 - title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
   year: '2026'
   venue: ACL
-  url: https://arxiv.org/abs/2510.24992
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:aqlVkmm33-oC
+- title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
+  year: '2026'
+  venue: ACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:R3hNpaxXUhUC
+- title: An Empirical Recipe for Universal Phone Recognition
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.29042
+  url: https://arxiv.org/abs/2603.29042
+- title: The CMU-AIST submission for the ICME 2025 Audio Encoder Challenge
+  year: '2026'
+  venue: arXiv preprint arXiv:2601.16273
+  url: https://arxiv.org/abs/2601.16273
+- title: Phone Segmentation and Recognition through Phonological Activation Mapping
+  year: '2026'
+  venue: arXiv preprint arXiv:2607.09020
+  url: https://arxiv.org/abs/2607.09020
 - title: 'Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality,
     long context, and next generation agentic capabilities'
   year: '2025'
   venue: arXiv preprint arXiv:2507.06261
-  url: ''
-- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
-  year: '2025'
-  venue: NAACL
-  url: ''
+  url: https://arxiv.org/abs/2507.06261
 - title: 'OpusLM: A Family of Open Unified Speech Language Models'
   year: '2025'
   venue: Interspeech
   url: https://arxiv.org/abs/2506.17611
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
+  year: '2025'
+  venue: NAACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:MXK_kJrjxJIC
 - title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
   year: '2025'
   venue: NAACL
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:RHpTSmoSYBkC
 - title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
   year: '2025'
   venue: WASPAA
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:_Qo2XoVZTnwC
 - title: Context-driven dynamic pruning for large speech foundation models
   year: '2025'
   venue: arXiv preprint arXiv:2505.18860
-  url: ''
+  url: https://arxiv.org/abs/2505.18860
 - title: Identifying and Mitigating Mismatched Language Code in Multilingual ASR
   year: '2025'
   venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:3fE2CSJIrl8C
 - title: Identifying and Mitigating Mismatched Language Signal in Multilingual Automated
     Speech Recognition
   year: '2025'
   venue: US Patent App. 19/173,179
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:Wp0gIr-vW9MC
 - title: 'EmoNews: A Spoken Dialogue System for Expressive News Conversations'
   year: '2025'
   venue: Proceedings of the 26th Annual Meeting of the Special Interest Group on …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:j3f4tGmQtD8C
+- title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
+    with Expanded Metrics, Visualization, and LLM Integration'
+  year: '2025'
+  venue: ASRU
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:iH-uZ7U-co4C
 - title: 'Indicgenbench: A multilingual benchmark to evaluate generation capabilities
     of llms on indic languages'
   year: '2024'
   venue: Proceedings of the 62nd Annual Meeting of the Association for Computational
     …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:4JMBOYKVnBMC
 - title: 'Codequeries: A dataset of semantic queries over code'
   year: '2024'
   venue: Proceedings of the 17th Innovations in Software Engineering Conference, 1-11
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:0EnyYjriUFMC
 - title: 'STAB: speech tokenizer assessment benchmark'
   year: '2024'
   venue: arXiv preprint arXiv:2409.02384
-  url: ''
+  url: https://arxiv.org/abs/2409.02384
 - title: Multimodal modeling for spoken language identification
   year: '2024'
   venue: ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:KlAtU1dfN6UC
 - title: Label aware speech representation learning for language identification
   year: '2023'
   venue: arXiv preprint arXiv:2306.04374
-  url: ''
-- title: 'MASR: Multi-Label Aware Speech Representation'
+  url: https://arxiv.org/abs/2306.04374
+- title: 'Masr: Metadata aware speech representation'
   year: '2023'
-  venue: 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
-    1-8
-  url: ''
+  venue: Proc. IEEE Autom. Speech Recognit. Understanding Workshop, 100-108
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:M3NEmzRMIkIC
 - title: Github issue classification using BERT-style models
   year: '2022'
   venue: Proceedings of the 1st International Workshop on Natural Language-based …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:eQOLeE2rZwMC
 - title: Efficient Constituency Tree based Encoding for Natural Language to Bash Translation
   year: '2022'
   venue: Proceedings of the 2022 Conference of the North American Chapter of the …
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:ufrVoPGSRksC
 - title: Explainable and Efficient Neural Models for Natural Language to Bash Command
     Translation
   year: '2022'
   venue: Indian Institute of Science (Awarded Outstanding Thesis 2022-23)
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:W7OEmFMy1HYC
 - title: Explainable natural language to bash translation using abstract syntax tree
   year: '2021'
   venue: Proceedings of the 25th Conference on Computational Natural Language …
-  url: ''
-- title: 'An Extraction based approach to Keyword Generation and Precedence Retrieval:
-    BITS Pilani-Hyderabad.'
-  year: '2017'
-  venue: FIRE (working notes), 74-77
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:WF5omc3nYNoC
