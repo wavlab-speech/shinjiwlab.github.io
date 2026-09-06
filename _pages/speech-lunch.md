@@ -458,9 +458,14 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
   }
 
   function toItems(records, semesterName) {
-    // The legacy tabs have no Location column at all, so "no room" cannot mean
-    // "not a talk" there; on those the break weeks are named by the date note.
-    var hasLocationColumn = records.some(function (r) { return !!r.location; });
+    // "This row has no room" only means "this is not a talk" on a tab where
+    // rooms are actually recorded. Test the VALUES, not the header: a new
+    // semester tab carries the Location header before anyone fills in a room,
+    // and on such a tab every speaker still waiting for a room would otherwise
+    // be dimmed as a break week and skipped for the "Next talk" card.
+    // On the legacy tabs, which have no Location column, the date note names
+    // the break instead.
+    var tabRecordsRooms = records.some(function (r) { return !!r.location; });
     var parsed = [];
     records.forEach(function (r) {
       var dp = parseDateCell(r.date);
@@ -490,7 +495,7 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
         // Requiring a location column for the first form is what stops a real
         // speaker with an unfilled title being dimmed as a break week.
         isBreak: !r.title && !r.abstract && !r.location &&
-                 ((hasLocationColumn && !!r.speaker) || (!r.speaker && !!p.dp.note))
+                 ((tabRecordsRooms && !!r.speaker) || (!r.speaker && !!p.dp.note))
       });
     });
     items.sort(function (a, b) { return a.date - b.date; });
@@ -540,12 +545,15 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
       });
   }
 
-  function show(gid) {
+  function show(gid, userAsked) {
     // A cached semester resolves in a microtask while an earlier, uncached one is
     // still on the network. Without this token the slower response wins and the
     // rendered schedule disagrees with the <select>.
     var myReq = ++reqSeq;
     setStatus("Loading the schedule…");
+    // Announce a semester the reader chose. Staying quiet on the first load
+    // avoids interrupting a screen reader that is still reading the page.
+    if (userAsked) say("Loading the schedule…");
 
     var entry = null;
     for (var i = 0; i < SEMESTERS.length; i++) {
@@ -601,7 +609,7 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
   // Browsers restore a <select> by index across reloads, which would land on an
   // arbitrary semester once the duplicate option is removed. Always start here.
   picker.selectedIndex = 0;
-  picker.addEventListener("change", function () { show(picker.value); });
+  picker.addEventListener("change", function () { show(picker.value, true); });
   show("");
 })();
 </script>
