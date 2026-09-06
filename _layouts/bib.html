@@ -2,7 +2,7 @@
 ---
 
 <div class="row">
-  <div class="col-sm-2 abbr">
+  <div class="col-sm-4 abbr">
   {% if entry.abbr %}
     {% if site.data.venues[entry.abbr] %}
     <abbr class="badge"><a href="{{site.data.venues[entry.abbr].url}}" target="_blank">{{entry.abbr}}</a></abbr>
@@ -16,6 +16,9 @@
     {% else %}
     <abbr class="badge badge-info">{{entry.abbr_publisher}}</abbr>
     {% endif %}
+  {% endif %}
+  {% if entry.img %}
+    <br><img src="{{entry.img}}" width="100%">
   {% endif %}
   </div>
 
