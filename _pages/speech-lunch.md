@@ -313,11 +313,14 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
     return y;
   }
 
-  // The weekday the lab meets on, as stated in the page copy above (0 = Sunday).
+  // When the lab meets, as stated in the page copy above (0 = Sunday). A talk
+  // carries the END of its meeting as its timestamp, so it leaves the "Next
+  // talk" card when the meeting finishes instead of at midnight.
   var MEETING_DAY = 4;
+  var MEETING_END_HOUR = 13, MEETING_END_MINUTE = 30;
 
   function makeDate(y, mo, d) {
-    var cand = new Date(y, mo - 1, d, 23, 59, 59);
+    var cand = new Date(y, mo - 1, d, MEETING_END_HOUR, MEETING_END_MINUTE, 0);
     return (cand.getMonth() === mo - 1 && cand.getDate() === d) ? cand : null;
   }
 
@@ -431,7 +434,9 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
 
   function renderSection(title, items, collapsible) {
     var frag = document.createDocumentFragment();
-    frag.appendChild(el("div", "sl-h", title));
+    // A heading element, not a styled div: screen readers navigate by heading.
+    // The page title above is an <h2>, so these sections are <h3>.
+    frag.appendChild(el("h3", "sl-h", title));
     var box = el("div", null);
     items.forEach(function (it) { box.appendChild(renderRow(it, collapsible)); });
     frag.appendChild(box);
@@ -552,9 +557,11 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
         if (myReq !== reqSeq) return;
         var out = toItems(records, entry ? entry.name : null);
         if (!out.items.length) {
-          setStatus(records.length
+          var empty = records.length
             ? "No dated talks could be read for this semester."
-            : "No talks are listed for this semester yet.");
+            : "No talks are listed for this semester yet.";
+          setStatus(empty);
+          say(empty);
           return;
         }
         if (entry) {
@@ -568,7 +575,9 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
       })
       .catch(function () {
         if (myReq !== reqSeq) return;
-        setStatus("The schedule could not be loaded right now. Please try again later — talks are also announced on our mailing list.");
+        var failed = "The schedule could not be loaded right now. Please try again later — talks are also announced on our mailing list.";
+        setStatus(failed);
+        say(failed);
       });
   }
 
