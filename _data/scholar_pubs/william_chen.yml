@@ -1,0 +1,112 @@
+total: 78
+pubs:
+- title: Steerable vision-language-action policies for embodied reasoning and hierarchical
+    control
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.13193
+  url: https://arxiv.org/abs/2602.13193
+- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.05220
+  url: https://arxiv.org/abs/2602.05220
+- title: 'AudioChat: Unified Audio Storytelling, Editing, and Understanding with Transfusion
+    Forcing'
+  year: '2026'
+  venue: ICML
+  url: https://arxiv.org/abs/2602.17097
+- title: Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic
+    Control?
+  year: '2026'
+  venue: arXiv preprint arXiv:2608.02547
+  url: https://arxiv.org/abs/2608.02547
+- title: Dissecting sensitivity to training language in self-supervised speech learning
+    using neural audio codec tokens
+  year: '2026'
+  venue: arXiv preprint arXiv:2607.26350
+  url: https://arxiv.org/abs/2607.26350
+- title: Improving Robotic Generalist Policies via Flow Reversal Steering
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.13675
+  url: https://arxiv.org/abs/2606.13675
+- title: An Empirical Recipe for Universal Phone Recognition
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.29042
+  url: https://arxiv.org/abs/2603.29042
+- title: Adapting Generalist Robot Policies with Semantic Reinforcement Learning
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.31958
+  url: https://arxiv.org/abs/2606.31958
+- title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
+    Model Era'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.21854
+  url: https://arxiv.org/abs/2606.21854
+- title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.21227
+  url: https://arxiv.org/abs/2606.21227
+- title: Evaluating Large Language Models Abilities for Addressee, Turn-change, and
+    Next Speaker Prediction in Meetings
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.17542
+  url: https://arxiv.org/abs/2606.17542
+- title: 'Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring
+    the Capabilities of Spoken Language Models with 180 Tasks'
+  year: '2025'
+  venue: ICLR
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:r0BpntZqJG4C
+- title: Quantum-enabled microwave-to-optical transduction via silicon nanomechanics
+  year: '2025'
+  venue: Nature nanotechnology 20 (5), 602-608
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:8AbLer7MMksC
+- title: 'OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and
+    Cleaning'
+  year: '2025'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.00338
+- title: 'OWLS: Scaling Laws for Multilingual Speech Recognition and Translation Models'
+  year: '2025'
+  venue: ICML
+  url: https://arxiv.org/abs/2502.10373
+- title: 'Polaris: Scalable real-to-sim evaluations for generalist robot policies'
+  year: '2025'
+  venue: arXiv preprint arXiv:2512.16881
+  url: https://arxiv.org/abs/2512.16881
+- title: 'Vulbinllm: Llm-powered vulnerability detection for stripped binaries'
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.22010
+  url: https://arxiv.org/abs/2505.22010
+- title: 'OpusLM: A Family of Open Unified Speech Language Models'
+  year: '2025'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.17611
+- title: Measuring general intelligence with generated games
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.07215
+  url: https://arxiv.org/abs/2505.07215
+- title: Findings of the IWSLT 2025 evaluation campaign
+  year: '2025'
+  venue: PROCEEDINGS OF THE 22ND INTERNATIONAL CONFERENCE ON SPOKEN LANGUAGE …
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:hFOr9nPyWt4C
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
+  year: '2025'
+  venue: NAACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:maZDTaKrznsC
+- title: 'CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset'
+  year: '2025'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2509.14161
+- title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
+  year: '2025'
+  venue: NAACL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:GnPB-g6toBAC
+- title: 'The ML-SUPERB 2.0 Challenge: Towards Inclusive ASR Benchmarking for All
+    Language Varieties'
+  year: '2025'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2509.07139
+- title: Samuele Cornell, Yifan Peng, Xiang Yue, Chao-Han Huck Yang, Graham Neubig
+    et Shinji Watanabe
+  year: '2025'
+  venue: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:eJXPG6dFmWUC

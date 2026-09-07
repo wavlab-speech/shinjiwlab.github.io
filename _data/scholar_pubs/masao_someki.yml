@@ -1,0 +1,54 @@
+total: 12
+pubs:
+- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.05220
+  url: https://arxiv.org/abs/2602.05220
+- title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
+    Audio Understanding'
+  year: '2026'
+  venue: ACLFindings
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_aVVkVsAAAAJ&citation_for_view=_aVVkVsAAAAJ:W7OEmFMy1HYC
+- title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
+    Model Era'
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.21854
+  url: https://arxiv.org/abs/2606.21854
+- title: 'Towards inclusive ASR: investigating voice conversion for dysarthric speech
+    recognition in low-resource languages'
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.14874
+  url: https://arxiv.org/abs/2505.14874
+- title: Context-aware Dynamic Pruning for Speech Foundation Models
+  year: '2025'
+  venue: ICLR
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_aVVkVsAAAAJ&citation_for_view=_aVVkVsAAAAJ:2osOgNQ5qMEC
+- title: On-device Streaming Discrete Speech Units
+  year: '2025'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2506.01845
+- title: Context-driven dynamic pruning for large speech foundation models
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.18860
+  url: https://arxiv.org/abs/2505.18860
+- title: 'Singingsds: A singing-capable spoken dialogue system for conversational
+    roleplay applications'
+  year: '2025'
+  venue: arXiv preprint arXiv:2511.20972
+  url: https://arxiv.org/abs/2511.20972
+- title: 'ESPnet-EZ: Python-only ESPnet for Easy Fine-tuning and Integration'
+  year: '2024'
+  venue: SLT
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_aVVkVsAAAAJ&citation_for_view=_aVVkVsAAAAJ:9yKSN-GCB0IC
+- title: Segment-Level Vectorized Beam Search Based on Partially Autoregressive Inference
+  year: '2023'
+  venue: ASRU
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_aVVkVsAAAAJ&citation_for_view=_aVVkVsAAAAJ:d1gkVwhDpl0C
+- title: 'Espnet-onnx: Bridging a gap between research and production'
+  year: '2022'
+  venue: 2022 Asia-Pacific Signal and Information Processing Association Annual …
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_aVVkVsAAAAJ&citation_for_view=_aVVkVsAAAAJ:u5HHmVD_uO8C
+- title: A comparative study on transformer vs rnn in speech applications
+  year: '2019'
+  venue: ASRU
+  url: https://ieeexplore.ieee.org/abstract/document/9003750

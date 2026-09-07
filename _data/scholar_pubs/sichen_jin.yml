@@ -1,0 +1,59 @@
+total: 13
+pubs:
+- title: Electronic device and method for voice recognition
+  year: '2025'
+  venue: US Patent App. 18/828,519
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:YsMSGLbcyi4C
+- title: Electronic apparatus for speech recognition, and controlling method thereof
+  year: '2025'
+  venue: US Patent 12,205,576
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:WF5omc3nYNoC
+- title: CTC-aligned Audio-Text Embedding for Streaming Open-vocabulary Keyword Spotting
+  year: '2024'
+  venue: Interspeech, 2958-1796
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:qjMakFHDy7sC
+- title: Electronic apparatus and control method thereof
+  year: '2024'
+  venue: US Patent 11,893,980
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:eQOLeE2rZwMC
+- title: Electronic device and method for controlling the same
+  year: '2023'
+  venue: US Patent App. 18/057,491
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:zYLM7Y9cAGgC
+- title: Conformer-based on-device streaming speech recognition with KD compression
+    and two-pass architecture
+  year: '2023'
+  venue: 2022 IEEE Spoken Language Technology Workshop (SLT), 92-99
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:u5HHmVD_uO8C
+- title: A More Accurate Internal Language Model Score Estimation for the Hybrid Autoregressive
+    Transducer
+  year: '2023'
+  venue: Proc. Interspeech 2023, 869-873
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:2osOgNQ5qMEC
+- title: Server that supports speech recognition of device, and operation method of
+    the server
+  year: '2022'
+  venue: US Patent 11,514,916
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:W7OEmFMy1HYC
+- title: Electronic apparatus, control method thereof and electronic system
+  year: '2022'
+  venue: US Patent App. 17/574,214
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:Tyk-4Ss8FVUC
+- title: Streaming on-device end-to-end asr system for privacy-sensitive voice-typing
+  year: '2020'
+  venue: Proc. Interspeech 2020, 3371-3375
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:u-x6o8ySG0sC
+- title: Utterance Invariant Training for Hybrid Two-Pass End-to-End Speech Recognition.
+  year: '2020'
+  venue: Interspeech, 2827-2831
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:9yKSN-GCB0IC
+- title: Attention based on-device streaming speech recognition with large speech
+    corpus
+  year: '2019'
+  venue: 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU …
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:d1gkVwhDpl0C
+- title: 'Less is Enough: A Target Fine-tuning Strategy for Contextual Biasing Speech
+    Recognition'
+  year: ''
+  venue: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:UeHWp8X0CEIC

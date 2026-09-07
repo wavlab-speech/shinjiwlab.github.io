@@ -1,0 +1,28 @@
+total: 6
+pubs:
+- title: 'ZEUS: Accelerating Diffusion Models with Only Second-Order Predictor'
+  year: '2026'
+  venue: ACM MM 2026 (Oral)
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eGfZvOkAAAAJ&citation_for_view=eGfZvOkAAAAJ:UeHWp8X0CEIC
+- title: 'T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive
+    Text-to-Structure Reasoning'
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.03790
+  url: https://arxiv.org/abs/2603.03790
+- title: 'DecodeShare: Tracing the Shared Subspace of LLM Decode-Time Decisions'
+  year: '2026'
+  venue: arXiv preprint arXiv:2607.20469
+  url: https://arxiv.org/abs/2607.20469
+- title: 'SADA: Stability-guided Adaptive Diffusion Acceleration'
+  year: '2025'
+  venue: ICML 2025
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eGfZvOkAAAAJ&citation_for_view=eGfZvOkAAAAJ:d1gkVwhDpl0C
+- title: 'FlashSVD: Memory-Efficient Inference with Streaming for Low-Rank Models'
+  year: '2025'
+  venue: AAAI 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eGfZvOkAAAAJ&citation_for_view=eGfZvOkAAAAJ:u-x6o8ySG0sC
+- title: Enhanced Cyclic Coordinate Descent Methods for Elastic Net Penalized Linear
+    Models
+  year: '2025'
+  venue: NeurIPS 2025
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eGfZvOkAAAAJ&citation_for_view=eGfZvOkAAAAJ:9yKSN-GCB0IC
