@@ -7,6 +7,10 @@ nav: true
 order: 6
 ---
 
+### 2026 Fall
+
+* [Speech Generation (11-752)]({% post_url 2026-08-31-11752-2026f %})
+
 ### 2026 Spring
 
 * [Speech Technology for Conversational AI (11-692)]({% post_url 2026-01-12-11692-2026s %})
