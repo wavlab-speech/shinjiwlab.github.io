@@ -236,14 +236,14 @@
 
 - name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
   acronym: CVPR
-  year: 2026
+  year: 2027
   ccfddl: AI/cvpr
-  abstract_deadline: 2025-11-06 23:59
-  deadline: 2025-11-13 23:59
-  start: 2026-06-03
-  end: 2026-06-07
-  place: "Denver, Colorado, United States"
-  url: https://cvpr.thecvf.com/Conferences/2026
+  abstract_deadline: 2026-11-10 23:59
+  deadline: 2026-11-16 23:59
+  start: 2027-06-20
+  end: 2027-06-24
+  place: "Seattle, WA, United States"
+  url: https://cvpr.thecvf.com/Conferences/2027
 
 - name: ACM International Conference on Multimodal Interaction
   acronym: ICMI
