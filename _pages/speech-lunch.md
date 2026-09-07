@@ -313,15 +313,43 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
     return y;
   }
 
-  // When the lab meets, as stated in the page copy above (0 = Sunday). A talk
-  // carries the END of its meeting as its timestamp, so it leaves the "Next
-  // talk" card when the meeting finishes instead of at midnight.
-  var MEETING_DAY = 4;
+  // When and where the lab meets, as stated in the page copy above.
+  var MEETING_DAY = 4;                       // 0 = Sunday
+  var MEETING_TZ = "America/New_York";       // the schedule is Pittsburgh time
   var MEETING_END_HOUR = 13, MEETING_END_MINUTE = 30;
 
+  // A calendar date, held at local noon. Use it to SHOW a date and to read its
+  // weekday. Noon keeps the date and the weekday correct in every time zone.
   function makeDate(y, mo, d) {
-    var cand = new Date(y, mo - 1, d, MEETING_END_HOUR, MEETING_END_MINUTE, 0);
+    var cand = new Date(y, mo - 1, d, 12, 0, 0);
     return (cand.getMonth() === mo - 1 && cand.getDate() === d) ? cand : null;
+  }
+
+  // The UTC offset of MEETING_TZ at one instant, in milliseconds.
+  function zoneOffset(epoch) {
+    var p = {};
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: MEETING_TZ, hour12: false,
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit"
+    }).formatToParts(new Date(epoch)).forEach(function (x) { p[x.type] = x.value; });
+    var hour = p.hour === "24" ? 0 : +p.hour;   // some engines report hour 24
+    return Date.UTC(+p.year, +p.month - 1, +p.day, hour, +p.minute, +p.second) - epoch;
+  }
+
+  // The instant a talk ENDS, anchored to Pittsburgh and not to the reader's
+  // clock. Compare this against Date.now() to sort past from upcoming. Without
+  // the anchor a reader in Taipei saw the talk of the day as already finished
+  // eleven hours before it started. Two passes settle the daylight-saving edge.
+  function meetingEndEpoch(y, mo, d) {
+    var wallAsUTC = Date.UTC(y, mo - 1, d, MEETING_END_HOUR, MEETING_END_MINUTE, 0);
+    try {
+      var first = wallAsUTC - zoneOffset(wallAsUTC);
+      return wallAsUTC - zoneOffset(first);
+    } catch (e) {
+      // No Intl time zone support: fall back to the reader's own clock.
+      return new Date(y, mo - 1, d, MEETING_END_HOUR, MEETING_END_MINUTE, 0).getTime();
+    }
   }
 
   // -- Name the tab as a whole. Every row then derives its year from this ONE
@@ -393,7 +421,14 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
     card.appendChild(el("div", "sl-next-date", fmtLong(item.date)));
 
     var meta = el("div", "sl-meta");
-    if (item.location) meta.appendChild(el("span", null, "📍 " + item.location));
+    if (item.location) {
+      var where = el("span", null);
+      var pin = el("span", null, "📍");
+      pin.setAttribute("aria-hidden", "true");
+      where.appendChild(pin);
+      where.appendChild(document.createTextNode(" " + item.location));
+      meta.appendChild(where);
+    }
     if (item.presentation) meta.appendChild(el("span", "sl-chip", item.presentation));
     if (item.note) meta.appendChild(el("span", "sl-chip", item.note));
     if (meta.childNodes.length) card.appendChild(meta);
@@ -484,6 +519,7 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
       var r = p.rec;
       items.push({
         date: date,
+        endsAt: meetingEndEpoch(y, p.dp.mo, p.dp.day),
         speaker: r.speaker,
         presentation: r.presentation,
         location: r.location,
@@ -505,8 +541,8 @@ Please contact Chien-yu Huang <cyhuang1997@gmail.com> and Shinji Watanabe <shinj
   // -- Current semester: next-talk card, then upcoming, then past.
   function renderCurrent(items) {
     var now = Date.now();
-    var upcoming = items.filter(function (i) { return i.date.getTime() >= now; });
-    var past = items.filter(function (i) { return i.date.getTime() < now; }).reverse();
+    var upcoming = items.filter(function (i) { return i.endsAt >= now; });
+    var past = items.filter(function (i) { return i.endsAt < now; }).reverse();
 
     var next = null;
     for (var i = 0; i < upcoming.length; i++) {
