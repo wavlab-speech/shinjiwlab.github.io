@@ -1,0 +1,111 @@
+name: Check publications
+
+# Reports papers that are on Shinji's public publication list but missing from
+# _bibliography/papers.bib. It writes no files and opens no pull request. It
+# keeps ONE issue up to date, so a week with nothing new produces no
+# notification, and a week with a new paper does.
+#
+# Design: docs/superpowers/specs/2026-09-04-publication-sync-design.md
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # Monday 07:00 UTC, an hour after the conferences bot
+  workflow_dispatch: {}    # allow manual runs from the Actions tab
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: check-publications
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install "beautifulsoup4>=4.12"
+
+      # Runs against the checked-in HTML fixture. A scraper or matcher
+      # regression fails here, offline, before any network call.
+      - name: Self-test against the checked-in fixture
+        run: python scripts/check_publications.py --selftest
+
+      # Exits 1 when papers are missing, 0 when none are. It also fails loudly
+      # if the live page yields too few entries, rather than reporting a false
+      # "nothing new".
+      - name: Look for missing publications
+        id: check
+        run: |
+          set +e
+          python scripts/check_publications.py --report "${RUNNER_TEMP}/report.md"
+          code=$?
+          set -e
+          if [ "$code" -gt 1 ]; then
+            echo "the checker failed with exit $code"
+            exit "$code"
+          fi
+          echo "missing=$code" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the tracking issue
+        if: steps.check.outputs.missing == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          {
+            cat "${RUNNER_TEMP}/report.md"
+            echo
+            echo "---"
+            echo
+            echo "Titles come from a scrape and are not authoritative. The source page"
+            echo "carries 13% ALL-CAPS titles against 4% here, so check a title before"
+            echo "you trust it. Link fields are left out by design: 92% of papers.bib"
+            echo "has none."
+            echo
+            echo "This issue is rewritten by the weekly job. A week with nothing new"
+            echo "leaves it unchanged and sends no notification."
+          } > "${RUNNER_TEMP}/body.md"
+
+          number=$(gh issue list --repo "$REPO" --state open --label automated \
+                     --search "Publications missing from papers.bib in:title" \
+                     --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --repo "$REPO" --body-file "${RUNNER_TEMP}/body.md"
+            echo "updated issue #$number"
+          else
+            gh issue create --repo "$REPO" \
+              --title "Publications missing from papers.bib" \
+              --label automated \
+              --body-file "${RUNNER_TEMP}/body.md"
+          fi
+
+      # Nothing missing: close the issue if one is open, so it does not linger.
+      - name: Close the tracking issue
+        if: steps.check.outputs.missing == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          number=$(gh issue list --repo "$REPO" --state open --label automated \
+                     --search "Publications missing from papers.bib in:title" \
+                     --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue close "$number" --repo "$REPO" \
+              --comment "Every paper on the publication list is now in papers.bib."
+            echo "closed issue #$number"
+          else
+            echo "nothing missing, no open issue"
+          fi
