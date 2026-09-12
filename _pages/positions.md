@@ -108,10 +108,10 @@ Please see the following for details of each application category.
 {: #postdoc}
 
 <div class="pos-status" markdown="1">
-Currently, we don't have an opening position, but if you really want to work with us, please contact us.
+We basically do not accept postdocs. When an opening does come up, Shinji announces it on his [X](https://x.com/shinjiw_at_cmu) and [LinkedIn](https://www.linkedin.com/in/shinji-watanabe-82533520/) accounts, so please follow them if you are interested.
 </div>
 
-If you're interested in the position, we suggest you to have the following actions. **Note that we would not respond to all applications.**
+If an opening has been announced and you're interested in the position, we suggest you to have the following actions. **Note that we would not respond to all applications.**
 
 - Please email your CV to shinjiw@ieee.org with the subject **"WAVLab postdoc applications"**.
 - If you do not put it in the subject, we regard that you do not thoroughly investigate our lab's activities on this webpage, and unfortunately, we may not respond to this email.
@@ -130,6 +130,8 @@ If you're interested in the position, we suggest you to have the following actio
 {: #collaborator}
 
 - We provide training and research opportunities to students who are interested in speech processing and want to collaborate with us.
+  - This is Shinji's volunteer activity for everyone in the world who wants to do speech research. Its purpose is to let you experience how much fun speech research is.
+  - The collaboration is based on a one-hour meeting every Thursday. That hour is basically the time we can commit to, and it is difficult to spend more time than that, although more time becomes possible depending on how your research progresses.
   - We usually work with students at Carnegie Mellon University (CMU), but students from other universities are also welcome. We accept both undergraduate and graduate students if they are motivated.
   - We emphasize the educational perspectives for speech processing, especially for students who are new to speech research. We guide students in understanding speech research background, required programming skills, knowledge of the cluster, and use of speech and audio toolkits. Students can also conduct research under our supervision. 
   - It usually takes a few months or even longer for students to obtain sufficient research skills before starting serious research activities. We believe this process is necessary and is essential for new researchers. If you want to publish a paper as soon as possible, our lab is not the best option for you, unfortunately. We recommend you contact the other faculties.
