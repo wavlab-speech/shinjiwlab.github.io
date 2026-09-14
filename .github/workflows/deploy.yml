@@ -19,6 +19,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        # jekyll-last-modified-at reads each file's last commit date. The default
+        # shallow clone has one commit, so every page would look edited today.
+        fetch-depth: 0
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
