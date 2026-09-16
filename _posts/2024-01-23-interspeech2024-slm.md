@@ -46,6 +46,6 @@ Important Dates for [INTERSPEECH 2024](https://interspeech2024.org/call-for-pape
 - [Yifan Peng](https://pyf98.github.io/) (Carnegie Mellon University)
 - [Siddhant Arora](https://siddhu001.github.io/) (Carnegie Mellon University)
 - [Karen Livescu](https://home.ttic.edu/~klivescu/) (TTI-Chicago)
-- [Shinji Watanabe](https://sites.google.com/view/shinjiwatanabe) (Carnegie Mellon University)
+- [Shinji Watanabe](https://sw005320.github.io) (Carnegie Mellon University)
 - [Hung-yi Lee](https://speech.ee.ntu.edu.tw/~hylee) (National Taiwan University)
 - [Yossi Adi](https://www.cs.huji.ac.il/~adiyoss/) (Hebrew University of Jerusalem)

@@ -38,7 +38,7 @@ Papers:
 
 Slides:
 
-- [Code Switching ASR](https://github.com/shinjiwlab/shinjiwlab.github.io/tree/source/assets/pdf/reading_group_code_switching.pdf)
+- [Code Switching ASR](https://github.com/wavlab-speech/shinjiwlab.github.io/tree/source/assets/pdf/reading_group_code_switching.pdf)
 
 
 ### 2021.11.09 Waspaa 2021 Paper list (Selector: Zhong-Qiu)

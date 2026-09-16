@@ -25,7 +25,7 @@ comments: false
 - [Joint prediction of truecasing and punctuation for conversational speech in low-resource scenarios](https://arxiv.org/pdf/2109.06103.pdf)
 
 ### 2022.02.16 Survey of Streaming SLU (presented by Siddhant Arora)
-- [Streaming SLU and Wake-up Word Detection](https://github.com/shinjiwlab/shinjiwlab.github.io/tree/source/assets/pdf/2022-02-16_Siddhant_Streaming_SLU.pdf)
+- [Streaming SLU and Wake-up Word Detection](https://github.com/wavlab-speech/shinjiwlab.github.io/tree/source/assets/pdf/2022-02-16_Siddhant_Streaming_SLU.pdf)
 
 ### 2022.02.23 NeurIPS 2021 Paper List
 - [Unsupervised Speech Recognition](https://proceedings.neurips.cc/paper/2021/hash/ea159dc9788ffac311592613b7f71fbb-Abstract.html)
@@ -43,7 +43,7 @@ comments: false
 - [Unsupervised Noise Adaptive Speech Enhancement by Discriminator-Constrained Optimal Transport](https://openreview.net/pdf?id=R6U4-Qkcg21)
 
 ### 2022.04.06 Adapters in Speech Transformers (presented by Karthik Ganesan)
-- [Adapters in Speech Transformers](https://github.com/shinjiwlab/shinjiwlab.github.io/tree/source/assets/pdf/2022-04-06-Adapters.pdf)
+- [Adapters in Speech Transformers](https://github.com/wavlab-speech/shinjiwlab.github.io/tree/source/assets/pdf/2022-04-06-Adapters.pdf)
 
 ### 2022.04.13 NeurIPS 2021 Paper List
 - [Understanding Adaptive, Multiscale Temporal Integration In Deep Speech Recognition Systems](https://nips.cc/virtual/2021/poster/28735)
@@ -51,10 +51,10 @@ comments: false
 - [Towards efficient end-to-end speech recognition with biologically-inspired neural networks](https://nips.cc/virtual/2021/workshop/21839#wse-detail-34284)
 
 ### 2022.04.27 Survey of Semi-Supervised ASR (presented by Dan Berrebbi)
-- [Semi-Supervised ASR](https://github.com/shinjiwlab/shinjiwlab.github.io/tree/source/assets/pdf/dan_reading_group_semi_supervised_asr.pdf)
+- [Semi-Supervised ASR](https://github.com/wavlab-speech/shinjiwlab.github.io/tree/source/assets/pdf/dan_reading_group_semi_supervised_asr.pdf)
 
 ### 2022.05.04 The VoiceMOS Challenge 2022 (presented by Wen-Chin Huang from Nagoya University)
-- [The VoiceMOS Challenge 2022](https://github.com/shinjiwlab/shinjiwlab.github.io/tree/source/assets/pdf/2022-05-04-VoiceMOS-Challenge.pdf)
+- [The VoiceMOS Challenge 2022](https://github.com/wavlab-speech/shinjiwlab.github.io/tree/source/assets/pdf/2022-05-04-VoiceMOS-Challenge.pdf)
 - [CodaLab Challenge Page](https://codalab.lisn.upsaclay.fr/competitions/695)
 - [Paper](https://arxiv.org/abs/2203.11389)
 - [Baseline System 1](https://github.com/nii-yamagishilab/mos-finetune-ssl)
