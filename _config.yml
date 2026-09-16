@@ -42,7 +42,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: shinjiwlab # your GitHub user name
+github_username: wavlab-speech # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: WavLab # your Twitter handle
 linkedin_username: wavlab-cmu # your LinkedIn user name

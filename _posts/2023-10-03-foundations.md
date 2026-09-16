@@ -11,7 +11,7 @@ authors:
     affiliations:
       name: Carnegie Mellon University
   - name: Shinji Watanabe
-    url: "https://sites.google.com/view/shinjiwatanabe"
+    url: "https://sw005320.github.io"
     affiliations:
       name: Carnegie Mellon University
 
