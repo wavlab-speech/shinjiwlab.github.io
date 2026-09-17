@@ -420,6 +420,7 @@ linked on their card. The lab's curated list of papers is on the
 
 ##### Visitors & Collaborators
 <ul>
+<li>2026. 05 - 2026. 08: Thanapat Trachu (University of Southern California) </li>
 <li>2026. 02 - 2026. 07: Dahee Yang (Hanyang University) </li>
 <li>2026. 01 - 2026. 05: Alexander Polok (Brno University of Technology) </li>
 <li>2025. 12 - 2026. 03: Xun Gong (Shanghai Jiao Tong University) </li>

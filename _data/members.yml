@@ -129,13 +129,6 @@
   website: https://whr-a.github.io/
   image: haoran.jpg
 
-- id: thanapat_trachu
-  name: Thanapat Trachu
-  role: visitor
-  scholar_id: zbCoi_EAAAAJ
-  website: https://www.linkedin.com/in/thanapat-trachu-602551227/
-  image: thanapat.jpg
-
 - id: kuangda_wang
   name: Kuang-Da Wang
   role: visitor
