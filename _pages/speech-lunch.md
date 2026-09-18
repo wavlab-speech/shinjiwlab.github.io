@@ -6,11 +6,10 @@ nav: true
 order: 10
 ---
 
-Welcome to the Speech Lunch (formerly Sphinx Lunch) at Carnegie Mellon University!
-This lunch meeting is designed to discuss any speech-related research items regularly.
-The meeting consists of presentations by CMU faculty members, CMU students, and guest speakers.
-We welcome any reserach topics, including an ordinary presentation, conference presentation rehearsals, preliminary research ideas, research discussions, and so on.
-We also welcome any CMU researchers and external researchers to join the meeting.
+Welcome to Speech Lunch (formerly Sphinx Lunch) at Carnegie Mellon University! Speech Lunch is a regular forum for discussing speech-related research and is organized by CMU speech faculty, including Shinji Watanabe, Bhiksha Raj, Carlos Busso, and others. The tradition was previously managed by Richard M. Stern, Alex Rudnicky, and Alan W. Black, and has since evolved into the current Speech Lunch.
+
+The meeting features presentations by CMU faculty, students, and guest speakers. We welcome a wide range of research activities, including regular research presentations, conference presentation rehearsals, preliminary research ideas, works in progress, and open research discussions.
+CMU researchers and external researchers are both welcome to join, present, and participate in discussions.
 
 During the semester, we will regularly have meetings in the following slots:
 
