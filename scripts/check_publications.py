@@ -49,19 +49,13 @@ SITE_URL = "https://sw005320.github.io/publications"
 CONTACT = "chienyuh@andrew.cmu.edu"
 UA = f"wavlab-pubbot/1.0 (+https://www.wavlab.org; {CONTACT})"
 
-# Only these two sections are lab publications. The rest of the page is
-# Shinji's pre-CMU career, keynotes, tutorials and books.
+# Only these two sections are lab publications. The scraper reads every section
+# on the page, and find_missing keeps these. That drops the other six: Book,
+# Book chapter, PhD thesis, Keynote talk, Tutorial/Overview/Invited talk, and
+# Review and overview paper. A thesis does not belong in the publication list.
 KEEP_SECTIONS = {
     "Journal (refereed)",
     "International Conference and Workshop (refereed)",
-}
-ALL_SECTIONS = KEEP_SECTIONS | {
-    "Book",
-    "Book chapter",
-    "PhD thesis",
-    "Keynote talk",
-    "Tutorial/Overview/Invited talk",
-    "Review and overview paper",
 }
 
 MIN_YEAR = 2025           # this automation catches new papers, not backlog
@@ -267,9 +261,9 @@ def scrape(html: str) -> list[dict]:
         label = summary.find("span", class_="t") if summary else None
         if label is None:
             continue
-        # Every section is kept, not only the ones in ALL_SECTIONS. A new
-        # category on the page then reaches find_missing, which applies
-        # KEEP_SECTIONS, instead of disappearing here without a word.
+        # Every section is read, not only the two that are kept. A new category
+        # on the page then reaches find_missing, which applies KEEP_SECTIONS,
+        # instead of disappearing here without a word.
         section = collapse(label.get_text(""))
         for item in block.select("ol.entries > li"):
             text = collapse(item.get_text(""))
