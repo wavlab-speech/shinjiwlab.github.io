@@ -26,6 +26,9 @@ permissions:
 
 jobs:
   placeholders:
+    # This name is the status check's name in branch protection. Without it the
+    # setting page shows the job id, "placeholders", which says nothing.
+    name: Check bibliography placeholders
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
