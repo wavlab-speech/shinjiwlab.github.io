@@ -84,16 +84,25 @@ jobs:
           fi
 
       # Compares the site against papers.bib ON THIS BRANCH, so a paper already
-      # waiting in the pull request is not proposed twice. Exit 1 means it
-      # wrote something, 0 means nothing was missing, and 2 or more is a real
-      # failure that must turn the run red.
+      # waiting in the pull request is not proposed twice. Exit 1 from --apply
+      # means it wrote something, 0 means nothing was missing, and 2 or more is
+      # a real failure that must turn the run red.
+      #
+      # The report runs FIRST. After --apply the papers are in papers.bib, so a
+      # report taken afterwards finds nothing missing, and the pull request body
+      # would say nothing is missing on the pull request that adds them.
+      #
+      # --apply then reads the page --report already saved, so the run makes one
+      # request to the site rather than two.
       - name: Write missing publications
         id: apply
         run: |
           set +e
-          python scripts/check_publications.py --apply
+          python scripts/check_publications.py \
+            --report "${RUNNER_TEMP}/report.md" \
+            --save-fixture "${RUNNER_TEMP}/page.html"
+          python scripts/check_publications.py --apply --fixture "${RUNNER_TEMP}/page.html"
           code=$?
-          python scripts/check_publications.py --report "${RUNNER_TEMP}/report.md" >/dev/null 2>&1
           set -e
           if [ "$code" -gt 1 ]; then
             echo "the checker failed with exit $code"
@@ -111,7 +120,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
-          count=$(grep -c 'abbr={TODO}' _bibliography/papers.bib || true)
+          # Count the entries this run added. `grep -c` over the whole file
+          # would also count placeholders still waiting from earlier runs, so
+          # on an accumulating branch the message would overstate the commit.
+          count=$(git diff -- _bibliography/papers.bib | grep -c '^+@' || true)
           git add _bibliography/papers.bib
           git commit -m "Add ${count} publications from Shinji's list" \
                      -m "Each entry needs its abbr topic tag. The placeholder check fails until then."

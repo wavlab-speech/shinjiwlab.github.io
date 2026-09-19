@@ -278,7 +278,10 @@ const state = new Map(DATA.papers.map(p => [p.id, {
   dropped: false, dupOk: !p.duplicate,
 }]));
 
-const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+// Quotes too: esc() output is interpolated into double-quoted attributes
+// such as data-a="${esc(a)}", where a bare quote would end the attribute.
+const esc = s => String(s).replace(/[&<>"']/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const allCaps = s => { const L = [...s].filter(c => /[a-z]/i.test(c));
   return L.length > 0 && L.filter(c => c === c.toUpperCase()).length / L.length > 0.85; };
 

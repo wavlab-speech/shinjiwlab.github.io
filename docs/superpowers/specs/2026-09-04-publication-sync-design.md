@@ -365,6 +365,30 @@ whose year is not a number, and reports nothing. The paper would sit in
 `.github/workflows/check-bib-placeholders.yml` therefore fails any pull request
 whose `papers.bib` still holds a TODO, and names the entry and the field.
 
+### The guard needs branch protection to work at all
+
+A pull request opened with `GITHUB_TOKEN` does not start a workflow run. The
+action's own documentation says it: "If you have `on: pull_request` or
+`on: push` workflows acting as checks on pull requests, they will not run."
+
+This repository already shows it. The conference bot's merged pull requests,
+#296 and #299, each carry **zero** check runs, while #304 and #305, opened by a
+person, each ran `deploy`.
+
+So the guard cannot fire on the bot's own pull request. It must be a **required
+status check** on `source`. A required check that never runs stays pending, and
+GitHub blocks the merge. When a person pushes the tag they filled in, that push
+is not token-raised, the check runs, and it turns green or red on the facts.
+
+The guard therefore has no `paths:` filter. A required check that is skipped by
+a path filter never reports, so every pull request that did not touch
+`papers.bib` would be unmergeable.
+
+This is a repository setting, not a file in this pull request. Until somebody
+makes the check required, the bot's pull request is mergeable with placeholders
+still in it. It also applies to the conference bot, whose pull requests merge
+today with no build check at all.
+
 ### Why the branch accumulates
 
 The job merges `source` into its branch and appends only papers that are not

@@ -13,11 +13,13 @@ name: Check bibliography placeholders
 #   year={TODO}  is worse. jekyll-scholar drops the entry from the page and
 #                says nothing, so the paper sits in papers.bib and is invisible.
 
+# Runs on EVERY pull request, with no `paths:` filter, on purpose. This check is
+# a required status check on `source`. A required check that never runs stays
+# pending and blocks the merge, so filtering by path would leave any pull
+# request that does not touch papers.bib permanently unmergeable.
 on:
   pull_request:
     branches: [source, master]
-    paths:
-      - "_bibliography/papers.bib"
 
 permissions:
   contents: read

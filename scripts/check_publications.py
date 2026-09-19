@@ -362,10 +362,13 @@ def parse_bib(path: Path) -> list[dict]:
 # few are journal papers marked "accepted" with no year anywhere -- those
 # honestly have no year yet.
 # A venue abbreviates its year as ICASSP'26. The site also writes "Proc. SLT/26"
-# for nine entries, which looks like a typo for the apostrophe. A slash before
-# two digits appears nowhere else in the venue strings, so accepting it costs
-# nothing and dates nine papers that would otherwise say "year unknown".
-_APOSTROPHE_YEAR = re.compile(r"[\'\u2018\u2019/](\d\d)\b")
+# for nine entries, which looks like a typo for the apostrophe.
+#
+# The slash must follow a LETTER. Volume/issue notation is the same shape:
+# "IEEE TASLP, vol. 31/12" would otherwise read as 2012, and a wrong old year
+# pushes an undated new paper below MIN_YEAR, where find_missing drops it
+# without a word.
+_APOSTROPHE_YEAR = re.compile(r"(?:['\u2018\u2019]|(?<=[A-Za-z])/)(\d\d)\b")
 
 
 def year_from_venue(rest: str) -> int | None:
@@ -506,6 +509,18 @@ def build_entry(card: dict, vocab: list[str]) -> str:
     if not CITEKEY_RE.fullmatch(citekey):
         raise WriteRefused(f"{title[:40]}: the citation key {citekey!r} is not "
                            "a plain name (letters, digits, _ : - . and +).")
+
+    # A brace in any interpolated value closes its field early and starts a new
+    # one. The balance check at the end of this function does not catch it: a
+    # title of `X}, selected={true` balances, and `selected` puts the paper on
+    # the front page. Refuse the brace instead of trying to escape it, because
+    # no real title, author list, or link contains one.
+    # Do not name these `name`/`value`: both are already bound above, and
+    # `value` carries the venue that builds the booktitle field below.
+    for field_label, field_text in (("title", title), ("author list", authors)):
+        if "{" in field_text or "}" in field_text:
+            raise WriteRefused(f"{title[:40]}: the {field_label} contains a brace. "
+                               "Remove it and try again.")
     lines = [f"@{kind}{{{citekey},",
              f"  abbr={{{'&'.join(abbr)}}},",
              f"  abbr_publisher={{{publisher}}},",
@@ -525,6 +540,8 @@ def build_entry(card: dict, vocab: list[str]) -> str:
             if not re.fullmatch(r"\d{4}\.\d{4,5}(v\d+)?", bare):
                 raise WriteRefused(f"{title[:40]}: the arxiv field needs a bare id, for example 2105.01051.")
             raw = bare
+        elif "{" in raw or "}" in raw:
+            raise WriteRefused(f"{title[:40]}: the {name} link contains a brace.")
         elif not raw.startswith(("http://", "https://")):
             # Without a scheme the template prepends /assets/pdf/ and 404s.
             raise WriteRefused(f"{title[:40]}: the {name} link needs http:// or https://.")
