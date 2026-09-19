@@ -43,7 +43,7 @@ except ImportError:  # pragma: no cover
 ROOT = Path(__file__).resolve().parent.parent
 BIB = ROOT / "_bibliography" / "papers.bib"
 
-SITE_URL = "https://sites.google.com/view/shinjiwatanabe/publications"
+SITE_URL = "https://sw005320.github.io/publications"
 CONTACT = "chienyuh@andrew.cmu.edu"
 UA = f"wavlab-pubbot/1.0 (+https://www.wavlab.org; {CONTACT})"
 
@@ -69,8 +69,8 @@ DUP_SKIP = 0.85           # >= this: silently treated as already present
 DUP_SUSPECT = 0.60        # >= this: emitted but flagged as a possible duplicate
 
 # A layout change must break loudly rather than emit an empty PR.
-MIN_BLOCKS = 600
-MIN_TITLES = 600
+MIN_SECTIONS = 6   # the page carries 8
+MIN_TITLES = 600   # the page carries 698
 
 STOPWORDS = {
     "a", "an", "and", "at", "by", "for", "from", "in", "into", "of", "on",
@@ -208,8 +208,8 @@ def read_html(path: Path) -> str:
 def fetch(url: str, tries: int = 6, timeout: int = 30) -> bytes:
     """GET with a self-identifying User-Agent and exponential backoff.
 
-    The User-Agent is not optional: without one, sites.google.com and dblp
-    both return 503.
+    The User-Agent identifies the bot and carries a contact address. dblp
+    returns 503 without one.
 
     This is the only network call the script makes, and it is critical: without
     the page there is no run at all. So it retries generously and honours
@@ -241,56 +241,79 @@ def fetch(url: str, tries: int = 6, timeout: int = 30) -> bytes:
 def scrape(html: str) -> list[dict]:
     """Extract publication entries, tagged with their section heading.
 
-    Uses role/dir attributes rather than Google's generated class names
-    (zfr3Q), which are not contractual. Spans are joined with NO separator:
-    Google Sites splits text mid-word, so a space separator corrupts tokens
-    into things like "Interspeech'2 5" and "(202 3 )".
+    The page is Hugo-generated. Each category is one <details class="sec">, with
+    its name in <summary><span class="t"> and its entries in <ol class="entries">
+    as <li data-year="YYYY"> elements.
+
+    Spans are joined with NO separator. A space separator puts one before the
+    comma that follows the <strong> author name: "Shinji Watanabe , Marc".
     """
     soup = BeautifulSoup(html, "html.parser")
-    blocks = soup.select("p[role=presentation][dir=ltr], h1, h2, h3, h4")
-    if len(blocks) < MIN_BLOCKS:
+    sections = soup.select("details.sec")
+    if len(sections) < MIN_SECTIONS:
         raise RuntimeError(
-            f"scrape found only {len(blocks)} blocks (expected >= {MIN_BLOCKS}). "
+            f"scrape found only {len(sections)} sections (expected >= {MIN_SECTIONS}). "
             "The page layout has probably changed; refusing to continue rather "
             "than report a false 'nothing new'."
         )
 
-    section: str | None = None
     entries: list[dict] = []
-    for block in blocks:
-        text = collapse(block.get_text(""))
-        if not text:
+    for block in sections:
+        summary = block.find("summary")
+        label = summary.find("span", class_="t") if summary else None
+        if label is None:
             continue
-        if text in ALL_SECTIONS:
-            section = text
-            continue
-        if section is None or len(text) < 40:
-            continue
-        match = ENTRY_RE.match(text)
-        if not match or len(match.group("title")) < 10:
-            continue
-        # Read the year from the venue text only, never from the whole citation.
-        # Three titles carry a year of their own -- "2025 URGENT Speech
-        # Enhancement Challenge ... Proc. ICASSP'26" -- and reading the whole
-        # string picks the title's year over the venue's.
-        rest = collapse(match.group("rest"))
-        years = [
-            int(y) for y in re.findall(r"\b(?:19|20)\d\d\b", rest)
-            if YEAR_SANE[0] <= int(y) <= YEAR_SANE[1]
-        ]
-        entries.append({
-            "section": section,
-            "authors": match.group("authors").strip(),
-            "title": collapse(match.group("title")).rstrip("."),
-            "rest": rest,
-            "year": max(years) if years else None,
-            "raw": text,
-        })
+        # Every section is kept, not only the ones in ALL_SECTIONS. A new
+        # category on the page then reaches find_missing, which applies
+        # KEEP_SECTIONS, instead of disappearing here without a word.
+        section = collapse(label.get_text(""))
+        for item in block.select("ol.entries > li"):
+            text = collapse(item.get_text(""))
+            if len(text) < 40:
+                continue
+            match = ENTRY_RE.match(text)
+            if not match or len(match.group("title")) < 10:
+                continue
+            rest = collapse(match.group("rest"))
+            # data-year is the site's own answer, so it wins. 95 of 698 entries
+            # leave it empty -- papers accepted but not yet published -- so fall
+            # back to the venue text, and leave the year unset when neither
+            # gives one. find_missing keeps an undated entry rather than
+            # dropping it, which is what a just-accepted paper needs.
+            attr = (item.get("data-year") or "").strip()
+            year: int | None = None
+            if attr.isdigit() and YEAR_SANE[0] <= int(attr) <= YEAR_SANE[1]:
+                year = int(attr)
+            else:
+                years = [
+                    int(y) for y in re.findall(r"\b(?:19|20)\d\d\b", rest)
+                    if YEAR_SANE[0] <= int(y) <= YEAR_SANE[1]
+                ]
+                year = max(years) if years else None
+            entries.append({
+                "section": section,
+                "authors": match.group("authors").strip(),
+                "title": collapse(match.group("title")).rstrip("."),
+                "rest": rest,
+                "year": year,
+                "raw": text,
+            })
 
     if len(entries) < MIN_TITLES:
         raise RuntimeError(
             f"scrape extracted only {len(entries)} titles (expected >= {MIN_TITLES}). "
             "The citation format has probably changed; refusing to continue."
+        )
+
+    # The two kept sections carry every lab paper. If the page renames one, the
+    # KEEP_SECTIONS filter downstream would quietly match nothing and the run
+    # would report that no paper is missing.
+    absent = KEEP_SECTIONS - {e["section"] for e in entries}
+    if absent:
+        raise RuntimeError(
+            f"the page has no entries under {sorted(absent)}. The section names "
+            "have probably changed; refusing to continue rather than report a "
+            "false 'nothing new'."
         )
     return entries
 
@@ -338,7 +361,11 @@ def parse_bib(path: Path) -> list[dict]:
 # which is why the script needs no external API to fill `year`. The remaining
 # few are journal papers marked "accepted" with no year anywhere -- those
 # honestly have no year yet.
-_APOSTROPHE_YEAR = re.compile(r"[\'\u2018\u2019](\d\d)\b")
+# A venue abbreviates its year as ICASSP'26. The site also writes "Proc. SLT/26"
+# for nine entries, which looks like a typo for the apostrophe. A slash before
+# two digits appears nowhere else in the venue strings, so accepting it costs
+# nothing and dates nine papers that would otherwise say "year unknown".
+_APOSTROPHE_YEAR = re.compile(r"[\'\u2018\u2019/](\d\d)\b")
 
 
 def year_from_venue(rest: str) -> int | None:
@@ -772,12 +799,31 @@ def selftest(fixture: Path) -> int:
     assert year_from_venue("Proc. Findings of EMNLP'26") == 2026
     assert year_from_venue("IEEE Open Journal of Signal Processing (accepted)") is None
     assert year_from_venue("Proc. ICASSP'12, pp. 4753--4756") == 2012
+    # The old Google Sites page carried no year attribute, so a high recovery
+    # rate from the venue string was the only protection. This page sets
+    # data-year, and leaves it empty for papers that are accepted but not yet
+    # published. Those have no year anywhere, so recovery cannot reach them.
+    # The rate is therefore reported, not asserted.
     recovered = sum(1 for e in entries
                     if e["year"] is None and year_from_venue(e["rest"]))
     undated = sum(1 for e in entries if e["year"] is None)
-    assert recovered / max(undated, 1) > 0.9, f"only {recovered}/{undated} recovered"
-    print(f"  ok  year recovered from the venue string for "
+    print(f"  --  year recovered from the venue string for "
           f"{recovered}/{undated} undated entries")
+
+    # This is the assertion that matters. An entry with no year at all must
+    # still reach the report. Those entries are the newest papers, which is
+    # exactly what this tool exists to catch, so the year filter must not drop
+    # them.
+    dateless = [e for e in entries
+                if e["section"] in KEEP_SECTIONS
+                and e["year"] is None and year_from_venue(e["rest"]) is None]
+    if dateless:
+        survived = find_missing(dateless, [], MIN_YEAR)
+        assert len(survived) == len(dateless), (
+            f"the year filter dropped {len(dateless) - len(survived)} of "
+            f"{len(dateless)} entries that carry no year; a paper accepted but "
+            "not yet published would go unreported")
+        print(f"  ok  {len(dateless)} entries with no year at all still reach the report")
 
     # A title can carry a year of its own ("2025 URGENT Speech Enhancement
     # Challenge ... Proc. ICASSP'26"). Reading the whole citation picked the

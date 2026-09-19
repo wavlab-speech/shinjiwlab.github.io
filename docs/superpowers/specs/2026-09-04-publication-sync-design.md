@@ -99,11 +99,13 @@ papers.bib ──parse──> existing titles             |
 
 ### Scraper
 
-- `p[role=presentation][dir=ltr]` plus `h1..h4` in document order, tracking the
-  current section heading. Deliberately avoids Google's generated class names
-  (`zfr3Q`), which are not contractual.
-- Text extraction joins spans with **no separator** — Google Sites splits text
-  mid-word, and a space separator corrupts tokens (`Interspeech'2 5`, `(202 3 )`).
+- One `details.sec` per category. The name is in `summary > span.t`, and the
+  entries are `ol.entries > li` with a `data-year` attribute.
+- Text extraction joins spans with **no separator**. A space separator puts one
+  before the comma after the `strong` author name: `Shinji Watanabe , Marc`.
+- The year comes from `data-year` where the site sets it, and from the venue
+  string otherwise. The site leaves `data-year` empty for 95 of 698 entries,
+  which are papers accepted but not yet published.
 - Section filter keeps only `Journal (refereed)` and
   `International Conference and Workshop (refereed)`. This drops 223 pre-CMU
   career papers and 65 keynotes/tutorials/books.
@@ -112,8 +114,9 @@ papers.bib ──parse──> existing titles             |
   contains `2070` and `2098`. The cutoff is deliberately recent: this automation
   exists to catch *new* papers, and a lower cutoff drags pre-2025 backlog into
   the first run. Older gaps are a separate manual backfill.
-- **Hard failure if the scrape yields zero entries** or fewer than 500 blocks.
-  A layout change must break loudly, never emit an empty PR.
+- **Hard failure if the scrape yields fewer than 6 sections or 600 titles**, or
+  if either kept section name is absent from the page. A layout change, or a
+  renamed section, must break loudly and never report a false "nothing new".
 
 ### Matcher
 
@@ -263,10 +266,11 @@ a regex over the source page cannot be rate-limited.
 
 No test suite exists in this repo, so verification is explicit:
 
-- Scraper: against a checked-in HTML fixture, assert >= 600 blocks and >= 600
-  extracted titles *before* the section and year filters are applied (the
-  current page yields 687 and 683), so a Google Sites layout change is caught
-  offline.
+- Scraper: against a checked-in HTML fixture, assert >= 600 extracted titles
+  *before* the section and year filters are applied (the current page yields
+  694 from 698 entries), so a layout change is caught offline.
+- Undated entries: assert that an entry with no year anywhere still reaches the
+  report. Those are the newest papers, so dropping them would defeat the tool.
 - Matcher: assert the six known false positives are suppressed and that
   Branchformer lands in the suspect band.
 - Enricher: assert exact-title-match guard rejects a near-miss result.
@@ -350,8 +354,12 @@ list of rejected papers would cost code and a file convention to do the same.
 
 ## Known limitations, to be restated in every PR body
 
-- Scraping depends on Google Sites' HTML structure. Mitigated by the
-  class-independent selector and the loud-failure guard, not eliminated.
+- Scraping depends on the HTML structure of Shinji's Hugo site. Mitigated by the
+  loud-failure guards on section count, title count, and the names of the two
+  kept sections; not eliminated. The page moved once already, from Google Sites
+  to sw005320.github.io, and the old page stayed up while frozen. A move is
+  therefore a real failure mode, and a frozen source reports "nothing new"
+  forever, so the address deserves a check when the report goes quiet.
 - Link fields (`arxiv`, `doi`, `html`) are never filled in — by design, see
   "Enrichment" above. A maintainer who wants them adds them by hand, as has
   always been the case here.
