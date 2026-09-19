@@ -9,6 +9,7 @@ order: 6
 
 ### 2026 Fall
 
+* [Speech Recognition and Understanding (11-751/18-781)]({% post_url 2026-08-31-11751-2026f %})
 * [Speech Generation (11-752)]({% post_url 2026-08-31-11752-2026f %})
 
 ### 2026 Spring
