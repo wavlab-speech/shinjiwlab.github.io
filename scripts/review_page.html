@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bib Inbox</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<style>
+  :root {
+    --paper:      #f2f4f7;
+    --card:       #ffffff;
+    --ink:        #16191f;
+    --muted:      #5c6470;
+    --faint:      #8a929e;
+    --rule:       #d9dee5;
+    --rule-soft:  #e8ecf1;
+    --accent:     #1f4e79;
+    --accent-ink: #ffffff;
+    --accent-bg:  #e6edf5;
+    --warn:       #8a5209;
+    --warn-bg:    #fbf1de;
+    --alert:      #8f2c2c;
+    --alert-bg:   #f9e9e9;
+    --ok:         #1f6b45;
+    --code-bg:    #f7f8fa;
+
+    --sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #11141a;
+      --card:      #181c23;
+      --ink:       #e7eaef;
+      --muted:     #9aa3b0;
+      --faint:     #6d7686;
+      --rule:      #2b313b;
+      --rule-soft: #232830;
+      --accent:    #8ab4e0;
+      --accent-ink:#0e1319;
+      --accent-bg: #1b2836;
+      --warn:      #dda944;
+      --warn-bg:   #2c2416;
+      --alert:     #e08585;
+      --alert-bg:  #2e1c1c;
+      --ok:        #6cc295;
+      --code-bg:   #12161c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #11141a;
+    --card:      #181c23;
+    --ink:       #e7eaef;
+    --muted:     #9aa3b0;
+    --faint:     #6d7686;
+    --rule:      #2b313b;
+    --rule-soft: #232830;
+    --accent:    #8ab4e0;
+    --accent-ink:#0e1319;
+    --accent-bg: #1b2836;
+    --warn:      #dda944;
+    --warn-bg:   #2c2416;
+    --alert:     #e08585;
+    --alert-bg:  #2e1c1c;
+    --ok:        #6cc295;
+    --code-bg:   #12161c;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 140px; }
+
+  /* ---------- masthead ---------- */
+  .mast { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+          padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+  .mast h1 { font-family: var(--serif); font-weight: 600; font-size: 30px;
+             margin: 0; letter-spacing: -0.01em; }
+  .mast .sub { color: var(--muted); font-size: 13.5px; }
+  .mast .src { margin-left: auto; font-family: var(--mono); font-size: 12px;
+               color: var(--faint); }
+
+  .demo-note {
+    margin: 18px 0 26px; padding: 11px 14px;
+    background: var(--warn-bg); border-left: 3px solid var(--warn);
+    color: var(--warn); font-size: 13.5px;
+  }
+  .demo-note strong { font-weight: 600; }
+
+  /* ---------- card ---------- */
+  .queue { display: flex; flex-direction: column; gap: 18px; }
+  .paper {
+    background: var(--card); border: 1px solid var(--rule);
+    border-left: 4px solid var(--rule);
+    display: grid; grid-template-columns: minmax(0, 1fr);
+  }
+  .paper[data-state="ready"]  { border-left-color: var(--ok); }
+  .paper[data-state="todo"]   { border-left-color: var(--warn); }
+  .paper[data-state="check"]  { border-left-color: var(--alert); }
+  .paper[data-dropped="1"]    { opacity: .45; }
+
+  .phead { padding: 16px 20px 12px; border-bottom: 1px solid var(--rule-soft); }
+  .idx { font-family: var(--mono); font-size: 11.5px; color: var(--faint);
+         letter-spacing: .06em; text-transform: uppercase; }
+  .ptitle {
+    font-family: var(--serif); font-size: 19px; line-height: 1.32; font-weight: 600;
+    width: 100%; border: 1px solid transparent; background: transparent;
+    color: var(--ink); padding: 3px 6px; margin: 4px -6px 0; border-radius: 2px;
+    resize: none; overflow: hidden; text-wrap: balance; font-synthesis: none;
+  }
+  .ptitle:hover { border-color: var(--rule); }
+  .ptitle:focus { outline: none; border-color: var(--accent); background: var(--card); }
+  .pauthors { color: var(--muted); font-size: 13px; margin-top: 8px;
+              overflow-wrap: anywhere; }
+
+  .flag { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+          font-size: 12.5px; padding: 5px 9px; border-radius: 2px; }
+  .flag.caps  { background: var(--warn-bg);  color: var(--warn); }
+  .flag.dup   { background: var(--alert-bg); color: var(--alert); }
+  .flag button { font: inherit; font-weight: 600; border: 0; background: none;
+                 color: inherit; text-decoration: underline; cursor: pointer; padding: 0; }
+
+  /* ---------- fields ---------- */
+  /* Each grid item needs min-width:0. A grid item uses min-width:auto by
+     default. The long author= line then sets the width of the column, and
+     overflow-x on the <pre> does nothing. The card becomes wider than its
+     own border. */
+  .pbody { display: grid; grid-template-columns: 1fr; }
+  .pbody > * { min-width: 0; }
+  @media (min-width: 900px) { .pbody { grid-template-columns: 1.15fr .85fr; } }
+
+  .fields { padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 16px;
+            min-width: 0; }
+  .frow { display: flex; flex-direction: column; gap: 7px; }
+  .flabel { font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+            letter-spacing: .04em; }
+  .flabel em { font-style: normal; color: var(--faint); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font: 500 12.5px/1 var(--sans); padding: 6px 10px; cursor: pointer;
+    border: 1px solid var(--rule); background: var(--card); color: var(--muted);
+    border-radius: 2px;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent);
+                               color: var(--accent-ink); }
+  .chip.more { border-style: dashed; color: var(--faint); }
+  .tail { display: none; flex-wrap: wrap; gap: 6px; }
+  .tail.open { display: flex; }
+
+  .inline { display: flex; gap: 10px; flex-wrap: wrap; }
+  select, input[type="text"], input[type="number"] {
+    font: 400 14px var(--sans); color: var(--ink); background: var(--card);
+    border: 1px solid var(--rule); border-radius: 2px; padding: 7px 9px;
+  }
+  select:focus, input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  input[type="number"] { width: 90px; font-family: var(--mono);
+                         font-variant-numeric: tabular-nums; }
+  .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+  .links input { font-family: var(--mono); font-size: 12.5px; width: 100%; }
+
+  .selrow { display: flex; align-items: center; gap: 9px; font-size: 13.5px; color: var(--muted); }
+  .selrow input { accent-color: var(--accent); width: 15px; height: 15px; }
+
+  /* ---------- live bibtex ---------- */
+  .out { background: var(--code-bg); border-left: 1px solid var(--rule-soft);
+         padding: 16px 18px; display: flex; flex-direction: column; gap: 10px;
+         min-width: 0; }
+  .outhead { display: flex; align-items: baseline; gap: 8px; }
+  .outhead span { font-family: var(--mono); font-size: 11.5px; color: var(--faint);
+                  letter-spacing: .04em; }
+  pre.bib { margin: 0; font-family: var(--mono); font-size: 12px; line-height: 1.6;
+            color: var(--ink); white-space: pre; overflow-x: auto;
+            max-width: 100%; padding-bottom: 4px; }
+  pre.bib .k  { color: var(--accent); }
+  pre.bib .todo { background: var(--warn-bg); color: var(--warn); padding: 0 3px; }
+  .why { font-size: 12px; color: var(--muted); border-top: 1px dashed var(--rule);
+         padding-top: 9px; line-height: 1.45; }
+  .why code { font-family: var(--mono); font-size: 11.5px; color: var(--ink); }
+
+  .pfoot { padding: 10px 20px; border-top: 1px solid var(--rule-soft);
+           display: flex; gap: 14px; align-items: center; }
+  .linkbtn { font: 400 13px var(--sans); background: none; border: 0; padding: 0;
+             color: var(--muted); text-decoration: underline; cursor: pointer; }
+  .linkbtn:hover { color: var(--alert); }
+  .state { margin-left: auto; font-family: var(--mono); font-size: 11.5px; }
+  .state[data-s="ready"] { color: var(--ok); }
+  .state[data-s="todo"]  { color: var(--warn); }
+  .state[data-s="check"] { color: var(--alert); }
+
+  /* ---------- commit bar ---------- */
+  .bar {
+    position: fixed; left: 0; right: 0; bottom: 0; background: var(--card);
+    border-top: 1px solid var(--rule); padding: 12px 24px;
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .bar .inner { max-width: 1080px; margin: 0 auto; width: 100%;
+                display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .tally { font-size: 13.5px; color: var(--muted); }
+  .tally b { color: var(--ink); font-weight: 600; }
+  .btn {
+    font: 600 14px var(--sans); padding: 10px 18px; border-radius: 2px; cursor: pointer;
+    border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+  }
+  .btn[disabled] { opacity: .4; cursor: not-allowed; }
+  .btn.ghost { background: transparent; color: var(--accent); }
+  .barnote { font-size: 12.5px; color: var(--faint); margin-left: auto; }
+
+  dialog { border: 1px solid var(--rule); background: var(--card); color: var(--ink);
+           max-width: 760px; width: calc(100% - 48px); padding: 0; border-radius: 2px; }
+  dialog::backdrop { background: rgba(10,12,16,.55); }
+  .dhead { padding: 16px 20px; border-bottom: 1px solid var(--rule-soft);
+           font-family: var(--serif); font-size: 19px; font-weight: 600; }
+  .dbody { padding: 16px 20px; max-height: 60vh; overflow: auto; }
+  .dfoot { padding: 12px 20px; border-top: 1px solid var(--rule-soft);
+           display: flex; gap: 10px; justify-content: flex-end; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+<style>
+  /* review-mode additions on top of the shared card styles */
+  .banner { margin: 16px 0 0; padding: 12px 15px; font-size: 13.5px; display: none; }
+  .banner.show { display: block; }
+  .banner.err  { background: var(--alert-bg); color: var(--alert);
+                 border-left: 3px solid var(--alert); }
+  .banner.ok   { background: var(--code-bg); color: var(--ok);
+                 border-left: 3px solid var(--ok); }
+  .banner pre  { margin: 8px 0 0; font-family: var(--mono); font-size: 12px;
+                 white-space: pre-wrap; }
+  .empty { padding: 48px 0; text-align: center; color: var(--muted); }
+  .empty h2 { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+  .key { font-family: var(--mono); font-size: 11.5px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <h1>Bib Inbox</h1>
+    <div class="sub">Complete each paper. The tool then writes them into <code style="font-family:var(--mono);font-size:12.5px">_bibliography/papers.bib</code></div>
+    <div class="src" id="src"></div>
+  </header>
+  <div class="banner" id="banner"></div>
+  <div class="queue" id="queue"></div>
+</div>
+
+<div class="bar">
+  <div class="inner">
+    <div class="tally" id="tally"></div>
+    <button class="btn ghost" id="preview">Preview all</button>
+    <button class="btn" id="commit">Write to papers.bib</button>
+    <div class="barnote" id="barnote"></div>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <div class="dhead" id="dhead">Preview</div>
+  <div class="dbody"><pre class="bib" id="dbody"></pre></div>
+  <div class="dfoot"><button class="btn ghost" id="dclose">Close</button></div>
+</dialog>
+
+<script id="payload" type="application/json">__DATA__</script>
+<script>
+const DATA = JSON.parse(document.getElementById("payload").textContent);
+const VOCAB = DATA.vocab, VENUES = DATA.venues, COMMON = VOCAB.slice(0, DATA.common);
+const TAIL = VOCAB.slice(DATA.common);
+
+const state = new Map(DATA.papers.map(p => [p.id, {
+  title: p.title, venue: p.venue, year: p.year, abbr: [],
+  selected: false, links: {arxiv: "", code: "", html: ""},
+  dropped: false, dupOk: !p.duplicate,
+}]));
+
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const allCaps = s => { const L = [...s].filter(c => /[a-z]/i.test(c));
+  return L.length > 0 && L.filter(c => c === c.toUpperCase()).length / L.length > 0.85; };
+
+function statusOf(s, p) {
+  if (s.dropped) return "dropped";
+  if (!s.abbr.length || !s.year) return "todo";
+  if (!s.dupOk) return "check";
+  return "ready";
+}
+
+function bibtex(p, s) {
+  const v = VENUES[s.venue];
+  if (!v) return "(pick a venue)";
+  const [kind, field, value, braced, publisher] = v;
+  const L = [`@${kind}{<span class="k">${esc(s.citekey || p.citekey)}</span>,`];
+  L.push(`  abbr={${s.abbr.length ? s.abbr.join("&amp;") : '<span class="todo">pick a topic</span>'}},`);
+  L.push(`  abbr_publisher={${esc(publisher)}},`);
+  L.push(`  title={${esc(s.title)}},`);
+  L.push(`  author={${esc(p.authors)}},`);
+  L.push(`  ${field}=${braced ? "{" + esc(value) + "}" : esc(value)},`);
+  L.push(`  year={${s.year || '<span class="todo">year</span>'}},`);
+  for (const k of ["arxiv", "code", "html"])
+    if (s.links[k].trim()) L.push(`  ${k}={${esc(s.links[k].trim())}},`);
+  if (s.selected) L.push("  selected={true},");
+  L.push("}");
+  return L.join("\n");
+}
+
+function whyLine(s) {
+  const v = VENUES[s.venue];
+  if (!v) return "";
+  const [kind, field, , braced] = v;
+  return `<code>${esc(s.venue)}</code> sets three things: the entry type ` +
+    `<code>@${kind}</code>, field <code>${field}</code>, and ` +
+    (braced ? "a value in braces. This venue has no <code>@string</code> macro."
+            : "a macro without braces. The page shows the full venue name.");
+}
+
+function render() {
+  const q = document.getElementById("queue");
+  q.innerHTML = "";
+  document.getElementById("src").textContent =
+    `${DATA.papers.length} to review \u00b7 ${DATA.entries} in papers.bib`;
+  document.getElementById("barnote").textContent =
+    `branch ${DATA.branch}${DATA.dirty ? " \u00b7 working tree is not clean" : ""}`;
+
+  if (!DATA.papers.length) {
+    q.innerHTML = '<div class="empty"><h2>Nothing to review</h2>' +
+      '<p>papers.bib contains every paper on the publication list.</p></div>';
+    tally(); return;
+  }
+
+  for (const p of DATA.papers) {
+    const s = state.get(p.id), st = statusOf(s, p);
+    const chip = a => `<button class="chip" aria-pressed="${s.abbr.includes(a)}" ` +
+      `data-p="${p.id}" data-a="${esc(a)}">${esc(a)}</button>`;
+    const card = document.createElement("div");
+    card.className = "paper";
+    card.dataset.state = st === "dropped" ? "" : st;
+    card.dataset.dropped = s.dropped ? "1" : "0";
+    card.innerHTML = `
+      <div class="phead">
+        <div class="idx">${esc(p.rest)}</div>
+        <textarea class="ptitle" rows="2" data-p="${p.id}" data-f="title">${esc(s.title)}</textarea>
+        <div class="pauthors">${esc(p.authors)}</div>
+        <div class="key">key: ${esc(p.citekey)}</div>
+        ${allCaps(s.title) ? '<div class="flag caps">The site gives this title in capitals. Please edit it above.</div>' : ""}
+        ${p.duplicate && !s.dupOk ? `<div class="flag dup">Scores ${p.duplicate.score} against
+           <code style="font-family:var(--mono)">${esc(p.duplicate.citekey)}</code>
+           (papers.bib:${p.duplicate.line}) &mdash;
+           <button data-dupok="${p.id}">not a duplicate</button></div>` : ""}
+      </div>
+      <div class="pbody">
+        <div class="fields">
+          <div class="frow">
+            <div class="flabel">abbr <em>&mdash; the tool reads these values from papers.bib</em></div>
+            <div class="chips">${COMMON.map(chip).join("")}
+              <button class="chip more" data-tail="${p.id}">+ ${TAIL.length} more</button></div>
+            <div class="tail" data-tailfor="${p.id}">${TAIL.map(chip).join("")}</div>
+          </div>
+          <div class="frow">
+            <div class="flabel">venue and year</div>
+            <div class="inline">
+              <select data-p="${p.id}" data-f="venue">
+                <option value="">pick a venue</option>
+                ${Object.keys(VENUES).map(v =>
+                  `<option value="${esc(v)}"${v === s.venue ? " selected" : ""}>${esc(v)}</option>`).join("")}
+              </select>
+              <input type="number" min="1990" max="2030" placeholder="year"
+                     value="${s.year || ""}" data-p="${p.id}" data-f="year">
+            </div>
+          </div>
+          <div class="frow">
+            <div class="flabel">links <em>&mdash; optional. 92% of papers.bib has no link.</em></div>
+            <div class="links">
+              <input type="text" placeholder="arxiv id" value="${esc(s.links.arxiv)}" data-p="${p.id}" data-l="arxiv">
+              <input type="text" placeholder="code url" value="${esc(s.links.code)}" data-p="${p.id}" data-l="code">
+              <input type="text" placeholder="html url" value="${esc(s.links.html)}" data-p="${p.id}" data-l="html">
+            </div>
+          </div>
+          <label class="selrow"><input type="checkbox" ${s.selected ? "checked" : ""}
+            data-p="${p.id}" data-f="selected"> Feature on the front page</label>
+        </div>
+        <div class="out">
+          <div class="outhead"><span>what gets written</span></div>
+          <pre class="bib">${bibtex(p, s)}</pre>
+          <div class="why">${whyLine(s)}</div>
+        </div>
+      </div>
+      <div class="pfoot">
+        <button class="linkbtn" data-drop="${p.id}">${s.dropped ? "Put back" : "Not our paper"}</button>
+        <div class="state" data-s="${st}">${
+          st === "ready" ? "ready to write" :
+          st === "todo" ? (!s.abbr.length ? "needs a topic" : "needs a year") :
+          st === "check" ? "confirm it is not a duplicate" : "dropped"}</div>
+      </div>`;
+    q.appendChild(card);
+  }
+  sizeTitles();
+  tally();
+}
+
+// Measuring a textarea before the web font loads gives a wrong scrollHeight --
+// it read 1584px for a two-line title. Measure again once fonts are ready and
+// on the next frame.
+function sizeTitles() {
+  document.querySelectorAll(".ptitle").forEach(t => {
+    t.style.height = "auto";
+    const h = t.scrollHeight;
+    // Cap it. Before the font loads scrollHeight came back as 1584px for a
+    // two-line title, which made the card 5000px tall until fonts.ready fired.
+    t.style.height = (h > 0 && h < 400 ? h : 80) + "px";
+  });
+}
+requestAnimationFrame(sizeTitles);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeTitles);
+window.addEventListener("resize", sizeTitles);
+
+function readyList() {
+  return DATA.papers.filter(p => statusOf(state.get(p.id), p) === "ready");
+}
+function tally() {
+  const ready = readyList().length;
+  let todo = 0, check = 0, dropped = 0;
+  for (const p of DATA.papers) {
+    const st = statusOf(state.get(p.id), p);
+    if (st === "todo") todo++; else if (st === "check") check++;
+    else if (st === "dropped") dropped++;
+  }
+  document.getElementById("tally").innerHTML =
+    `<b>${ready}</b> ready \u00b7 ${todo} need a topic or year \u00b7 ${check} to confirm` +
+    (dropped ? ` \u00b7 ${dropped} dropped` : "");
+  const b = document.getElementById("commit");
+  b.disabled = ready === 0;
+  b.textContent = ready === 1 ? "Write 1 entry to papers.bib"
+                              : `Write ${ready} entries to papers.bib`;
+}
+
+function banner(kind, html) {
+  const el = document.getElementById("banner");
+  el.className = `banner show ${kind}`;
+  el.innerHTML = html;
+  el.scrollIntoView({block: "nearest"});
+}
+
+document.addEventListener("click", e => {
+  const t = e.target;
+  if (t.dataset.a) {
+    const s = state.get(t.dataset.p), a = t.dataset.a, i = s.abbr.indexOf(a);
+    if (i >= 0) s.abbr.splice(i, 1); else s.abbr.push(a);
+    s.abbr.sort((x, y) => VOCAB.indexOf(x) - VOCAB.indexOf(y));
+    render();
+  }
+  if (t.dataset.tail) {
+    const el = document.querySelector(`[data-tailfor="${t.dataset.tail}"]`);
+    el.classList.toggle("open");
+    t.textContent = el.classList.contains("open") ? "\u2212 fewer" : `+ ${TAIL.length} more`;
+  }
+  if (t.dataset.dupok) { state.get(t.dataset.dupok).dupOk = true; render(); }
+  if (t.dataset.drop) { const s = state.get(t.dataset.drop); s.dropped = !s.dropped; render(); }
+});
+
+document.addEventListener("input", e => {
+  const t = e.target, id = t.dataset.p;
+  if (!id) return;
+  const s = state.get(id);
+  if (t.dataset.f === "title") {
+    s.title = t.value; sizeTitles();
+  } else if (t.dataset.f === "year") {
+    s.year = t.value ? parseInt(t.value, 10) : null;
+  } else if (t.dataset.l) { s.links[t.dataset.l] = t.value; } else return;
+  const p = DATA.papers.find(x => x.id === id), card = t.closest(".paper");
+  card.querySelector("pre.bib").innerHTML = bibtex(p, s);
+  const st = statusOf(s, p);
+  card.dataset.state = st === "dropped" ? "" : st;
+  const el = card.querySelector(".state");
+  el.dataset.s = st;
+  el.textContent = st === "ready" ? "ready to write" :
+    st === "todo" ? (!s.abbr.length ? "needs a topic" : "needs a year") :
+    st === "check" ? "confirm it is not a duplicate" : "dropped";
+  tally();
+});
+
+document.addEventListener("change", e => {
+  const t = e.target;
+  if (t.dataset.f === "venue") { state.get(t.dataset.p).venue = t.value; render(); }
+  if (t.dataset.f === "selected") { state.get(t.dataset.p).selected = t.checked; render(); }
+});
+
+function plain(p, s) {
+  return bibtex(p, s).replace(/<[^>]+>/g, "").replace(/&amp;/g, "&")
+                     .replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+}
+document.getElementById("preview").onclick = () => {
+  const out = readyList().map(p => plain(p, state.get(p.id))).join("\n\n");
+  document.getElementById("dhead").textContent = "Preview";
+  document.getElementById("dbody").textContent =
+    out || "No paper is ready. Give each paper a topic and a year.";
+  document.getElementById("dlg").showModal();
+};
+document.getElementById("dclose").onclick = () => document.getElementById("dlg").close();
+
+document.getElementById("commit").onclick = async () => {
+  const btn = document.getElementById("commit");
+  btn.disabled = true; btn.textContent = "Writing\u2026";
+  const cards = readyList().map(p => {
+    const s = state.get(p.id);
+    return {id: p.id, citekey: p.citekey, title: s.title, authors: p.authors,
+            abbr: s.abbr, venue: s.venue, year: s.year,
+            links: s.links, selected: s.selected};
+  });
+  try {
+    const r = await fetch("/commit", {method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({digest: DATA.digest, cards})});
+    const j = await r.json();
+    if (!r.ok) {
+      banner("err", `<strong>The tool wrote nothing.</strong> ${esc(j.error)}`);
+      tally(); return;
+    }
+    banner("ok",
+      `<strong>Wrote ${j.written} entr${j.written === 1 ? "y" : "ies"} to ` +
+      `_bibliography/papers.bib.</strong> The file now holds ${j.entries} entries. ` +
+      `The tool put a backup at <code>${esc(j.backup)}</code>.` +
+      `<pre>Read the change before you push:\n` +
+      `  git diff _bibliography/papers.bib\n\n` +
+      `The tool checked the structure. Please check the facts:\n` +
+      `the title, the venue, the year and the topic.\n\n` +
+      `To undo:\n` +
+      `  git checkout -- _bibliography/papers.bib</pre>` +
+      `<p>The server stopped. You can close this tab.</p>`);
+    document.getElementById("queue").innerHTML = "";
+    document.getElementById("tally").textContent = "";
+    btn.style.display = "none";
+    document.getElementById("preview").style.display = "none";
+  } catch (err) {
+    banner("err", `<strong>The tool wrote nothing.</strong> ${esc(err.message)}`);
+    tally();
+  }
+};
+
+render();
+requestAnimationFrame(sizeTitles);
+</script>
+</body>
+</html>
