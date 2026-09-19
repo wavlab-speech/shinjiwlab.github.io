@@ -4,8 +4,10 @@ from _bibliography/papers.bib.
 
 Design: docs/superpowers/specs/2026-09-04-publication-sync-design.md
 
-This script does not write to papers.bib. It reports what is missing and
-exits 1 when there is work to do, so the weekly workflow can branch on it.
+By default this script does not write to papers.bib. It reports what is missing
+and exits 1 when there is work to do, so the weekly workflow can branch on it.
+`--review` is the exception: it serves a local page and writes the entries you
+complete there into papers.bib, after taking a backup.
 
 Usage:
     python scripts/check_publications.py                 # report to stdout
@@ -97,6 +99,8 @@ def abbr_vocabulary(records: list[dict]) -> list[str]:
             if part and part != "TODO":
                 counts[part] = counts.get(part, 0) + 1
     return sorted(counts, key=lambda k: (-counts[k], k))
+
+CITEKEY_RE = re.compile(r"[A-Za-z0-9_:.+-]{1,120}")
 
 DQUOTE = '["“”]'
 ENTRY_RE = re.compile(
@@ -498,7 +502,14 @@ def build_entry(card: dict, vocab: list[str]) -> str:
     if " and " not in authors and len(authors) < 4:
         raise WriteRefused(f"{title[:40]}: the author list is empty.")
 
-    lines = [f"@{kind}{{{card['citekey']},",
+    # The citekey arrives in the POST body and goes straight into
+    # "@kind{<citekey>,". Without this check a crafted body could close the
+    # brace and write further BibTeX of its own.
+    citekey = str(card.get("citekey", ""))
+    if not CITEKEY_RE.fullmatch(citekey):
+        raise WriteRefused(f"{title[:40]}: the citation key {citekey!r} is not "
+                           "a plain name (letters, digits, _ : - . and +).")
+    lines = [f"@{kind}{{{citekey},",
              f"  abbr={{{'&'.join(abbr)}}},",
              f"  abbr_publisher={{{publisher}}},",
              f"  title={{{title}}},",
@@ -694,7 +705,11 @@ def serve_review(payload: dict, vocab: list[str]) -> int:
             if self.path not in ("/", "/index.html"):
                 self._send(404, b"not found", "text/plain; charset=utf-8")
                 return
-            page = template.replace("__DATA__", json.dumps(payload))
+            # json.dumps escapes quotes and backslashes, but not "</script>".
+            # A title carrying it would close the tag early. "\\/" is a valid
+            # JSON escape for "/", so the parsed data is unchanged.
+            data = json.dumps(payload).replace("</", "<\\/")
+            page = template.replace("__DATA__", data)
             self._send(200, page.encode("utf-8"), "text/html; charset=utf-8")
 
         def do_POST(self):

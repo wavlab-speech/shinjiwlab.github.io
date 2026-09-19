@@ -1,8 +1,8 @@
 # Publication gap detection from Shinji's website
 
-**Status:** the checker and the weekly notifier are implemented. The local
-review tool (`--review`) is designed but not built.
-**Date:** 2026-09-04
+**Status:** the checker, the weekly notifier, and the local review tool
+(`--review`) are implemented.
+**Date:** 2026-09-04, source page updated 2026-09-19
 
 ## Problem
 
