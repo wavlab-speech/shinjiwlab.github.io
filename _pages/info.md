@@ -26,28 +26,18 @@ sections:
       - slug: babel-usage
         title: "Babel"
         blurb: "LTI's cluster: access, GPU limits, storage layout, and ESPnet on Slurm."
-      - slug: tir-usage
-        title: "TIR"
-        tag: "for ESPnet users"
-        blurb: "CMU's TIR cluster: Slurm jobs, modules, and ESPnet and Kaldi installation."
       - slug: psc-usage
         title: "PSC"
         blurb: "ACCESS account setup, SSH login, GPU and CPU partitions, and ESPnet installation."
       - slug: delta-usage
         title: "Delta"
         blurb: "NCSA account setup, login, partitions, and ESPnet and Kaldi installation."
-      - slug: aws-usage
-        title: "AWS"
-        blurb: "Launching a GPU instance, sharing access, and installing ESPnet."
   - name: "Tools and templates"
     icon: "fas fa-tools"
     items:
       - slug: espnet2-recipe
         title: "ESPnet2 recipes"
         blurb: "How to make an ESPnet2 recipe from scratch."
-      - slug: dependency-jobs
-        title: "SLURM dependency jobs"
-        blurb: "Chain sequential Slurm jobs so each starts after the previous one finishes."
       - title: "Lab logos and slides template"
         external: https://github.com/wavlab-speech/lab_logo
         blurb: "Need to request access."
