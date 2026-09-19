@@ -59,7 +59,19 @@ def fetch(path: str):
         return yaml.load(resp.read().decode("utf-8"))
 
 
-def parse_deadline(value: str | None) -> dt.datetime | None:
+def parse_deadline(value: str | None,
+                   offset_hours: float = -12) -> dt.datetime | None:
+    """Parse a ccfddl deadline into a UTC instant.
+
+    ccfddl gives the wall-clock time in the conference's own timezone. Returning
+    that clock reading and comparing it against a UTC clock mixes two timezones:
+    an AoE deadline of 23:59 is really 11:59 the next day in UTC, so for up to
+    twelve hours a deadline that is still open reads as passed. pick_edition
+    would then move the site to the next year's edition and drop a deadline
+    people can still meet.
+
+    `UTC = wall - offset`, the same rule the page's own countdown uses.
+    """
     if not value or value == "TBD":
         return None
     # ccfddl timestamps include seconds (e.g. '2026-09-16 23:59:59'); the
@@ -69,8 +81,8 @@ def parse_deadline(value: str | None) -> dt.datetime | None:
         return None
     y, mo, d, h, mi = (int(x) for x in m.groups())
     try:
-        return dt.datetime(y, mo, d, h, mi)
-    except ValueError:
+        return dt.datetime(y, mo, d, h, mi) - dt.timedelta(hours=offset_hours)
+    except (ValueError, OverflowError):
         return None
 
 
@@ -144,12 +156,21 @@ def tz_to_offset(tz: str | None):
 
 
 def pick_edition(confs):
-    """Pick the soonest future deadline; else the latest year."""
-    now = dt.datetime.utcnow()
+    """Pick the soonest future deadline; else the latest year.
+
+    Each edition carries its own timezone, so each deadline is converted with
+    that edition's offset before the comparison.
+    """
+    # utcnow() is deprecated from Python 3.12. This form is naive UTC, which is
+    # what parse_deadline returns.
+    now = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None)
     parsed = []
     for conf in confs:
         timeline = (conf.get("timeline") or [{}])[0]
-        deadline = parse_deadline(timeline.get("deadline"))
+        offset = tz_to_offset(conf.get("timezone"))
+        if offset is None:          # unrecognised: the page's default is AoE
+            offset = -12
+        deadline = parse_deadline(timeline.get("deadline"), offset)
         parsed.append((deadline, int(conf.get("year", 0)), conf))
     future = [p for p in parsed if p[0] and p[0] >= now]
     if future:
