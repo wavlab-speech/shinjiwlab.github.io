@@ -7,16 +7,50 @@ nav: false
 ---
 
 <style>
+  /* --global-divider-color is defined nowhere in this repository. When var()
+     substitution fails the whole `border` shorthand is invalid at
+     computed-value time, so every longhand resets: border-style becomes none
+     and border-width becomes 0. The cards had no border at all, while
+     border-radius still applied -- rounded corners on an invisible box.
+     These two tokens are the ones the Info page uses. */
+  :root {
+    --conf-border: rgba(0, 0, 0, 0.42);
+    --conf-surface: rgba(0, 0, 0, 0.022);
+  }
+  html[data-theme='dark'] {
+    --conf-border: rgba(255, 255, 255, 0.38);
+    --conf-surface: rgba(255, 255, 255, 0.05);
+  }
+
   .conf-tracker { margin-top: 1rem; }
   .conf-card {
-    border: 1px solid var(--global-divider-color);
+    border: 1px solid var(--conf-border);
     border-radius: 8px;
     padding: 1rem 1.25rem;
     margin-bottom: 1rem;
-    background-color: var(--global-bg-color);
+    background-color: var(--conf-surface);
     transition: opacity 0.2s ease;
   }
-  .conf-card.past { opacity: 0.5; }
+  .conf-card.past { opacity: 0.65; }
+
+  /* 15 of 21 entries had passed, and they filled 64% of the page height. They
+     are still useful, so they fold away instead of going. */
+  .conf-past-group { margin-top: 2rem; }
+  .conf-past-group > summary {
+    cursor: pointer;
+    padding: 0.7rem 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    border-top: 1px solid var(--conf-border);
+  }
+  .conf-past-group > summary:hover { color: var(--global-theme-color); }
+  .conf-past-group > summary:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
   .conf-head {
     display: flex;
     align-items: baseline;
@@ -83,6 +117,11 @@ nav: false
   {% endfor %}
 </div>
 
+<details class="conf-past-group" id="conf-past" hidden>
+  <summary>Past deadlines<span id="conf-past-count"></span></summary>
+  <div class="conf-tracker" id="conf-past-list"></div>
+</details>
+
 <script>
 (function () {
   // Parse a "YYYY-MM-DD HH:MM" wall-clock string in a given UTC offset (hours)
@@ -120,6 +159,9 @@ nav: false
 
   var tracker = document.getElementById("conf-tracker");
   if (!tracker) return;
+  var pastGroup = document.getElementById("conf-past");
+  var pastList = document.getElementById("conf-past-list") || tracker;
+  var pastCount = document.getElementById("conf-past-count");
   var cards = Array.prototype.slice.call(tracker.querySelectorAll(".conf-card"));
 
   cards.forEach(function (card) {
@@ -146,10 +188,19 @@ nav: false
       if (!ap) return ea - eb;               // both future: soonest first
       return eb - ea;                        // both past: most recent first
     });
+    var passed = 0;
     cards.forEach(function (card) {
-      card.classList.toggle("past", card.deadlineEpoch != null && card.deadlineEpoch < now);
-      tracker.appendChild(card);
+      var isPast = card.deadlineEpoch != null && card.deadlineEpoch < now;
+      card.classList.toggle("past", isPast);
+      // A card with no deadline stays with the upcoming ones: "no deadline set"
+      // means the next one is not announced, not that it has gone.
+      (isPast ? pastList : tracker).appendChild(card);
+      if (isPast) passed++;
     });
+    if (pastGroup) {
+      pastGroup.hidden = passed === 0;
+      if (pastCount) pastCount.textContent = " (" + passed + ")";
+    }
   }
 
   function tick() {
