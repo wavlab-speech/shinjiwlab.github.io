@@ -73,8 +73,8 @@ galleries:
   }
 
   /* The one page here that changes on its own leads the page, so the eye has a
-     place to land before the reference shelf below. Border-left accent matches
-     the .pos-status idiom on the Positions page. */
+     place to land before the reference shelf below. It earns that through width
+     and type size; it takes the same border and radius as every other card. */
   .info-feature {
     display: flex;
     align-items: center;
@@ -82,8 +82,7 @@ galleries:
     margin: 1.6rem 0 0.4rem;
     padding: 1.1rem 1.25rem;
     border: 1px solid var(--info-border);
-    border-left: 3px solid var(--global-theme-color);
-    border-radius: 0 8px 8px 0;
+    border-radius: 8px;
     background-color: var(--info-surface);
     color: var(--global-text-color);
     text-decoration: none;
