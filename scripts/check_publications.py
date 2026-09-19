@@ -6,8 +6,9 @@ Design: docs/superpowers/specs/2026-09-04-publication-sync-design.md
 
 By default this script does not write to papers.bib. It reports what is missing
 and exits 1 when there is work to do, so the weekly workflow can branch on it.
-`--review` is the exception: it serves a local page and writes the entries you
-complete there into papers.bib, after taking a backup.
+Two modes write: `--review` serves a local page and writes what you complete
+there, and `--apply` writes every missing entry with TODO placeholders for a
+person to finish in a pull request. Both take a backup first.
 
 Usage:
     python scripts/check_publications.py                 # report to stdout
@@ -20,6 +21,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import difflib
 import gzip
 import hashlib
@@ -406,7 +408,7 @@ def make_citekey(authors: str, year: int | str | None, title: str) -> str:
 
 
 def render_stub(entry: dict, suspect: tuple[float, dict] | None,
-                vocab: list[str]) -> str:
+                vocab: list[str], citekey: str | None = None) -> str:
     kind, venue, abbr = map_venue(entry["section"], entry["rest"])
     year = entry["year"] or year_from_venue(entry["rest"])
     authors = format_authors(entry["authors"])
@@ -431,7 +433,8 @@ def render_stub(entry: dict, suspect: tuple[float, dict] | None,
 
     lines.append("% abbr options: " + " ".join(vocab[:VOCAB_COMMON]))
     lines.append("%   combine with & for multi-topic work, e.g. abbr={SE&ASR}")
-    lines.append(f"@{kind}{{{make_citekey(authors, year, entry['title'])},")
+    key = citekey or make_citekey(authors, year, entry["title"])
+    lines.append(f"@{kind}{{{key},")
     lines.append("  abbr={TODO},")
     lines.append(f"  abbr_publisher={{{abbr}}},")
     lines.append(f"  title={{{entry['title']}}},")
@@ -623,6 +626,40 @@ def write_papers_bib(entries: list[tuple[int, str]], expect_digest: str) -> dict
         shown = str(backup)
     return {"written": len(entries), "entries": n_before + len(entries),
             "backup": shown}
+
+
+# -------------------------------------------------------------------- applying
+
+def apply_stubs(missing: list[tuple[dict, tuple[float, dict] | None]],
+                records: list[dict], vocab: list[str]) -> dict:
+    """Write the missing entries into papers.bib, placeholders and all.
+
+    This is what the weekly job runs. It leaves `abbr={TODO}` for a person to
+    replace, because the topic is a curation choice and no tool should guess it.
+    A guard on the pull request refuses to merge while any TODO remains: an
+    `abbr` placeholder shows as a TODO badge on the site, and a `year`
+    placeholder is worse, because jekyll-scholar drops the entry from the page
+    and reports nothing.
+
+    Unlike the review page, this writes a real citation key. Only the fields a
+    person must decide are left as TODO.
+    """
+    taken = {r["citekey"] for r in records}
+    entries: list[tuple[int, str]] = []
+    for entry, suspect in missing:
+        year = entry["year"] or year_from_venue(entry["rest"])
+        # format_authors first. make_citekey splits on " and ", and the raw
+        # site string is "A, B, C, and D", so the raw form yields C's surname.
+        key = unique_citekey(
+            make_citekey(format_authors(entry["authors"]), year,
+                         entry["title"]).replace("TODO_", ""),
+            taken, entry["title"])
+        taken.add(key)
+        # splice needs a number to choose a year block. An entry whose year
+        # nobody knows goes at the top, with the field still TODO.
+        entries.append((year or dt.date.today().year,
+                        render_stub(entry, suspect, vocab, citekey=key)))
+    return write_papers_bib(entries, digest(BIB))
 
 
 # ------------------------------------------------------------------- serving
@@ -1029,6 +1066,9 @@ def main() -> int:
                     help="write the Markdown report here instead of to stdout")
     ap.add_argument("--review", action="store_true",
                     help="open the review page and write completed entries into papers.bib")
+    ap.add_argument("--apply", action="store_true",
+                    help="write the missing entries into papers.bib with TODO "
+                         "placeholders, for a pull request a person then completes")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
 
@@ -1062,6 +1102,19 @@ def main() -> int:
 
     if args.review:
         return serve_review(build_payload(missing, records, vocab), vocab)
+
+    if args.apply:
+        if not missing:
+            print("nothing to write", file=sys.stderr)
+            return 0
+        try:
+            result = apply_stubs(missing, records, vocab)
+        except WriteRefused as refusal:
+            print(f"error: {refusal}", file=sys.stderr)
+            return 2
+        print(f"wrote {result['written']} entries to papers.bib "
+              f"({result['entries']} total)", file=sys.stderr)
+        return 1
 
     text = report(missing, vocab)
     if args.report:

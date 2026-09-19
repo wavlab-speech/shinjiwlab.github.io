@@ -1,7 +1,8 @@
 # Publication gap detection from Shinji's website
 
-**Status:** the checker, the weekly notifier, and the local review tool
-(`--review`) are implemented.
+**Status:** the checker, the weekly job, the local review tool (`--review`),
+and the placeholder merge guard are implemented. The weekly job opens a pull
+request; it no longer keeps an issue.
 **Date:** 2026-09-04, source page updated 2026-09-19
 
 ## Problem
@@ -329,16 +330,53 @@ Two consequences, one good and one not:
   partial replacement, not an equal one: the real review is now the `git diff`
   the person who ran the tool reads before they push.
 
-### What the weekly job does now
+### What the weekly job did between 2026-09-05 and 2026-09-19
 
-It runs `scripts/check_publications.py --report`, which exits 1 when papers are
-missing and 0 when none are. On 1 it creates or updates ONE issue titled
-"Publications missing from papers.bib". On 0 it closes that issue.
+It ran `scripts/check_publications.py --report` and kept ONE issue up to date:
+created or rewritten when papers were missing, closed when none were.
 
-One long-lived issue, rewritten in place, gives the reject list for free: a week
-whose candidate set has not changed produces an identical body and therefore no
-notification. A genuinely new paper changes the body and notifies. A committed
-list of rejected papers would cost code and a file convention to do the same.
+## Shape change: the pull request is back (2026-09-19)
+
+The issue is gone. The weekly job now runs `--apply`, which writes each missing
+paper into `papers.bib` with `abbr={TODO}`, and opens ONE pull request.
+
+This is not the first design returning. That one wrote drafts to a separate
+`_bibliography/incoming.bib` and asked a person to move each entry across by
+hand. The file was the problem, and it is still gone. This job writes the entry
+where it belongs, and leaves exactly one field for a person: the topic tag,
+which is a curation choice no tool should guess.
+
+It restores the reader the 2026-09-05 change gave up: "the bot PR was the one
+place a second person saw an entry before it went live".
+
+### Why a merge guard is required, not optional
+
+Neither placeholder fails the Jekyll build, and both reach the live site:
+
+| Placeholder | Build | Result on the site |
+|---|---|---|
+| `abbr={TODO}` | succeeds | a "TODO" badge beside the paper |
+| `year={TODO}` | succeeds | **the entry vanishes from the page** |
+
+The second is the dangerous one. jekyll-scholar groups by year, drops an entry
+whose year is not a number, and reports nothing. The paper would sit in
+`papers.bib`, invisible, with no error anywhere.
+
+`.github/workflows/check-bib-placeholders.yml` therefore fails any pull request
+whose `papers.bib` still holds a TODO, and names the entry and the field.
+
+### Why the branch accumulates
+
+The job merges `source` into its branch and appends only papers that are not
+already on it, then pushes without force. A tag a person filled in last week
+survives.
+
+The comparison runs against `papers.bib` **on the bot branch**, so a paper
+already waiting in the pull request is not proposed a second time.
+
+Closing the pull request without merging is the way to reject the drafts: with
+no open pull request the next run rebuilds the branch from `source`, and the
+papers are proposed again.
 
 ### Two defects found and fixed before this shipped
 
