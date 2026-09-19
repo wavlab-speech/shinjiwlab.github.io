@@ -334,13 +334,22 @@ def parse_bib(path: Path) -> list[dict]:
         # Most entries use title={...}, but an ACL Anthology export uses
         # title = "..." instead. Missing one means that paper is never matched
         # and would be re-reported as missing forever.
-        title = (re.search(r"title\s*=\s*\{(.*?)\},?\s*\n", chunk, re.S)
-                 or re.search(r'title\s*=\s*"(.*?)",?\s*\n', chunk, re.S))
+        # (?<!\w) so `site_title={...}` is not read as the entry's own title:
+        # the field name ends in "title", and it sits above `title` in the file.
+        title = (re.search(r"(?<!\w)title\s*=\s*\{(.*?)\},?\s*\n", chunk, re.S)
+                 or re.search(r'(?<!\w)title\s*=\s*"(.*?)",?\s*\n', chunk, re.S))
         if not cite or not title:
             continue
         clean = collapse(title.group(1)).strip("{}").replace("{", "").replace("}", "")
         year = re.search(r"year\s*=\s*\{?(\d{4})", chunk)
         abbr = re.search(r"abbr\s*=\s*\{([^}]*)\}", chunk)
+        # `site_title` records the wording Shinji's page uses when it differs
+        # from the title here. Without it the two readings score 0.67 and 0.64
+        # on Jaccard, which lands in the suspect band, so the paper is proposed
+        # again every week and a person rejects it again every week. A custom
+        # field, like abbr and arxiv: jekyll-scholar ignores it.
+        alias = re.search(r"site_title\s*=\s*\{(.*?)\},?\s*\n", chunk, re.S)
+        alias_clean = collapse(alias.group(1)) if alias else ""
         records.append({
             "citekey": cite.group(2).strip(),
             "abbr": abbr.group(1) if abbr else "",
@@ -349,6 +358,9 @@ def parse_bib(path: Path) -> list[dict]:
             "line": line_no,
             "key": hard_key(clean),
             "tokens": tokens(clean),
+            "alias": alias_clean,
+            "alias_key": hard_key(alias_clean) if alias_clean else None,
+            "alias_tokens": tokens(alias_clean) if alias_clean else set(),
         })
     return records
 
@@ -845,6 +857,18 @@ def selftest(fixture: Path) -> int:
         assert exact or best >= DUP_SKIP, f"{title!r} would be reported as new (J={best:.2f})"
     print(f"  ok  {len(known_present)} papers already in papers.bib are not reported as new")
 
+    # A paper whose title differs between the site and papers.bib scores in the
+    # suspect band, so it is reported again every week until somebody records
+    # the site's wording in `site_title`. Assert that the field does its job,
+    # and that the entries carrying one are still parsed normally.
+    aliased = [r for r in records if r["alias"]]
+    assert aliased, "no entry carries site_title; the alias path is untested"
+    for record in aliased:
+        assert record["alias_key"] and record["alias_key"] != record["key"], (
+            f"{record['citekey']}: site_title repeats the title, so it adds nothing")
+        assert hard_key(record["alias"]) in {r2["alias_key"] for r2 in aliased}
+    print(f"  ok  {len(aliased)} entries carry a site_title alias")
+
     # Branchformer is present in papers.bib under a longer title, so it must land
     # in the suspect band -- evidence that the threshold is not trustworthy alone.
     # This assertion depends on papers.bib content, so a legitimate edit to that
@@ -998,6 +1022,11 @@ def find_missing(site: list[dict], records: list[dict],
     existing entry, for the band where a human has to decide.
     """
     by_key = {r["key"]: r for r in records}
+    # A site_title is an exact match too, so the paper never reaches the
+    # similarity test below.
+    for record in records:
+        if record["alias_key"]:
+            by_key.setdefault(record["alias_key"], record)
 
     # The year filter consults the venue abbreviation too, not just a 4-digit
     # year. Without that, "Proc. ICASSP'24 (accepted)" counts as undated and
@@ -1017,7 +1046,9 @@ def find_missing(site: list[dict], records: list[dict],
         toks = tokens(entry["title"])
         score, best = 0.0, None
         for record in records:
-            value = jaccard(toks, record["tokens"])
+            # Score against the site's own wording too, where it is known.
+            value = max(jaccard(toks, record["tokens"]),
+                        jaccard(toks, record["alias_tokens"]))
             if value > score:
                 score, best = value, record
         if score >= DUP_SKIP:

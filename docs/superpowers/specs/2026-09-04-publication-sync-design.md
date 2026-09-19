@@ -414,6 +414,33 @@ papers are proposed again.
   already used 39. The list is now read from `papers.bib` at run time, ordered
   by use, and a self-test assertion holds that too.
 
+### Rejecting a paper that is already here under another title
+
+Shinji's page and `papers.bib` sometimes word the same title differently:
+"(TITW) Database" against "(TITW) dataset", or "Speaker Tokens" against "Speaker
+Token Estimation". Those score 0.67 and 0.64 on Jaccard, inside the suspect
+band, so the paper is proposed every week and a person rejects it every week.
+
+A `site_title` field on the existing entry records the page's wording:
+
+```bibtex
+@inproceedings{jung_titw_interspeech2025,
+  site_title={The text-to-speech in the wild (TITW) Database},
+  title={The text-to-speech in the wild (TITW) dataset},
+```
+
+The matcher treats it as a second exact key and a second token set, so the paper
+is skipped in silence, as an exact title match already is.
+
+This says "the page calls it that", not "ignore this paper", so the knowledge
+sits next to the paper it belongs to and cannot drift from a separate list. It
+also expires by itself: if the page is corrected the field becomes redundant and
+harmless. It lowers no threshold, so nothing else is detected any less well.
+
+`jekyll-scholar` ignores the field, as it ignores `abbr` and `arxiv`. Note that
+`parse_bib` reads the title with `(?<!\w)title`, because `site_title` ends in
+`title` and would otherwise be read as the entry's own title.
+
 ## Known limitations, to be restated in every PR body
 
 - Scraping depends on the HTML structure of Shinji's Hugo site. Mitigated by the
