@@ -2,17 +2,53 @@
 layout: default
 title: Research Activities
 order: 3
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 3
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
+
+# The group of a post comes from its slug, not from its front matter. Editing 40
+# posts to add a `category` would change the last commit date of each one, and
+# the Info page shows that date as "Updated" for the cluster guides. A guide
+# untouched since 2022 would then claim to be current.
+#
+# `match` holds substrings, tested against the lower-case slug. A post that
+# matches nothing still appears, under "Other", so nothing disappears in silence.
+groups:
+  - name: Projects and releases
+    match: [owsm, xeus, versa, foundations, interspeech]
+  - name: Paper lists
+    match: [paper-list]
+  - name: Reading groups
+    match: [reading-group]
+  - name: Courses
+    match: ["11692", "11751", "11752"]
+  - name: Cluster and workflow guides
+    match: [usage, recipe, dependency]
+  - name: Galleries
+    match: [-record]
 ---
+
+<style>
+  :root { --act-border: rgba(0, 0, 0, 0.42); --act-muted: rgba(0, 0, 0, 0.58); }
+  html[data-theme='dark'] { --act-border: rgba(255, 255, 255, 0.38); --act-muted: rgba(255, 255, 255, 0.74); }
+
+  .act-heading {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--act-muted);
+    margin: 2.4rem 0 0.2rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--act-border);
+  }
+  .act-heading .act-count { float: right; font-weight: 400; letter-spacing: 0; }
+  .act-list { list-style: none; padding-left: 0; margin: 0; }
+  .act-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--act-border); }
+  .act-list li:last-child { border-bottom: none; }
+  .act-title { font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+  .act-title a { color: var(--global-text-color); text-decoration: none; }
+  .act-title a:hover { color: var(--global-theme-color); text-decoration: none; }
+  .act-meta { font-size: 0.78rem; color: var(--act-muted); margin: 0.1rem 0 0; }
+  .act-desc { font-size: 0.9rem; line-height: 1.5; color: var(--act-muted); margin: 0.25rem 0 0; }
+</style>
 
 <div class="post">
 
@@ -21,17 +57,52 @@ pagination:
     <h2>{{ site.blog_description }}</h2>
   </div>
 
+  {%- comment -%} Every pattern, used below to find the posts no group claims. {%- endcomment -%}
+  {%- assign all_patterns = "" | split: "" -%}
+  {%- for g in page.groups -%}{%- assign all_patterns = all_patterns | concat: g.match -%}{%- endfor -%}
 
-  <ul class="post-list">
-    {% for post in paginator.posts %}
+  {% for g in page.groups %}
+    {%- assign hits = "" | split: "" -%}
+    {%- for post in site.posts -%}
+      {%- assign slug = post.slug | downcase -%}
+      {%- for pat in g.match -%}
+        {%- if slug contains pat -%}{%- assign hits = hits | push: post -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+    {% if hits.size > 0 %}
+    <h2 class="act-heading">{{ g.name | escape }}<span class="act-count">{{ hits.size }}</span></h2>
+    <ul class="act-list">
+      {% for post in hits %}
       <li>
-        <h3><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
-        <p>{{ post.description }}</p>
+        <div class="act-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
+        <p class="act-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+        {% if post.description %}<p class="act-desc">{{ post.description | escape }}</p>{% endif %}
       </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endfor %}
+
+  {%- assign others = "" | split: "" -%}
+  {%- for post in site.posts -%}
+    {%- assign slug = post.slug | downcase -%}
+    {%- assign claimed = false -%}
+    {%- for pat in all_patterns -%}
+      {%- if slug contains pat -%}{%- assign claimed = true -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+    {%- unless claimed -%}{%- assign others = others | push: post -%}{%- endunless -%}
+  {%- endfor -%}
+  {% if others.size > 0 %}
+  <h2 class="act-heading">Other<span class="act-count">{{ others.size }}</span></h2>
+  <ul class="act-list">
+    {% for post in others %}
+    <li>
+      <div class="act-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
+      <p class="act-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+      {% if post.description %}<p class="act-desc">{{ post.description | escape }}</p>{% endif %}
+    </li>
     {% endfor %}
   </ul>
-
-  {% include pagination.html %}
+  {% endif %}
 
 </div>
