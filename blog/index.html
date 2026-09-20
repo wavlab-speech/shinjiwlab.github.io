@@ -2,36 +2,148 @@
 layout: default
 title: Research Activities
 order: 3
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 3
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
+
+# This page used to paginate at three posts each, which published /blog/page/2/
+# through /blog/page/13/. Those addresses were live, so they redirect here
+# rather than turning into 404s. Every post keeps its own address either way.
+redirect_from:
+  - /blog/page/2/
+  - /blog/page/3/
+  - /blog/page/4/
+  - /blog/page/5/
+  - /blog/page/6/
+  - /blog/page/7/
+  - /blog/page/8/
+  - /blog/page/9/
+  - /blog/page/10/
+  - /blog/page/11/
+  - /blog/page/12/
+  - /blog/page/13/
+
+# The group of a post comes from its slug, not from its front matter. Editing 37
+# posts to add a `category` would change the last commit date of each one, and
+# the Info page shows that date as "Updated" for the cluster guides. A guide
+# untouched since 2022 would then claim to be current.
+#
+# `match` holds substrings, tested against the lower-case slug. A post that
+# matches nothing still appears, under "Other", so nothing disappears in silence.
+# `open: true` makes a group start open. The rest start closed.
+groups:
+  - name: Projects and releases
+    match: [owsm, xeus, versa, foundations, interspeech]
+    open: true
+  - name: Paper lists
+    match: [paper-list]
+  - name: Reading groups
+    match: [reading-group]
+  - name: Courses
+    match: ["11692", "11751", "11752"]
+  - name: Cluster and workflow guides
+    match: [usage, recipe, dependency]
+  - name: Galleries
+    match: [-record]
 ---
+
+<style>
+  :root { --act-border: rgba(0, 0, 0, 0.42); --act-muted: rgba(0, 0, 0, 0.58); }
+  html[data-theme='dark'] { --act-border: rgba(255, 255, 255, 0.38); --act-muted: rgba(255, 255, 255, 0.74); }
+
+  /* The theme's .header-bar sets a 5rem title over 5rem of padding, and the
+     empty blog_description adds another empty heading. Nothing else on the site
+     uses that class, so this page uses the same header as every other page. */
+  .act-group {
+    border-bottom: 1px solid var(--act-border);
+  }
+  .act-group > summary {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    padding: 0.85rem 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--act-muted);
+    list-style: none;
+  }
+  .act-group > summary::-webkit-details-marker { display: none; }
+  .act-group > summary::before { content: "\25B8"; font-size: 0.9rem; line-height: 1; }
+  .act-group[open] > summary::before { content: "\25BE"; }
+  .act-group > summary:hover { color: var(--global-theme-color); }
+  .act-group > summary:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
+  .act-count { margin-left: auto; font-weight: 400; letter-spacing: 0; }
+
+  .act-list { list-style: none; padding: 0 0 0.6rem; margin: 0; }
+  .act-list li { padding: 0.6rem 0 0.6rem 1.45rem; }
+  .act-list li + li { border-top: 1px solid var(--act-border); }
+  .act-title { font-size: 1.02rem; font-weight: 600; line-height: 1.35; }
+  .act-title a { color: var(--global-text-color); text-decoration: none; }
+  .act-title a:hover { color: var(--global-theme-color); text-decoration: none; }
+  .act-meta { font-size: 0.78rem; color: var(--act-muted); margin: 0.1rem 0 0; }
+  .act-desc { font-size: 0.9rem; line-height: 1.5; color: var(--act-muted); margin: 0.25rem 0 0; }
+</style>
 
 <div class="post">
 
-  <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">{{ site.blog_name }}</h1>
+    <p class="post-description">Project pages, paper lists, reading groups, courses, guides, and galleries.</p>
+  </header>
 
+  {%- comment -%} Every pattern, used below to find the posts no group claims. {%- endcomment -%}
+  {%- assign all_patterns = "" | split: "" -%}
+  {%- for g in page.groups -%}{%- assign all_patterns = all_patterns | concat: g.match -%}{%- endfor -%}
 
-  <ul class="post-list">
-    {% for post in paginator.posts %}
+  {% for g in page.groups %}
+    {%- assign hits = "" | split: "" -%}
+    {%- for post in site.posts -%}
+      {%- assign slug = post.slug | downcase -%}
+      {%- for pat in g.match -%}
+        {%- if slug contains pat -%}{%- assign hits = hits | push: post -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+    {% if hits.size > 0 %}
+    <details class="act-group"{% if g.open %} open{% endif %}>
+      <summary>{{ g.name | escape }}<span class="act-count">{{ hits.size }}</span></summary>
+      <ul class="act-list">
+        {% for post in hits %}
+        <li>
+          <div class="act-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
+          <p class="act-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+          {% if post.description %}<p class="act-desc">{{ post.description | escape }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+  {% endfor %}
+
+  {%- assign others = "" | split: "" -%}
+  {%- for post in site.posts -%}
+    {%- assign slug = post.slug | downcase -%}
+    {%- assign claimed = false -%}
+    {%- for pat in all_patterns -%}
+      {%- if slug contains pat -%}{%- assign claimed = true -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+    {%- unless claimed -%}{%- assign others = others | push: post -%}{%- endunless -%}
+  {%- endfor -%}
+  {% if others.size > 0 %}
+  <details class="act-group" open>
+    <summary>Other<span class="act-count">{{ others.size }}</span></summary>
+    <ul class="act-list">
+      {% for post in others %}
       <li>
-        <h3><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
-        <p>{{ post.description }}</p>
+        <div class="act-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
+        <p class="act-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+        {% if post.description %}<p class="act-desc">{{ post.description | escape }}</p>{% endif %}
       </li>
-    {% endfor %}
-  </ul>
-
-  {% include pagination.html %}
+      {% endfor %}
+    </ul>
+  </details>
+  {% endif %}
 
 </div>

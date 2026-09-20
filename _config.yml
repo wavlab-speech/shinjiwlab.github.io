@@ -73,9 +73,6 @@ blog_description:
 permalink: /activities/:year/:title/
 
 # Pagination
-pagination:
-  enabled: true
-
 # Comments
 disqus_shortname: https-shinjiwlab-github-io # put your disqus shortname
 
@@ -119,6 +116,11 @@ include: ['_pages']
 exclude:
   - bin
   - docs
+  # The maintenance scripts, the local review page and its test fixture were
+  # published at /scripts/. Nothing links to them, and they are not site
+  # content, so they are built no more. `bin` and `docs` are excluded already
+  # for the same reason.
+  - scripts
   - Gemfile
   - Gemfile.lock
   - vendor
@@ -132,7 +134,7 @@ plugins:
   - jekyll-email-protect
   - jekyll-github-metadata
   - jekyll-last-modified-at
-  - jekyll-paginate-v2
+  - jekyll-redirect-from
   - jekyll/scholar
   - jekyll-twitter-plugin
   - jemoji
