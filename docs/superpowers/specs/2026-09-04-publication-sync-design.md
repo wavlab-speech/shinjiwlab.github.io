@@ -437,9 +437,14 @@ sits next to the paper it belongs to and cannot drift from a separate list. It
 also expires by itself: if the page is corrected the field becomes redundant and
 harmless. It lowers no threshold, so nothing else is detected any less well.
 
-`jekyll-scholar` ignores the field, as it ignores `abbr` and `arxiv`. Note that
-`parse_bib` reads the title with `(?<!\w)title`, because `site_title` ends in
-`title` and would otherwise be read as the entry's own title.
+`jekyll-scholar` ignores the field, as it ignores `abbr` and `arxiv`.
+
+Two things keep the field from being read as the entry's own title, because it
+ends in `title`. `parse_bib` matches `(?<!\w)title`, and the field is written
+**below** `title`, so the first match in the entry is the real one even if that
+lookbehind is ever lost. The first version of this change had the field above
+`title` and read the page's wording as the entry's title; the self-test caught
+it.
 
 ## Known limitations, to be restated in every PR body
 
