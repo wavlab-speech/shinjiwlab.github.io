@@ -73,9 +73,6 @@ blog_description:
 permalink: /activities/:year/:title/
 
 # Pagination
-pagination:
-  enabled: true
-
 # Comments
 disqus_shortname: https-shinjiwlab-github-io # put your disqus shortname
 
@@ -137,7 +134,7 @@ plugins:
   - jekyll-email-protect
   - jekyll-github-metadata
   - jekyll-last-modified-at
-  - jekyll-paginate-v2
+  - jekyll-redirect-from
   - jekyll/scholar
   - jekyll-twitter-plugin
   - jemoji
