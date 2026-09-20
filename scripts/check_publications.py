@@ -883,6 +883,21 @@ def selftest(fixture: Path) -> int:
         "without site_title the paper must still be reported, or this test proves nothing")
     print("  ok  site_title suppresses a paper the site words differently")
 
+    # The assertion above exercises the exact-key path only: the probe title
+    # equals the alias, so it never reaches the similarity test. This one covers
+    # the other half of the change, where the alias joins the token comparison.
+    # A third wording matches neither title exactly, so it is reported either
+    # way, but only the alias makes it a flagged possible duplicate instead of a
+    # paper that looks new.
+    third = {**probe_entry, "title": site_words + " Version Two"}
+    with_alias = find_missing([third], [probe_record], MIN_YEAR)
+    without_alias = find_missing([third], [stripped], MIN_YEAR)
+    assert len(with_alias) == 1 and with_alias[0][1] is not None, (
+        "the alias should have raised the score into the suspect band")
+    assert len(without_alias) == 1 and without_alias[0][1] is None, (
+        "without the alias there must be nothing to flag, or this proves nothing")
+    print("  ok  site_title also scores in the similarity test, not only as a key")
+
     aliased = [r for r in records if r["alias"]]
     for record in aliased:
         assert record["alias_key"] != record["key"], (
