@@ -857,17 +857,37 @@ def selftest(fixture: Path) -> int:
         assert exact or best >= DUP_SKIP, f"{title!r} would be reported as new (J={best:.2f})"
     print(f"  ok  {len(known_present)} papers already in papers.bib are not reported as new")
 
-    # A paper whose title differs between the site and papers.bib scores in the
-    # suspect band, so it is reported again every week until somebody records
-    # the site's wording in `site_title`. Assert that the field does its job,
-    # and that the entries carrying one are still parsed normally.
+    # The site_title mechanism, tested on a record built here rather than on
+    # whatever papers.bib happens to hold. The real entries carrying the field
+    # are there to stop two known papers being re-reported, and removing them is
+    # the right thing to do once the page is corrected. A test that asserts on
+    # their presence would turn that correct edit into a CI failure.
+    site_words = "A Study of Something in the Wild Database"
+    bib_words = "A Study of Something in the Wild Dataset"
+    probe_record = {
+        "citekey": "probe_alias", "abbr": "", "title": bib_words, "year": "2026",
+        "line": 1, "key": hard_key(bib_words), "tokens": tokens(bib_words),
+        "alias": site_words, "alias_key": hard_key(site_words),
+        "alias_tokens": tokens(site_words),
+    }
+    probe_entry = {
+        "section": sorted(KEEP_SECTIONS)[0], "authors": "A B", "title": site_words,
+        "rest": "Proc. Interspeech'26", "year": 2026, "raw": "",
+    }
+    assert jaccard(tokens(site_words), tokens(bib_words)) < DUP_SKIP, (
+        "the probe titles match too closely to prove anything")
+    assert not find_missing([probe_entry], [probe_record], MIN_YEAR), (
+        "site_title did not suppress a paper the site words differently")
+    stripped = {**probe_record, "alias": "", "alias_key": None, "alias_tokens": set()}
+    assert find_missing([probe_entry], [stripped], MIN_YEAR), (
+        "without site_title the paper must still be reported, or this test proves nothing")
+    print("  ok  site_title suppresses a paper the site words differently")
+
     aliased = [r for r in records if r["alias"]]
-    assert aliased, "no entry carries site_title; the alias path is untested"
     for record in aliased:
-        assert record["alias_key"] and record["alias_key"] != record["key"], (
+        assert record["alias_key"] != record["key"], (
             f"{record['citekey']}: site_title repeats the title, so it adds nothing")
-        assert hard_key(record["alias"]) in {r2["alias_key"] for r2 in aliased}
-    print(f"  ok  {len(aliased)} entries carry a site_title alias")
+    print(f"  --  {len(aliased)} entries in papers.bib carry a site_title")
 
     # Branchformer is present in papers.bib under a longer title, so it must land
     # in the suspect band -- evidence that the threshold is not trustworthy alone.
