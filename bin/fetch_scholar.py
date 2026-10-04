@@ -447,8 +447,10 @@ def fetch_publications(scholar_id, bib_index):
     """
     try:
         from scholarly import scholarly as _scholarly
-    except ImportError:
-        print("scholarly not installed. Run: pip install scholarly")
+    except ImportError as exc:
+        # Print the real error. A broken dependency also raises ImportError,
+        # and "not installed" hid that for four weekly runs.
+        print(f"cannot import scholarly: {exc}")
         sys.exit(1)
 
     print(f"  Fetching from Google Scholar: {scholar_id}")
