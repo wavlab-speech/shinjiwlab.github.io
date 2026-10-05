@@ -7,7 +7,10 @@ Usage:
     python3 bin/fetch_scholar.py --enrich-only  # re-apply papers.bib metadata, no network
 
 Requirements:
-    pip install scholarly pyyaml     (--enrich-only needs only pyyaml)
+    pip install scholarly "bibtexparser<2" pyyaml     (--enrich-only needs only pyyaml)
+
+    scholarly does not cap bibtexparser, and bibtexparser 2 removed a module
+    that scholarly imports. Keep the "<2" in every install command.
 
 This script reads member data from _data/members.yml, fetches publications
 from Google Scholar for each member with a scholar_id, and saves the results

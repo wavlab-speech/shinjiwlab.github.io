@@ -133,9 +133,11 @@ To get your publications immediately, start the script yourself. Then add the
 result to your own pull request.
 
 ```bash
-pip install scholarly pyyaml
+pip install scholarly "bibtexparser<2" pyyaml
 python3 bin/fetch_scholar.py
 ```
+
+Keep `"bibtexparser<2"`. Version 2 does not work with scholarly.
 
 Google Scholar limits the number of requests. Thus the script can fail. You
 can start the script again safely. The script does not replace good data with
