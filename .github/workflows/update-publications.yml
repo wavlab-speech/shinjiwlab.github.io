@@ -28,7 +28,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install scholarly pyyaml
+        # scholarly does not cap bibtexparser, and bibtexparser 2 removed the
+        # bibdatabase module that scholarly imports. Keep it below 2.
+        run: pip install scholarly "bibtexparser<2" pyyaml
 
       # No continue-on-error: the script exits non-zero when it could not
       # refresh a single member, which is exactly the case we must not sleep

@@ -7,7 +7,10 @@ Usage:
     python3 bin/fetch_scholar.py --enrich-only  # re-apply papers.bib metadata, no network
 
 Requirements:
-    pip install scholarly pyyaml     (--enrich-only needs only pyyaml)
+    pip install scholarly "bibtexparser<2" pyyaml     (--enrich-only needs only pyyaml)
+
+    scholarly does not cap bibtexparser, and bibtexparser 2 removed a module
+    that scholarly imports. Keep the "<2" in every install command.
 
 This script reads member data from _data/members.yml, fetches publications
 from Google Scholar for each member with a scholar_id, and saves the results
@@ -447,8 +450,10 @@ def fetch_publications(scholar_id, bib_index):
     """
     try:
         from scholarly import scholarly as _scholarly
-    except ImportError:
-        print("scholarly not installed. Run: pip install scholarly")
+    except ImportError as exc:
+        # Print the real error. A broken dependency also raises ImportError,
+        # and "not installed" hid that for four weekly runs.
+        print(f"cannot import scholarly: {exc}")
         sys.exit(1)
 
     print(f"  Fetching from Google Scholar: {scholar_id}")
