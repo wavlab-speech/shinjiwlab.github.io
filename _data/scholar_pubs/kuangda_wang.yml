@@ -1,4 +1,4 @@
-total: 31
+total: 32
 pubs:
 - title: Test-time alignment for large language models via textual model predictive
     control
@@ -11,14 +11,23 @@ pubs:
   venue: Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and
     …
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:8k81kl-MbHgC
+- title: Agentic Model Predictive Questioning Control in Visual Design
+  year: '2026'
+  venue: Forty-third International Conference on Machine Learning
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:M3ejUd6NZC8C
+- title: 'CAME: Company-Aware Evidence-Memory Experts for Interpretable Quarter-Ahead
+    Revenue Forecasting'
+  year: '2026'
+  venue: arXiv preprint arXiv:2609.33143
+  url: https://arxiv.org/abs/2609.33143
+- title: Visual Prompt Discovery via Semantic Exploration
+  year: '2026'
+  venue: European Conference on Computer Vision, 570-587
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:_kc_bZDykSQC
 - title: Benchmarking Agentic Newswriting via Journalistic Workflows
   year: '2026'
   venue: 'Findings of the Association for Computational Linguistics: ACL 2026, 36450-36463'
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:4TOpqqG69KYC
-- title: Visual Prompt Discovery via Semantic Exploration
-  year: '2026'
-  venue: arXiv preprint arXiv:2603.16250
-  url: https://arxiv.org/abs/2603.16250
 - title: 'Adapting to Evolving Data: Test-Time Expert Aggregation for Imbalanced Tabular
     Regression'
   year: '2026'
@@ -41,6 +50,10 @@ pubs:
   venue: Proceedings of the 2025 Conference on Empirical Methods in Natural Language
     …
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:hqOjcs7Dif8C
+- title: NVIDIA-NeMo’s WMT 2025 Metrics Shared Task Submission
+  year: '2025'
+  venue: Proceedings of the Tenth Conference on Machine Translation, 920-925
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:MXK_kJrjxJIC
 - title: Mixture experts with test-time self-supervised aggregation for tabular imbalanced
     regression
   year: '2025'
@@ -56,10 +69,6 @@ pubs:
   year: '2025'
   venue: arXiv preprint arXiv:2509.00446
   url: https://arxiv.org/abs/2509.00446
-- title: NVIDIA-NeMo’s WMT 2025 Metrics Shared Task Submission
-  year: '2025'
-  venue: Proceedings of the Tenth Conference on Machine Translation, 920-925
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:MXK_kJrjxJIC
 - title: 'Ddot: A derivative-directed dual-decoder ordinary differential equation
     transformer for dynamic system modeling'
   year: '2025'
@@ -118,14 +127,3 @@ pubs:
   venue: Proceedings of the AAAI Conference on Artificial Intelligence 38 (21), 23679
     …
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:KlAtU1dfN6UC
-- title: A reinforcement learning badminton environment for simulating player tactics
-    (student abstract)
-  year: '2023'
-  venue: Proceedings of the AAAI Conference on Artificial Intelligence 37 (13), 16232
-    …
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:u5HHmVD_uO8C
-- title: 'Enhancing badminton player performance via a closed-loop AI approach: Imitation,
-    simulation, optimization, and execution'
-  year: '2023'
-  venue: Proceedings of the 32nd ACM International Conference on Information and …
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JGH6qUMAAAAJ&citation_for_view=JGH6qUMAAAAJ:9yKSN-GCB0IC

@@ -10,7 +10,7 @@ pubs:
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:R3hNpaxXUhUC
 - title: An Empirical Recipe for Universal Phone Recognition
   year: '2026'
-  venue: arXiv preprint arXiv:2603.29042
+  venue: Interspeech
   url: https://arxiv.org/abs/2603.29042
 - title: The CMU-AIST submission for the ICME 2025 Audio Encoder Challenge
   year: '2026'
@@ -18,7 +18,7 @@ pubs:
   url: https://arxiv.org/abs/2601.16273
 - title: Phone Segmentation and Recognition through Phonological Activation Mapping
   year: '2026'
-  venue: arXiv preprint arXiv:2607.09020
+  venue: SLT
   url: https://arxiv.org/abs/2607.09020
 - title: 'Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality,
     long context, and next generation agentic capabilities'

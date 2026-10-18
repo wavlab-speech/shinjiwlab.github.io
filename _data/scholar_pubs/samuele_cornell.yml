@@ -1,33 +1,47 @@
-total: 102
+total: 104
 pubs:
 - title: ICASSP 2026 URGENT Speech Enhancement Challenge
   year: '2026'
   venue: ICASSP
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:zA6iFVUQeVQC
+- title: 'URGENT-MOS: Unified Multi-Metric and Preference Learning for Robust Speech
+    Quality Assessment'
+  year: '2026'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2601.18438
+- title: An End-to-End Integration of Speech Separation and Recognition with Self-Supervised
+    Learning Representation
+  year: '2026'
+  venue: CSL
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:GnPB-g6toBAC
 - title: 'Se-dicow: Self-enrolled diarization-conditioned whisper'
   year: '2026'
   venue: ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:4OULZ7Gr8RgC
-- title: An end-to-end integration of speech separation and recognition with self-supervised
-    learning representation
+- title: 'Mind the Gap: Impact of Synthetic Conversational Data on Multi-Talker ASR
+    and Speaker Diarization'
   year: '2026'
-  venue: Computer Speech & Language 95, 101813
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:GnPB-g6toBAC
-- title: 'Urgentmos: Unified multi-metric and preference learning for robust speech
-    quality assessment'
-  year: '2026'
-  venue: arXiv preprint arXiv:2601.18438
-  url: https://arxiv.org/abs/2601.18438
-- title: 'Mind the gap: Impact of synthetic conversational data on multi-talker ASR
-    and speaker diarization'
-  year: '2026'
-  venue: arXiv preprint arXiv:2605.15442
+  venue: Interspeech
   url: https://arxiv.org/abs/2605.15442
-- title: Dissecting sensitivity to training language in self-supervised speech learning
-    using neural audio codec tokens
+- title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
+    Audio Understanding'
   year: '2026'
-  venue: arXiv preprint arXiv:2607.26350
+  venue: ACLFindings
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:abG-DnoFyZgC
+- title: Grounding Spoken LLMs in Multi-Speaker Audio via Diarization Conditioning
+  year: '2026'
+  venue: Interspeech
+  url: https://arxiv.org/abs/2606.18134
+- title: Dissecting Sensitivity to Training Language in Self-Supervised Speech Learning
+    Using Neural Audio Codec Tokens
+  year: '2026'
+  venue: Interspeech
   url: https://arxiv.org/abs/2607.26350
+- title: Exploiting Noise Inseparability for Weakly-Supervised Discriminative Speech
+    Denoising Using Noisy Targets
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.02327
+  url: https://arxiv.org/abs/2606.02327
 - title: Cross-Talk Speech Reduction, by Separation, for Separation
   year: '2026'
   venue: arXiv preprint arXiv:2605.19695
@@ -46,25 +60,20 @@ pubs:
   year: '2026'
   venue: arXiv preprint arXiv:2601.16273
   url: https://arxiv.org/abs/2601.16273
-- title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
-    Audio Understanding'
+- title: 'YODAS v3: Over 1 Million Hours of High-Bandwidth, Stereophonic, Multilingual
+    Speech'
   year: '2026'
-  venue: ACLFindings
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:abG-DnoFyZgC
+  venue: Interspeech
+  url: https://arxiv.org/abs/2609.29448
+- title: 'LACE: Layer-Wise Compression for dynamic frame rate Codecs'
+  year: '2026'
+  venue: SLT
+  url: https://arxiv.org/abs/2609.17509
 - title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
     Model Era'
   year: '2026'
-  venue: arXiv preprint arXiv:2606.21854
+  venue: Interspeech
   url: https://arxiv.org/abs/2606.21854
-- title: Grounding Spoken LLMs in Multi-Speaker Audio via Diarization Conditioning
-  year: '2026'
-  venue: arXiv preprint arXiv:2606.18134
-  url: https://arxiv.org/abs/2606.18134
-- title: Exploiting Noise Inseparability for Weakly-Supervised Discriminative Speech
-    Denoising Using Noisy Targets
-  year: '2026'
-  venue: arXiv preprint arXiv:2606.02327
-  url: https://arxiv.org/abs/2606.02327
 - title: 'MAPSS: Manifold-based Assessment of Perceptual Source Separation'
   year: '2026'
   venue: ICLR
@@ -72,7 +81,7 @@ pubs:
 - title: Who Spoke What When? Evaluating Spoken Language Models for Conversational
     ASR with Semantic and Overlap-Aware Metrics
   year: '2026'
-  venue: arXiv preprint arXiv:2603.22709
+  venue: Interspeech
   url: https://arxiv.org/abs/2603.22709
 - title: Modeling Overlapped Speech with Shuffles
   year: '2026'
@@ -103,12 +112,3 @@ pubs:
   year: '2025'
   venue: Computer Speech & Language, 101901
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:HoB7MX3m0LUC
-- title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
-  year: '2025'
-  venue: WASPAA
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=A3lfL0QAAAAJ&citation_for_view=A3lfL0QAAAAJ:pqnbT2bcN3wC
-- title: 'P. 808 Multilingual Speech Enhancement Testing: Approach and Results of
-    URGENT 2025 Challenge'
-  year: '2025'
-  venue: arXiv preprint arXiv:2507.11306
-  url: https://arxiv.org/abs/2507.11306

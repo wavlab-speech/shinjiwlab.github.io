@@ -1,18 +1,22 @@
-total: 12
+total: 13
 pubs:
-- title: 'Bagpiper: Solving open-ended audio tasks via rich captions'
+- title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
   year: '2026'
-  venue: arXiv preprint arXiv:2602.05220
+  venue: COLM
   url: https://arxiv.org/abs/2602.05220
 - title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
     Audio Understanding'
   year: '2026'
   venue: ACLFindings
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_aVVkVsAAAAJ&citation_for_view=_aVVkVsAAAAJ:W7OEmFMy1HYC
+- title: 'HARP: Agentic Hybrid Retrieval and Analysis for Long-Form Audio'
+  year: '2026'
+  venue: SLT
+  url: https://arxiv.org/abs/2609.14116
 - title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
     Model Era'
   year: '2026'
-  venue: arXiv preprint arXiv:2606.21854
+  venue: Interspeech
   url: https://arxiv.org/abs/2606.21854
 - title: 'Towards inclusive ASR: investigating voice conversion for dysarthric speech
     recognition in low-resource languages'
