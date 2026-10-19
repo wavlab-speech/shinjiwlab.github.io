@@ -1,28 +1,38 @@
-total: 13
+total: 15
 pubs:
 - title: 'The interspeech 2026 audio reasoning challenge: Evaluating reasoning process
     quality for audio reasoning models and agents'
   year: '2026'
-  venue: arXiv preprint arXiv:2602.14224
-  url: https://arxiv.org/abs/2602.14224
+  venue: Interspeech 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:ufrVoPGSRksC
 - title: 'Wow-bench: Evaluating fine-grained acoustic perception in audio-language
     models via marine mammal vocalizations'
   year: '2026'
-  venue: 'Findings of the Association for Computational Linguistics: ACL 2026, 31208-31229'
+  venue: ACL Findings 2026, 31208-31229
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:Y0pCki6q_DkC
 - title: 'K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts'
   year: '2026'
-  venue: arXiv preprint arXiv:2606.02404
-  url: https://arxiv.org/abs/2606.02404
-- title: 'Comparative Reasoning: Making an Audio Language Model Better at Comparing
-    Emotions'
-  year: '2026'
-  venue: arXiv preprint arXiv:2606.24082
-  url: https://arxiv.org/abs/2606.24082
+  venue: EMNLP Findings 2026
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:0EnyYjriUFMC
 - title: Towards Scene-Aware Video-to-Spatial Audio Generation
   year: '2026'
   venue: International Journal of Computer Vision 134 (4), 184
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:UebtZRa9Y70C
+- title: 'Listen to the Latents: Self-Correcting Speech Recognition in Large Audio
+    Language Models Through Hidden-State Interactions'
+  year: '2026'
+  venue: EMNLP
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:3fE2CSJIrl8C
+- title: 'Comparative Reasoning: Making an Audio Language Model Better at Comparing
+    Emotions'
+  year: '2026'
+  venue: Interspeech
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:5nxA0vEk-isC
+- title: 'Long Listening Thoughts: Eliciting Open Auditory Reasoning with Deliberative
+    Perception and Cognitive Refinement'
+  year: '2026'
+  venue: EMNLP
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:kNdYIx-mwKoC
 - title: 'Visage: Video-to-spatial audio generation'
   year: '2025'
   venue: ICLR 2025

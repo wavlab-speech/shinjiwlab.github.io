@@ -1,5 +1,13 @@
-total: 13
+total: 15
 pubs:
+- title: Electronic apparatus for generating captions and control method thereof
+  year: '2026'
+  venue: US Patent 12,658,185
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:Y0pCki6q_DkC
+- title: Electronic device and method for controlling same
+  year: '2026'
+  venue: US Patent App. 19/179,546
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OwO5VXMAAAAJ&citation_for_view=OwO5VXMAAAAJ:ufrVoPGSRksC
 - title: Electronic device and method for voice recognition
   year: '2025'
   venue: US Patent App. 18/828,519

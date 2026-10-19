@@ -11,8 +11,8 @@ pubs:
   url: https://arxiv.org/abs/2603.03790
 - title: 'DecodeShare: Tracing the Shared Subspace of LLM Decode-Time Decisions'
   year: '2026'
-  venue: arXiv preprint arXiv:2607.20469
-  url: https://arxiv.org/abs/2607.20469
+  venue: ICML 2026 (Spotlight)
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eGfZvOkAAAAJ&citation_for_view=eGfZvOkAAAAJ:IjCSPb-OGe4C
 - title: 'SADA: Stability-guided Adaptive Diffusion Acceleration'
   year: '2025'
   venue: ICML 2025
