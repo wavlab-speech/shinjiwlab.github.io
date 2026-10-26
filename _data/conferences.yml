@@ -57,11 +57,13 @@
   acronym: SLT
   year: 2026
   ccfddl: CG/slt
-  deadline: 2026-06-24 23:59
+  abstract_deadline: 2026-06-24 23:59
+  deadline: 2026-07-01 23:59
   start: 2026-12-13
   end: 2026-12-16
   place: "Palermo, Sicily, Italy"
   url: https://attend.ieee.org/slt-2026/
+  note: "Abstract registration / full paper"
 
 - name: IEEE SLT Workshop — Demo, System & Data / Challenge Papers
   acronym: SLT Demo/Challenge
@@ -128,7 +130,7 @@
   end: 2026-12-12
   place: "Sydney, Australia; Atlanta, USA; Paris, France"
   url: https://neurips.cc/Conferences/2026
-  note: "Unrecognized ccfddl date 'December 6-12 (Sydney), December 9-13 (Atlanta and Paris), 2026' — verify on the official site."
+  note: "Unrecognized ccfddl date 'December 8-10 (Sydney), December 9-11 (Atlanta and Paris), 2026' — verify on the official site."
 
 - name: AAAI Conference on Artificial Intelligence
   acronym: AAAI
@@ -148,7 +150,7 @@
   abstract_deadline: 2026-03-26 23:59
   deadline: 2026-03-31 23:59
   start: 2026-10-06
-  end: 2026-10-09
+  end: 2026-10-08
   place: "Hilton Union Square, San Francisco, USA"
   url: https://colm.cc/Conferences/2026/CallForPapers
 
