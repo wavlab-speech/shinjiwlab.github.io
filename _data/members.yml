@@ -136,6 +136,13 @@
   website: https://kuangdw.github.io/
   image: photo-kuangda.jpg
 
+- id: kazuki_yano
+  name: Kazuki Yano
+  role: visitor
+  scholar_id: KnttZUwAAAAJ
+  website: https://kazuki-ya.github.io/
+  image: kazuki.jpg
+
 - id: jeeweon_jung
   name: Jee-weon Jung
   role: industrial
