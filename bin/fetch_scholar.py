@@ -505,8 +505,14 @@ def fetch_publications(scholar_id, bib_index):
     return sort_newest_first(dedupe(rows))
 
 
-class ScholarTimeout(Exception):
-    """A member's fetch ran past MEMBER_TIMEOUT seconds."""
+class ScholarTimeout(BaseException):
+    """A member's fetch ran past MEMBER_TIMEOUT seconds.
+
+    A BaseException, like KeyboardInterrupt, on purpose. scholarly wraps its
+    requests in `except Exception` and retries, so an Exception raised by the
+    alarm is logged as "Exception ScholarTimeout while fetching page" and the
+    loop goes on; the alarm fires only once, and nothing stops it again.
+    """
 
 
 # In the last good run (2026-10-18) the fetch step took 138 s, and 75 s of that
