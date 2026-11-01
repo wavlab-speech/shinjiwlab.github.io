@@ -37,10 +37,12 @@ jobs:
       # through. Google Scholar blocking this runner should turn the run red,
       # not quietly leave stale data on the site.
       - name: Fetch Scholar publications
-        # Google Scholar can leave a request hanging; without a cap the job
-        # would sit on the runner until the 6-hour default.
+        # The script gives up on its own when Google Scholar blocks the runner
+        # (see MEMBER_TIMEOUT). This cap is the backstop if that ever fails.
         timeout-minutes: 30
-        run: python3 bin/fetch_scholar.py
+        # -u: without it, Python buffers its output when writing to a pipe, and
+        # a job killed by the timeout above loses every line it printed.
+        run: python3 -u bin/fetch_scholar.py
 
       # deploy.yml's `on: pull_request` build does not run unattended on a PR
       # opened with the default GITHUB_TOKEN: GitHub holds such runs behind an

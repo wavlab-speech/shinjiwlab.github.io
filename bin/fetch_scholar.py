@@ -26,11 +26,19 @@ keep their Scholar metadata.
 Note: Google Scholar may block automated requests. The script exits non-zero if
 it could not refresh a single member, so a blocked run fails loudly instead of
 silently leaving stale data behind.
+
+When Google Scholar blocks the runner, scholarly (1.7.11, Navigator._get_page)
+does not give up: it retries a 403 or a DoS page forever, sleeping 60-120 s each
+time, and if it can start a browser it waits up to a week for a person to solve
+a captcha. So each member gets MEMBER_TIMEOUT seconds, and the first member that
+runs out stops the run.
 """
 
 import bisect
+import logging
 import os
 import re
+import signal
 import sys
 import time
 import unicodedata
@@ -497,6 +505,41 @@ def fetch_publications(scholar_id, bib_index):
     return sort_newest_first(dedupe(rows))
 
 
+class ScholarTimeout(BaseException):
+    """A member's fetch ran past MEMBER_TIMEOUT seconds.
+
+    A BaseException, like KeyboardInterrupt, on purpose. scholarly wraps its
+    requests in `except Exception` and retries, so an Exception raised by the
+    alarm is logged as "Exception ScholarTimeout while fetching page" and the
+    loop goes on; the alarm fires only once, and nothing stops it again.
+    """
+
+
+# In the last good run (2026-10-18) the fetch step took 138 s, and 75 s of that
+# was the 5 s pause between members, so all the fetches together took about a
+# minute. Three minutes for one member is a wide margin, and a run that gives up
+# still ends far inside the workflow's 30-minute step limit.
+MEMBER_TIMEOUT = 180
+
+
+def _give_up(signum, frame):
+    raise ScholarTimeout()
+
+
+def show_scholarly_log():
+    """Print scholarly's own log lines (403, captcha, DoS page) to stdout.
+
+    scholarly logs these at INFO on a logger that has no handler, so by default
+    none of them reach the job log, and a blocked run shows nothing at all.
+    """
+    log = logging.getLogger('scholarly')
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(logging.Formatter('    scholarly: %(message)s'))
+    log.addHandler(handler)
+    log.setLevel(logging.INFO)
+    log.propagate = False
+
+
 # --------------------------------------------------------------------------
 # Persistence
 # --------------------------------------------------------------------------
@@ -643,6 +686,9 @@ def main():
     ensure_member_files(members)
     print()
 
+    show_scholarly_log()
+    signal.signal(signal.SIGALRM, _give_up)
+
     considered = 0
     refreshed = 0
     for member in members:
@@ -660,7 +706,13 @@ def main():
         considered += 1
         print(f"Processing {name} (scholar_id: {scholar_id})")
         try:
-            pubs = fetch_publications(scholar_id, bib_index)
+            # Cancel the alarm before saving, so it cannot fire halfway
+            # through writing a member's file.
+            signal.alarm(MEMBER_TIMEOUT)
+            try:
+                pubs = fetch_publications(scholar_id, bib_index)
+            finally:
+                signal.alarm(0)
             if pubs:
                 if save_publications(member_id, pubs):
                     refreshed += 1
@@ -670,6 +722,15 @@ def main():
                 # with nothing -- leave the existing YAML file in place.
                 print(f"  No publications returned for {name}; "
                       "keeping existing data.")
+        except ScholarTimeout:
+            # Google Scholar blocks the runner, not one profile, so the rest
+            # would most likely hang too. Trying them would cost MEMBER_TIMEOUT
+            # each and run into the step limit, which kills the job before the
+            # summary below is printed.
+            print(f"  Gave up on {name} after {MEMBER_TIMEOUT} s. Google Scholar "
+                  "is most likely blocking this runner; skipping the remaining "
+                  "members.")
+            break
         except Exception as e:
             print(f"  Error fetching publications for {name}: {e}")
 
