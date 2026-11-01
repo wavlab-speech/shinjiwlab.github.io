@@ -30,7 +30,7 @@
 #                     official site and ccfddl disagrees, so the weekly PR stops
 #                     proposing the wrong value. It holds only for the current
 #                     `year`: when the refresh moves to the next edition, it
-#                     drops `keep` and updates every field.
+#                     drops `keep`, and every field follows ccfddl again.
 #
 # The page computes live countdowns client-side and sorts by soonest deadline;
 # passed deadlines automatically grey out and drop to the bottom.

@@ -13,8 +13,8 @@ An entry can list volatile fields under ``keep:`` (e.g. ``keep: [end]``) when a
 person has checked them on the official site and ccfddl disagrees. The refresh
 leaves those fields exactly as they are, present or absent. ``keep`` holds only
 for the entry's current ``year``: when the refresh moves to a new edition it
-drops ``keep`` and updates every field, because the checked values belonged to
-the old edition.
+drops ``keep`` and every field follows ccfddl again, because the checked values
+belonged to the old edition.
 
 For each tracked conference the script picks the *next upcoming* edition (the
 soonest deadline still in the future); if every deadline has passed it falls
@@ -238,7 +238,13 @@ def update_entry(entry) -> str:
     elif not date_str:                     # upstream omitted dates -> drop stale
         entry.pop("start", None)
         entry.pop("end", None)
-    else:                                  # present but unparseable -> keep, flag
+    else:                                  # present but unparseable -> flag
+        # The old start/end still describe this edition only if the year did
+        # not change. On a new edition they are last year's dates, so drop them
+        # and let the page show TBD until someone checks the official site.
+        if entry["year"] != old_year:
+            entry.pop("start", None)
+            entry.pop("end", None)
         note_bits.append(
             f"Unrecognized ccfddl date '{date_str}' — verify on the official site."
         )
