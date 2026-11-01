@@ -25,6 +25,12 @@
 #                     the volatile fields (year, deadlines, dates, place, url,
 #                     note) but preserves name/acronym. Entries WITHOUT this
 #                     key (e.g. ARR) are maintained entirely by hand.
+#   keep              (optional) fields the refresh must not overwrite, e.g.
+#                     [start, end]. Use it after you checked a date on the
+#                     official site and ccfddl disagrees, so the weekly PR stops
+#                     proposing the wrong value. It holds only for the current
+#                     `year`: when the refresh moves to the next edition, it
+#                     drops `keep` and updates every field.
 #
 # The page computes live countdowns client-side and sorts by soonest deadline;
 # passed deadlines automatically grey out and drop to the bottom.
@@ -62,6 +68,7 @@
   end: 2026-12-16
   place: "Palermo, Sicily, Italy"
   url: https://attend.ieee.org/slt-2026/
+  keep: [abstract_deadline, deadline, note]
 
 - name: IEEE SLT Workshop — Demo, System & Data / Challenge Papers
   acronym: SLT Demo/Challenge
@@ -128,7 +135,8 @@
   end: 2026-12-12
   place: "Sydney, Australia; Atlanta, USA; Paris, France"
   url: https://neurips.cc/Conferences/2026
-  note: "Unrecognized ccfddl date 'December 6-12 (Sydney), December 9-13 (Atlanta and Paris), 2026' — verify on the official site."
+  note: "Sydney (main venue): Dec 6-12. Atlanta and Paris (satellites): Dec 9-13."
+  keep: [start, end, note]
 
 - name: AAAI Conference on Artificial Intelligence
   acronym: AAAI
@@ -151,6 +159,7 @@
   end: 2026-10-09
   place: "Hilton Union Square, San Francisco, USA"
   url: https://colm.cc/Conferences/2026/CallForPapers
+  keep: [start, end]
 
 - name: IEEE International Workshop on Machine Learning for Signal Processing
   acronym: MLSP
