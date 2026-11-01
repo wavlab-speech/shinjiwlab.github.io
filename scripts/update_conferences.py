@@ -9,6 +9,13 @@ year, abstract_deadline, deadline, utc_offset, start, end, place, url, note.
 Entries without ``ccfddl:`` (e.g. ARR) are left untouched for manual
 maintenance.
 
+An entry can list volatile fields under ``keep:`` (e.g. ``keep: [end]``) when a
+person has checked them on the official site and ccfddl disagrees. The refresh
+leaves those fields exactly as they are, present or absent. ``keep`` holds only
+for the entry's current ``year``: when the refresh moves to a new edition it
+drops ``keep`` and every field follows ccfddl again, because the checked values
+belonged to the old edition.
+
 For each tracked conference the script picks the *next upcoming* edition (the
 soonest deadline still in the future); if every deadline has passed it falls
 back to the latest available year.
@@ -44,9 +51,17 @@ _MONTHS["sept"] = 9
 _KEY_ORDER = [
     "name", "acronym", "year", "ccfddl",
     "abstract_deadline", "deadline", "utc_offset",
-    "start", "end", "place", "url", "note",
+    "start", "end", "place", "url", "note", "keep",
 ]
 _QUOTED_KEYS = {"place", "note"}
+
+# The fields update_entry() writes, and so the only ones `keep` can protect.
+# Anything else in `keep` is a typo that would protect nothing; fail loudly.
+_KEEPABLE = {
+    "abstract_deadline", "deadline", "utc_offset",
+    "start", "end", "place", "url", "note",
+}
+_MISSING = object()
 
 yaml = YAML(typ="safe")
 
@@ -179,6 +194,13 @@ def pick_edition(confs):
 
 
 def update_entry(entry) -> str:
+    keep = list(entry.get("keep") or [])
+    unknown = [k for k in keep if k not in _KEEPABLE]
+    if unknown:
+        raise ValueError(f"keep lists fields the refresh never writes: {unknown}")
+    old_year = int(entry["year"]) if entry.get("year") is not None else None
+    kept = {k: entry.get(k, _MISSING) for k in keep}
+
     doc = fetch(entry["ccfddl"])
     meta = doc[0]
     conf = pick_edition(meta["confs"])
@@ -216,7 +238,13 @@ def update_entry(entry) -> str:
     elif not date_str:                     # upstream omitted dates -> drop stale
         entry.pop("start", None)
         entry.pop("end", None)
-    else:                                  # present but unparseable -> keep, flag
+    else:                                  # present but unparseable -> flag
+        # The old start/end still describe this edition only if the year did
+        # not change. On a new edition they are last year's dates, so drop them
+        # and let the page show TBD until someone checks the official site.
+        if entry["year"] != old_year:
+            entry.pop("start", None)
+            entry.pop("end", None)
         note_bits.append(
             f"Unrecognized ccfddl date '{date_str}' — verify on the official site."
         )
@@ -238,7 +266,18 @@ def update_entry(entry) -> str:
     elif "note" in entry:
         del entry["note"]
 
-    return f"{entry.get('acronym')} -> {entry['year']}"
+    label = f"{entry.get('acronym')} -> {entry['year']}"
+    if not keep:
+        return label
+    if entry["year"] != old_year:
+        del entry["keep"]
+        return f"{label} (new edition, dropped keep)"
+    for key, value in kept.items():
+        if value is _MISSING:
+            entry.pop(key, None)
+        else:
+            entry[key] = value
+    return f"{label} (kept {', '.join(keep)})"
 
 
 def _quote(value) -> str:
@@ -254,7 +293,7 @@ def _quote(value) -> str:
 
 
 def _format_value(key, value) -> str:
-    if key == "tags":
+    if key in ("tags", "keep"):
         return "[" + ", ".join(str(t) for t in value) + "]"
     if key in ("year", "utc_offset"):
         return str(value)
