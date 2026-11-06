@@ -14,8 +14,8 @@
 #               _data/scholar_pubs/<id>.yml uses this name also.
 #   name        Necessary. The card shows this name.
 #   role        Necessary. This field selects the group on the page.
-#               Use one of these six values:
-#               faculty | postdoc | phd | master | visitor | industrial
+#               Use one of these seven values:
+#               faculty | adjunct | postdoc | phd | master | visitor | industrial
 #               CAUTION: an incorrect value removes the member from the page.
 #               The build does not fail, and you get no error message.
 #   scholar_id  Optional. The 12 characters from the Google Scholar address
@@ -145,7 +145,7 @@
 
 - id: jeeweon_jung
   name: Jee-weon Jung
-  role: industrial
+  role: adjunct
   scholar_id: A5OcLdAAAAAJ
   website: https://jungjee.github.io/
   image: jeeweon.png

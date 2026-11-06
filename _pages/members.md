@@ -307,9 +307,16 @@ linked on their card. The lab's curated list of papers is on the
 
 #### Faculty
 
+##### Principal Investigator
 <div class="member-grid">
 {%- assign faculty = site.data.members | where: "role", "faculty" -%}
 {% for m in faculty %}{% include member_card.html member=m %}{% endfor %}
+</div>
+
+##### Adjunct
+<div class="member-grid">
+{%- assign adjunct = site.data.members | where: "role", "adjunct" -%}
+{% for m in adjunct %}{% include member_card.html member=m %}{% endfor %}
 </div>
 <hr />
 
@@ -370,7 +377,7 @@ linked on their card. The lab's curated list of papers is on the
 
 #### Alumni
 
-##### Visting Faculty
+##### Visiting Faculty
 <ul>
 <li>2023. 09 -- 2024. 06: Karen Livescu (TTIC) </li>
 </ul>
