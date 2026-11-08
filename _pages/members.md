@@ -367,13 +367,15 @@ linked on their card. The lab's curated list of papers is on the
 </div>
 <hr />
 
+{%- assign industrial = site.data.members | where: "role", "industrial" -%}
+{%- if industrial.size > 0 %}
 #### Industrial Collaborators
 
 <div class="member-grid">
-{%- assign industrial = site.data.members | where: "role", "industrial" -%}
 {% for m in industrial %}{% include member_card.html member=m %}{% endfor %}
 </div>
 <hr />
+{% endif %}
 
 #### Alumni
 
