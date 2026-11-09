@@ -52,12 +52,13 @@
   acronym: Interspeech
   year: 2027
   ccfddl: CG/interspeech
-  deadline: 2027-02-09 23:59
+  deadline: 2027-02-10 11:59
   utc_offset: 0
   start: 2027-08-29
   end: 2027-09-02
   place: "São Paulo, Brazil"
   url: https://interspeech2027.org/
+  note: "Regular papers; rebuttal April 13-20. Date-only milestones use AoE end-of-day convention, converted to UTC."
 
 - name: IEEE Spoken Language Technology Workshop
   acronym: SLT
@@ -102,16 +103,13 @@
 
 - name: International Conference on Machine Learning
   acronym: ICML
-  year: 2026
+  year: 2027
   ccfddl: AI/icml
-  abstract_deadline: 2026-01-24 11:59
-  deadline: 2026-01-29 11:59
-  utc_offset: 0
-  start: 2026-07-06
-  end: 2026-07-11
-  place: "Seoul, Korea"
-  url: https://icml.cc/Conferences/2026
-  note: "Paper Submissions Open on OpenReview Jan 08 2026 12:00AM UTC-0"
+  start: 2027-08-02
+  end: 2027-08-04
+  place: "Riocentro, Rio de Janeiro, Brazil"
+  url: https://icml.cc/Conferences/2027
+  note: "Next deadline TBD on ccfddl — verify on the official site."
 
 - name: International Conference on Learning Representations
   acronym: ICLR
