@@ -1,50 +1,251 @@
----
-layout: default
-title: Research Activities
-order: 3
+<!DOCTYPE html>
+<html>
 
-# This page used to paginate at three posts each, which published /blog/page/2/
-# through /blog/page/13/. Those addresses were live, so they redirect here
-# rather than turning into 404s. Every post keeps its own address either way.
-redirect_from:
-  - /blog/page/2/
-  - /blog/page/3/
-  - /blog/page/4/
-  - /blog/page/5/
-  - /blog/page/6/
-  - /blog/page/7/
-  - /blog/page/8/
-  - /blog/page/9/
-  - /blog/page/10/
-  - /blog/page/11/
-  - /blog/page/12/
-  - /blog/page/13/
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-# The group of a post comes from its slug, not from its front matter. Editing 37
-# posts to add a `category` would change the last commit date of each one, and
-# the Info page shows that date as "Updated" for the cluster guides. A guide
-# untouched since 2022 would then claim to be current.
-#
-# `match` holds substrings, tested against the lower-case slug. A post that
-# matches nothing still appears, under "Other", so nothing disappears in silence.
-# `open: true` makes a group start open. The rest start closed.
-groups:
-  - name: Projects and releases
-    match: [owsm, xeus, versa, foundations, interspeech]
-    open: true
-  - name: Paper lists
-    match: [paper-list]
-  - name: Reading groups
-    match: [reading-group]
-  - name: Courses
-    match: ["11692", "11751", "11752"]
-  - name: Cluster and workflow guides
-    match: [usage, recipe, dependency]
-  - name: Galleries
-    match: [-record]
----
+<title>WAVLab | Research Activities</title>
+<meta name="description" content="Webpage of Watanabe's Audio and Voice (WAV) Lab
+">
 
-<style>
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="/assets/img/favicon.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       WAVLab
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              Activities
+              
+            </a>
+          </li>
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/members/">
+                Members
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/open_source">
+                Open-source
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/courses/">
+                Courses
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/sponsors/">
+                Sponsors
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/info/">
+                Info
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/positions/">
+                Positions
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/speech_lunch">
+                Speech Lunch
+                
+              </a>
+          </li>
+          
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <style>
   :root { --act-border: rgba(0, 0, 0, 0.42); --act-muted: rgba(0, 0, 0, 0.58); }
   html[data-theme='dark'] { --act-border: rgba(255, 255, 255, 0.38); --act-muted: rgba(255, 255, 255, 0.74); }
 
@@ -90,60 +291,318 @@ groups:
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{{ site.blog_name }}</h1>
+    <h1 class="post-title">Research Activities</h1>
     <p class="post-description">Project pages, paper lists, reading groups, courses, guides, and galleries.</p>
   </header>
-
-  {%- comment -%} Every pattern, used below to find the posts no group claims. {%- endcomment -%}
-  {%- assign all_patterns = "" | split: "" -%}
-  {%- for g in page.groups -%}{%- assign all_patterns = all_patterns | concat: g.match -%}{%- endfor -%}
-
-  {% for g in page.groups %}
-    {%- assign hits = "" | split: "" -%}
-    {%- for post in site.posts -%}
-      {%- assign slug = post.slug | downcase -%}
-      {%- for pat in g.match -%}
-        {%- if slug contains pat -%}{%- assign hits = hits | push: post -%}{%- break -%}{%- endif -%}
-      {%- endfor -%}
-    {%- endfor -%}
-    {% if hits.size > 0 %}
-    <details class="act-group"{% if g.open %} open{% endif %}>
-      <summary>{{ g.name | escape }}<span class="act-count">{{ hits.size }}</span></summary>
+    <details class="act-group" open>
+      <summary>Projects and releases<span class="act-count">6</span></summary>
       <ul class="act-list">
-        {% for post in hits %}
+        
         <li>
-          <div class="act-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
-          <p class="act-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
-          {% if post.description %}<p class="act-desc">{{ post.description | escape }}</p>{% endif %}
+          <div class="act-title"><a href="/activities/2025/versa/">Revolutionizing Speech and Audio Evaluation</a></div>
+          <p class="act-meta">April 25, 2025</p>
+          <p class="act-desc">A Comprehensive Speech and Audio Evaluation Toolkit</p>
         </li>
-        {% endfor %}
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/xeus/">XEUS - Towards Robust Speech Representation Learning for Thousands of Languages</a></div>
+          <p class="act-meta">June 30, 2024</p>
+          <p class="act-desc">This is the page for the XEUS project.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/interspeech2024-slm/">INTERSPEECH 2024 Special Session: Spoken Language Models for Universal Speech Processing</a></div>
+          <p class="act-meta">January 22, 2024</p>
+          <p class="act-desc">This is the official webpage for INTERSPEECH 2024 Special Session: Spoken Language Models for Universal Speech Processing</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/Interspeech2024-Discrete-Speech-Unit-Challenge/">Interspeech2024 Speech Processing Using Discrete Speech Unit Challenge</a></div>
+          <p class="act-meta">January 19, 2024</p>
+          <p class="act-desc">This is the Interspeech2024 challenge website for speech processing using discrete speech unit challenge</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/owsm/">Open Whisper-style Speech Models (OWSM)</a></div>
+          <p class="act-meta">January 1, 2024</p>
+          <p class="act-desc">This is the project page for OWSM models.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/foundations/">Foundations for Speech Foundation Models</a></div>
+          <p class="act-meta">October 3, 2023</p>
+          <p class="act-desc">A summary of our recent work at WAVLab towards building large-scale speech foundation models</p>
+        </li>
+        
       </ul>
     </details>
-    {% endif %}
-  {% endfor %}
-
-  {%- assign others = "" | split: "" -%}
-  {%- for post in site.posts -%}
-    {%- assign slug = post.slug | downcase -%}
-    {%- assign claimed = false -%}
-    {%- for pat in all_patterns -%}
-      {%- if slug contains pat -%}{%- assign claimed = true -%}{%- break -%}{%- endif -%}
-    {%- endfor -%}
-    {%- unless claimed -%}{%- assign others = others | push: post -%}{%- endunless -%}
-  {%- endfor -%}
-  {% if others.size > 0 %}
-  <details class="act-group" open>
-    <summary>Other<span class="act-count">{{ others.size }}</span></summary>
-    <ul class="act-list">
-      {% for post in others %}
-      <li>
-        <div class="act-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
-        <p class="act-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
-        {% if post.description %}<p class="act-desc">{{ post.description | escape }}</p>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </details>
-  {% endif %}
+    
+  
+    <details class="act-group">
+      <summary>Paper lists<span class="act-count">9</span></summary>
+      <ul class="act-list">
+        
+        <li>
+          <div class="act-title"><a href="/activities/2026/paper-list/">2026 Papers</a></div>
+          <p class="act-meta">January 27, 2026</p>
+          <p class="act-desc">2026 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2025/paper-list/">2025 Papers</a></div>
+          <p class="act-meta">January 27, 2025</p>
+          <p class="act-desc">2025 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/paper-list/">2024 Papers</a></div>
+          <p class="act-meta">January 27, 2024</p>
+          <p class="act-desc">2024 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/paper-list/">2023 Papers</a></div>
+          <p class="act-meta">January 27, 2023</p>
+          <p class="act-desc">2023 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/paper-list/">2022 Papers</a></div>
+          <p class="act-meta">January 10, 2022</p>
+          <p class="act-desc">2022 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2021/paper-list/">2021 Papers</a></div>
+          <p class="act-meta">September 10, 2021</p>
+          <p class="act-desc">2021 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2020/paper-list/">2020 Papers</a></div>
+          <p class="act-meta">December 31, 2020</p>
+          <p class="act-desc">2020 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2019/paper-list/">2019 Papers</a></div>
+          <p class="act-meta">December 31, 2019</p>
+          <p class="act-desc">2019 Paper List</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2018/paper-list/">2018 Papers</a></div>
+          <p class="act-meta">December 31, 2018</p>
+          <p class="act-desc">2018 Paper List</p>
+        </li>
+        
+      </ul>
+    </details>
+    
+  
+    <details class="act-group">
+      <summary>Reading groups<span class="act-count">4</span></summary>
+      <ul class="act-list">
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/reading-group/">2024 Reading Group</a></div>
+          <p class="act-meta">January 1, 2024</p>
+          <p class="act-desc">Paper list for reading group</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/reading-group/">2023 Reading Group</a></div>
+          <p class="act-meta">January 1, 2023</p>
+          <p class="act-desc">Paper list for reading group</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/reading-group/">2022 Reading Group</a></div>
+          <p class="act-meta">January 28, 2022</p>
+          <p class="act-desc">Paper list for reading group</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2021/reading-group/">2021 Reading Group</a></div>
+          <p class="act-meta">September 9, 2021</p>
+          <p class="act-desc">Paper list and comments for reading group</p>
+        </li>
+        
+      </ul>
+    </details>
+    
+  
+    <details class="act-group">
+      <summary>Courses<span class="act-count">8</span></summary>
+      <ul class="act-list">
+        
+        <li>
+          <div class="act-title"><a href="/activities/2026/11752-2026f/">Speech Generation (11-752) — Fall 2026</a></div>
+          <p class="act-meta">August 31, 2026</p>
+          <p class="act-desc">Course page for Fall 2026</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2026/11751-2026f/">Speech Recognition and Understanding (11-751/18-781) — Fall 2026</a></div>
+          <p class="act-meta">August 31, 2026</p>
+          <p class="act-desc">Course page for Fall 2026</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2026/11692-2026s/">Speech Technology for Conversational AI (11-492/11-692/18-495) — Spring 2026</a></div>
+          <p class="act-meta">January 12, 2026</p>
+          <p class="act-desc">Minimal course page for Fall 2025 with Piazza login notice</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2025/11751-2025f/">Speech Recognition and Understanding (11-751/18-781) — Fall 2025</a></div>
+          <p class="act-meta">August 25, 2025</p>
+          <p class="act-desc">Minimal course page for Fall 2025 with Piazza login notice</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/11751-2024f/">Speech Recognition and Understanding (11-751/18-781) — Fall 2024</a></div>
+          <p class="act-meta">August 26, 2024</p>
+          <p class="act-desc">Minimal course page for Fall 2024 with Piazza login notice</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/11751-2023f/">Speech Recognition and Understanding (11-751/18-781)</a></div>
+          <p class="act-meta">August 27, 2023</p>
+          <p class="act-desc">This is the 2022Fall version of 11-751/18-781 Speech Recognition and Understanding</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/11692-2023s/">Speech Processing (11-492/11-692/18-495)</a></div>
+          <p class="act-meta">January 16, 2023</p>
+          <p class="act-desc">This is the 2023Spring version of 11-492/11-692/18-495 Speech Processing</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/11751-2022f/">Speech Recognition and Understanding (11-751/18-781)</a></div>
+          <p class="act-meta">August 25, 2022</p>
+          <p class="act-desc">This is the 2022Fall version of 11-751/18-781 Speech Recognition and Understanding</p>
+        </li>
+        
+      </ul>
+    </details>
+    
+  
+    <details class="act-group">
+      <summary>Cluster and workflow guides<span class="act-count">7</span></summary>
+      <ul class="act-list">
+        
+        <li>
+          <div class="act-title"><a href="/activities/2025/dependency-jobs/">Submit dependency jobs in SLURM</a></div>
+          <p class="act-meta">April 22, 2025</p>
+          <p class="act-desc">dependency jobs in slurm</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2024/babel-usage/">Babel Usage</a></div>
+          <p class="act-meta">August 20, 2024</p>
+          <p class="act-desc">Babel cluster usage.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/delta-usage/">Delta Usage</a></div>
+          <p class="act-meta">April 1, 2023</p>
+          <p class="act-desc">Delta cluster usage.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/tir-usage/">TIR Usage</a></div>
+          <p class="act-meta">January 1, 2022</p>
+          <p class="act-desc">CMU TIR cluster usage.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/psc-usage/">PSC Usage</a></div>
+          <p class="act-meta">January 1, 2022</p>
+          <p class="act-desc">PSC cluster usage.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/espnet2-recipe/">ESPnet Recipe Instructions</a></div>
+          <p class="act-meta">January 1, 2022</p>
+          <p class="act-desc">How to make a ESPnet2 recipe from scratch</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/aws-usage/">AWS Usage</a></div>
+          <p class="act-meta">January 1, 2022</p>
+          <p class="act-desc">AWS usage.</p>
+        </li>
+        
+      </ul>
+    </details>
+    
+  
+    <details class="act-group">
+      <summary>Galleries<span class="act-count">3</span></summary>
+      <ul class="act-list">
+        
+        <li>
+          <div class="act-title"><a href="/activities/2023/2023-record/">2023 Activities Gallery</a></div>
+          <p class="act-meta">September 24, 2023</p>
+          <p class="act-desc">This is memory gallery for 2023 activities.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/2022-record/">2022 Activities Gallery</a></div>
+          <p class="act-meta">December 31, 2022</p>
+          <p class="act-desc">This is memory gallery for 2022 activities.</p>
+        </li>
+        
+        <li>
+          <div class="act-title"><a href="/activities/2022/2021-record/">2021 Actvities Gallery</a></div>
+          <p class="act-meta">January 10, 2022</p>
+          <p class="act-desc">This is memory gallery for 2021 activities.</p>
+        </li>
+        
+      </ul>
+    </details>
+    
+  
 
 </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2026   WAV Lab.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
