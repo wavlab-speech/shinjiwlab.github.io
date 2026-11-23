@@ -22,6 +22,7 @@ Requirements:
 """
 
 import bisect
+import json
 import os
 import re
 import sys
@@ -453,6 +454,84 @@ def bib_rows_for_member(entries, keys):
     return rows
 
 
+
+# --------------------------------------------------------------------------
+# ORCID
+# --------------------------------------------------------------------------
+
+# ORCID work types that are not publications. Everything else is kept,
+# including "other": on Shinji's record every "other" work is an arXiv preprint
+# imported from Scopus, and 20 of his 25 newest papers are among them.
+EXCLUDED_TYPES = {
+    'data-set', 'software', 'patent', 'lecture-speech',
+    'supervised-student-publication', 'website', 'physical-object',
+    'research-technique', 'spin-off-company', 'standards-and-policy',
+    'technical-standard',
+}
+
+ORCID_ID = re.compile(r'^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$')
+
+
+def normalize_orcid(value):
+    """The bare ORCID iD in `value`, or None when `value` is not a valid iD.
+
+    Accepts "0000-0002-5970-8631" and "https://orcid.org/0000-0002-5970-8631"
+    (http:// too), with spaces around it and a lower-case check digit "x".
+    """
+    text = str(value or '').strip()
+    text = re.sub(r'^https?://orcid\.org/', '', text, flags=re.I).strip().upper()
+    return text if ORCID_ID.match(text) else None
+
+
+def _value(node, *path):
+    """Follow `path` through nested dicts. ORCID writes null for missing parts."""
+    for key in path:
+        node = (node or {}).get(key)
+    return node
+
+
+def _orcid_link(work):
+    """A DOI link if the work has a DOI, else the work's own URL, else ''."""
+    for ext in _value(work, 'external-ids', 'external-id') or []:
+        if (ext or {}).get('external-id-type') != 'doi':
+            continue
+        # The value is usually a bare DOI, but may already carry a resolver
+        # prefix; strip it so the link is not doubled.
+        doi = re.sub(r'^(https?://(dx\.)?doi\.org/|doi:)', '',
+                     (ext.get('external-id-value') or '').strip(), flags=re.I)
+        if doi:
+            return 'https://doi.org/' + doi
+    url = (_value(work, 'url', 'value') or '').strip()
+    return url if url.startswith(('http://', 'https://')) else ''
+
+
+def parse_orcid_works(data):
+    """Rows {title, year, venue, url} from an ORCID /works response.
+
+    ORCID groups the copies of one work that different sources added; the first
+    summary of each group stands for the work.
+    """
+    rows = []
+    for group in (data or {}).get('group') or []:
+        summaries = (group or {}).get('work-summary') or []
+        if not summaries:
+            continue
+        work = summaries[0] or {}
+        if work.get('type') in EXCLUDED_TYPES:
+            continue
+        title = (_value(work, 'title', 'title', 'value') or '').strip()
+        if not title:
+            continue
+        venue = re.sub(r'arxiv', 'arXiv',
+                       (_value(work, 'journal-title', 'value') or '').strip(), flags=re.I)
+        rows.append({
+            'title': title,
+            'year': str(_value(work, 'publication-date', 'year', 'value') or '').strip(),
+            'venue': venue,
+            'url': _orcid_link(work),
+        })
+    return rows
+
 # --------------------------------------------------------------------------
 # Self-test and entry point
 # --------------------------------------------------------------------------
@@ -496,6 +575,21 @@ def selftest():
     check('papers.bib separates authors with "and"', bad == [])
     if bad:
         print('    fix the author field of: ' + ', '.join(sorted(set(bad))))
+
+    # ORCID works, from the checked-in sample record
+    sample = json.load(open(os.path.join(TESTDATA_DIR, 'orcid_works_sample.json'), encoding='utf-8'))
+    rows = parse_orcid_works(sample)
+    titles = [r['title'] for r in rows]
+    check('excluded type is dropped', 'Selftest data set' not in titles)
+    check('work with no title is dropped', len(rows) == len(sample['group']) - 2)
+    check('work with no date keeps an empty year',
+          [r['year'] for r in rows if r['title'] == 'Selftest work with no date'] == [''])
+    check('arXiv venue is normalized', any(r['venue'] == 'arXiv' for r in rows))
+    check('DOI becomes a doi.org link', any(r['url'].startswith('https://doi.org/10.') for r in rows))
+    check('orcid: bare iD', normalize_orcid('0000-0002-5970-8631') == '0000-0002-5970-8631')
+    check('orcid: URL form, spaces, lower-case x',
+          normalize_orcid(' https://orcid.org/0000-0002-1825-009x ') == '0000-0002-1825-009X')
+    check('orcid: invalid', normalize_orcid('0000-0002-5970') is None and normalize_orcid('') is None)
 
     passed = sum(_RESULTS)
     print(f"\n{passed}/{len(_RESULTS)} self-test checks pass")

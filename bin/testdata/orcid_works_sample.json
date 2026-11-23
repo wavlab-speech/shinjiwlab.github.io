@@ -1,0 +1,663 @@
+{
+ "group": [
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "ADEPT: RL-Aligned Agentic Decoding of Emotion via Evidence Probing Tools \u2014 From Consensus Learning to Ambiguity-Driven Emotion Reasoning"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "other",
+     "publication-date": {
+      "year": {
+       "value": "2026"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Arxiv"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.48550/arXiv.2602.12714",
+        "external-id-normalized": {
+         "value": "10.48550/arxiv.2602.12714",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-105031095494",
+        "external-id-normalized": {
+         "value": "2-s2.0-105031095494",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "23318422",
+        "external-id-normalized": {
+         "value": "2331-8422",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "https://www.scopus.com/inward/record.url?eid=2-s2.0-105031095494&partnerID=MN8TOARS"
+     },
+     "put-code": 226801411
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "ANCHOR: Autoregressive Non-intrusive Chunk-Ordered Refinement for Joint Multi-Resolution Speech Quality Modeling"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "other",
+     "publication-date": {
+      "year": {
+       "value": "2026"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Arxiv"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.48550/arXiv.2606.10233",
+        "external-id-normalized": {
+         "value": "10.48550/arxiv.2606.10233",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-105044063657",
+        "external-id-normalized": {
+         "value": "2-s2.0-105044063657",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "23318422",
+        "external-id-normalized": {
+         "value": "2331-8422",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "https://www.scopus.com/inward/record.url?eid=2-s2.0-105044063657&partnerID=MN8TOARS"
+     },
+     "put-code": 226800954
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "conference-paper",
+     "publication-date": {
+      "year": {
+       "value": "2026"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "19th Conference of the European Chapter of the Association for Computational Linguistics Findings of Eacl 2026"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.18653/v1/2026.findings-eacl.245",
+        "external-id-normalized": {
+         "value": "10.18653/v1/2026.findings-eacl.245",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-105038991760",
+        "external-id-normalized": {
+         "value": "2-s2.0-105038991760",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "isbn",
+        "external-id-value": "9798891763869",
+        "external-id-normalized": {
+         "value": "9798891763869",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "https://www.scopus.com/inward/record.url?eid=2-s2.0-105038991760&partnerID=MN8TOARS"
+     },
+     "put-code": 226800946
+    },
+    {
+     "title": {
+      "title": {
+       "value": "BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "other",
+     "publication-date": {
+      "year": {
+       "value": "2025"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Arxiv"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.48550/arXiv.2511.06150",
+        "external-id-normalized": {
+         "value": "10.48550/arxiv.2511.06150",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-105022475560",
+        "external-id-normalized": {
+         "value": "2-s2.0-105022475560",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "23318422",
+        "external-id-normalized": {
+         "value": "2331-8422",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "https://www.scopus.com/inward/record.url?eid=2-s2.0-105022475560&partnerID=MN8TOARS"
+     },
+     "put-code": 226801360
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "CSPB: Conversational Speech Processing Benchmark for Self-supervised Speech Models"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "conference-paper",
+     "publication-date": {
+      "year": {
+       "value": "2026"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Eacl 2026 19th Conference of the European Chapter of the Association for Computational Linguistics Proceedings of the Conference Vol 1 Long Papers"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.18653/v1/2026.eacl-long.275",
+        "external-id-normalized": {
+         "value": "10.18653/v1/2026.eacl-long.275",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-105040505264",
+        "external-id-normalized": {
+         "value": "2-s2.0-105040505264",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "isbn",
+        "external-id-value": "9798891763807",
+        "external-id-normalized": {
+         "value": "9798891763807",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "https://www.scopus.com/inward/record.url?eid=2-s2.0-105040505264&partnerID=MN8TOARS"
+     },
+     "put-code": 226801315
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "An end-to-end integration of speech separation and recognition with self-supervised learning representation"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "journal-article",
+     "publication-date": {
+      "year": {
+       "value": "2026"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Computer Speech and Language"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.1016/j.csl.2025.101813",
+        "external-id-normalized": {
+         "value": "10.1016/j.csl.2025.101813",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-105005177447",
+        "external-id-normalized": {
+         "value": "2-s2.0-105005177447",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "08852308 10958363",
+        "external-id-normalized": {
+         "value": "0885-2308",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-105005177447&partnerID=MN8TOARS"
+     },
+     "put-code": 199946071
+    },
+    {
+     "title": {
+      "title": {
+       "value": "An End-to-End Integration of Speech Separation and Recognition with Self-Supervised Learning Representation"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "other",
+     "publication-date": {
+      "year": {
+       "value": "2024"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Ssrn"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.2139/ssrn.5030846",
+        "external-id-normalized": {
+         "value": "10.2139/ssrn.5030846",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-85210662547",
+        "external-id-normalized": {
+         "value": "2-s2.0-85210662547",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "15565068",
+        "external-id-normalized": {
+         "value": "1556-5068",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85210662547&partnerID=MN8TOARS"
+     },
+     "put-code": 199946092
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "The fifth \u2018CHiME\u2019 speech separation and recognition challenge: Dataset, task and baselines"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "other",
+     "publication-date": {
+      "year": {
+       "value": "2018"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "arXiv"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.48550/arxiv.1803.10609",
+        "external-id-normalized": {
+         "value": "10.48550/arxiv.1803.10609",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-85170149527",
+        "external-id-normalized": {
+         "value": "2-s2.0-85170149527",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "23318422",
+        "external-id-normalized": {
+         "value": "2331-8422",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85170149527&partnerID=MN8TOARS"
+     },
+     "put-code": 169324462
+    },
+    {
+     "title": {
+      "title": {
+       "value": "The fifth \u2018CHiME\u2019 speech separation and recognition challenge: Dataset, task and baselines"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "other",
+     "publication-date": {
+      "year": {
+       "value": "2018"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "arXiv"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-85093022085",
+        "external-id-normalized": {
+         "value": "2-s2.0-85093022085",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "issn",
+        "external-id-value": "23318422",
+        "external-id-normalized": {
+         "value": "2331-8422",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "part-of"
+       }
+      ]
+     },
+     "url": {
+      "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85093022085&partnerID=MN8TOARS"
+     },
+     "put-code": 130341818
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "The fifth 'CHiME' speech separation and recognition challenge: Dataset, task and baselines"
+      },
+      "subtitle": null,
+      "translated-title": null
+     },
+     "type": "conference-paper",
+     "publication-date": {
+      "year": {
+       "value": "2018"
+      },
+      "month": null,
+      "day": null
+     },
+     "journal-title": {
+      "value": "Proceedings of the Annual Conference of the International Speech Communication Association, INTERSPEECH"
+     },
+     "external-ids": {
+      "external-id": [
+       {
+        "external-id-type": "doi",
+        "external-id-value": "10.21437/Interspeech.2018-1768",
+        "external-id-normalized": {
+         "value": "10.21437/interspeech.2018-1768",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       },
+       {
+        "external-id-type": "eid",
+        "external-id-value": "2-s2.0-85054986374",
+        "external-id-normalized": {
+         "value": "2-s2.0-85054986374",
+         "transient": true
+        },
+        "external-id-normalized-error": null,
+        "external-id-url": null,
+        "external-id-relationship": "self"
+       }
+      ]
+     },
+     "url": {
+      "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85054986374&partnerID=MN8TOARS"
+     },
+     "put-code": 65649683
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "Selftest data set"
+      }
+     },
+     "type": "data-set",
+     "publication-date": {
+      "year": {
+       "value": "2024"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": null,
+     "type": "conference-paper",
+     "publication-date": {
+      "year": {
+       "value": "2024"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "work-summary": [
+    {
+     "title": {
+      "title": {
+       "value": "Selftest work with no date"
+      }
+     },
+     "type": "journal-article",
+     "publication-date": null
+    }
+   ]
+  }
+ ]
+}
