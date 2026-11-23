@@ -3,19 +3,31 @@
 The [Members page](https://www.wavlab.org/members/) comes from one data file.
 To add yourself, edit that file and add a photo. You do not write any HTML.
 
-The site gets your publication list from Google Scholar. You do not write the
-list, and you do not edit it.
+The site makes your publication list from two sources: the lab's list of
+papers (`_bibliography/papers.bib`) and your public ORCID record. You do not
+write the list on the Members page.
 
 ---
 
 ## Before you start
 
-You need these two items:
+You need these items:
 
 - **A photo.** Use a square photo. The card cuts the photo to a circle of 72
   pixels.
-- **Your Google Scholar ID.** This item is optional. Open your Google Scholar
-  profile. Copy the `user=` part of the address:
+- **Your ORCID iD.** This item is optional. Open your record on
+  <https://orcid.org/>. Copy the iD at the end of the address:
+
+  ```
+  https://orcid.org/0000-0002-5970-8631
+                    ^^^^^^^^^^^^^^^^^^^
+                    this is your orcid
+  ```
+
+  The site uses only the works that you made public in your ORCID record.
+- **Your Google Scholar ID.** This item is optional. The card uses it only for
+  a "Google Scholar" link. The site gets no data from Google Scholar. Open your
+  Google Scholar profile. Copy the `user=` part of the address:
 
   ```
   https://scholar.google.com/citations?user=U5xRA6QAAAAJ&hl=en
@@ -23,9 +35,10 @@ You need these two items:
                                             this is your scholar_id
   ```
 
-If you do not have a Google Scholar profile, do not add the `scholar_id` field.
-Your card is still correct. The card shows "No publications listed yet". The
-card does not show a Google Scholar link.
+If you do not have an ORCID iD, do not add the `orcid` field. Your card is
+still correct. Your list then shows only your papers in
+`_bibliography/papers.bib`. If you do not have a Google Scholar profile, do not
+add the `scholar_id` field. The card then shows no Google Scholar link.
 
 ---
 
@@ -64,6 +77,7 @@ group is the sequence on the page.
   name: Your Name
   role: phd
   scholar_id: XXXXXXXXXXXX
+  orcid: 0000-0000-0000-0000
   website: https://yourname.github.io/
   image: yourname.jpg
 ```
@@ -99,10 +113,12 @@ gh pr create --base source --title "Add Your Name to members"
 
 | Field | Necessary | Description |
 |---|---|---|
-| `id` | yes | A unique name in lower case. Use the form `firstname_lastname`. The data file `_data/scholar_pubs/<id>.yml` uses this name also. |
-| `name` | yes | The card shows this name. The card shows the name as you write it. |
+| `id` | yes | A unique name in lower case. Use the form `firstname_lastname`. The data file `_data/member_pubs/<id>.yml` uses this name also. |
+| `name` | yes | The card shows this name. The card shows the name as you write it. The script also finds your papers in `_bibliography/papers.bib` by this full name. |
 | `role` | yes | This field selects your group on the page. See the list below. |
-| `scholar_id` | no | The 12 characters from your Google Scholar address. Without this field, the site gets no publications for you. |
+| `orcid` | no | Your ORCID iD, for example `0000-0002-5970-8631`. The site adds the public works of your ORCID record to your list. |
+| `bib_names` | no | Other spellings of your name in `_bibliography/papers.bib`, as a list. Example: `["S. Watanabe"]`. Use this field only if the script does not find your papers by your full name. |
+| `scholar_id` | no | The 12 characters from your Google Scholar address. The card uses it only for the "Google Scholar" link. |
 | `website` | no | The address must start with `http://` or `https://`. The card removes all other addresses. |
 | `image` | no | The name of your photo file in `assets/img/`. |
 | `note` | no | The card shows this text in parentheses after your name. Example: `co-supervising`. |
@@ -126,51 +142,51 @@ You do not do anything. The site adds your publications in three steps:
 | Time | Result |
 |---|---|
 | A person merges your pull request | Your card comes on the page. The card shows "No publications listed yet". |
-| The next Sunday | A scheduled workflow starts `bin/fetch_scholar.py`. The script makes the file `_data/scholar_pubs/<id>.yml`. The script gets your publications. The workflow then opens a pull request. |
+| The next Sunday | A scheduled workflow starts `bin/fetch_publications.py`. The script makes the file `_data/member_pubs/<id>.yml`. The script gets your papers from `_bibliography/papers.bib` and from your public ORCID record. The workflow then opens a pull request. |
 | A person merges that pull request | Your publication list and your publication count come on the card. |
 
 To get your publications immediately, start the script yourself. Then add the
 result to your own pull request.
 
 ```bash
-pip install scholarly "bibtexparser<2" pyyaml
-python3 bin/fetch_scholar.py
+pip install pyyaml
+python3 bin/fetch_publications.py
 ```
 
-Keep `"bibtexparser<2"`. Version 2 does not work with scholarly.
+The script needs no account and no key. It sends one request to the public
+ORCID API for each member who has an `orcid` field.
 
-Google Scholar limits the number of requests. Thus the script can fail. You
-can start the script again safely. The script does not replace good data with
-empty data or with too little data.
+If an ORCID request fails, the script does not change that member's file. You
+can start the script again safely. The script also does not replace a list
+with a list that is much shorter from the same source.
 
-To make only the empty data files, use this command. This command does not use
-the network.
+### Keep your ORCID record current
 
-```bash
-python3 bin/fetch_scholar.py --enrich-only
-```
+The site shows only the works that are public in your ORCID record. ORCID does
+not always add your papers by itself. For example, the 2025 DOI records of
+Interspeech and ACL papers carry no ORCID iD, so ORCID's automatic update from
+Crossref cannot add these papers to your record. Add each missing paper to
+your ORCID record yourself, and make it public. For instructions, see the
+ORCID help center at <https://support.orcid.org/hc>.
 
 ### Incorrect titles
 
-Google Scholar changes the letters in a title. Example: Google Scholar changes
-`POWSM` to `Powsm`. Google Scholar also shows many published papers as arXiv
-preprints.
-
-The script corrects these errors. The script compares each title with the
-titles in `_bibliography/papers.bib`. If the script finds the paper in that
-file, the script uses the curated title, venue, year, and link.
+When a paper is in `_bibliography/papers.bib` and in your ORCID record, the
+script uses the curated title, venue, year, and link from
+`_bibliography/papers.bib`. The script compares the titles to find the same
+paper.
 
 To correct your entry, add your paper to `_bibliography/papers.bib`. This
 correction improves the Publications page and your member card. After you edit
-that file, use this command:
+that file, start the script again:
 
 ```bash
-python3 bin/fetch_scholar.py --enrich-only
+python3 bin/fetch_publications.py
 ```
 
-The script keeps the Google Scholar data for all other papers. A note at the
-top of the Members page tells the readers about this limit. The note sends the
-readers to your personal page.
+The script keeps the ORCID data for all other papers. A note at the top of the
+Members page tells the readers about this limit. The note sends the readers to
+your personal page.
 
 ---
 
@@ -185,7 +201,7 @@ automatically. Your publications move with you.
 When you leave the lab, do these three steps:
 
 1. Delete your entry from `_data/members.yml`.
-2. Delete the file `_data/scholar_pubs/<id>.yml`.
+2. Delete the file `_data/member_pubs/<id>.yml`.
 3. Add your name to the Alumni list at the bottom of `_pages/members.md`. Give
    your dates and your new organization. This list is still HTML.
 
@@ -204,13 +220,19 @@ address such as `yourname.github.io`. This rule prevents unsafe links.
 The card cuts each photo to a circle. Cut your photo to a square first.
 
 **My publication count is incorrect.**
-The count shows the number of different papers in your Google Scholar profile.
-The script removes the duplicate papers first. Thus this count can differ from
-the count in Google Scholar. If the count is very different, examine your
-Google Scholar profile. The profile can contain papers from a different person
-with your name. Correct your profile. The site then corrects the count at the
-next run.
+The count shows the number of different papers in `_bibliography/papers.bib`
+and in the public part of your ORCID record together. The script removes the
+duplicate papers first. Thus this count can differ from the count in ORCID. If
+the count is too low, make sure that your works are public in ORCID. If the
+count is too high, examine your ORCID record for papers from a different
+person. Correct your record. The site then corrects the count at the next run.
+
+**My list is missing a paper.**
+Add the paper to your ORCID record and make it public. If it is a lab paper,
+make sure that it is in `_bibliography/papers.bib` with your full name in the
+author list.
 
 **The card shows only 20 papers.**
 This quantity is correct. The card shows your 20 most recent papers. The card
-also gives a link to your full Google Scholar profile.
+also gives a link to your full ORCID record, or to your Google Scholar profile
+if you have no ORCID iD.

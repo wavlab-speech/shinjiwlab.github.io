@@ -1,8 +1,10 @@
-name: Update Scholar Publications
+name: Update Member Publications
 
-# Refreshes the per-member files in _data/scholar_pubs/ from Google Scholar and
-# opens a pull request with the proposed changes for human review. It never
-# pushes to a deploy branch directly — a maintainer reviews and merges.
+# Refreshes the per-member files in _data/member_pubs/ from two sources: the
+# lab's curated _bibliography/papers.bib, and each member's public ORCID record
+# (anonymous ORCID public API, no credentials). It opens a pull request with
+# the proposed changes for human review. It never pushes to a deploy branch
+# directly — a maintainer reviews and merges.
 
 on:
   schedule:
@@ -17,10 +19,10 @@ jobs:
   update-publications:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source branch
+      # No `ref:` here, so a manual run on a branch tests that branch. The
+      # schedule runs on the default branch, which is `source`.
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: source
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,29 +30,30 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        # scholarly does not cap bibtexparser, and bibtexparser 2 removed the
-        # bibdatabase module that scholarly imports. Keep it below 2.
-        run: pip install scholarly "bibtexparser<2" pyyaml
+        run: pip install pyyaml
 
-      # No continue-on-error: the script exits non-zero when it could not
-      # refresh a single member, which is exactly the case we must not sleep
-      # through. Google Scholar blocking this runner should turn the run red,
-      # not quietly leave stale data on the site.
-      - name: Fetch Scholar publications
-        # The script gives up on its own when Google Scholar blocks the runner
-        # (see MEMBER_TIMEOUT). This cap is the backstop if that ever fails.
-        timeout-minutes: 30
+      # Offline checks against a checked-in ORCID sample, before any network
+      # call: a parser or matcher regression fails here, not halfway through.
+      - name: Self-test
+        run: python3 bin/fetch_publications.py --selftest
+
+      # No continue-on-error. The script fails only when it sent ORCID requests
+      # and every one of them failed (an ORCID outage or an API change). One
+      # failed member keeps its old file, and the run stays green.
+      - name: Fetch member publications
+        # About one ORCID request per member, one per second.
+        timeout-minutes: 10
         # -u: without it, Python buffers its output when writing to a pipe, and
         # a job killed by the timeout above loses every line it printed.
-        run: python3 -u bin/fetch_scholar.py
+        run: python3 -u bin/fetch_publications.py
 
       # deploy.yml's `on: pull_request` build does not run unattended on a PR
       # opened with the default GITHUB_TOKEN: GitHub holds such runs behind an
       # "Approve workflows to run" banner that a write-access user has to click
       # (and historically suppressed them entirely). Either way the bot PR has
       # no automatic build result. So build the site here instead, before the
-      # PR exists: scraped data that breaks the build fails this run rather
-      # than sitting in an unchecked PR and taking the site down once merged.
+      # PR exists: data that breaks the build fails this run rather than
+      # sitting in an unchecked PR and taking the site down once merged.
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -60,27 +63,20 @@ jobs:
       - name: Verify the site still builds with the new data
         run: bundle exec jekyll build
 
+      # Only on `source`. A run on another branch would put that branch's code
+      # into the bot pull request.
       - name: Open pull request
+        if: github.ref == 'refs/heads/source'
         uses: peter-evans/create-pull-request@v6
         with:
           base: source
-          branch: bot/update-scholar-pubs
+          branch: bot/update-member-pubs
           delete-branch: true
-          add-paths: _data/scholar_pubs/
-          commit-message: "chore: refresh member publications from Google Scholar"
-          title: "Update member publications from Google Scholar"
+          add-paths: _data/member_pubs/
+          commit-message: "chore: refresh member publications from papers.bib and ORCID"
+          title: "Update member publications from papers.bib and ORCID"
           labels: automated
           body: |
-            Automated refresh of `_data/scholar_pubs/*.yml` from Google Scholar
-            (via `bin/fetch_scholar.py`).
-
-            **Please review the diff before merging.** Google Scholar metadata is
-            community-sourced and the scraper can be rate-limited, so titles,
-            venues, and links may be incomplete or wrong. Titles, venues and
-            links are upgraded from `_bibliography/papers.bib` wherever a paper
-            is found there, so unmatched records are the ones worth eyeballing.
-
-            Two guards ran before this PR was opened: fetches that returned
-            nothing (or fewer than 70% of a member's previous publications) were
-            discarded rather than saved, and `jekyll build` succeeded against
-            this data. If there is nothing to update, no PR is created.
+            This pull request refreshes `_data/member_pubs/*.yml` from `_bibliography/papers.bib` and each member's public ORCID record.
+            When a paper is in both, the papers.bib title, venue, year and link replace the ORCID data.
+            A member whose ORCID request failed keeps the old file; the run log names that member.

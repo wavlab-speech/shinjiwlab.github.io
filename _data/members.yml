@@ -2,16 +2,16 @@
 # each member as a card on the /members/ page.
 #
 # TO ADD A MEMBER: add an entry below. Put the photo in assets/img/.
-# Do this only. Do not make a file in _data/scholar_pubs/.
+# Do this only. Do not make a file in _data/member_pubs/.
 # The new card comes on the page immediately. The card shows
-# "No publications listed yet". The next run of bin/fetch_scholar.py makes
-# the publication file for the new member.
+# "No publications listed yet". The next run of bin/fetch_publications.py
+# makes the publication file for the new member.
 #
 # For the full procedure, and for the pull request steps, read
 # docs/adding-a-member.md
 #
 #   id          Necessary. A unique name. The data file
-#               _data/scholar_pubs/<id>.yml uses this name also.
+#               _data/member_pubs/<id>.yml uses this name also.
 #   name        Necessary. The card shows this name.
 #   role        Necessary. This field selects the group on the page.
 #               Use one of these seven values:
@@ -19,9 +19,16 @@
 #               CAUTION: an incorrect value removes the member from the page.
 #               The build does not fail, and you get no error message.
 #   scholar_id  Optional. The 12 characters from the Google Scholar address
-#               (scholar.google.com/citations?user=THIS_PART). Without this
-#               field, the site gets no publications. The card also shows no
-#               Google Scholar link.
+#               (scholar.google.com/citations?user=THIS_PART). The card uses
+#               it only for the "Google Scholar" link. The site gets no data
+#               from Google Scholar.
+#   orcid       Optional. Your ORCID iD, for example 0000-0002-5970-8631.
+#               The site adds the public works of your ORCID record to your
+#               publication list. Without this field, the list comes only
+#               from _bibliography/papers.bib.
+#   bib_names   Optional. A list of other spellings of your name in
+#               _bibliography/papers.bib, for example ["S. Watanabe"]. The
+#               script finds your papers there by your full name.
 #   website     Optional. The address must start with http:// or https://.
 #               The card removes all other addresses.
 #   image       Optional. The name of a photo file in assets/img/.
@@ -31,7 +38,7 @@
 # The sequence in each role is the sequence on the page.
 #
 # WHEN A MEMBER LEAVES: delete the entry below. Delete the file
-# _data/scholar_pubs/<id>.yml also. Then add the member to the Alumni list in
+# _data/member_pubs/<id>.yml also. Then add the member to the Alumni list in
 # _pages/members.md.
 
 - id: shinji_watanabe
