@@ -22,11 +22,18 @@ Requirements:
 """
 
 import bisect
+import http.client
 import json
 import os
 import re
+import shutil
+import socket
 import sys
+import tempfile
+import time
 import unicodedata
+import urllib.error
+import urllib.request
 import yaml
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -532,6 +539,165 @@ def parse_orcid_works(data):
         })
     return rows
 
+
+# --------------------------------------------------------------------------
+# Fetch, merge and save
+# --------------------------------------------------------------------------
+
+# A generic client name. It identifies the site, and carries no person's
+# contact details.
+USER_AGENT = 'wavlab-site-publications/1.0 (+https://github.com/wavlab-speech/shinjiwlab.github.io)'
+ORCID_WORKS_URL = 'https://pub.orcid.org/v3.0/{orcid}/works'
+
+
+class OrcidError(Exception):
+    """An ORCID request failed: an HTTP error, no connection, a timeout, or bad JSON."""
+
+
+class InvalidOrcid(ValueError):
+    """A member's `orcid` value is not a valid ORCID iD."""
+
+
+def fetch_orcid_works(orcid, opener=urllib.request.urlopen, timeout=30.0):
+    """The public /works response for one ORCID iD, as a dict.
+
+    Anonymous public API: no credentials. Raises OrcidError on any failure.
+    """
+    req = urllib.request.Request(
+        ORCID_WORKS_URL.format(orcid=orcid),
+        headers={'Accept': 'application/json', 'User-Agent': USER_AGENT})
+    try:
+        with opener(req, timeout=timeout) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+    except urllib.error.HTTPError as exc:          # before URLError: a subclass
+        raise OrcidError(f'HTTP {exc.code}') from exc
+    except (OSError, socket.timeout, http.client.HTTPException) as exc:
+        # URLError, TimeoutError and dropped connections are all OSError.
+        raise OrcidError(f'{type(exc).__name__}: {exc}') from exc
+    except ValueError as exc:                       # JSONDecodeError, UnicodeDecodeError
+        raise OrcidError(f'bad JSON: {exc}') from exc
+    if not isinstance(data, dict):
+        raise OrcidError('bad JSON: the response is not an object')
+    return data
+
+
+def merge_rows(orcid_rows, bib_rows, bib_index):
+    """ORCID rows corrected from papers.bib, plus the papers.bib rows ORCID lacks.
+
+    The ORCID rows go first, so when dedupe meets a paper twice with the same
+    year it keeps the enriched ORCID row, which already carries the papers.bib
+    title, venue and link.
+    """
+    enriched = [enrich(dict(row), bib_index) for row in orcid_rows]
+    return sort_newest_first(dedupe(enriched + list(bib_rows)))
+
+
+def member_rows(member, entries, bib_index, fetch=fetch_orcid_works):
+    """(source, full newest-first list) for one member.
+
+    Raises InvalidOrcid when `orcid` is present but not a valid iD, and
+    OrcidError when the ORCID request fails.
+    """
+    bib_rows = bib_rows_for_member(entries, member_name_keys(member))
+    if 'orcid' not in member:
+        return 'papers.bib', sort_newest_first(dedupe(bib_rows))
+    orcid = normalize_orcid(member.get('orcid'))
+    if orcid is None:
+        raise InvalidOrcid(f"orcid {member.get('orcid')!r} is not a valid ORCID iD")
+    works = parse_orcid_works(fetch(orcid))
+    return 'papers.bib+orcid', merge_rows(works, bib_rows, bib_index)
+
+
+def read_existing(member_id):
+    out_file = os.path.join(PUBS_DIR, f'{member_id}.yml')
+    if not os.path.exists(out_file):
+        return None
+    try:
+        with open(out_file, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f) or None
+    except (OSError, yaml.YAMLError) as exc:
+        print(f"  Could not read {out_file}: {exc}")
+        return None
+
+
+def write_file(member_id, source, total, pubs):
+    os.makedirs(PUBS_DIR, exist_ok=True)
+    out_file = os.path.join(PUBS_DIR, f'{member_id}.yml')
+    data = {'source': source, 'total': total, 'pubs': pubs}
+    with open(out_file, 'w', encoding='utf-8') as f:
+        # safe_dump, to match the safe_load these files are read back with.
+        yaml.safe_dump(data, f, default_flow_style=False, allow_unicode=True,
+                       sort_keys=False)
+    return out_file
+
+
+def save_publications(member_id, source, pubs):
+    """Save the member's total and newest KEEP_LATEST publications.
+
+    Returns False, and writes nothing, when the stored file has the same source
+    and the new total is below MIN_KEEP_RATIO of the stored total. A file from
+    another source (or from the Google Scholar period, which has no `source`)
+    is replaced.
+    """
+    total = len(pubs)
+    existing = read_existing(member_id) or {}
+    previous = existing.get('total') or 0
+    if (existing.get('source') == source and isinstance(previous, int) and previous
+            and total < previous * MIN_KEEP_RATIO):
+        print(f"  REFUSING to save {member_id}: {previous} -> {total} publications "
+              f"(below {int(MIN_KEEP_RATIO * 100)}% of the stored total from {source}). "
+              "Keeping the existing data.")
+        return False
+    out_file = write_file(member_id, source, total, pubs[:KEEP_LATEST])
+    print(f"  Saved {min(total, KEEP_LATEST)} of {total} publications to {out_file}")
+    return True
+
+
+def ensure_member_files(members):
+    """Create an empty data file for any member that does not have one yet.
+
+    Adding somebody to the lab should mean editing _data/members.yml and
+    nothing else. The members page already tolerates a missing file; this keeps
+    _data/members.yml and _data/member_pubs/ in step, and means the weekly PR
+    carries the new member's file along with everyone else's refresh.
+    """
+    os.makedirs(PUBS_DIR, exist_ok=True)
+    created = []
+    for member in members:
+        member_id = member.get('id')
+        if not member_id:
+            print(f"  Skipping entry with no id: {member!r}")
+            continue
+        if os.path.exists(os.path.join(PUBS_DIR, f'{member_id}.yml')):
+            continue
+        write_file(member_id, 'papers.bib', 0, [])
+        created.append(member.get('name', member_id))
+    if created:
+        print("Created empty publication files for: " + ", ".join(created))
+    return created
+
+
+def refresh_member(member, entries, bib_index, fetch=fetch_orcid_works):
+    """Refresh one member's file.
+
+    Returns 'saved', 'refused', 'orcid_failed' or 'invalid_orcid'. The last two
+    change no file.
+    """
+    try:
+        source, rows = member_rows(member, entries, bib_index, fetch=fetch)
+    except InvalidOrcid as exc:
+        print(f"  Not changed: {exc}. Write the bare iD, for example 0000-0002-5970-8631.")
+        return 'invalid_orcid'
+    except OrcidError as exc:
+        print(f"  Not changed: the ORCID request failed ({exc}).")
+        return 'orcid_failed'
+    return 'saved' if save_publications(member['id'], source, rows) else 'refused'
+
+
+def exit_status(orcid_attempts, orcid_failures):
+    """1 only when the run sent ORCID requests and every one of them failed."""
+    return 1 if orcid_attempts > 0 and orcid_failures == orcid_attempts else 0
+
 # --------------------------------------------------------------------------
 # Self-test and entry point
 # --------------------------------------------------------------------------
@@ -591,6 +757,61 @@ def selftest():
           normalize_orcid(' https://orcid.org/0000-0002-1825-009x ') == '0000-0002-1825-009X')
     check('orcid: invalid', normalize_orcid('0000-0002-5970') is None and normalize_orcid('') is None)
 
+    # Fetch, merge, guard and save. Writes go to a temporary directory.
+    def fake_fetch(works):
+        return lambda orcid, **kw: works
+
+    def failing_fetch(orcid, **kw):
+        raise OrcidError('HTTP 503')
+
+    def opener_429(req, timeout):
+        raise urllib.error.HTTPError(req.full_url, 429, 'Too Many Requests', {}, None)
+
+    global PUBS_DIR
+    saved_pubs_dir, PUBS_DIR = PUBS_DIR, tempfile.mkdtemp()
+    try:
+        index = build_bib_index([{'title': 'Shared Paper', 'abbr_publisher': 'ICASSP',
+                                  'year': '2025', 'author': 'Shinji Watanabe'}])
+        merged = merge_rows([{'title': 'shared paper', 'venue': 'arXiv', 'year': '2025', 'url': ''},
+                             {'title': 'Dup Title', 'venue': 'arXiv', 'year': '2024', 'url': ''},
+                             {'title': 'Dup Title', 'venue': 'Interspeech', 'year': '2025', 'url': ''}],
+                            [{'title': 'Shared Paper', 'venue': 'ICASSP', 'year': '2025', 'url': ''},
+                             {'title': 'Bib Only', 'venue': 'SLT', 'year': '2023', 'url': ''}], index)
+        check('merge: bib metadata wins', ('Shared Paper', 'ICASSP') in [(r['title'], r['venue']) for r in merged])
+        check('merge: preprint and published collapse to the newest',
+              [r['year'] for r in merged if r['title'] == 'Dup Title'] == ['2025'])
+        check('merge: bib-only paper is added', 'Bib Only' in [r['title'] for r in merged])
+        try:
+            fetch_orcid_works('0000-0002-5970-8631', opener=opener_429)
+            got = False
+        except OrcidError:
+            got = True
+        check('HTTP 429 raises OrcidError', got)
+        m = {'id': 'm1', 'name': 'Shinji Watanabe', 'orcid': '0000-0002-5970-8631'}
+        write_file('m1', 'papers.bib+orcid', 100, [])
+        check('same source, big drop is refused',
+              refresh_member(m, [], index, fetch=fake_fetch({'group': []})) == 'refused'
+              and read_existing('m1')['total'] == 100)
+        write_file('m1', 'papers.bib+orcid', 100, [])
+        check('ORCID failure keeps the file',
+              refresh_member(m, [], index, fetch=failing_fetch) == 'orcid_failed'
+              and read_existing('m1')['total'] == 100)
+        check('invalid orcid keeps the file',
+              refresh_member(dict(m, orcid='0000-12'), [], index, fetch=failing_fetch) == 'invalid_orcid'
+              and read_existing('m1')['total'] == 100)
+        with open(os.path.join(PUBS_DIR, 'm2.yml'), 'w', encoding='utf-8') as f:
+            yaml.safe_dump({'total': 855, 'pubs': []}, f)       # a file from the Google Scholar period
+        check('file without source is replaced',
+              save_publications('m2', 'papers.bib+orcid', [{'title': 'T', 'venue': '', 'year': '2025', 'url': ''}])
+              and read_existing('m2')['source'] == 'papers.bib+orcid')
+        write_file('m3', 'papers.bib', 10, [])
+        check('a different source is replaced',
+              save_publications('m3', 'papers.bib+orcid', [{'title': 'T', 'venue': '', 'year': '2025', 'url': ''}]))
+        check('exit status', (exit_status(3, 3), exit_status(3, 2), exit_status(0, 0)) == (1, 0, 0))
+    finally:
+        shutil.rmtree(PUBS_DIR, ignore_errors=True)
+        PUBS_DIR = saved_pubs_dir
+
     passed = sum(_RESULTS)
     print(f"\n{passed}/{len(_RESULTS)} self-test checks pass")
     return 0 if passed == len(_RESULTS) else 1
@@ -599,7 +820,36 @@ def selftest():
 def main(argv):
     if '--selftest' in argv:
         return selftest()
-    return 0
+
+    members = load_members()
+    entries = parse_bib(PAPERS_BIB)
+    bib_index = build_bib_index(entries)
+    print(f"Loaded {len(entries)} entries from papers.bib")
+    ensure_member_files(members)
+    print()
+
+    considered = refreshed = attempts = failures = 0
+    for member in members:
+        member_id = member.get('id')
+        if not member_id:
+            continue
+        considered += 1
+        has_orcid = 'orcid' in member
+        print(f"{member.get('name', member_id)} "
+              f"({'orcid ' + str(member.get('orcid')) if has_orcid else 'papers.bib only'})")
+        status = refresh_member(member, entries, bib_index)
+        refreshed += status == 'saved'
+        if has_orcid and status != 'invalid_orcid':
+            attempts += 1
+            failures += status == 'orcid_failed'
+            time.sleep(1)        # stay far below the public API's rate limit
+
+    print(f"\nRefreshed {refreshed} of {considered} members ({failures} ORCID failures).")
+    status = exit_status(attempts, failures)
+    if status:
+        print("Every ORCID request failed. ORCID may be down, or its API changed. "
+              "No file was changed for those members.", file=sys.stderr)
+    return status
 
 
 if __name__ == '__main__':
