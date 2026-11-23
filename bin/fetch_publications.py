@@ -488,6 +488,14 @@ def selftest():
     real = parse_bib(PAPERS_BIB)
     check('Shinji has at least 300 papers.bib entries',
           len(bib_rows_for_member(real, member_name_keys({'name': 'Shinji Watanabe'}))) >= 300)
+    # A name with two or more commas is a list that uses commas instead of
+    # "and", unless one comma part is a BibTeX suffix ("von Last, Jr, First").
+    SUFFIXES = {'jr', 'jr.', 'sr', 'sr.', 'ii', 'iii', 'iv'}
+    bad = [e['_key'] for e in real for a in split_authors(e.get('author', ''))
+           if a.count(',') >= 2 and not ({p.strip().lower() for p in a.split(',')} & SUFFIXES)]
+    check('papers.bib separates authors with "and"', bad == [])
+    if bad:
+        print('    fix the author field of: ' + ', '.join(sorted(set(bad))))
 
     passed = sum(_RESULTS)
     print(f"\n{passed}/{len(_RESULTS)} self-test checks pass")

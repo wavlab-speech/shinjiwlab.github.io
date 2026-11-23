@@ -148,9 +148,14 @@ replaced once.
 ### Fix three entries in `papers.bib`
 
 `seki19inter`, `wiesner19inter` and `hayashi19inter` separate authors with
-commas instead of `and`. BibTeX reads each list as one author. This breaks the
-name match, and it shows the wrong authors on the Publications page. Change the
-commas to `and`.
+commas instead of `and`. BibTeX reads each list as one author, and the new name
+matcher splits author lists on `and`, so it misses Shinji on these entries.
+Change the commas to `and`.
+
+(Correction, 2026-11-23: an earlier version of this section said these entries
+also show the wrong authors on the Publications page. That is false. The page
+renders them correctly before and after the fix; the generated HTML is the
+same.)
 
 ### Card, page and workflow
 
