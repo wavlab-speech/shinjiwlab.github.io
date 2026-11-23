@@ -1,6 +1,6 @@
 # Member publication lists from papers.bib and ORCID
 
-**Status:** design approved in conversation on 2026-11-23. Not implemented.
+**Status:** implemented on 2026-11-23; ORCID iDs for 13 of 16 members.
 **Date:** 2026-11-23
 
 ## Problem

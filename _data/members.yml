@@ -45,6 +45,7 @@
   name: Shinji Watanabe
   role: faculty
   scholar_id: U5xRA6QAAAAJ
+  orcid: 0000-0002-5970-8631
   website: https://sw005320.github.io
   image: shinji_20210605.jpg
 
@@ -52,6 +53,7 @@
   name: Samuele Cornell
   role: postdoc
   scholar_id: A3lfL0QAAAAJ
+  orcid: 0000-0002-5358-1844
   website: https://github.com/popcornell
   image: samuele.jpg
 
@@ -59,6 +61,7 @@
   name: Jinchuan Tian
   role: phd
   scholar_id: KE5I4R0AAAAJ
+  orcid: 0009-0002-5461-4342
   website: https://jctian98.github.io/
   image: jinchuan.jpg
 
@@ -66,6 +69,7 @@
   name: William Chen
   role: phd
   scholar_id: e89NRb0AAAAJ
+  orcid: 0000-0002-3251-3084
   website: https://wanchichen.github.io/
   image: william_chen.png
 
@@ -73,6 +77,7 @@
   name: Shikhar Bharadwaj
   role: phd
   scholar_id: pbU47_MAAAAJ
+  orcid: 0009-0000-4927-4561
   website: https://shikhar-s.github.io/
   image: shikhar.png
   note: co-supervising
@@ -81,6 +86,7 @@
   name: Chien-yu Huang
   role: phd
   scholar_id: 1Xfc3ikAAAAJ
+  orcid: 0000-0003-4927-1293
   website: https://cyhuang-tw.github.io/
   image: chienyu.png
 
@@ -88,6 +94,7 @@
   name: Jaeyeon Kim
   role: phd
   scholar_id: 2Yi8qMIAAAAJ
+  orcid: 0009-0007-4412-9999
   website: https://jaeyeonkim99.github.io/
   image: jaeyeon.jpg
   note: co-supervising
@@ -96,6 +103,7 @@
   name: Sichen Jin
   role: phd
   scholar_id: OwO5VXMAAAAJ
+  orcid: 0009-0000-6932-0342
   website: https://chenehk.github.io/
   image: sichen.png
 
@@ -103,6 +111,7 @@
   name: Masao Someki
   role: phd
   scholar_id: _aVVkVsAAAAJ
+  orcid: 0009-0006-5864-7634
   website: https://masao-someki.github.io/
   image: msomeki.png
 
@@ -111,6 +120,7 @@
   name: Chin-Jou Li
   role: phd
   scholar_id: tU4UHFAAAAAJ
+  orcid: 0009-0007-8221-4553
   website: https://chinjouli.github.io/mysite
   image: chinjou.jpg
   note: co-supervising
@@ -125,6 +135,7 @@
   name: Haeri Kim
   role: phd
   scholar_id: YVhT8sEAAAAJ
+  orcid: 0009-0004-1267-0092
   website: https://kimhaeri.github.io/
   image: haeri.jpg
   note: co-supervising
@@ -147,6 +158,7 @@
   name: Kazuki Yano
   role: visitor
   scholar_id: KnttZUwAAAAJ
+  orcid: 0009-0004-2180-9359
   website: https://kazuki-ya.github.io/
   image: kazuki.jpg
 
@@ -154,5 +166,6 @@
   name: Jee-weon Jung
   role: adjunct
   scholar_id: A5OcLdAAAAAJ
+  orcid: 0000-0003-0505-2988
   website: https://jungjee.github.io/
   image: jeeweon.png

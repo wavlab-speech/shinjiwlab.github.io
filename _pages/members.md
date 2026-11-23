@@ -208,14 +208,19 @@ order: 1
     white-space: nowrap;
 }
 
+/* A flex row that wraps. The card template trims the whitespace between the
+   links, so as plain inline elements they could not break onto a new line,
+   and three links (Website, Google Scholar, ORCID) ran past the card edge. */
 .member-card-links {
     margin-top: 0.3rem;
     font-size: 0.82rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.7rem;
 }
 
 .member-card-links a {
     color: var(--global-theme-color);
-    margin-right: 0.7rem;
     white-space: nowrap;
     text-decoration: none;
 }

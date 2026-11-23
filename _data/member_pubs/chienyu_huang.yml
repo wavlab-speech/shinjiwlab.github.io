@@ -1,87 +1,78 @@
-total: 19
+source: papers.bib+orcid
+total: 16
 pubs:
-- title: 'Desta2. 5-audio: Toward general-purpose large audio language model with
-    self-generated cross-modal alignment'
+- title: 'DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model With Self-Generated
+    Cross-Modal Alignment'
   year: '2026'
-  venue: IEEE Transactions on Audio, Speech and Language Processing
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:MXK_kJrjxJIC
+  venue: IEEE Transactions on Audio Speech and Language Processing
+  url: https://doi.org/10.1109/TASLPRO.2026.3675792
 - title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
-  year: '2026'
   venue: COLM
-  url: https://arxiv.org/abs/2602.05220
-- title: Causal tracing of audio-text fusion in large audio language models
   year: '2026'
-  venue: arXiv preprint arXiv:2603.13768
-  url: https://arxiv.org/abs/2603.13768
-- title: 'TurnBench: A Multi-Domain Benchmark for Turn-Taking Dynamics in Spoken Dialogue'
-  year: '2026'
-  venue: SLT
-  url: https://arxiv.org/abs/2608.25218
+  url: ''
 - title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
     Audio Understanding'
-  year: '2026'
   venue: ACLFindings
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:KlAtU1dfN6UC
-- title: 'The ISCSLP 2026 Real-World Audio-Visual Speech Enhancement Challenge: A
-    Benchmark with Natural Mixtures and Degraded Video'
   year: '2026'
-  venue: arXiv preprint arXiv:2608.23759
-  url: https://arxiv.org/abs/2608.23759
-- title: 'MulTTiPop: A Multitrack Transcription Dataset for Pop Music'
+  url: ''
+- title: 'TurnBench: A Multi-Domain Benchmark for Turn-Taking Dynamics in Spoken Dialogue'
+  venue: SLT
   year: '2026'
-  venue: arXiv preprint arXiv:2607.08756
-  url: https://arxiv.org/abs/2607.08756
+  url: ''
+- title: A Preliminary Exploration with GPT-4o Voice Mode
+  year: '2025'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2502.09940
 - title: 'Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring
     the Capabilities of Spoken Language Models with 180 Tasks'
   year: '2025'
   venue: ICLR
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:Se3iqnhoufwC
-- title: A preliminary exploration with gpt-4o voice mode
-  year: '2025'
-  venue: arXiv preprint arXiv:2502.09940
-  url: https://arxiv.org/abs/2502.09940
-- title: 'SpeechCaps: Advancing Instruction-Based Universal Speech Models with Multi-Talker
+  url: https://www.scopus.com/inward/record.url?eid=2-s2.0-105010275248&partnerID=MN8TOARS
+- title: 'SPEECHCAPS: Advancing Instruction-Based Universal Speech Models with Multi-Talker
     Speaking Style Captioning'
   year: '2025'
-  venue: ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:Tyk-4Ss8FVUC
+  venue: ICASSP IEEE International Conference on Acoustics Speech and Signal Processing
+    Proceedings
+  url: https://doi.org/10.1109/ICASSP49660.2025.10889205
 - title: 'Dynamic-Superb: Towards a Dynamic, Collaborative, and Comprehensive Instruction-Tuning
     Benchmark for Speech'
   year: '2024'
   venue: ICASSP
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:UeHWp8X0CEIC
+  url: https://doi.org/10.1109/ICASSP48485.2024.10448257
 - title: Fusion of Discrete Representations and Self-Augmented Representations for
     Multilingual Automatic Speech Recognition
   year: '2024'
   venue: SLT
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:YsMSGLbcyi4C
-- title: Prompting and adapter tuning for self-supervised encoder-decoder speech model
+  url: https://doi.org/10.1109/SLT61566.2024.10832321
+- title: PROMPTING AND ADAPTER TUNING FOR SELF-SUPERVISED ENCODER-DECODER SPEECH MODEL
   year: '2023'
-  venue: 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU),
-    1-8
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:IjCSPb-OGe4C
-- title: Toward degradation-robust voice conversion
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2310.02971
+- title: TOWARD DEGRADATION-ROBUST VOICE CONVERSION
   year: '2022'
-  venue: ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and …
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:qjMakFHDy7sC
+  venue: ICASSP IEEE International Conference on Acoustics Speech and Signal Processing
+    Proceedings
+  url: https://doi.org/10.1109/ICASSP43922.2022.9746636
+- title: Improving cross-lingual reading comprehension with self-training
+  year: '2021'
+  venue: arXiv
+  url: https://doi.org/10.48550/arxiv.2105.03627
 - title: Investigating on incorporating pretrained and learnable speaker representations
     for multi-speaker multi-style text-to-speech
   year: '2021'
-  venue: ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and …
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:d1gkVwhDpl0C
-- title: 'Defending your voice: Adversarial attack on voice conversion'
-  year: '2021'
-  venue: 2021 IEEE Spoken Language Technology Workshop (SLT), 552-559
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:u5HHmVD_uO8C
+  venue: ICASSP IEEE International Conference on Acoustics Speech and Signal Processing
+    Proceedings
+  url: https://doi.org/10.1109/ICASSP39728.2021.9413880
 - title: Utilizing self-supervised representations for MOS prediction
   year: '2021'
-  venue: Interspeech 2021
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:2osOgNQ5qMEC
+  venue: Proceedings of the Annual Conference of the International Speech Communication
+    Association Interspeech
+  url: https://doi.org/10.21437/Interspeech.2021-2013
+- title: 'Defending your voice: Adversarial attack on voice conversion'
+  year: '2020'
+  venue: arXiv
+  url: https://doi.org/10.48550/arxiv.2005.08781
 - title: 'How far are we from robust voice conversion: A survey'
-  year: '2021'
-  venue: 2021 IEEE Spoken Language Technology Workshop (SLT), 514-521
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:u-x6o8ySG0sC
-- title: Improving cross-lingual reading comprehension with self-training
-  year: '2021'
-  venue: arXiv preprint arXiv:2105.03627
-  url: https://arxiv.org/abs/2105.03627
+  year: '2020'
+  venue: arXiv
+  url: https://doi.org/10.48550/arxiv.2011.12063
