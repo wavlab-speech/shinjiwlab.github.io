@@ -440,15 +440,31 @@ git commit -m "Describe ORCID in the workflow, the member docs and members.yml"
 - Modify: `_data/member_pubs/*.yml` (generated)
 - Modify: `docs/superpowers/specs/2026-11-23-orcid-member-publications-design.md` (`Status:` line)
 
-- [ ] **Step 1: List candidate iDs for each member**
+- [x] **Step 1–2: Collect and confirm the iDs (done 2026-11-23)**
 
-For each member in `_data/members.yml`, query `https://pub.orcid.org/v3.0/expanded-search/?q=family-name:<last> AND given-names:<first>` (with the `User-Agent` from Global Constraints, one request per second). For each candidate, print the iD, the affiliations, the number of works, and how many of the member's old displayed titles (`git show origin/source:_data/scholar_pubs/<id>.yml`) the works contain. Write the table to the scratchpad, not to the repo.
+The maintainer gave these iDs. Each checksum is valid, and each ORCID record carries the member's name. A member not listed has no ORCID iD and gets no `orcid` field: `ting_jiang`, `haoran_wang`, `kuangda_wang`.
 
-- [ ] **Step 2: STOP. Give the table to the maintainer**
+| `id` | `orcid` |
+|---|---|
+| `samuele_cornell` | `0000-0002-5358-1844` |
+| `chienyu_huang` | `0000-0003-4927-1293` |
+| `shinji_watanabe` | `0000-0002-5970-8631` |
+| `william_chen` | `0000-0002-3251-3084` |
+| `shikhar_bharadwaj` | `0009-0000-4927-4561` |
+| `jinchuan_tian` | `0009-0002-5461-4342` |
+| `jaeyeon_kim` | `0009-0007-4412-9999` |
+| `sichen_jin` | `0009-0000-6932-0342` |
+| `haeri_kim` | `0009-0004-1267-0092` |
+| `masao_someki` | `0009-0006-5864-7634` |
+| `chinjou_li` | `0009-0007-8221-4553` |
+| `kazuki_yano` | `0009-0004-2180-9359` |
+| `jeeweon_jung` | `0000-0003-0505-2988` |
 
-The maintainer confirms each iD with the member. Add only confirmed iDs. A member without a confirmed iD gets no `orcid` field.
+On 2026-11-23, seven of these records had no public works: `jinchuan_tian`, `shikhar_bharadwaj`, `masao_someki`, `chinjou_li`, `jaeyeon_kim`, `sichen_jin`, `kazuki_yano`. Their lists come from `papers.bib` until they add public works. `kazuki_yano` has no data file on `origin/source`; `ensure_member_files` creates it.
 
-- [ ] **Step 3: Add the confirmed `orcid` values to `_data/members.yml`**
+- [ ] **Step 3: Add the thirteen `orcid` values above to `_data/members.yml`**
+
+Put each `orcid:` line directly after the member's `scholar_id:` line, as the bare iD.
 
 - [ ] **Step 4: Run the self-test and the live refresh**
 
