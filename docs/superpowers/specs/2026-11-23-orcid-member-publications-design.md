@@ -70,6 +70,11 @@ papers do not reach ORCID automatically. Members must add them by hand.
 
 - Citation counts.
 - Any data from Google Scholar. `scholar_id` stays only as a profile link.
+  Exception, decided by the maintainer on 2026-11-23: the paper links that the
+  site already stored from Google Scholar (until 2026-10-18) stay, in
+  `bin/scholar_links.yml`. A paper uses such a link only when papers.bib and
+  ORCID give none. No job sends a request to Google Scholar, and nothing
+  updates the file.
 - Automatic ORCID iD discovery in the weekly job.
 - Writing ORCID data back into `papers.bib`. `papers.bib` stays hand-curated.
 

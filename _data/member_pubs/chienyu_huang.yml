@@ -4,16 +4,16 @@ pubs:
 - title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
   venue: COLM
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2602.05220
 - title: 'PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form
     Audio Understanding'
   venue: ACLFindings
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Xfc3ikAAAAJ&citation_for_view=1Xfc3ikAAAAJ:KlAtU1dfN6UC
 - title: 'TurnBench: A Multi-Domain Benchmark for Turn-Taking Dynamics in Spoken Dialogue'
   venue: SLT
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2608.25218
 - title: 'DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model With Self-Generated
     Cross-Modal Alignment'
   year: '2026'

@@ -13,6 +13,10 @@ The list comes from two sources:
 
 When a paper is in both, the papers.bib title, venue, year and link win.
 
+A paper that gets no link from either source uses the link that the site
+stored from Google Scholar until 2026-10-18, if there is one
+(bin/scholar_links.yml). The script sends no request to Google Scholar.
+
 Usage:
     python3 bin/fetch_publications.py             # refresh every member
     python3 bin/fetch_publications.py --selftest  # offline checks, no network
@@ -42,6 +46,7 @@ PAPERS_BIB = os.path.join(REPO_ROOT, '_bibliography', 'papers.bib')
 # A module global, so the self-test can point it at a temporary directory.
 PUBS_DIR = os.path.join(REPO_ROOT, '_data', 'member_pubs')
 TESTDATA_DIR = os.path.join(REPO_ROOT, 'bin', 'testdata')
+SCHOLAR_LINKS_FILE = os.path.join(REPO_ROOT, 'bin', 'scholar_links.yml')
 
 # How many of the most recent publications to store per member. The members
 # page only ever displays the 20 newest, so we keep a small buffer beyond that
@@ -633,6 +638,47 @@ def member_rows(member, entries, bib_index, fetch=fetch_orcid_works):
     return 'papers.bib+orcid', merge_rows(works, bib_rows, bib_index)
 
 
+def load_old_links(path):
+    """{member_id: {normalized title: url}} from the stored Google Scholar links.
+
+    The file maps each member id to a list of {title, url}. A missing file
+    gives no links.
+    """
+    if not os.path.exists(path):
+        return {}
+    with open(path, 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f) or {}
+    links = {}
+    for member_id, items in data.items():
+        for item in items or []:
+            url = str(item.get('url') or '')
+            if url.startswith(('http://', 'https://')):
+                links.setdefault(member_id, {}).setdefault(normalize_title(item.get('title', '')), url)
+    return links
+
+
+def fill_missing_links(rows, member_id, old_links):
+    """Give each row without a link its stored Google Scholar link.
+
+    The member's own stored link comes first. Otherwise the stored link of
+    another member for the same paper is used, an arxiv.org link first. A row
+    that already has a link keeps it.
+    """
+    out = []
+    for row in rows:
+        row = dict(row)
+        if not row.get('url'):
+            key = normalize_title(row['title'])
+            url = (old_links.get(member_id) or {}).get(key)
+            if not url:
+                others = [links[key] for mid, links in old_links.items() if mid != member_id and key in links]
+                arxiv = [u for u in others if 'arxiv.org/' in u]
+                url = (arxiv or others or [''])[0]
+            row['url'] = url
+        out.append(row)
+    return out
+
+
 def read_existing(member_id):
     out_file = os.path.join(PUBS_DIR, f'{member_id}.yml')
     if not os.path.exists(out_file):
@@ -702,14 +748,15 @@ def ensure_member_files(members):
     return created
 
 
-def refresh_member(member, entries, bib_index, fetch=fetch_orcid_works):
+def refresh_member(member, entries, bib_index, fetch=fetch_orcid_works, old_links=None):
     """Refresh one member's file.
 
     Returns 'saved', 'refused', 'orcid_failed' or 'invalid_orcid'. The last two
-    change no file.
+    change no file. `old_links` is the result of load_old_links.
     """
     try:
         source, rows = member_rows(member, entries, bib_index, fetch=fetch)
+        rows = fill_missing_links(rows, member['id'], old_links or {})
     except InvalidOrcid as exc:
         print(f"  Not changed: {exc}. Write the bare iD, for example 0000-0002-5970-8631.")
         return 'invalid_orcid'
@@ -858,9 +905,32 @@ def selftest():
         check('unexpected ORCID data fails only this member',
               all(refresh_member(m, [], index, fetch=fake_fetch(odd)) == 'orcid_failed' for odd in odd_shapes)
               and read_existing('m1')['total'] == 100)
+        # Links stored from Google Scholar fill only the rows that have no link.
+        old_links = {'m1': {normalize_title('Gap Paper'): 'https://scholar.google.com/own'},
+                     'm8': {normalize_title('Shared Gap'): 'https://scholar.google.com/m8'},
+                     'm9': {normalize_title('Shared Gap'): 'https://arxiv.org/abs/2601.00001'}}
+        filled = fill_missing_links(
+            [{'title': 'Gap Paper', 'venue': '', 'year': '2025', 'url': ''},
+             {'title': 'Linked Paper', 'venue': '', 'year': '2025', 'url': 'https://doi.org/10.1/x'},
+             {'title': 'Shared Gap', 'venue': '', 'year': '2025', 'url': ''},
+             {'title': 'No Old Link', 'venue': '', 'year': '2025', 'url': ''}], 'm1', old_links)
+        urls = {r['title']: r['url'] for r in filled}
+        check("old link: the member's own link fills a gap", urls['Gap Paper'] == 'https://scholar.google.com/own')
+        check('old link: an existing link is kept', urls['Linked Paper'] == 'https://doi.org/10.1/x')
+        check("old link: another member's link fills a gap, arXiv first",
+              urls['Shared Gap'] == 'https://arxiv.org/abs/2601.00001')
+        check('old link: a paper with no old link keeps no link', urls['No Old Link'] == '')
+        check('old link: a missing file gives no links', load_old_links(os.path.join(PUBS_DIR, 'none.yml')) == {})
+        refresh_member({'id': 'm4', 'name': 'Shinji Watanabe'},
+                       [{'title': 'Gap Paper', 'author': 'Shinji Watanabe', 'year': '2025'}], index,
+                       old_links={'m4': {normalize_title('Gap Paper'): 'https://arxiv.org/abs/2501.00001'}})
+        check('old link: saved for a member without an ORCID iD',
+              [p['url'] for p in read_existing('m4')['pubs']] == ['https://arxiv.org/abs/2501.00001'])
     finally:
         shutil.rmtree(PUBS_DIR, ignore_errors=True)
         PUBS_DIR = saved_pubs_dir
+
+    check('the stored Google Scholar links load for 15 members', len(load_old_links(SCHOLAR_LINKS_FILE)) == 15)
 
     passed = sum(_RESULTS)
     print(f"\n{passed}/{len(_RESULTS)} self-test checks pass")
@@ -875,6 +945,8 @@ def main(argv):
     entries = parse_bib(PAPERS_BIB)
     bib_index = build_bib_index(entries)
     print(f"Loaded {len(entries)} entries from papers.bib")
+    old_links = load_old_links(SCHOLAR_LINKS_FILE)
+    print(f"Loaded stored Google Scholar links for {len(old_links)} members")
     ensure_member_files(members)
     print()
 
@@ -887,7 +959,7 @@ def main(argv):
         has_orcid = 'orcid' in member
         print(f"{member.get('name', member_id)} "
               f"({'orcid ' + str(member.get('orcid')) if has_orcid else 'papers.bib only'})")
-        status = refresh_member(member, entries, bib_index)
+        status = refresh_member(member, entries, bib_index, old_links=old_links)
         refreshed += status == 'saved'
         if has_orcid and status != 'invalid_orcid':
             attempts += 1

@@ -4,24 +4,24 @@ pubs:
 - title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
   venue: COLM
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2602.05220
 - title: An Empirical Recipe for Universal Phone Recognition
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2603.29042
 - title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
   venue: ACL
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:zYLM7Y9cAGgC
 - title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
   venue: ACL
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=tU4UHFAAAAAJ&citation_for_view=tU4UHFAAAAAJ:2osOgNQ5qMEC
 - title: 'HARP: Agentic Hybrid Retrieval and Analysis for Long-Form Audio'
   venue: SLT
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2609.14116
 - title: Phone Segmentation and Recognition through Phonological Activation Mapping
   venue: SLT
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2607.09020

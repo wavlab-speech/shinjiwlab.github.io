@@ -188,6 +188,18 @@ The script keeps the ORCID data for all other papers. A note at the top of the
 Members page tells the readers about this limit. The note sends the readers to
 your personal page.
 
+### Links
+
+Each title on the card links to the paper when the script finds a link. The
+script uses the link from `_bibliography/papers.bib` first, and then the link
+from your ORCID record. If neither source has a link, the script uses the link
+that the site stored from Google Scholar until 2026-10-18
+(`bin/scholar_links.yml`). Some of these links open the paper page on Google
+Scholar. Nothing updates that file.
+
+To add or correct a link, add an `html`, `pdf`, `arxiv`, or `doi` field to your
+paper in `_bibliography/papers.bib`.
+
 ---
 
 ## Change or remove your entry

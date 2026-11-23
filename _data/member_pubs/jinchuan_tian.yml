@@ -5,24 +5,24 @@ pubs:
     Perception and Cognitive Refinement'
   venue: EMNLP
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:j3f4tGmQtD8C
 - title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
   venue: COLM
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2602.05220
 - title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2606.21227
 - title: 'Bagpiper-TTS: Natural Language Guided Universal Speech Synthesis'
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2606.22811
 - title: An Efficient vLLM-Based Inference Pipeline for Unified Audio Understanding
     and Generation
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2607.02119
 - title: Online Predictive Coding for Dual-Mode Self-Supervised Speech Models
   venue: Interspeech
   year: '2026'
@@ -31,40 +31,40 @@ pubs:
     Model Era'
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2606.21854
 - title: 'Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition
     and Audio Reasoning with Omni Perception'
   venue: ACL
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:HDshCWvjkbEC
 - title: Optimizing Conversational Quality in Spoken Dialogue Systems with Reinforcement
     Learning from AI Feedback
   venue: ACLFindings
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:R3hNpaxXUhUC
 - title: 'UALM: Unified Audio Language Model for Understanding, Generation and Reasoning'
   venue: ICLR
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:ZeXyd9-uunAC
 - title: 'Reasoning Beyond Majority Vote: An Explainable SpeechLM Framework for Speech
     Emotion Recognition'
   venue: ICASSP
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:dhFuZR0502QC
 - title: 'Online Register for Dual-Mode Self-Supervised Speech Models: Mitigating
     the Lack of Future Context'
   venue: ICASSP
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:_Qo2XoVZTnwC
 - title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
   venue: EACLFindings
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:hC7cP41nSMkC
 - title: 'Speech Language Models for Full-Meeting Speaker Diarization: Capabilities
     and Limitations'
   venue: SLT
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2609.23114
 - title: 'WaveRVQ: Iterative Residual Vector Quantization in the Waveform Domain for
     Neural Audio Coding'
   venue: SLT
@@ -77,7 +77,7 @@ pubs:
 - title: 'SpoofCeleb: Speech Deepfake Detection and SASV in the Wild'
   venue: OJSP
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:3fE2CSJIrl8C
 - title: 'ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization
     for Speech Multi-Metric Estimation'
   venue: NeurIPS
@@ -87,7 +87,7 @@ pubs:
     with Expanded Metrics, Visualization, and LLM Integration'
   venue: ASRU
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:iH-uZ7U-co4C
 - title: Evaluating Self-Supervised Speech Models via Text-based LLMs
   venue: ASRU
   year: '2025'
@@ -95,7 +95,7 @@ pubs:
 - title: 'PURE Codec: Progressive Unfolding of Residual Entropy for Speech Codec Learning'
   venue: ASRU
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:VOx2b1Wkg3QC
 - title: 'Continual Pre-training for Codec-Based Speech LLMs: Balancing Understanding
     and Generation'
   venue: ASRU
@@ -108,9 +108,9 @@ pubs:
 - title: Chain-of-Thought Training for Open E2E Spoken Dialogue Systems
   venue: Interspeech
   year: '2025'
-  url: ''
+  url: https://arxiv.org/abs/2506.00722
 - title: Exploring Linear Variant Transformers and k-NN Memory Inference for Long-Form
     ASR
   venue: Interspeech
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e89NRb0AAAAJ&citation_for_view=e89NRb0AAAAJ:SP6oXDckpogC

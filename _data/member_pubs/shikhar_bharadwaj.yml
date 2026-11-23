@@ -4,41 +4,41 @@ pubs:
 - title: An Empirical Recipe for Universal Phone Recognition
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2603.29042
 - title: 'POWSM: A Phonetic Open Whisper-Style Speech Foundation Model'
   venue: ACL
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:aqlVkmm33-oC
 - title: 'PRiSM: Benchmarking Phone Realization in Speech Models'
   venue: ACL
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:R3hNpaxXUhUC
 - title: Phone Segmentation and Recognition through Phonological Activation Mapping
   venue: SLT
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2607.09020
 - title: 'VERSA-v2: A Modular and Scalable Toolkit for Speech and Audio Evaluation
     with Expanded Metrics, Visualization, and LLM Integration'
   venue: ASRU
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:iH-uZ7U-co4C
 - title: 'OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder'
   venue: WASPAA
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:_Qo2XoVZTnwC
 - title: Context-Driven Dynamic Pruning for Large Speech Foundation Models
   venue: Interspeech
   year: '2025'
-  url: ''
+  url: https://arxiv.org/abs/2505.18860
 - title: 'OpusLM: A Family of Open Unified Speech Language Models'
   venue: Interspeech
   year: '2025'
-  url: ''
+  url: https://arxiv.org/abs/2506.17611
 - title: 'ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems'
   venue: NAACL
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:RHpTSmoSYBkC
 - title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
   venue: NAACL
   year: '2025'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pbU47_MAAAAJ&citation_for_view=pbU47_MAAAAJ:MXK_kJrjxJIC

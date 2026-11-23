@@ -32,7 +32,7 @@ pubs:
     Perception and Cognitive Refinement'
   venue: EMNLP
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:j3f4tGmQtD8C
 - title: 'MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant'
   venue: EMNLP
   year: '2026'
@@ -41,7 +41,7 @@ pubs:
     Language Models Through Hidden-State Interactions'
   venue: EMNLP
   year: '2026'
-  url: ''
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:3fE2CSJIrl8C
 - title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
   year: '2026'
   venue: COLM
@@ -50,7 +50,7 @@ pubs:
     Speech'
   venue: Interspeech
   year: '2026'
-  url: ''
+  url: https://arxiv.org/abs/2609.29448
 - title: 'Mind the Gap: Impact of Synthetic Conversational Data on Multi-Talker ASR
     and Speaker Diarization'
   year: '2026'
