@@ -1,0 +1,7 @@
+source: papers.bib+orcid
+total: 1
+pubs:
+- title: Adapting Text LLMs to Speech via Multimodal Depth Up-Scaling
+  venue: Interspeech
+  year: '2026'
+  url: ''

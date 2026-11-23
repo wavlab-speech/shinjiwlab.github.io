@@ -1,0 +1,114 @@
+source: papers.bib+orcid
+total: 752
+pubs:
+- title: Do Neural Codecs Generalize? A Controlled Study Across Unseen Languages and
+    Non-Speech Tasks
+  year: '2026'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2601.12205
+- title: The CMU-AIST submission for the ICME 2025 Audio Encoder Challenge
+  year: '2026'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2601.16273
+- title: 'Recent trends in distant conversational speech recognition: A review of
+    CHiME-7 and 8 DASR challenges'
+  year: '2026'
+  venue: Computer Speech and Language
+  url: https://doi.org/10.1016/j.csl.2025.101901
+- title: 'MulTTiPop: A MULTITRACK TRANSCRIPTION DATASET FOR POP MUSIC'
+  year: '2026'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2607.08756
+- title: 'TRADE: Transducer-Augmented Decoder for Speech LLM'
+  year: '2026'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2606.08486
+- title: Online Predictive Coding for Dual-Mode Self-Supervised Speech Model
+  year: '2026'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2606.21268
+- title: 'On The Landscape of Spoken Language Models: A Comprehensive Survey'
+  year: '2026'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2504.08528
+- title: 'CS-YODAS: A Mined Dataset of In-the-Wild Code-Switched Speech'
+  year: '2026'
+  venue: LREC
+  url: https://doi.org/10.48550/arXiv.2606.11514
+- title: Online Frontend System for Multi-Talker DSR Using Neural Blind Source Separation
+    and Diarization
+  year: '2026'
+  venue: TASLP
+  url: https://doi.org/10.1109/TASLPRO.2026.3711759
+- title: Uncertainty-Based Streaming ASR with Evidential Deep Learning
+  year: '2026'
+  venue: OJSP
+  url: https://doi.org/10.1109/OJSP.2026.3657308
+- title: 'TMT: Tri-Modal Translation between Speech, Image, and Text by Processing
+    Different Modalities as Different Languages'
+  year: '2026'
+  venue: TMM
+  url: https://doi.org/10.48550/arXiv.2402.16021
+- title: An End-to-End Integration of Speech Separation and Recognition with Self-Supervised
+    Learning Representation
+  year: '2026'
+  venue: CSL
+  url: https://doi.org/10.1016/j.csl.2025.101813
+- title: Benchmarking Speech-to-Speech Translation Models
+  year: '2026'
+  venue: EMNLP
+  url: https://doi.org/10.48550/arXiv.2606.03241
+- title: 'Long Listening Thoughts: Eliciting Open Auditory Reasoning with Deliberative
+    Perception and Cognitive Refinement'
+  venue: EMNLP
+  year: '2026'
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KE5I4R0AAAAJ&citation_for_view=KE5I4R0AAAAJ:j3f4tGmQtD8C
+- title: 'MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant'
+  venue: EMNLP
+  year: '2026'
+  url: ''
+- title: 'Listen to the Latents: Self-Correcting Speech Recognition in Large Audio
+    Language Models Through Hidden-State Interactions'
+  venue: EMNLP
+  year: '2026'
+  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2Yi8qMIAAAAJ&citation_for_view=2Yi8qMIAAAAJ:3fE2CSJIrl8C
+- title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
+  year: '2026'
+  venue: COLM
+  url: https://doi.org/10.48550/arXiv.2602.05220
+- title: 'YODAS v3: Over 1 Million Hours of High-Bandwidth, Stereophonic, Multilingual
+    Speech'
+  venue: Interspeech
+  year: '2026'
+  url: https://arxiv.org/abs/2609.29448
+- title: 'Mind the Gap: Impact of Synthetic Conversational Data on Multi-Talker ASR
+    and Speaker Diarization'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2605.15442
+- title: Grounding Spoken LLMs in Multi-Speaker Audio via Diarization Conditioning
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.18134
+- title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.21227
+- title: 'Bagpiper-TTS: Natural Language Guided Universal Speech Synthesis'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.22811
+- title: 'ANCHOR: Autoregressive Non-intrusive Chunk-Ordered Refinement for Joint
+    Multi-Resolution Speech Quality Modeling'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.10233
+- title: An Efficient vLLM-Based Inference Pipeline for Unified Audio Understanding
+    and Generation
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2607.02119
+- title: An Empirical Recipe for Universal Phone Recognition
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2603.29042

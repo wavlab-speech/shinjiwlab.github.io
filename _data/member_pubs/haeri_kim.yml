@@ -1,0 +1,19 @@
+source: papers.bib+orcid
+total: 3
+pubs:
+- title: 'BBPE16: UTF-16-Based Byte-Level Byte-Pair Encoding for Improved Multilingual
+    Speech Recognition'
+  year: '2026'
+  venue: ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and
+    Signal Processing (ICASSP)
+  url: https://doi.org/10.1109/ICASSP55912.2026.11460641
+- title: A More Accurate Internal Language Model Score Estimation for the Hybrid Autoregressive
+    Transducer
+  year: '2023'
+  venue: INTERSPEECH 2023
+  url: https://doi.org/10.21437/interspeech.2023-213
+- title: 'Self-Diagnosing GAN: Diagnosing Underrepresented Samples in Generative Adversarial
+    Networks'
+  year: '2021'
+  venue: Advances in Neural Information Processing Systems
+  url: https://proceedings.neurips.cc/paper_files/paper/2021/file/0ebcc77dc72360d0eb8e9504c78d38bd-Paper.pdf

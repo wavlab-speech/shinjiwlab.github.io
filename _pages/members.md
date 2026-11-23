@@ -208,14 +208,19 @@ order: 1
     white-space: nowrap;
 }
 
+/* A flex row that wraps. The card template trims the whitespace between the
+   links, so as plain inline elements they could not break onto a new line,
+   and three links (Website, Google Scholar, ORCID) ran past the card edge. */
 .member-card-links {
     margin-top: 0.3rem;
     font-size: 0.82rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.7rem;
 }
 
 .member-card-links a {
     color: var(--global-theme-color);
-    margin-right: 0.7rem;
     white-space: nowrap;
     text-decoration: none;
 }
@@ -296,12 +301,12 @@ order: 1
 </style>
 
 <p class="pub-disclaimer">
-The publication list under each member is fetched automatically from
-<a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-and shows only that member's most recent papers, so it may be incomplete or
-out of date, and titles and venues are not always correct. For an accurate and
-complete list, please see each member's own website or Google Scholar profile,
-linked on their card. The lab's curated list of papers is on the
+The publication list under each member comes from two sources: the lab's
+curated list of papers, and the member's public
+<a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID</a>
+record. It shows only the most recent papers, so it can be incomplete or out
+of date. For a complete list, please see each member's own website or ORCID
+record, linked on their card. The lab's curated list of papers is on the
 <a href="{{ site.baseurl }}/publications/">Publications</a> page.
 </p>
 
