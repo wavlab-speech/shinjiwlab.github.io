@@ -502,10 +502,16 @@ def _value(node, *path):
     return node
 
 
+# New-style (2601.01234) and old-style (cs/0112017) arXiv IDs, with an
+# optional version.
+ARXIV_ID = re.compile(r'(\d{4}\.\d{4,5}|[a-z-]+(\.[A-Z]{2})?/\d{7})(v\d+)?')
+
+
 def _orcid_link(work):
-    """A DOI link if the work has a DOI, else the work's own URL, else ''."""
-    for ext in _value(work, 'external-ids', 'external-id') or []:
-        if (ext or {}).get('external-id-type') != 'doi':
+    """The work's DOI link, else its own URL, else its arXiv link, else ''."""
+    ext_ids = [ext for ext in _value(work, 'external-ids', 'external-id') or [] if ext]
+    for ext in ext_ids:
+        if ext.get('external-id-type') != 'doi':
             continue
         # The value is usually a bare DOI, but may already carry a resolver
         # prefix; strip it so the link is not doubled.
@@ -514,7 +520,17 @@ def _orcid_link(work):
         if doi:
             return 'https://doi.org/' + doi
     url = (_value(work, 'url', 'value') or '').strip()
-    return url if url.startswith(('http://', 'https://')) else ''
+    if url.startswith(('http://', 'https://')):
+        return url
+    for ext in ext_ids:
+        if ext.get('external-id-type') != 'arxiv':
+            continue
+        arxiv_id = re.sub(r'^(arxiv:|https?://(www\.)?arxiv\.org/(abs|pdf)/)', '',
+                          (ext.get('external-id-value') or '').strip(), flags=re.I)
+        arxiv_id = re.sub(r'\.pdf$', '', arxiv_id)
+        if ARXIV_ID.fullmatch(arxiv_id):
+            return 'https://arxiv.org/abs/' + arxiv_id
+    return ''
 
 
 def parse_orcid_works(data):
@@ -839,6 +855,17 @@ def selftest():
         {'work-summary': [{'title': {'title': {'value': 'Newer Work'}}, 'type': 'conference-paper',
                            'put-code': 200, 'publication-date': {'year': {'value': '2026'}}}]}]})
     check('ORCID works added later come first', [r['title'] for r in later] == ['Newer Work', 'Older Work'])
+
+    def work(ids=(), url=''):
+        return {'external-ids': {'external-id': [{'external-id-type': t, 'external-id-value': v} for t, v in ids]},
+                'url': {'value': url} if url else None}
+    check('ORCID arXiv ID becomes a link when there is no DOI or URL',
+          [_orcid_link(work([('arxiv', 'arXiv:2601.01234')])), _orcid_link(work([('arxiv', 'cs/0112017v2')]))]
+          == ['https://arxiv.org/abs/2601.01234', 'https://arxiv.org/abs/cs/0112017v2'])
+    check('a DOI or a work URL comes before the arXiv ID',
+          _orcid_link(work([('arxiv', '2601.01234'), ('doi', '10.1/x')])) == 'https://doi.org/10.1/x'
+          and _orcid_link(work([('arxiv', '2601.01234')], url='https://example.org/p')) == 'https://example.org/p')
+    check('an ORCID arXiv value that is not an ID gives no link', _orcid_link(work([('arxiv', 'see paper')])) == '')
 
     # Fetch, merge, guard and save. Writes go to a temporary directory.
     def fake_fetch(works):
