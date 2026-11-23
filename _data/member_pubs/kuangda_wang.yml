@@ -1,7 +1,0 @@
-source: papers.bib
-total: 1
-pubs:
-- title: 'ATLAS: Agentic ASR Tuning for Research Labor Scaling'
-  venue: SLT
-  year: '2026'
-  url: ''
