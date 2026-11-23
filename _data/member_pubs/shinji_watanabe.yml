@@ -1,20 +1,78 @@
 source: papers.bib+orcid
 total: 752
 pubs:
-- title: 'ADEPT: RL-Aligned Agentic Decoding of Emotion via Evidence Probing Tools
-    – From Consensus Learning to Ambiguity-Driven Emotion Reasoning'
+- title: 'CS-YODAS: A Mined Dataset of In-the-Wild Code-Switched Speech'
   year: '2026'
-  venue: ICML
-  url: https://doi.org/10.48550/arXiv.2602.12714
+  venue: LREC
+  url: https://doi.org/10.48550/arXiv.2606.11514
+- title: Online Frontend System for Multi-Talker DSR Using Neural Blind Source Separation
+    and Diarization
+  year: '2026'
+  venue: TASLP
+  url: https://doi.org/10.1109/TASLPRO.2026.3711759
+- title: Uncertainty-Based Streaming ASR with Evidential Deep Learning
+  year: '2026'
+  venue: OJSP
+  url: https://doi.org/10.1109/OJSP.2026.3657308
+- title: 'TMT: Tri-Modal Translation between Speech, Image, and Text by Processing
+    Different Modalities as Different Languages'
+  year: '2026'
+  venue: TMM
+  url: https://doi.org/10.48550/arXiv.2402.16021
+- title: An End-to-End Integration of Speech Separation and Recognition with Self-Supervised
+    Learning Representation
+  year: '2026'
+  venue: CSL
+  url: https://doi.org/10.1016/j.csl.2025.101813
+- title: Benchmarking Speech-to-Speech Translation Models
+  year: '2026'
+  venue: EMNLP
+  url: https://doi.org/10.48550/arXiv.2606.03241
+- title: 'Long Listening Thoughts: Eliciting Open Auditory Reasoning with Deliberative
+    Perception and Cognitive Refinement'
+  venue: EMNLP
+  year: '2026'
+  url: ''
+- title: 'MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant'
+  venue: EMNLP
+  year: '2026'
+  url: ''
+- title: 'Listen to the Latents: Self-Correcting Speech Recognition in Large Audio
+    Language Models Through Hidden-State Interactions'
+  venue: EMNLP
+  year: '2026'
+  url: ''
+- title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
+  year: '2026'
+  venue: COLM
+  url: https://doi.org/10.48550/arXiv.2602.05220
+- title: 'YODAS v3: Over 1 Million Hours of High-Bandwidth, Stereophonic, Multilingual
+    Speech'
+  venue: Interspeech
+  year: '2026'
+  url: ''
+- title: 'Mind the Gap: Impact of Synthetic Conversational Data on Multi-Talker ASR
+    and Speaker Diarization'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2605.15442
+- title: Grounding Spoken LLMs in Multi-Speaker Audio via Diarization Conditioning
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.18134
+- title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.21227
+- title: 'Bagpiper-TTS: Natural Language Guided Universal Speech Synthesis'
+  year: '2026'
+  venue: Interspeech
+  url: https://doi.org/10.48550/arXiv.2606.22811
 - title: 'ANCHOR: Autoregressive Non-intrusive Chunk-Ordered Refinement for Joint
     Multi-Resolution Speech Quality Modeling'
   year: '2026'
   venue: Interspeech
   url: https://doi.org/10.48550/arXiv.2606.10233
-- title: Adapting Text LLMs to Speech via Multimodal Depth Up-Scaling
-  year: '2026'
-  venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2604.00489
 - title: An Efficient vLLM-Based Inference Pipeline for Unified Audio Understanding
     and Generation
   year: '2026'
@@ -24,93 +82,35 @@ pubs:
   year: '2026'
   venue: Interspeech
   url: https://doi.org/10.48550/arXiv.2603.29042
-- title: An End-to-End Integration of Speech Separation and Recognition with Self-Supervised
-    Learning Representation
+- title: Speaker-Aware Hypothesis Clustering and Merging for Target-Speaker-free and
+    Target-Speaker Multi-Talker ASR
+  venue: Interspeech
   year: '2026'
-  venue: CSL
-  url: https://doi.org/10.1016/j.csl.2025.101813
-- title: 'BSCodec: A Band-Split Neural Codec for High-Quality Universal Audio Reconstruction'
-  year: '2026'
-  venue: EACLFindings
-  url: https://doi.org/10.18653/v1/2026.findings-eacl.245
-- title: 'Bagpiper-Edit: Zero-Shot Open-Ended Audio Editing via Rich-Caption'
+  url: ''
+- title: 'URGENT-MOS: Unified Multi-Metric and Preference Learning for Robust Speech
+    Quality Assessment'
   year: '2026'
   venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2606.21227
-- title: 'Bagpiper-TTS: Natural Language Guided Universal Speech Synthesis'
+  url: https://doi.org/10.48550/arXiv.2601.18438
+- title: Online Predictive Coding for Dual-Mode Self-Supervised Speech Models
+  venue: Interspeech
+  year: '2026'
+  url: ''
+- title: Adapting Text LLMs to Speech via Multimodal Depth Up-Scaling
   year: '2026'
   venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2606.22811
-- title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
-  year: '2026'
-  venue: COLM
-  url: https://doi.org/10.48550/arXiv.2602.05220
-- title: Benchmarking Speech-to-Speech Translation Models
-  year: '2026'
-  venue: EMNLP
-  url: https://doi.org/10.48550/arXiv.2606.03241
-- title: 'CALM: Joint Contextual Acoustic-Linguistic Modeling for Personalization
-    of Multi-Speaker ASR'
-  year: '2026'
-  venue: ICASSP
-  url: https://doi.org/10.48550/arXiv.2601.22792
-- title: 'CS-YODAS: A Mined Dataset of In-the-Wild Code-Switched Speech'
-  year: '2026'
-  venue: LREC
-  url: https://doi.org/10.48550/arXiv.2606.11514
-- title: 'CSPB: Conversational Speech Processing Benchmark for Self-supervised Speech
-    Models'
-  year: '2026'
-  venue: EACL
-  url: https://doi.org/10.18653/v1/2026.eacl-long.275
-- title: 'Comparative Reasoning: Making an Audio Language Model Better at Comparing
-    Emotions'
+  url: https://doi.org/10.48550/arXiv.2604.00489
+- title: Endpoint Anticipation for Low-Latency Spoken Dialogue
   year: '2026'
   venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2606.24082
-- title: Dissecting Sensitivity to Training Language in Self-Supervised Speech Learning
-    Using Neural Audio Codec Tokens
-  year: '2026'
-  venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2607.26350
-- title: Do Neural Codecs Generalize? A Controlled Study Across Unseen Languages and
-    Non-Speech Tasks
-  year: '2026'
-  venue: arXiv
-  url: https://doi.org/10.48550/arXiv.2601.12205
+  url: https://doi.org/10.48550/arXiv.2606.13450
 - title: 'ESPnet3: Infrastructure for Scalable Speech and Audio Research in the Foundation
     Model Era'
   year: '2026'
   venue: Interspeech
   url: https://doi.org/10.48550/arXiv.2606.21854
-- title: Endpoint Anticipation for Low-Latency Spoken Dialogue
+- title: Who Spoke What When? Evaluating Spoken Language Models for Conversational
+    ASR with Semantic and Overlap-Aware Metrics
   year: '2026'
   venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2606.13450
-- title: Evaluating Large Language Models Abilities for Addressee, Turn-change, and
-    Next Speaker Prediction in Meetings
-  year: '2026'
-  venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2606.17542
-- title: 'Full-Duplex-Bench v1.5: Evaluating Overlap Handling for Full-Duplex Speech
-    Models'
-  year: '2026'
-  venue: ICASSP
-  url: https://doi.org/10.48550/arXiv.2507.23159
-- title: Grounding Spoken LLMs in Multi-Speaker Audio via Diarization Conditioning
-  year: '2026'
-  venue: Interspeech
-  url: https://doi.org/10.48550/arXiv.2606.18134
-- title: ICASSP 2026 URGENT Speech Enhancement Challenge
-  year: '2026'
-  venue: ICASSP
-  url: https://doi.org/10.48550/arXiv.2601.13531
-- title: 'LALM-as-a-Judge: Benchmarking Large Audio-Language Models for Safety Evaluation
-    in Multi-Turn Spoken Dialogues'
-  year: '2026'
-  venue: ICML
-  url: https://doi.org/10.48550/arXiv.2602.04796
-- title: 'MAPSS: Manifold-based Assessment of Perceptual Source Separation'
-  year: '2026'
-  venue: ICLR
-  url: https://doi.org/10.48550/arXiv.2509.09212
+  url: https://doi.org/10.48550/arXiv.2603.22709

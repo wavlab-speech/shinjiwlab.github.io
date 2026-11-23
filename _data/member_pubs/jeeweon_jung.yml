@@ -10,10 +10,6 @@ pubs:
   venue: Interspeech
   year: '2026'
   url: ''
-- title: 'X3A: Efficient Multimodal Deepfake Detection with Score-Level Fusion'
-  year: '2025'
-  venue: ''
-  url: https://doi.org/10.1145/3672608.3707934
 - title: 'SpoofCeleb: Speech Deepfake Detection and SASV in the Wild'
   year: '2025'
   venue: OJSP
@@ -35,10 +31,10 @@ pubs:
   venue: ICASSP
   year: '2025'
   url: ''
-- title: 'The VoxCeleb Speaker Recognition Challenge: A Retrospective'
-  year: '2024'
-  venue: IEEE/ACM Transactions on Audio, Speech, and Language Processing
-  url: https://doi.org/10.1109/TASLP.2024.3444456
+- title: 'X3A: Efficient Multimodal Deepfake Detection with Score-Level Fusion'
+  year: '2025'
+  venue: ''
+  url: https://doi.org/10.1145/3672608.3707934
 - title: 'VoxMM: Rich Transcription of Conversations in the Wild'
   venue: ICASSP
   year: '2024'
@@ -113,3 +109,7 @@ pubs:
   venue: ICASSP
   year: '2024'
   url: ''
+- title: 'The VoxCeleb Speaker Recognition Challenge: A Retrospective'
+  year: '2024'
+  venue: IEEE/ACM Transactions on Audio, Speech, and Language Processing
+  url: https://doi.org/10.1109/TASLP.2024.3444456

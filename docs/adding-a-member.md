@@ -236,3 +236,7 @@ author list.
 This quantity is correct. The card shows your 20 most recent papers. The card
 also gives a link to your full ORCID record, or to your Google Scholar profile
 if you have no ORCID iD.
+
+ORCID gives a year but no month for most works. Thus, in each year, the
+papers in `_bibliography/papers.bib` come first, in the sequence of that file.
+Then the other ORCID works come, the most recently added work first.

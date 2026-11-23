@@ -406,9 +406,9 @@ def sort_newest_first(rows):
     """Newest first; entries with no usable year sort to the end.
 
     Python's sort is stable and stays stable under reverse=True, so records
-    sharing a year keep the order Google Scholar listed them in. The members
-    page renders the stored order as-is, which is what makes the displayed
-    "20 most recent" actually the 20 most recent.
+    sharing a year keep the order merge_rows gave them (the member's papers.bib
+    entries first, then the other ORCID works, newest added first). The members
+    page renders the stored order as-is.
     """
     return sorted(rows, key=lambda r: (r['year'].isdigit(), r['year']),
                   reverse=True)
@@ -518,8 +518,16 @@ def parse_orcid_works(data):
     ORCID groups the copies of one work that different sources added; the first
     summary of each group stands for the work.
     """
+    def put_code(group):
+        summaries = (group or {}).get('work-summary') or [{}]
+        code = (summaries[0] or {}).get('put-code')
+        return code if isinstance(code, int) else 0
+
+    # ORCID gives no month or day, and lists works in title order. A larger
+    # put-code means ORCID got the work later, so use it as "newer" within a
+    # year: the year-only sort that follows is stable and keeps this order.
     rows = []
-    for group in (data or {}).get('group') or []:
+    for group in sorted((data or {}).get('group') or [], key=put_code, reverse=True):
         summaries = (group or {}).get('work-summary') or []
         if not summaries:
             continue
@@ -584,12 +592,24 @@ def fetch_orcid_works(orcid, opener=urllib.request.urlopen, timeout=30.0):
 def merge_rows(orcid_rows, bib_rows, bib_index):
     """ORCID rows corrected from papers.bib, plus the papers.bib rows ORCID lacks.
 
-    The ORCID rows go first, so when dedupe meets a paper twice with the same
-    year it keeps the enriched ORCID row, which already carries the papers.bib
-    title, venue and link.
+    Within a year, the member's papers.bib entries come first, in papers.bib
+    order (papers.bib is kept newest first), then the other ORCID works. The
+    ORCID rows go first in the list, so when dedupe meets a paper twice it keeps
+    the enriched ORCID row: it carries the papers.bib title and venue, and
+    falls back to the ORCID link when papers.bib has none.
     """
     enriched = [enrich(dict(row), bib_index) for row in orcid_rows]
-    return sort_newest_first(dedupe(enriched + list(bib_rows)))
+    position = {}
+    for i, row in enumerate(bib_rows):
+        position.setdefault(normalize_title(row['title']), i)
+
+    def rank(row):
+        pos = position.get(normalize_title(row['title']))
+        return (0, pos) if pos is not None else (1, 0)
+
+    # sorted() is stable: equal ranks keep the list order (ORCID row first).
+    ranked = sorted(enriched + list(bib_rows), key=rank)
+    return sort_newest_first(dedupe(ranked))
 
 
 def member_rows(member, entries, bib_index, fetch=fetch_orcid_works):
@@ -604,7 +624,12 @@ def member_rows(member, entries, bib_index, fetch=fetch_orcid_works):
     orcid = normalize_orcid(member.get('orcid'))
     if orcid is None:
         raise InvalidOrcid(f"orcid {member.get('orcid')!r} is not a valid ORCID iD")
-    works = parse_orcid_works(fetch(orcid))
+    data = fetch(orcid)
+    try:
+        works = parse_orcid_works(data)
+    except (AttributeError, TypeError, KeyError) as exc:
+        # The JSON decoded, but not into the v3.0 shape this parser reads.
+        raise OrcidError(f'unexpected ORCID data: {type(exc).__name__}: {exc}') from exc
     return 'papers.bib+orcid', merge_rows(works, bib_rows, bib_index)
 
 
@@ -756,6 +781,12 @@ def selftest():
     check('orcid: URL form, spaces, lower-case x',
           normalize_orcid(' https://orcid.org/0000-0002-1825-009x ') == '0000-0002-1825-009X')
     check('orcid: invalid', normalize_orcid('0000-0002-5970') is None and normalize_orcid('') is None)
+    later = parse_orcid_works({'group': [
+        {'work-summary': [{'title': {'title': {'value': 'Older Work'}}, 'type': 'conference-paper',
+                           'put-code': 100, 'publication-date': {'year': {'value': '2026'}}}]},
+        {'work-summary': [{'title': {'title': {'value': 'Newer Work'}}, 'type': 'conference-paper',
+                           'put-code': 200, 'publication-date': {'year': {'value': '2026'}}}]}]})
+    check('ORCID works added later come first', [r['title'] for r in later] == ['Newer Work', 'Older Work'])
 
     # Fetch, merge, guard and save. Writes go to a temporary directory.
     def fake_fetch(works):
@@ -808,6 +839,25 @@ def selftest():
         check('a different source is replaced',
               save_publications('m3', 'papers.bib+orcid', [{'title': 'T', 'venue': '', 'year': '2025', 'url': ''}]))
         check('exit status', (exit_status(3, 3), exit_status(3, 2), exit_status(0, 0)) == (1, 0, 0))
+        # Within a year, the member's papers.bib entries come first, in
+        # papers.bib order (which is newest first); then the other ORCID works.
+        index2 = build_bib_index([{'title': 'Zeta Lab Paper', 'abbr_publisher': 'ICASSP', 'year': '2026'},
+                                  {'title': 'Alpha Lab Paper', 'abbr_publisher': 'ICASSP', 'year': '2026'}])
+        ordered = merge_rows([{'title': 'Alpha Lab Paper', 'venue': 'arXiv', 'year': '2026', 'url': 'https://doi.org/10.1/a'},
+                              {'title': 'Beta ORCID Only', 'venue': 'arXiv', 'year': '2026', 'url': ''}],
+                             [{'title': 'Zeta Lab Paper', 'venue': 'ICASSP', 'year': '2026', 'url': ''},
+                              {'title': 'Alpha Lab Paper', 'venue': 'ICASSP', 'year': '2026', 'url': ''}], index2)
+        check('within a year, papers.bib order comes first',
+              [r['title'] for r in ordered] == ['Zeta Lab Paper', 'Alpha Lab Paper', 'Beta ORCID Only'])
+        check('a paper in both keeps the ORCID link when papers.bib has none',
+              [r['url'] for r in ordered if r['title'] == 'Alpha Lab Paper'] == ['https://doi.org/10.1/a'])
+        # ORCID data that decodes but has an unexpected shape fails only this member.
+        write_file('m1', 'papers.bib+orcid', 100, [])
+        odd_shapes = [{'group': {'not': 'a list'}},
+                      {'group': [{'work-summary': [{'title': 'a string', 'type': 'other'}]}]}]
+        check('unexpected ORCID data fails only this member',
+              all(refresh_member(m, [], index, fetch=fake_fetch(odd)) == 'orcid_failed' for odd in odd_shapes)
+              and read_existing('m1')['total'] == 100)
     finally:
         shutil.rmtree(PUBS_DIR, ignore_errors=True)
         PUBS_DIR = saved_pubs_dir

@@ -1,11 +1,6 @@
 source: papers.bib+orcid
 total: 78
 pubs:
-- title: 'Recent trends in distant conversational speech recognition: A review of
-    CHiME-7 and 8 DASR challenges'
-  year: '2026'
-  venue: Computer Speech & Language
-  url: https://doi.org/10.1016/j.csl.2025.101901
 - title: An End-to-End Integration of Speech Separation and Recognition with Self-Supervised
     Learning Representation
   year: '2026'
@@ -71,15 +66,11 @@ pubs:
   venue: SLT
   year: '2026'
   url: ''
-- title: 'Complex-bin2bin: A Latency-Flexible Generative Neural Model for Audio Packet
-    Loss Concealment'
-  year: '2025'
-  venue: IEEE Transactions on Audio, Speech and Language Processing
-  url: https://doi.org/10.1109/TASLP.2024.3515794
-- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
-  year: '2025'
-  venue: NAACL
-  url: https://doi.org/10.48550/arXiv.2502.15218
+- title: 'Recent trends in distant conversational speech recognition: A review of
+    CHiME-7 and 8 DASR challenges'
+  year: '2026'
+  venue: Computer Speech & Language
+  url: https://doi.org/10.1016/j.csl.2025.101901
 - title: 'ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization
     for Speech Multi-Metric Estimation'
   venue: NeurIPS
@@ -113,5 +104,14 @@ pubs:
   url: ''
 - title: Lessons Learned from the URGENT 2024 Speech Enhancement Challenge
   venue: Interspeech
+  year: '2025'
+  url: ''
+- title: 'ESPnet-SpeechLM: An Open Speech Language Model Toolkit'
+  year: '2025'
+  venue: NAACL
+  url: https://doi.org/10.48550/arXiv.2502.15218
+- title: Investigation of Spatial Self-Supervised Learning and Its Application to
+    Target Speaker Speech Recognition
+  venue: ICASSP
   year: '2025'
   url: ''

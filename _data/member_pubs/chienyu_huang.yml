@@ -1,11 +1,6 @@
 source: papers.bib+orcid
 total: 16
 pubs:
-- title: 'DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model With Self-Generated
-    Cross-Modal Alignment'
-  year: '2026'
-  venue: IEEE Transactions on Audio Speech and Language Processing
-  url: https://doi.org/10.1109/TASLPRO.2026.3675792
 - title: 'Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions'
   venue: COLM
   year: '2026'
@@ -19,10 +14,11 @@ pubs:
   venue: SLT
   year: '2026'
   url: ''
-- title: A Preliminary Exploration with GPT-4o Voice Mode
-  year: '2025'
-  venue: arXiv
-  url: https://doi.org/10.48550/arXiv.2502.09940
+- title: 'DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model With Self-Generated
+    Cross-Modal Alignment'
+  year: '2026'
+  venue: IEEE Transactions on Audio Speech and Language Processing
+  url: https://doi.org/10.1109/TASLPRO.2026.3675792
 - title: 'Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring
     the Capabilities of Spoken Language Models with 180 Tasks'
   year: '2025'
@@ -34,16 +30,20 @@ pubs:
   venue: ICASSP IEEE International Conference on Acoustics Speech and Signal Processing
     Proceedings
   url: https://doi.org/10.1109/ICASSP49660.2025.10889205
-- title: 'Dynamic-Superb: Towards a Dynamic, Collaborative, and Comprehensive Instruction-Tuning
-    Benchmark for Speech'
-  year: '2024'
-  venue: ICASSP
-  url: https://doi.org/10.1109/ICASSP48485.2024.10448257
+- title: A Preliminary Exploration with GPT-4o Voice Mode
+  year: '2025'
+  venue: arXiv
+  url: https://doi.org/10.48550/arXiv.2502.09940
 - title: Fusion of Discrete Representations and Self-Augmented Representations for
     Multilingual Automatic Speech Recognition
   year: '2024'
   venue: SLT
   url: https://doi.org/10.1109/SLT61566.2024.10832321
+- title: 'Dynamic-Superb: Towards a Dynamic, Collaborative, and Comprehensive Instruction-Tuning
+    Benchmark for Speech'
+  year: '2024'
+  venue: ICASSP
+  url: https://doi.org/10.1109/ICASSP48485.2024.10448257
 - title: PROMPTING AND ADAPTER TUNING FOR SELF-SUPERVISED ENCODER-DECODER SPEECH MODEL
   year: '2023'
   venue: arXiv
@@ -53,10 +53,6 @@ pubs:
   venue: ICASSP IEEE International Conference on Acoustics Speech and Signal Processing
     Proceedings
   url: https://doi.org/10.1109/ICASSP43922.2022.9746636
-- title: Improving cross-lingual reading comprehension with self-training
-  year: '2021'
-  venue: arXiv
-  url: https://doi.org/10.48550/arxiv.2105.03627
 - title: Investigating on incorporating pretrained and learnable speaker representations
     for multi-speaker multi-style text-to-speech
   year: '2021'
@@ -68,6 +64,10 @@ pubs:
   venue: Proceedings of the Annual Conference of the International Speech Communication
     Association Interspeech
   url: https://doi.org/10.21437/Interspeech.2021-2013
+- title: Improving cross-lingual reading comprehension with self-training
+  year: '2021'
+  venue: arXiv
+  url: https://doi.org/10.48550/arxiv.2105.03627
 - title: 'Defending your voice: Adversarial attack on voice conversion'
   year: '2020'
   venue: arXiv
